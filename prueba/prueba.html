@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="example">
+        <h2>Welcome to my page</h2>
+        <p>Hello! what is your name?</p>
+        <input type="text" id="nameInput" placeholder="Enter Your Name"> <br>
+        <button id="button">Enter</button>
+    </div>
+
+
+    <!--Javascript-->
+    <script>
+
+        const nameInput = document.getElementById("nameInput");
+        const button = document.getElementById("button")
+
+        const enterName = () => {
+            const name = nameInput.value // it will get the value of the input
+            if(name === ""){
+                window.alert("please enter Your name")
+            }else{
+                window.alert("Hello " + name + "!")
+            }
+        }
+
+        button.addEventListener("click", enterName)
+    </script>
+</body>
+</html>

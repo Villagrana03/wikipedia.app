@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/CSS-Files/style.css">
+    <link rel="stylesheet" href="/CSS-Files/codingColors.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Callbacks</title>
+</head>
+<body>
+
+      
+    <div class="navbar">
+        <div class="container-navbar1">
+            <a href="/index.html">Home</a>
+            <a href="">CSS</a>
+            <a href="/HTML/htmlFirst.html">HTML</a>
+        </div>  
+    </div>
+
+    <div>
+        <div class="JSfiles-header">
+            <h2 class="JSfiles-header">Here you will Learn about sychrony and Asynchrony.</h2>
+            
+        </div>
+
+        <p><span class="bold">Synchrony</span> is a term we used to talk about code instructions that executes ONE AFTER ANOTHER</p>
+            <p>in <span class="bold">synchronous </span>code, one line of code is executed only after the previous has finished.</p>
+            <p>Synchronous: In synchronous programming, tasks are executed one after the other in a sequential manner. Each task must wait for the previous one to complete before it can start. This means that if one task takes a long time to execute</p>
+            <p><span class="bold">Asynchronous</span> does not wait for the previous instruction.</p>
+            <p>In asynchronous programming, tasks can be executed independently of one another. Instead of waiting for a task to finish before moving on to the next one, asynchronous code allows tasks to run concurrently. </p>
+
+            <div class="javascript-body">
+               <p>Here i will explain the first Synchronous callback</p>
+
+               <div class="blackCoding">
+                    <p><span class="darkBlue">const </span>= <span class="yellow">add</span><span class="lightBlue">(num1, num2, callback)</span>{</p>
+                        <p><span class="darkBlue">let</span> result = <span class="lightBlue">num1</span> + <span class="lightBlue">num2</span></p>
+                        <p><span class="purple">callback</span>(result);</p>
+                        <p>}</p>
+               </div>
+            </div>
+
+            <h3>Asynchronous callback</h3>
+            <p></p>
+
+            <div class="blackCoding">
+
+            </div>
+    </div>
+
+    <script>
+        // SynchronousCallbacks
+
+//1.- we call add(2,4, logResult)
+//2.- add() function is working we sotred the result in the result variable
+//3.- after the sum is being completed, the callback will start insie of the callback we stored "result" AND we called the logResult function add(2,4, logResult), its like a combination
+//4.- after the add has been completed, since we called logResult() it will start working on that function "AFTER ADD() is completed"
+
+
+const add = (num1, num2, callback) => {
+    let result = num1 + num2
+    callback(result) // after the function is being "perfomed" it goes to the callback with result as a parameter
+}
+
+function logResult(result){
+    console.log(`The Result it's ${result}`)
+}
+
+add(2,4, logResult)
+
+//callback with filter
+
+const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+function callback(num){
+    return num % 2 === 0
+}
+
+const evenNumbersArray = numbers.filter(callback);
+console.log(evenNumbersArray);
+console.log("This is a synchronous code....")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//Asynchronous callback
+
+
+
+
+function multiplyCallback(num){
+    const result = num * 2;
+    console.log(`The input doubled is equal to ${result}`)
+}
+
+function doSomeMath(input, callback){
+    console.log("We are doubling the input number")
+    callback(input)
+}
+
+doSomeMath(2, multiplyCallback) // 1.- step. we call the function the callback "multiplyCallback" we set it in the parameter after the message is being completed, we call the other function
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+</body>
+</html>

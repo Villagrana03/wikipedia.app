@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/CSS-Files/style.css">
+    <link rel="stylesheet" href="/CSS-Files/codingColors.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+      
+    <div class="navbar">
+        <div class="container-navbar1">
+            <a href="/index.html">Home</a>
+            <a href="">CSS</a>
+            <a href="/HTML/htmlFirst.html">HTML</a>
+        </div>  
+    </div>
+
+    <div>
+        <div class="main-container">
+           
+            <div>
+                <h2>JS Promises</h2>
+                <p>Promises are objects that represent the outcome of an asynchronous operation.</p>
+                <p>a JS promise is like a real-life promise, it can be fulfilled or rejected, when we're waiting to know the result the promise is pending</p>
+                <p>An asynchronous operation is one that allows the computer to “move on” to other tasks while waiting for the asynchronous operation to complete. Asynchronous programming means that time-consuming operations don’t have to bring everything else in our programs to a halt.</p>
+            </div>
+
+            <div class="main-content">
+               
+            </div>
+
+        </div>
+
+
+            <div class="javascript-body">
+                <p>to create a promise we use the "<span class="yellow">new</span>" keyword, and the "<span class="yellow">Promise</span>" constructor method, the constructor takes a function as a parameter</p>
+
+                <div class="blackCoding">
+                    <p><span class="darkBlue">const </span> promiseDemo = <span class="yellow">new Promise</span>(<span class="pink">function</span>(){})</p>
+                </div>
+
+                <p>Then we pass 2 parameters "<span class="green">resolve</span>" and "<span class="red">reject</span>"</p>
+
+                <div class="blackCoding">
+                    <p><span class="darkBlue">const </span> promiseDemo = <span class="yellow">new Promise</span>(<span class="pink">function</span>(<span class="green">resolve</span>, <span class="red">reject</span>){})</p>
+                </div>
+
+                <p>Here i will make and example of how it would look</p>
+                <p>if the promise is fulfilled, the resolve function changes the propmise status from pending to fulfilled, The <span class="green">resolve</span> function takes one argument</p>
+
+                <div class="blackCoding">
+                    <p>
+                        <span class="darkBlue">const</span> <span class="blue">dessertStock</span> = { <br>
+                            cheeseCake: 10, <br>
+                            moltenCake: 7, <br>
+                            spongeCake: 3 <br>
+                        }; <br>
+                        <br>
+                        <span class="pink">function</span> <span class="yellow">orderCake</span>(){ <br>
+                            <span class="pink">return</span> <span class="yellow">new Promise</span>(function(resolve, reject){ <br>
+                                if(<span class="blue">dessertStock</span>.<span class="lightBlue">cheeseCake</span> > 0){ <br>
+                                    <span class="lightGreen">// after the resolve, we must add () for the promise</span> <br>
+                                    <span class="green">resolve</span><span class="yellow">(</span>"Cheesecake it is available"<span class="yellow">)</span> <br>
+                                } else { <br>
+                                    <span class="red">reject</span><span class="yellow">(</span>"Cheesecake is not available"<span class="yellow">)</span> <br>
+                                } <br>
+                            }) <br>
+                        } <br>
+                        <br>
+                        console.log(orderCake()) <span class="yellow">Output // Promise { 'Cheesecake is available' }</span>
+                    </p>
+                </div>
+
+                <p>Here we will handle the promise </p>
+                <p>we will use the .then when the promise is no longer in pending.</p>
+
+                <div class="blackCoding">
+                    <p>
+                        <span class="darkBlue">const</span> <span class="blue">dessertStock</span> = { <br>
+                            cheeseCake: 10, <br>
+                            moltenCake: 7, <br>
+                            spongeCake: 3 <br>
+                        }; <br>
+                        <br>
+                        <span class="pink">function</span> <span class="yellow">orderCake</span>(){ <br>
+                            <span class="pink">return</span> <span class="yellow">new Promise</span>(function(resolve, reject){ <br>
+                                if(<span class="blue">dessertStock</span>.<span class="lightBlue">cheeseCake</span> > 0){ <br>
+                                    <span class="lightGreen">// after the resolve, we must add () for the promise</span> <br>
+                                    <span class="green">resolve</span><span class="yellow">(</span>"Cheesecake it is available"<span class="yellow">)</span> <br>
+                                } else { <br>
+                                    <span class="red">reject</span><span class="yellow">(</span>"Cheesecake is not available"<span class="yellow">)</span> <br>
+                                } <br>
+                            }) <br>
+                        } <br>
+                        <br>
+                        <span class="blue">handleSuccess</span> = (successValue) => { <br>
+                            console.log(successValue) <br>
+                        } <br>
+                         <br>
+                        function handleFailure(failureValue){ <br>
+                            console.log(failureValue) <br>
+                        } <br>
+                        
+                        <span class="darkBlue">const</span>  <span class="blue">makeOrder</span> = orderCake() <br>
+                        makeOrder<span class="green">.then</span>(handleSuccess)<span class="red">.catch</span>(handleFailure) <br>
+            
+
+                      
+                    </p>
+                </div>
+                <p>async function</p>
+                <p>async functions always return promise objects we'll then write code to handle these objects</p>
+                <p>we also use await keyword  inside the async function, this keyword waits to the promise to be resolve</p>
+
+                <div class="blackCoding">
+                    <p>
+                        <span class="darkBlue">let</span> <span class="blue">traditiionalPromise</span> = new Promise(function(resolve, reject){ <br>
+                            <span class="yellow">setTimeout</span>(() => { <br>
+                                <span class="green">resolve</span>("this wil be resolved after 2 seconds") <br>
+                            },2000) <br>
+                        }); <br>
+<br>
+                        <span class="yellow">async</span> <span class="pink">function</span> <span class="blue">asyncFunction</span>(){<br>
+                            <span class="darkBlue">let</span> value = <span class="yellow">await</span> traditiionalPromise; <br>
+                            console.log(value) <br>
+                        } <br>
+                            <br>
+                        asyncFunction() 
+                    </p>
+                </div>
+
+                <p>This is an example from chatgpt of how .<span class="green">then</span> and .<span class="red">catch</span> would work getting a JSON file.</p>
+
+                <div class="blackCoding">
+                 <p>
+                    fetch('https://api.example.com/data') <br>
+                    .<span class="green">then</span>(response => { <br>                  
+                  <span class="lightGreen">//     // The server responded with a JSON string. <br>
+                      // .json() parses the JSON string into a JavaScript object.</span>   <br>
+                      return response.json(); <br>
+                    }) <br>                                    
+                    .<span class="green">then</span>(data => { <br>                        
+                  <span class="lightGreen">    // Now 'data' is a JavaScript object. <br>
+                    // You can use it in your code. <br> </span>
+                      console.log(data); <br>
+                    }) <br>
+                    . <span class="red">catch</span> (error => { <br>
+                    <span class="lightGreen">  // If there is an error, handle it here.</span> <br>
+                      console.error('Error:', error); <br>
+                    });
+                 </p>
+
+                </div>
+            </div>
+    </div>
+</body>
+</html>

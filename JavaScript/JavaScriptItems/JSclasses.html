@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/CSS-Files/style.css">
+    <link rel="stylesheet" href="/CSS-Files/codingColors.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+      
+    <div class="navbar">
+        <div class="container-navbar1">
+            <a href="/index.html">Home</a>
+            <a href="">CSS</a>
+            <a href="/HTML/htmlFirst.html">HTML</a>
+        </div>  
+    </div>
+
+    <div>
+        <div class="JSfiles-header">
+            <h2 class="JSfiles-header">Classes</h2>
+            <p>a class is a "template for objects" or a blueprint or template that defines the properties and behaviors of objects. Objects are instances of classes, created based on the specifications defined in the class.
+            <p>We would use classes intead of objects because it is faster.</p>
+
+
+            </p>
+        </div>
+
+            <div class="javascript-body">
+
+               <p>Here i will show how is a class made, first we start with the word "class" then with the superclass which in this case will be "<span class="yellow">B</span>ook" always the first letter uppercase</p>
+                <p>to create new objects, classes need a special method called <span class="green">constructor()</span> thius method sets the property values for a new object, in the example i will have 2 parameters, that will specified unique values of the new object.</p>
+                <p> The purpose of the constructor is to set up the initial state of the object by assigning values to its properties or performing any other necessary setup tasks.</p>
+
+               <div class="blackCoding">
+
+                <p><span class="darkBlue">class </span> <span class="yellow">B</span>ook {</p>
+                    <p><span class="green">constructor(author, tittle)</span>{</p>
+                    <p></p>
+                        <p>}</p>
+                <p>}</p>
+
+               </div>
+
+               <p>Before creating a new object property, we would need the special keyboard "<span class="pink">this</span>" we use <span class="pink">this</span> to refer the object being created, then we add a <span class="pink">.</span> and the property name</p>
+               <p>to finish creating the object property we will assign the author, as a VALUE to <sdpan class="pink">this.author</sdpan></p>
+               <p>The line this.title = title; inside the constructor is assigning the value of the title parameter to the title property of the Book object being created. This line ensures that each Book object created with the Book class will have a title property set to the value provided when the object is instantiated.</p>
+
+               <div class="blackCoding">
+
+                <p><span class="lightGreen">// this is the class</span></p>
+
+                <p><span class="darkBlue">class </span> <span class="yellow">B</span>ook {</p>
+                    <p><span class="green">constructor(author, tittle)</span>{</p>
+                    <p><span class="pink">this.author = author;</span></p>
+                    <p><span class="pink">this.title = title;</span></p>
+                        <p>}</p>
+                <p>}</p>
+
+                <p><span class="darkBlue">const </span> book1 = new Book()</p>
+            
+               </div>
+
+               <p>Time to use our class, we start the same way we'd create a constant, but then add the "<span class="orange">new</span>" keyboard followed by <span class="yellow">B</span>ook() <br> Here we are assigning <span class="orange">new</span> <span class="yellow">B</span>ook() to the book1 constant</p>
+               <p>Then we will add values we want to set for the new object inside the parentheses</p>
+
+               <div class="blackCoding">
+
+                <p><span class="darkBlue">class </span> <span class="yellow">B</span>ook {</p>
+                    <p><span class="green">constructor(author, tittle)</span>{</p>
+                    <p><span class="pink">this.author = author;</span></p>
+                    <p><span class="pink">this.title = title;</span></p>
+                        <p>}</p>
+                <p>}</p>
+
+
+                <p><span class="darkBlue">const </span> book1 = <span class="orange">new</span> Book( <span class="blue">"Suzanne Collins" , "hunger Games"</span> )</p>
+                <p><span class="darkBlue">const </span> book2 = <span class="orange">new</span> Book( <span class="blue">"George Lucas" , "star wars"</span> )</p>
+
+                <p><span class="yellow">console</span>.<span class="lightBlue">log</span>(book1) <span class="lightGreen">// output author: "Suzanne Collins", tittle: "Hunger Games"</span></p>
+                <p><span class="yellow">console</span>.<span class="lightBlue">log</span>(book2) <span class="lightGreen">// output author: "George Lucas", tittle: "star wars" </span> </p>
+               </div>
+
+            </div>
+
+            <h3>Methods in classes</h3>
+            <p>so far the objects we created from classes, ca not perfom any action, by adding methods to classes we will be able to create interactive objects</p>
+            <p>Adding a method in a class is like creating a regular function, except there is not need of <span class="red">function</span> keyboard <br> Pet() cannot eat, lets give it that function.</p>
+            <p>To use the function we need to set the <span class="orange">variable</span> followed of a "<span class="orange">.</span>" and the <span class="orange">function()</span> name</p>
+
+            <div class="blackCoding">
+                
+                <p><span class="darkBlue">class </span> <span class="yellow">P</span>et {</p>
+                    <p><span class="green">constructor(name)</span>{</p>
+                    <p><span class="pink">this.name = name;</span></p>
+                        <p>}</p>
+                        <p><span class="lightGreen">// this function must be inside Pet() in order to work</span></p>
+                        <p><span class="blue">eat</span>() {</p>
+                            <p><span class="yellow">console</span>.<span class="lightBlue">log</span>("nom nom")</p>
+                            <p>}</p>
+                <p>}</p>
+
+                <p><span class="darkBlue">const </span> pet = new Virtualpet("mango");</p>
+                <p><span class="orange">pet.eat();</span></p>
+            </div>
+
+           <p>Parameters allow class methods to be more interactive, by reacting to things we give them for example "<span class="purple">food</span>"</p>
+
+            <div class="blackCoding">
+                
+                <p><span class="darkBlue">class </span> <span class="yellow">P</span>et {</p>
+                    <p><span class="green">constructor(name)</span>{</p>
+                    <p><span class="pink">this.name = name;</span></p>
+                        <p>}</p>
+                        <p><span class="lightGreen">// this function must be inside Pet() in order to work</span></p>
+                        <p><span class="blue">eat</span>(food) {</p>
+                            <p>if(food === "treats") {</p>
+                           <p><span class="yellow">console</span>.<span class="lightBlue">log</span>("nom nom")</p>
+                                <p>} else {</p>
+                                    <p><span class="yellow">console</span>.<span class="lightBlue">log</span>("discard")</p>
+                                    <p>}</p>
+                            <p>}</p>
+                <p>}</p>
+
+                <p><span class="darkBlue">const </span> pet = new Virtualpet("mango");</p>
+                <p><span class="orange">pet.eat("treats"); <span class="lightGreen"> // output "nom nom"</span></span></p>
+
+            </div>
+    </div>
+</body>
+</html>

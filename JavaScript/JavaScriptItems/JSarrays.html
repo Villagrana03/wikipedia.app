@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/CSS-Files/style.css">
+    <link rel="stylesheet" href="/CSS-Files/codingColors.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+      
+    <div class="navbar">
+        <div class="container-navbar1">
+            <a href="/index.html">Home</a>
+            <a href="">CSS</a>
+            <a href="/HTML/htmlFirst.html">HTML</a>
+        </div>  
+    </div>
+
+    <div>
+        <div class="JSfiles-header">
+            <h2 class="JSfiles-header">What's an array?</h2>
+            <p>Array is a data structure that allows you to store and organize multiple values of the same data type in a single variable</p>
+        </div>
+
+            <div class="javascript-body">
+                <ol>
+                    <span class="boldClass">Examples:</span> <br>
+                    <br><li><span class="boldClass">Grouping Data:</span> Arrays are used to organize related data elements together. For example, if you have a list of students' names</li> <br>
+                    <li><span class="boldClass">Iteration and Loops:</span> Arrays work seamlessly with loops, allowing you to iterate over all elements of an array and perform operations on each element without writing repetitive code.</li> <br>
+                    <li><span class="boldClass">Implementing Data Structures: </span>Many data structures, such as stacks, queues, and matrices, are often implemented using arrays.</li>
+                </ol>
+    
+                 
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <div class="ArrayOperations">
+    
+    
+                    <h2>Array Operations</h2>
+            <!---->
+                    <h3>Array index</h3>
+                    <div class="blackCoding">
+                        <p>const numbers = [1,2,3,4,5]</p>
+                        <p>console.log(numbers[3])</p> <br>
+    
+                        <p><span class="yellow">4</span></p>
+                    </div>
+                    <p>array[index];</p>
+            <!---->
+                    <h3>Array.length</h3>
+                    <div class="blackCoding">
+                        <p>const numbers = [1,2,3,4,5]</p>
+                        <p>console.log(numbers.length)</p> <br>
+    
+                        <p><span class="yellow">5</span></p>
+                    </div>
+                    <p>array.length;</p>
+            <!--Array push-->
+                    <h3>Array Push</h3>
+                    <div class="blackCoding">
+                        <p>const numbers = [1,2,3,4,5]</p> 
+                        <p>numbers.push(<span class="answerColor">54</span>)</p>
+                        <p>console.log(numbers)</p> <br>
+                        <p><span class="yellow">[ 1, 2, 3, 4, 5, <span class="answerColor">54</span> ]</span></p>
+                        
+                        
+                    </div>
+                    <p>array.push(element); Adds an element to the end of the array</p>
+            <!--Array pop-->
+                    <h3>Array Pop</h3>
+                    <div class="blackCoding">
+                        <p>const numbers = [1,2,3,4,5]</p>
+                        <p>numbers.pop()</p>
+                        <p>console.log(numbers)</p> <br>
+    
+                        <p><span class="yellow">[ 1, 2, 3, 4 ]</span></p>
+                    </div>
+                    <p>array.pop();  Removes an element to the end of the array</p>
+    
+            <!--Shift-->
+                    <h3>Array.shift() </h3>
+                    <div class="blackCoding">
+                        <p>const numbers = [1,2,3,4,5]</p> 
+                        <p>numbers.shift()</p> 
+                        <p>console.log(numbers)</p> <br>
+                        <p><span class="yellow">[ 2, 3, 4, 5 ]</span></p>
+                        <p></p>
+                    </div>
+                    <p>array.shift(); method removes the first element from an array and returns that element.</p>
+    
+            <!--Unshift-->
+                    <h3>array.unshift()</h3>
+                    <div class="blackCoding">
+                        <p>const numbers = [1,2,3,4,5]</p>
+                        <p>numbers.unshift(<span class="answerColor">54</span>)</p>
+                        <p>console.log(numbers)</p> <br>
+                        <p><span class="yellow">[ <span class="answerColor">54</span>, 1, 2, 3, 4, 5 ]</span></p>
+                    </div>
+                    <p>array.unshift(element) // method Adds the first element from an array and returns that element.</p>
+    
+            <!--splice-->
+                      <h3>array.splice()</h3>
+                      <div class="blackCoding">
+                          <p>const numbers = [1,2,3,4,5]</p>
+                          <p>console.log(numbers.splice(2))</p> <br>
+      
+                          <p><span class="yellow">[ 3, 4, 5 ]
+                          </span></p>
+                      </div>
+                      <p></p>
+    
+            <!--slice-->
+                    <h3>array.slice()</h3>
+                    <div class="blackCoding">
+                        <p>const numbers = [1,2,3,4,5]</p>
+                        <p>console.log(numbers.slice(1,-1))</p> <br>
+    
+                        <p><soan class="yellow">[ 2, 3, 4 ]</soan></p>
+                    </div>
+                    <p>Returns a new array with elements from startIndex to endIndex (exclusive)</p>
+            <!--concat-->
+                    <h3>array.concat()</h3>
+                    <div class="blackCoding">
+                        <p>const numbers = [1,2,3,4,5]</p>
+                        <p>const numbersTwo = [6,7,8,9,10]</p>
+                        <p>console.log(numbers.concat(numbersTwo))</p> <br>
+    
+                        <p><span class="yellow">[
+                            1, 2, 3, 4,  5,
+                            6, 7, 8, 9, 10
+                          ]
+                          </span></p>
+                    </div>
+                    <p> Returns a new array that combines the elements of the original array and otherArray</p>
+          
+            <!--indexOf-->
+                    <h3>array.indexOf()</h3>
+                    <div class="blackCoding">
+                        <p>const fruits = ['apple', 'banana', 'orange', 'apple', 'grape'];</p>
+                        <p>console.log(fruits.indexOf("orange"))</p> <br>
+    
+                        <p><span class="yellow">2</span></p>
+                    </div>
+                    <p>function is used to search for a specified value within an array or a string. It returns the index of the first occurrence of the specified value, or -1 if the value is not found.</p>
+    
+            <!--split-->
+                     <h3>string.split(delimeter)</h3>
+                     <div class="blackCoding">
+                         <p>const word = "mango"
+                        </p>
+                         <p>console.log(word.split(""))</p> <br>
+     
+                         <p><span class="yellow">[ 'm', 'a', 'n', 'g', 'o' ]</span></p>
+                     </div>
+                     <p>Splits a string into an array of substrings based on the delimiter</p>
+    
+             <!--join-->
+                    <h3>array.join(delimeter)</h3>
+                    <div class="blackCoding">
+                        <p>const numbers = [1,2,3,4,5]</p>
+                        <p>console.log(numbers.join("..."))</p>  <br>
+    
+                        <p><span class="yellow">1...2...3...4...5</span></p>
+                    </div>
+                    <p>Joins the elements of an array into a string with the specified delimiter</p>
+    
+    
+            <!--includes-->
+                    <h3>array.includes(element)</h3>
+                    <div class="blackCoding">
+                        <p>const numbers = [1,2,3,4,5]</p> <br>
+    
+    
+                        <p>console.log(numbers.includes(3)) => <span class="yellow">true</span></p> 
+                        <p>console.log(numbers.includes(6)) => <span class="yellow">false</span></p>
+                    </div>
+                    <p>Returns true if the element is found in the array, false otherwise</p>
+    
+    
+            <!--Parseint-->
+
+            <h3>parseInt(string, radix)</h3>
+            <div class="blackCoding">
+                <p> parseInt("10");    // Output: 10 <br>
+                    parseInt("10", 10);  // Output: 10 <br>
+                    parseInt("10", 2);   // Output: 2 (binary) <br>
+                    parseInt("10", 16);  // Output: 16 (hexadecimal) <br>
+                    
+                    parseInt("1010", 2); // Output: 10 (binary) <br>
+                    parseInt("A", 16);   // Output: 10 (hexadecimal)</p>
+            </div>
+            <p>The parseInt() function in JavaScript is used to parse a string and convert it into an integer. It takes two parameters: the string to be parsed and an optional parameter representing the radix or base of the numeral system to be used. If the radix is not specified, parseInt() assumes base 10.</p>
+
+            <!--Sort-->
+                    <h3>array.sort()</h3>
+                    <div class="blackCoding">
+                        <p>const numbers = [3,4,1,5,2]</p>
+                        <p>console.log(numbers.sort())</p> <br>
+    
+                        <p><span class="yellow">[ 1, 2, 3, 4, 5 ]</span></p>
+                    </div>
+                    <p>method is used to sort the elements of an array in place, meaning it modifies the original array.</p>
+    
+            <!--sort -->
+                    <h3>Sort descending order</h3>
+                    <div class="blackCoding">
+                        <p>const numbers = [3,4,1,5,2]</p>
+                        <p>const result = numbers.sort((a,b) => a - b)</p> 
+                        <p>console.log(result)</p> <br>
+    
+                        <p><span class="yellow">[ 1, 2, 3, 4, 5 ]</span></p> <br>
+    
+                        <p>const numbers = [3,4,1,5,2]</p>
+                        <p>const result = numbers.sort((a,b) => b - a)</p> 
+                        <p>console.log(result)</p> <br>
+    
+                        <p><span class="yellow">[ 5, 4, 3, 2, 1 ]</span></p>
+    
+                        
+                    </div>
+                    <p>The code array.sort((a, b) => a - b) is an example of using the sort() method with a custom comparison function to sort an array in ascending numerical order.</p>
+    
+            </div>
+
+            <p style="color: rgb(20, 78, 177)">
+                charAt(index) - Returns the character at the specified index. <br>
+charCodeAt(index) - Returns the Unicode of the character at the specified index. <br>
+codePointAt(index) - Returns a non-negative integer that is the Unicode code point value at the given position. <br>
+concat(string2, string3, ..., stringN) - Joins two or more strings and returns a new string. <br>
+endsWith(searchString, length) - Checks if a string ends with the specified value. <br>
+includes(searchString, position) - Checks if a string contains the specified value. <br>
+indexOf(searchValue, fromIndex) - Returns the index of the first occurrence of the specified value, or -1 if not found. <br>
+lastIndexOf(searchValue, fromIndex) - Returns the index of the last occurrence of the specified value, or -1 if not found. <br>
+localeCompare(compareString) - Compares two strings in the current locale. <br>
+match(regexp) - Retrieves the matches of a string against a regular expression. <br>
+matchAll(regexp) - Returns an iterator of all matches of a string against a regular expression. <br>
+normalize([form]) - Returns the Unicode Normalization Form of the string. <br>
+padEnd(targetLength [, padString]) - Pads the current string with a given string at the end. <br>
+padStart(targetLength [, padString]) - Pads the current string with a given string at the start. <br>
+repeat(count) - Returns a new string with a specified number of copies of the string. <br>
+replace(searchFor, replaceWith) - Replaces a substring or regular expression match with a new string. <br>
+replaceAll(searchFor, replaceWith) - Replaces all substrings or regular expression matches with a new string. <br>
+search(regexp) - Executes a search for a match between a regular expression and the string. <br>
+slice(beginIndex, endIndex) - Extracts a section of a string and returns it as a new string. <br>
+split(separator, limit) - Splits a string into an array of substrings. <br>
+startsWith(searchString, position) - Checks if a string starts with the specified value. <br>
+substring(indexStart, indexEnd) - Returns the part of the string between the start and end indexes. <br>
+toLocaleLowerCase([locale]) - Converts the string to lowercase according to any specified locale. <br>
+toLocaleUpperCase([locale]) - Converts the string to uppercase according to any specified locale. <br>
+toLowerCase() - Converts the string to lowercase. <br>
+toUpperCase() - Converts the string to uppercase. <br>
+trim() - Removes whitespace from both ends of a string. <br>
+trimStart() / trimLeft() - Removes whitespace from the beginning of a string. <br>
+trimEnd() / trimRight() - Removes whitespace from the end of a string. <br>
+valueOf() - Returns the primitive value of a String object. <br>
+            </p>
+    </div>
+</body>
+</html>

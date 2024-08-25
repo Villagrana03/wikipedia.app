@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/CSS-Files/style.css">
+    <link rel="stylesheet" href="/CSS-Files/codingColors.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+      
+    <div class="navbar">
+        <div class="container-navbar1">
+            <a href="/index.html">Home</a>
+            <a href="">CSS</a>
+            <a href="/HTML/htmlFirst.html">HTML</a>
+        </div>  
+    </div>
+
+    <div>
+        <div class="main-container">
+           
+            <div>
+                <h2>Python List</h2>
+                <p>In Python, a list is a built-in data structure that allows you to store an ordered collection of items. Lists can contain elements of different types (integers, floats, strings, other lists, etc.), and they are mutable, meaning you can change their content after creation.</p>
+            </div>
+
+        </div>
+
+        <div class="blackCoding">
+            <p>
+                <span class="blue">Ordered:</span> Elements have a defined order, and this order will not change unless explicitly modified. <br>
+                <span class="blue">Indexed:</span> Each element in a list has an index, starting from 0. <br>
+                <span class="blue">Mutable:</span> You can change elements, add new elements, and remove elements after the list has been created. <br>
+                <span class="blue">Allows Duplicates:</span> Lists can have multiple occurrences of the same element. <br>
+            </p>
+        </div>
+
+            <div class="javascript-body">
+               <h3>List example</h3>
+               <p>in this example I have data stored in list. </p>
+               <div class="blackCoding">
+                <p>
+                    <span class="lightBlue">names</span> = [<span class="orange">"Michelle", "Mango", "Rene"</span>] <br>
+                    <span class="lightBlue">numbers</span> = [<span class="orange">1, 2, 3, 4, 5</span>] <br>
+                    <br>
+                    <span class="yellow">print</span>(<span class="lightBlue">names</span>[1]) <span class="lightGreen">//Output -> "Mango"</span> <br>
+                    <br>
+                    <br>
+                    <span class="lightGreen">// Here i will modify "Mango" which is at index 1</span> <br>
+                    <span class="lightBlue">names</span>[1] = <span class="orange">"Azul"</span> <br>
+                    <br>
+                    <span class="yellow">print</span>(<span class="lightBlue">names</span>) <span class="lightGreen">// Output -> ['Michelle', 'Azul', 'Rene']</span> <br>
+                    <br>
+                    <br>
+                    <span class="lightGreen">// A nested list</span> <br>
+                    <br>
+                    <span class="lightBlue">childNumbers</span> = [[<span class="orange">1, 2</span>], [<span class="orange">3, 4</span>], [<span class="orange">5, 6</span>]] <br>
+                    <br>
+                    <span class="lightBlue">childNumbers</span>[1][0] = 10
+                    <span class="yellow">print</span>(<span class="lightBlue">childNumbers</span>) <span class="lightGreen">// Output -> [[1, 2], [10, 4], [5, 6]]</span>
+
+
+                </p>
+               </div>
+
+               
+
+
+               <h3>List Methods</h3>
+               <p>Python provides a variety of methods to work with lists:</p>
+
+               <h4>Append()</h4>
+               <p>Append adds a value at the end</p>
+               <div class="blackCoding">
+                <p>
+                    <span class="lightBlue">numbers</span> = [1, 2, 3, 4, 5] <br>
+                    <span class="lightBlue">numbers</span>.<span class="yellow">append</span>(9) <br>
+                    <br>
+                    <span class="yellow">print</span>(<span class="lightBlue">numbers</span>)  Output -> [1, 2, 3, 4, 5, <span class="result">9</span>]
+                </p>
+               </div>
+
+               <h4>extend()</h4>
+               <p>Adds all elements of an iterable (list, tuple, set, etc.) to the end of the list.</p>
+
+               <div class="blackCoding">
+                <p>
+                    <span class="lightBlue">numbers</span> = [1, 2, 3, 4, 5] <br>
+                    <span class="lightBlue">numbers</span>.<span class="yellow">extend</span>([11, 12, 13])  <span class="lightGreen">// in order to use many values must be inside of a list in the extend</span> <br>
+                    <br>
+                    <span class="yellow">print</span>(<span class="lightBlue">numbers</span>)  Output -> [1, 2, 3, 4, 5, <span class="result">11, 12, 13</span>]
+                </p>
+               </div>
+
+               <h4>insert()</h4>
+               <p>Inserts an item at the specified position. insert(index, item)</p>
+               <div class="blackCoding">
+                <p>
+                    <span class="lightBlue">numbers</span> = [1, 2, 3, 4, 5] <br>
+                    <span class="lightBlue">numbers</span>.<span class="yellow">insert</span>(1, 99) <span class="lightGreen">// 1 is the index and 99 the number that would be introduced at index 1</span><br>
+                    <br>
+                    <span class="yellow">print</span>(<span class="lightBlue">numbers</span>)  Output -> [1, <span class="result">99</span>, 2, 3, 4, 5]
+                </p>
+               </div>
+
+               <h4>pop()</h4>
+               <p>Removes and returns the element at the specified position (default is the last element)</p>
+               <div class="blackCoding">
+                <p>
+                    <span class="lightBlue">numbers</span> = [1, 2, 3, 4, 5] <br>
+                    <span class="lightBlue">numbers</span>.<span class="yellow">pop</span>() <span class="lightGreen"></span><br>
+                    <br>
+                    <span class="yellow">print</span>(<span class="lightBlue">numbers</span>)  Output -> [1, 2, 3, 4] <span class="lightGreen"># since we did not declare anything inside of pop. we will remove the last item.</span>
+                    <br>
+                    <br>
+                    <span class="lightBlue">numbers</span>.<span class="yellow">pop</span>(1) <span class="lightGreen"></span><br>
+                    <br>
+                    <span class="yellow">print</span>(<span class="lightBlue">numbers</span>)  Output -> [1, 3, 4, 5] <span class="lightGreen"># In this example we have 1 inside of pop, which means that the index 1 at numbers will be deleted.</span>
+              
+                </p>
+               </div>
+
+               <h4>remove()</h4>
+               <p>Removes the first occurrence of an item.</p>
+               <div class="blackCoding">
+                <p>
+                    <span class="lightBlue">numbers</span> = [1, 2, 3, 4, 5, 3] <br>
+                    <span class="lightBlue">numbers</span>.<span class="yellow">remove</span>(3) <br>
+                    <br>
+                    <span class="yellow">print</span>(<span class="lightBlue">numbers</span>)  Output -> [1, 2, 4, 5, 3] <span class="lightGreen">// it only removes the first value that you give, for example it removed the first 3</span>
+                </p>
+               </div>
+
+               <h4>pop(index)</h4>
+               <p>Removes and returns the item at the specified position (default is the last item).</p>
+
+               <div class="blackCoding">
+                <p>
+                    <span class="lightBlue">numbers</span> = [1, 2, 3, 4, 5] <br>
+                    <span class="lightBlue">numbers</span>.<span class="yellow">pop</span>(3)  <br>
+                    <br>
+                    <span class="yellow">print</span>(<span class="lightBlue">numbers</span>)  Output -> [1, 2, 3, 5] <span class="lightGreen">// it deletes the index 3 element</span>
+                </p>
+               </div>
+
+               <h4>clear()</h4>
+               <p>Removes all items from the list.</p>
+               <div class="blackCoding">
+                <p>
+                    <span class="lightBlue">numbers</span> = [1, 2, 3, 4, 5] <br>
+                    <span class="lightBlue">numbers</span>.<span class="yellow">clear</span>() <br>
+                    <br>
+                    <span class="yellow">print</span>(<span class="lightBlue">numbers</span>)  Output -> []
+                </p>
+               </div>
+
+               <h4>index()</h4>
+               <p>Returns the index of the first occurrence of an item</p>
+               <div class="blackCoding">
+                <p>
+                    <span class="lightBlue">numbers</span> = [1, 2, 3, 4, 5] <br>
+                    <br>
+                    <span class="yellow">print</span>(<span class="lightBlue">numbers</span>.<span class="yellow">index</span>(2))  Output -> [3]
+                </p>
+               </div>
+
+               <h4>count()</h4>
+               <p>Returns the number of occurrences of an item.</p>
+               <div class="blackCoding">
+                <p>
+                    <span class="lightBlue">numbers</span> = [1, 2, 3, 4, 5, 4, 4, 4, 4 ,4] <br>
+                    <br>
+                    <span class="yellow">print</span>(<span class="lightBlue">numbers</span>.<span class="yellow">count</span>(4))  Output -> 6 <span class="lightGreen">// it counts the number of 4</span>
+                </p>
+               </div>
+
+               <h4>reverse()</h4>
+               <p>Reverses the order of the list.</p>
+               <div class="blackCoding">
+                <p>
+                    <span class="lightBlue">numbers</span> = [1, 2, 3, 4, 5] <br>
+                    <span class="lightBlue">numbers</span>.<span class="yellow">reverse</span>() <br>
+                    <br>
+                    <span class="yellow">print</span>(<span class="lightBlue">numbers</span>)  Output -> [5, 4, 3, 2, 1]
+                </p>
+               </div>
+
+               <h4>sort()</h4>
+               <p>Sorts the list in ascending order (can be modified with parameters).</p>
+               <div class="blackCoding">
+                <p>
+                    <span class="lightBlue">numbers</span> = [3, 5, 1, 4, 2] <br>
+                    <span class="lightBlue">numbers</span>.<span class="yellow">sort</span>() <span class="lightGreen"></span><br>
+                    <br>
+                    <span class="yellow">print</span>(<span class="lightBlue">numbers</span>)  Output -> [1, 2, 3, 4, 5]
+                </p>
+               </div>
+
+               <h4>copy()</h4>
+               <p>Returns a shallow copy of the list.</p>
+               <div class="blackCoding">
+                <p>
+                    <span class="lightBlue">numbers</span> = [1, 2, 3, 4, 5] <br>
+                    <span class="lightBlue">numbersCopy</span> = <span class="lightBlue">numbers</span>.<span class="yellow">copy</span>() <br>
+                    <br>
+                    <span class="yellow">print</span>(<span class="lightBlue">numbersCopy</span>)  Output -> [1, 2, 3, 4, 5]
+                </p>
+
+                <h4>setdefault()</h4>
+                <p>i need to update.</p>
+                <div class="blackCoding">
+                 <p>
+                     <span class="lightBlue">numbers</span> = [1, 2, 3, 4, 5] <br>
+                     <span class="lightBlue">numbersCopy</span> = <span class="lightBlue">numbers</span>.<span class="yellow">copy</span>() <br>
+                     <br>
+                     <span class="yellow">print</span>(<span class="lightBlue">numbersCopy</span>)  Output -> [1, 2, 3, 4, 5]
+                 </p>
+               </div>
+
+            </div>
+    </div>
+</body>
+</html>

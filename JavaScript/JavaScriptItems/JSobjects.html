@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/CSS-Files/style.css">
+    <link rel="stylesheet" href="/CSS-Files/codingColors.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+      
+    <div class="navbar">
+        <div class="container-navbar1">
+            <a href="/index.html">Home</a>
+            <a href="">CSS</a>
+            <a href="/HTML/htmlFirst.html">HTML</a>
+        </div>  
+    </div>
+
+    <div>
+        <div class="JSfiles-header">
+           
+        </div>
+
+        <h2 class="JSfiles-header">Objects in javascript</h2>
+        <p>Here you wil learn the 2 types of objects, class objects, and class literals</p>
+        <p>
+           <h3> <span class="yellow">Reusability:</span></h3> <br>
+<span class="lightBlue">Classes/Constructors:</span> Ideal for creating multiple instances with similar properties and methods. Promotes code reuse. <br>
+<br>
+<span class="lightBlue">Object Literals:</span> Best for creating individual objects with unique properties. Less reusable <br>
+        </p>
+
+       <h3> When to Use Each Approach</h3>
+<p><span class="lightBlue">Classes/Constructors:</span> Use when you need to create multiple instances with similar properties and methods, and especially when you need inheritance. <br>
+    <span class="lightBlue">Object Literals:</span> Use for simpler structures, configuration objects, or when creating a single-use object with a fixed set of properties and methods.</p>
+
+        <!-- <p><span class="lightGreen">// i will update this from codeacademy objects.</span></p> -->
+
+        <!--i will explain This later-->
+        <p><span class="pink">Encapsulation, Absatraction, Inheritance, Polymorphism</span></p>
+
+            <div class="javascript-body">
+                <!--creating objects-->
+                <div class="classObjects">
+                    <h2>Class Objects</h2>
+                    <p>This approach involves using constructors, which are special functions used to create and initialize objects.</p>
+
+                    <div class="blackCoding">
+                      <p>
+                        class person <span class="yellow">{</span> <br>             
+                            constructor(name, age) <span class="purple">{</span> <br>   
+                             <span class="darkBlue"> this.name </span>= <span class="lightBlue">name</span>; <span class="lightGreen">//the parameter name will now be inside of this.name</span> <br>
+                              <span class="darkBlue">this.age </span> = <span class="lightBlue">age</span>; <br>              
+                              <span class="purple">}</span> <br>
+                            <span class="yellow">greet</span>()<span class="purple">{</span> <br>                                   
+                              console.log(`Hello my name is ${this.name} and i am ${this.age} old`) <br>
+                            <span class="purple">}</span> <br>
+                            <span class="yellow">}</span> <br>
+                                <br>     
+
+                                class student extends person{ <br>
+                                    study(){ <br>                                <br>
+                                      console.log(`${this.name} is studying`) <br>
+                                    } <br>
+                                  } <br>
+                                
+                                <span class="lightGreen">// Here i am setting a person with person values </span> <br>
+                          const rene = new person("Rene", 21) <br>
+                          const michelle = new person("Michelle",19)    <br>
+                                <br>                                                                                
+                          rene.greet(); <span class="lightGreen">//Hello my name is Rene and i am 21 old</span> <br>
+                          michelle.greet() <span class="lightGreen">//Hello my name is Michelle and i am 19 old</span> <br>
+                    
+                          <span class="lightGreen">//This might not be the best example but i am showing how can a class extend</span> <br>
+                          const estudiante = new student("Michelle") <br>
+                          estudiante.study() <span class="lightGreen">//Michelle is studying </span>
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="literalObjects">
+                    <h2>Object literals</h2>
+                    <p>lets say we have 2 variables, "name" and "favFood" which both are related to the cat</p>
+
+                    <div class="blackCoding">
+                        <p><span class="darkBlue">const</span>name = "mango"</p>
+                        <p><span class="darkBlue">const</span>favFood = "nuggets"</p>
+                    </div>
+
+                    <p>instead of using 2 different variables to describe the cat, we can use and <span class="yellow">Object</span> we use <span class="yellow">{}</span>to create the object,  and <span class="yellow">:</span> to set the "propeties", and there are separated with a <span class="yellow">,</span></p>
+                    <p>Methods are functions related with objects</p>
+                    
+                    <div class="blackCoding">
+                        <p><span class="darkBlue">const </span>cat = <span class="yellow">{</span></p>
+                            <p> <span class="blue">name</span><span class="yellow">:</span> "mango" <span class="yellow">.</span></p>
+                            <p> <span class="blue">favFood</span><span class="yellow">:</span> "nuggets"<span class="yellow">,</span></p>
+                            <p><span class="blue">age</span><span class="yellow">:</span> 4</p>
+                            <p><span class="yellow">}</span></p>
+                    </div>
+
+                    <p>To display all the properties using the console.log(): </p>
+                    <p>we can use dot notation to access the properties and methods of built-in objects and data instances:</p>
+                    <p><span class="lightGreen">// i have a image for this object dot notation </span></p>
+                    <p><span class="lightGreen">// Also, i have to put when a object keyword has an space, examnple: "Fuel type" </span></p>
+                    <div class="blackCoding">
+                        <p><span class="lightBlue">console</span>.<span class="yellow">log</span>(cat)</p>
+
+                        <p>{ name: 'mango', favFood: 'pizza', age: 4 }</p>
+
+                        <p><span class="lightBlue">console</span>.<span class="yellow">log</span>(cat.name)</p>
+
+                        <p>mango</p>
+                    </div>
+
+                    <p>The second way to access a key’s value is by using bracket notation, [ ].
+
+                        You’ve used bracket notation when indexing an array:</p>
+
+                    <p>sometimes we have functions that are related to our objects</p>
+
+                    <p><span class="lightGreen">// i have another image object notation bracket</span></p>
+
+                    <div class="blackCoding">
+                        <p><span class="darkBlue">const </span>cat = <span class="yellow">{</span></p>
+                            <p> <span class="blue">name</span><span class="yellow">:</span> "mango" <span class="yellow">,</span></p>
+                            <p><span class="yellow">}</span></p>
+
+                            <p><span class="pink">function </span>meow(){</p>
+                                <p><span class="lightBlue">console</span>.<span class="yellow">log</span>("Meow Meow")</p>
+                                <p>}</p>
+                    </div>
+
+                    <p>similar to properties, we can group related functions into objects, functions insdie an object are called object's <span class="yellow">methods</span></p>
+
+                    <div class="blackCoding">
+                        <p><span class="darkBlue">const </span>cat = <span class="yellow">{</span></p>
+                            <p> <span class="blue">name</span><span class="yellow">:</span> "mango" <span class="yellow">.</span></p>
+                            <p><span class="blue">meow</span><span class="yellow">:</span> <span class="pink">function</span>() {}</p>
+                            <p><span class="yellow">}</span></p>
+                    </div>
+
+                    <h2>Object Methods</h2>
+                    <p>When the data stored on an object is a function we call that a method. A property is what an object has, while a method is what an object does.</p>
+                    <p>we call these methods with <span class="yellow">object.</span>and <span class="yellow">method</span>followed by parentheses</p>
+
+                    <div class="blackCoding">
+                        <p><span class="darkBlue">const </span>cat = <span class="yellow">{</span></p>
+                            <p> <span class="blue">name</span><span class="yellow">:</span> "mango" <span class="yellow">.</span></p>
+                            <p><span class="blue">meow</span><span class="yellow">:</span> <span class="pink">function</span>() {}</p>
+                            <p><span class="yellow">}</span></p>
+                            <p>also, methods are similar to regular functions meaning we can include parameters such as <span class="pink">return</span></p>
+
+                            <p><span class="yellow">cat</span>.meow() -> <span class="orange">"meow meow"</span></p>
+                    </div>
+
+                    <p>Objects are passed by reference. This means when we pass a variable assigned to an object into a function as an argument, the computer interprets the parameter name as pointing to the space in memory holding that object. As a result, functions which change object properties actually mutate the object permanently (even when the object is assigned to a const variable).</p>
+                    <p>This means when we can change the value of a object using their parameter, or (mutate) but we cannot add new values.</p>
+
+                    <div class="blackCoding">
+                        
+                    </div>
+                </div>
+            </div>
+    </div>
+</body>
+</html>

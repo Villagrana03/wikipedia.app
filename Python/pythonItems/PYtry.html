@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/CSS-Files/style.css">
+    <link rel="stylesheet" href="/CSS-Files/codingColors.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+      
+    <div class="navbar">
+        <div class="container-navbar1">
+            <a href="/index.html">Home</a>
+            <a href="">CSS</a>
+            <a href="/HTML/htmlFirst.html">HTML</a>
+        </div>  
+    </div>
+
+    <div>
+        <div class="main-container">
+           
+            <div>
+                <h2>Try, Except</h2>
+                <p></p>
+            </div>
+
+        </div>
+
+
+            <div class="javascript-body">
+               <h2>Try</h2>
+               <p>What i am doing here is if i want to prevent an error, i would use try and except</p>
+
+                <div class="blackCoding">
+                    <p>
+                        <span class="purple">try</span>: <span class="lightGreen"># Here we are getting index 3, and the max is 2, so we are using the try to prevent the code to fail</span> <br>
+                            <span class="lightBlue">list</span> = [1,2,3] <br>
+                            <span class="lightBlue">print</span>(list[3]) <br>
+                            <span class="purple">except</span>: <br>
+                            print("Error en lista") <br>
+                            <br>        
+                        print("hola")
+                    </p>
+                </div>
+
+                <h3>Try with a error</h3>
+                <p>HEre next to the except we will put the error</p>
+
+                <div class="blackCoding">
+                    <p>
+                        try: <br>
+                            <span class="lightBlue">division</span> = 5/0 <br>
+                            print(division) <br>
+                        except ZeroDivisionError: <br> <span class="lightGreen"># if we get an ZeroDivisionError the following print will work.</span>
+                            print("Error al dividir 0") <br>
+                        except: <br>            
+                            print("Error en lista") <br>
+                                <br>
+                        print("hi") 
+                    </p>
+                </div>
+
+                <h3>assert</h3>
+                <p></p>
+
+                <div class="blackCoding">
+                    <p>
+                        <span class="purple">try</span>: <br>                                       
+                            <span class="lightBlue">edad</span> = int(input("Ingrese una edad: ")) <br>
+                            <span class="purple">assert</span> edad > 0 <br> <span class="lightGreen"># assert is a condition that must be completed</span>
+                            <span class="lightBlue">print</span>(":)"*2) <br>
+                            <span class="purple">except</span>  AssertionError: <br>                 
+                            print("Edad debe de ser mayor a 0") <br>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            y = 6.5 <br>
+                            <br>
+                            <span class="lightGreen"># Here we can check if y is a int, if it is, it will be false, we can use this if the user insert a float when we are asking a number.</span> <br>
+                            print(isinstance(y, <span class="green">int</span>)) <span class="yellow">Output </span><br>-> False
+                            print(isinstance(y, <span class="green">float</span>)) <br> <span class="yellow">Output</span> -> True
+
+                    </p>
+                </div>
+
+            </div>
+    </div>
+</body>
+</html>

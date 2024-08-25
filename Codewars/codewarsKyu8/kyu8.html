@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/CSS-Files/style.css">
+    <link rel="stylesheet" href="/CSS-Files/codingColors.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+      
+    <div class="navbar">
+        <div class="container-navbar1">
+            <a href="/index.html">Home</a>
+            <a href="">CSS</a>
+            <a href="/HTML/htmlFirst.html">HTML</a>
+        </div>  
+    </div>
+
+    <div>
+        <div class="main-container">
+           
+            <div>
+                <h2>Welcome to level kyu 8!</h2>
+                <p></p>
+            </div>
+
+            <div class="main-content">
+                <!-- <div class="card">
+                    <h5 class="card-title-HTML"></h5>
+                    <p class="card-p">Here you wil learn the magic of...</p>
+                    <a href=""><button class="card-btn">Start</button></a>
+                </div> -->
+                
+                <!-- <div class="kyu8">
+                    <h2>Difference in Age</h2>
+                    <p>At the annual family gathering, the family likes to find the oldest living family member’s age and the youngest family member’s age and calculate the difference between them.  You will be given an array of all the family members' ages, in any order. The ages will be given in whole numbers, so a baby of 5 months, will have an ascribed ‘age’ of 0. Return a new array (a tuple in Python) with [youngest age, oldest age, difference between the youngest and oldest age].</p>
+                  
+                    <div class="blackCoding">
+                        <p>hola</p>
+                    </div>
+                </div> -->
+
+            </div>
+
+        </div>
+
+
+            <div class="body">
+                <div class="kyu8">
+                    <h2>Difference in Age</h2>
+                    <p>At the annual family gathering, the family likes to find the oldest living family member’s age and the youngest family member’s age and calculate the difference between them.  You will be given an array of all the family members' ages, in any order. The ages will be given in whole numbers, so a baby of 5 months, will have an ascribed ‘age’ of 0. Return a new array (a tuple in Python) with [youngest age, oldest age, difference between the youngest and oldest age].</p>
+                  
+                    <div class="blackCoding">
+                        <p><span class="purple">function</span> <span class="orange">differenceInAges</span>(ages){</p>
+                        <p>const newAge = ages.sort((a,b) => a -b) <span class="lightGreen"> // Here i will sort the array from lowest to highest, </span> <br>
+                            <span class="purple">let</span> youngest = newAge[0]; <span class="lightGreen"> // here i am getting the first number of the newAge</span> <br>
+                            <span class="purple">let</span> oldest = newAge[newAge.length - 1] <span class="lightGreen"> // Here im getting the last index of newArray</span><br>
+                            <span class="purple">let</span> difference = oldest - youngest; <br>
+                            return[youngest, oldest, difference]</p>
+                        <p>}</p>
+                        
+                    </div>
+                </div>
+            </div>
+
+            <div class="body">
+                <div class="kyu8">
+                    <h2>Sentence Smash</h2>
+                    <p>Write a function that takes an array of words and smashes them together into a sentence and returns the sentence. You can ignore any need to sanitize words or add punctuation, but you should add spaces between each word. Be careful, there shouldn't be a space at the beginning or the end of the sentence! <br>
+
+                        Example
+                        ['hello', 'world', 'this', 'is', 'great']  =>  'hello world this is great'</p>
+
+                        <div class="blackCoding">
+                            <p><span class="purple">function</span> <span class="orange">smash</span> (words) { <br>
+                                return words.join(" ") <span class="lightGreen"> // Here they will just join each item of the array and make it as a string, also the delimeter of Join(" ") its just a space</span> <br>
+                                };</p>
+                        </div>
+                </div>
+            </div>
+
+            <div class="body">
+                <div class="kyu8">
+                    <h2>Count Odd Numbers below n</h2>
+                    <p>Given a number n, return the number of positive odd numbers below n, EASY! <br>
+
+                        Examples (Input -> Output) <br>
+                        7  -> 3 (because odd numbers below 7 are [1, 3, 5]) <br>
+                        15 -> 7 (because odd numbers below 15 are [1, 3, 5, 7, 9, 11, 13])</p>
+                </div>
+
+                <div class="blackCoding">
+
+                    <p>function oddCount(n){ <br>
+                        let count = 0; <br>
+                         
+                         for(let i = 1; i < n; i+=2){ <br> <span class="lightGreen">/ here what i am doing, starting at 1 i will be adding 2 to 1, so it only be odd number, and the loop will finish once i < n</span>
+                           count++ <br>
+                         } <br>
+                         return count <br>
+                       }</p>
+                </div>
+            </div>
+
+            <div class="body">
+                <div class="kyu8">
+                    <h2>Find the smallest integer in the array</h2>
+                    <p>Given an array of integers your solution should find the smallest integer.
+
+                        For example:
+                        
+                        Given [34, 15, 88, 2] your solution will return 2
+                        Given [34, -345, -1, 100] your solution will return -345
+                        You can assume, for the purpose of this kata, that the supplied array will not be empty.
+                        
+                        </p>
+
+                    <div class="blackCoding">
+                        <p>
+                           
+                            function findSmallestInt(arr) { <br>
+                                <span class="lightGreen">// Here i sort the array from smallest to larger</span>
+                                const newArr = arr.sort((a, b) => a - b) <br>
+                                <span class="lightGreen">// Here i got the first element of the array, since they are from smallest to bigger> the one at index 0 will be the smallest</span>
+                                const result = newArr[0] <br>
+                                 return result; <br>
+                               }
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="body">
+                <div class="kyu8">
+                    <h2>Sum Arrays</h2>
+                    <p>Write a function that takes an array of numbers and returns the sum of the numbers. The numbers can be negative or non-integer. If the array does not contain any numbers then you should return 0.
+
+                        Examples</p>
+
+                    <div class="blackCoding">
+                        function sum (numbers) { <br>
+                            <span class="lightGreen">// Here i use the reduce method, that reduce the array into a single value. (remember to have the 0, second parameter must start with a number.)</span>
+                            const result = numbers.reduce((prev,curr) => { <br>
+                              prev + curr, 0 <br>
+                            }) <br>
+                            return result <br>  
+                        };
+                    </div>
+                </div>
+            </div>
+
+            <div class="body">
+                <div class="kyu8">
+                    <h2></h2>
+                    <p></p>
+
+                    <div class="blackCoding"></div>
+                </div>
+            </div>
+
+            <div class="body">
+                <div class="kyu8">
+                    <h2></h2>
+                    <p></p>
+
+                    <div class="blackCoding">
+                        function sumStr(a,b) { <br>
+                            <span class="lightGreen">// here i made strings into integers</span>
+                            let sumA = parseInt(a); <br>
+                            let sumB = parseInt(b); <br>
+                             <br>
+                             <span class="lightGreen">// Here i am checking, if its an empty string, i want the number to be 0 else i want to make the number integer</span>
+                            if(a === ""){ <br>
+                              sumA = 0 <br>
+                            }else{ <br>
+                              sumA = parseInt(a); <br>
+                            } <br>
+                             <br>
+                             if(b === ""){ <br>
+                              sumB = 0 <br>
+                            }else{ <br>
+                              sumB = parseInt(b); <br>
+                            } <br>
+                             <br>
+                             <span class="lightGreen">// Here i am  adding both numbers</span>
+                            const sum = sumA + sumB; <br>
+                            <span class="lightGreen">// Here i am making the result  a string back</span>
+                             let finalAnswer = sum.toString() <br>
+                            return finalAnswer <br>
+                          }
+                    </div>
+                </div>
+            </div>
+
+            <div class="body">
+                <div class="kyu8">
+                    <h2>replace all "g" to "z"</h2>
+                    <p>THis is not a codewars task, i created to practice</p>
+
+                    <div class="blackCoding">
+                        const array = ["g", "a", "b", "t", "g"]; <br>
+<br>
+const hola = () => { <br>
+    const result = []; <br>
+ <br>
+ <span class="lightGreen">// Here i will loop through each value of the array</span>
+    for(let ind = 0; ind < array.length; ind++){ <br>
+        <span class="lightGreen">// for each iteration the for loop makes, with "array[ind]" i will get each value, the for loop does not get the value, but array[ind] does</span>
+        if (array[ind] === "g"){ <br>
+            result.push("z") <br>
+        } else{ <br>
+            <span class="lightGreen">// if the value is not "g" it will be pushed to the new array</span>
+            result.push(array[ind]) <br>
+        } <br>
+    } <br>
+    return result <br>
+} <br>
+ <br>
+console.log(hola())
+                    </div>
+                </div>
+            </div>
+
+            <div class="body">
+                <div class="kyu8">
+                    <h2>Calculate average</h2>
+                    <p>Write a function which calculates the average of the numbers in a given list.
+
+                        Note: Empty arrays should return 0.</p>
+
+                    <div class="blackCoding">
+
+                       <p> function findAverage(array) { <br>
+                        <br>
+                        let add <br>     
+                        <span class="lightGreen">// Here i am checking if the array its empty, i want to return a 0</span>                               
+                       if(array.length === 0 || array.some(isNaN)){ <br>
+                       return 0  <br>
+                                <br>
+                       } else{ <br>            
+                        <span class="lightGreen">// Here i will reduce the whole array into a single value (in case the array is not empty)</span>                 
+                        add = array.reduce((e, w) => e + w,0); <br>
+                            <br>
+                       } <br>                
+                       <span class="lightGreen">// And since this is to get the average a will dive that single value into depending the length of the array.</span>                               
+                       const finalAnswer = add / array.length  <br>
+                        return finalAnswer <br>
+                      }
+                    
+                    </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="body">
+                <div class="kyu8">
+                    <h2>Sum Mixed Array</h2>
+                    <p>Given an array of integers as strings and numbers, return the sum of the array values as if all were numbers.
+
+                        Return your answer as a number.</p>
+
+                    <div class="blackCoding">
+                        <p>
+                            const x = [5, 3, 2, "6", 7, "9", 2, "4"] <br>
+                            <span class="lightGreen">// how result woks, result its 0, first iteration, once we get the first value in this case would be result = result + value => 0 + 5, next iteration would be result(5) = result(5) + value(3) so now result = 8, and that until the loop ends.</span>
+                                                <br>
+                        function sumMix(x){ <br>
+                            <span class="lightGreen">// Here i made this variable so every iteration of the loop, the value will be stored here</span>
+                            let result = 0  <br>
+                                                <br>
+                                <span class="lightGreen">// Here i will loop through each value of x, whih x is the array</span>
+                        for(const value of x){ <br>    
+                            <span class="lightGreen">// what it is doing here, its every value inside of the array, will convert each value into a integer (because we have strings) and then we will add it and sotre it inside of result</span> 
+                            result += parseInt(value); <br>
+                            <br>
+                        } <br>  
+                        <spam class="lightGreen">// After all numbers were added they will be stored here and we will return the final result.</spam>        
+                        return result <br>
+                        } <br>
+                                                    <br>
+                        console.log(sumMix(x)) 
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="body">
+                <div class="kyu8">
+                    <h2></h2>
+                    <p></p>
+
+                    <div class="blackCoding"></div>
+                </div>
+            </div>
+
+            <div class="body">
+                <div class="kyu8">
+                    <h2></h2>
+                    <p></p>
+
+                    <div class="blackCoding"></div>
+                </div>
+            </div>
+
+            <div class="body">
+                <div class="kyu8">
+                    <h2></h2>
+                    <p></p>
+
+                    <div class="blackCoding"></div>
+                </div>
+            </div>
+
+            <div class="body">
+                <div class="kyu8">
+                    <h2></h2>
+                    <p></p>
+
+                    <div class="blackCoding"></div>
+                </div>
+            </div>
+
+            <div class="body">
+                <div class="kyu8">
+                    <h2></h2>
+                    <p></p>
+
+                    <div class="blackCoding"></div>
+                </div>
+            </div>
+    </div>
+
+    <script>
+
+        // THIS IS CONVERT G TO Z, I DID NOT PUT IT RIGHT, AND I HAVE IT HERE SO I DONT LOOSE THE CODE
+        const array = ["g", "a", "b", "t", "g"];
+
+const hola = () => {
+    const result = [];
+
+    for (let ind = 0; ind < array.length; ind++) {
+        // ind is the current index
+        // array[ind] is the value at the current index
+        if (array[ind] === "g") {
+            result.push("z"); // Replace "g" with "z"
+        } else {
+            result.push(array[ind]); // Push the current value
+        }
+    }
+    return result;
+}
+
+console.log(hola()); // Output: ["z", "a", "b", "t", "z"]
+    </script>
+
+</body>
+</html>

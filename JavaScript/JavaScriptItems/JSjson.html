@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/CSS-Files/style.css">
+    <link rel="stylesheet" href="/CSS-Files/codingColors.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+      
+    <div class="navbar">
+        <div class="container-navbar1">
+            <a href="/index.html">Home</a>
+            <a href="">CSS</a>
+            <a href="/HTML/htmlFirst.html">HTML</a>
+        </div>  
+    </div>
+
+    <div>
+        <div class="main-container">
+           
+            <div>
+                <h2>JSON</h2>
+                <p>difference between javascript object literals and JSON</p>
+                <p>JSON (JavaScript Object Notation) is a lightweight data interchange format that's easy for humans to read and write, and easy for machines to parse and generate. JSON is based on a subset of the JavaScript programming language, but it is language-independent, meaning it can be used in conjunction with many different programming languages</p>
+                <p>Why JSON?
+                    Standard Format: JSON (JavaScript Object Notation) is a lightweight data-interchange format that is easy for humans to read and write and easy for machines to parse and generate.
+                    Language Agnostic: JSON is language-independent, but it uses conventions familiar to programmers of the C-family of languages, including C, C++, C#, Java, JavaScript, Perl, Python, and many others. This makes it a great choice for exchanging data between a server and a client that might be written in different languages.
+                    Fetching Data from a Server:
+                    When you make a request to a server to get data (e.g., using the fetch API), the server often responds with data in JSON format. Here’s why and how we handle that:
+                    
+                    Server Responds with JSON:
+                    
+                    Servers send data in JSON format because it is a standardized format that can be easily parsed and used by various programming languages and environments.
+                    Fetching and Parsing JSON:
+                    
+                    When you fetch data using fetch, you get a Response object.
+                    To use the data in your JavaScript code, you need to parse the JSON string into a JavaScript object. This is done using response.json(), which returns a Promise that resolves to a JavaScript object</p>
+            </div>
+<!-- 
+            <div class="main-content">
+
+            </div> -->
+
+        </div>
+
+
+            <div class="javascript-body">
+                <p>in this first example we can see an object literal (Properties), we can have the object with "", ``, no quotes and there are valid.</p>
+               <div class="blackCoding">
+                <p>
+                    
+                    <span class="lightGreen">//   // JavaScript object</span> <br>
+
+const objects = { <br>
+    "prop1": "string", <br>
+    "prop2": 'string', <br>
+    prop3: 123, <br>
+    prop4: ["array", "value", 123], <br>
+    prop5: function(){ <br>
+      console.log("Hello this is an object!") <br>
+    }, <br>
+    prop6: null, <br>
+    prop7: true <br>
+  }
+
+
+
+<span class="lightGreen">// Convert to JSON string</span>
+const jsonString = JSON.stringify(jsObject);
+console.log(jsonString);
+
+                </p>
+               </div>
+            </div>
+
+        <p>This is JSON style</p>
+        <div class="blackCoding">
+            {                                                   <br>
+                "prop1": "string", <br>
+                "prop2": "string", <br>
+                "prop3": 123, <br>                  <br>
+                "prop4": ["array", "value", 123], <br>
+                "prop5": null, <br>
+                "prop6": null, <br>
+                "prop7": true <br>
+              } 
+              <span class="lightGreen">// Convert to JavaScript object</span>
+const jsObject = JSON.parse(jsonString);
+console.log(jsObject);
+        </div>
+            <p>THis is the link for JSON page</p>
+            <a href="https://www.json.org/json-en.html">JSON</a>
+    </div>
+</body>
+</html>

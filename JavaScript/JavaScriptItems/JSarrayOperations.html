@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Operations</title>
+</head>
+<body>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <link rel="stylesheet" href="/CSS-Files/style.css">
+        <link rel="stylesheet" href="/CSS-Files/codingColors.css">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+    
+          
+        <div class="navbar">
+            <div class="container-navbar1">
+                <a href="/index.html">Home</a>
+                <a href="">CSS</a>
+                <a href="/HTML/htmlFirst.html">HTML</a>
+            </div>  
+        </div>
+    
+        <div>
+            <div class="JSfiles-header">
+                <h2 class="JSfiles-header"></h2>
+                <p>Here you will learn Array Operations such as .map() , .filter() and .reduce()</p>
+            </div>
+
+
+           <p>if we wanted to modify each element in an array and store the result into a new array we can use .map</p>
+            <div class="blackCoding">
+                 <div class="javascript-body">
+                   <p><span class="darkBlue">const </span> age = [<span class="green">19, 21, 20, 24, 54, 16</span>]</p> 
+                  <p> <span class="darkBlue">const </span> ageTimesTwo = age.<span class="yellow">map</span>() </p>
+
+                </div>
+            </div>    
+
+
+            <p>Then we have to pass a function as a parameter, and later we will program our modifications in the function, </p>
+            <p>Before we can modify the array we need to pass them to the function, we do that by adding a parameter inside of the function, Then we add a second parameter so we can access each iteration's index along the array value</p>
+
+            <div class="blackCoding">
+                <div class="javascript-body">
+                  <p><span class="darkBlue">const </span> age = [<span class="green">19, 21, 20, 24, 54, 16</span>]</p> 
+                  <p><span class="darkBlue">const </span> ageTimesTwo = age.<span class="yellow">map</span>(function(<span class="green">element, index</span>) {}) </p>
+               </div>
+           </div>    
+
+           <p>We must use the return value and the arrow function, the "element" values is used to get the data of the array</p>
+
+           <div class="blackCoding">
+            <div class="javascript-body">
+              <p><span class="darkBlue">const </span> age = [<span class="green">19, 21, 20, 24, 54, 16</span>]</p> 
+              <p><span class="darkBlue">const </span> ageTimesTwo = age.<span class="yellow">map</span>(function(<span class="green">element, index</span>) <span class="yellow">=></span> {</p>
+                <br> <p><span class="purple">return</span> e * 2</p>
+                <p>})</p>
+           </div>
+       </div>   
+
+        </div>
+
+        <h2>.filter()</h2>
+        <p>.filter() is used when we want to find cetaibn elements that meet a specific condition, abd extract them into a new array</p>
+
+        <div class="blackCoding">
+            <p><span class="darkBlue">const </span> age = [<span class="green">19, 21, 20, 24, 54, 16</span>]</p> 
+            <p><span class="darkBlue">const</span> newArray = age.<span class="yellow">filter</span>();</p>
+        </div>
+
+        <p>And again, in order to include or exclude a value we need to pass a function with his "element" (in the example i would use <span class="green">e</span> )</p>
+        <p>in this particular example we are filtering data that is less than or equal to 6</p>
+        <div class="blackCoding">
+            <p><span class="darkBlue">const </span> age = [<span class="green">19, 21, 20, 24, 54, 16</span>]</p> 
+            <p><span class="darkBlue">const</span> newArray = age.<span class="yellow">filter</span>(function(<span class="green">e</span>) { <br></p>
+                <p> <span class="purple">return</span> e <= 6 </p>
+            <p>});</p>
+        </div>
+
+        <p>in this example we would filter data that their first letter starts with "M"</p>
+
+        <div class="blackCoding">
+            <p><span class="darkBlue">const </span> names = [<span class="green">"Michelle", "Valeria", "Sofia", "Estefania", "Mango"</span>]</p> 
+            <p><span class="darkBlue">const</span> newArray = names.<span class="yellow">filter</span>(<span class="green">e</span> => { <br></p>
+                <p> <span class="purple">return</span> e[0] === "M"  </p>
+            <p>});</p>
+        </div>
+
+
+        <h2>.reduce()</h2>
+        <p>.reduce() is used to convert values of an array into one</p>
+        <p>to conbime values, we have pass a function inside of .reduce()</p>
+
+          <div class="blackCoding">
+            <p> <span class="darkBlue">const </span>age = [<span class="green">34, 22, 20, 54, 16</span>]</p>
+            <p> <span class="darkBlue">const </span> sumOfAges = age.reduce( <span class="green">e</span> => {}); </p>
+          </div>
+
+        <p>the function takes 2 parameters <span class="yellow">prev, </span>and <span class="yellow">curr </span> the 1st is to access the previous reduction and the second to access the current value</p>
+        <p>.reduce() iterates through an array, at each value, for example, to sum the values, the inline function return the sum of <span class="yellow">prev</span> reduction and <span class="yellow">curr</span> value.</p>
+        <p> <span class="yellow">prev</span> the 1st parameter access to the result of the previous reduction and the second paremeter,  <span class="yellow">curr </span>acces ro the current iteration's array value</p>
+        <p><span class="result">0</span> i have 0 on green because i did not know we must have a number after the "," and the reason is, the second paramter must need to start with a number, if we would have 1 instead of 0 the solution would be plus 1.</p>
+
+          <div class="blackCoding">
+            <p> <span class="darkBlue">const </span>age = [<span class="green">34, 22, 20, 54, 16</span>]</p>
+            <p> <span class="darkBlue">const </span> sumOfAges = age.reduce((<span class="yellow">prev, curr</span>) => prev + curr, <span class="result">0</span>) </p>
+            <p><span class="pink">return </span>sumOfAges </p>
+          </div>
+
+    </body>
+    </html>
+</body>
+</html>

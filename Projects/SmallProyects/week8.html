@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/Projects/SmallProyects/CCS-files-SmallProjects/week8.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms</title>
+</head>
+<body>
+
+    <div class="dad">
+        <h2>Welcome to my page!</h2>
+    </div>
+
+    <div class="dad">
+        <form class="main-container">
+            <div class="form">
+                <input type="text" placeholder="Name" id="name">
+                <input type="text" placeholder="Last Name" id="lastName">
+                <input type="text" placeholder="Email" id="email">
+
+                <select name="" id="select">
+                    <option value="" id="nothing"></option>
+                    <option value="664" id="n664">664</option>
+                    <option value="619" id="n619">619</option>
+                </select>
+
+                <button id="buttonAreaCode">Press me</button>
+                <p id="areaCode"></p>
+
+                <input type="text" placeholder="Phone Number" id="number">
+                <button id="button">Click me</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+
+    // check areaCode
+        let nothing = document.getElementById("nothing")
+        let areaCode = document.getElementById("areaCode")
+        let buttonAreaCode = document.getElementById("buttonAreaCode")
+        let select = document.getElementById("select")
+        //id of the 2 options
+        let n664 = document.getElementById("n664");
+        let n619 = document.getElementById("n619");
+
+    //checks every input
+        let name = document.getElementById("name");
+        let lastName = document.getElementById("lastName");
+        let email = document.getElementById("email");
+        let number = document.getElementById("number");
+        let button = document.getElementById("button");
+
+
+    //checks the form is there is anything wrong.
+        const validation = () => {
+            if(name.value.length <= 3 || name.value.length >= 9 || name.value === ""){
+                alert("Please enter a valid name...")
+            }
+
+            if(lastName.value.length <= 3 || lastName.value.length >= 30 || LastName.value === ""){
+                alert("Please enter a valid last name...")
+            }
+
+            if(number.value.length !== 7){
+                alert("Can you please provide a valid Phone number? ")
+            }
+        }
+
+
+    //here i will check if email has an "@"
+        const checkEmailA = () => {
+            let checkEmail = email.value.split("");
+                if(checkEmail.includes("@")){
+                    true
+                }else{
+                    alert("please provide an email with an @")
+                }
+            }
+
+
+
+    //here i will check what does the user selects in the "select"
+        const checkAreacode = (e) => {
+            e.preventDefault()
+         if(select.value === "619"){
+            areaCode.innerHTML = "619"
+         }
+         else if(select.value === "664"){
+                areaCode.innerHTML = "664"
+            }else{
+                alert("Please provide a valid area code")
+            }
+      }
+       
+       
+        button.addEventListener("click", validation) // checks the validation of the input
+        button.addEventListener("click", checkEmailA) // check if email has an "@"
+        buttonAreaCode.addEventListener("click",  (e) => checkAreacode(e))
+    </script>
+</body>
+</html>

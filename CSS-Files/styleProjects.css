@@ -1,0 +1,810 @@
+/* Body */
+
+/* *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+} */
+
+
+/*
+
+
+
+302 javscriptfiles CSS
+
+*/
+
+body{
+    background-color: rgb(29, 29, 29);
+}
+
+
+/* navbar */
+
+.navbar{
+    background-color: rgb(0, 0, 0);
+    height: 10vh;
+    display: flex;
+    align-items: flex-end;
+    position: relative;
+}
+
+.container-navbar1{
+    display: flex;
+    justify-content: space-around;
+    width: 50%;  
+    margin-bottom: 10px;
+}
+
+.container-navbar1 i{
+    width: 20px;
+    height: 20px;
+    background-color: aqua;
+}
+
+.container-navbar1 a{
+    color: rgb(37, 73, 193);
+    text-decoration: none;
+    margin-left: 10%;
+}
+
+.container-navbar2 input{
+    margin-bottom: 10px;
+
+    position: relative;
+    
+}
+
+.navbar-input{
+    position: absolute;
+    left: 80%;
+    width: 300px;
+}
+
+.navbar-logo{
+    width: 40px;
+    height: 40px;
+    background-color: aqua;
+    position: absolute;
+   left: 20px;
+   margin-bottom: 10px;
+}
+
+/*Content*/
+
+.main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    height: 1000%;
+
+}
+
+.main-content{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+
+/*page body*/
+
+.main-container h2{
+    background-image: linear-gradient(to right, rgb(255, 255, 255) 40%, rgb(149, 147, 147) 50%, rgb(255, 245, 245) 60%);
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+}
+
+.main-container p{
+    color: rgb(97, 96, 96);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+/*images of each card*/
+
+.card:nth-child(1){
+    background-image: linear-gradient(to bottom, rgb(95, 93, 93) 0%, rgba(0, 0, 0, 0.6) 100%), url("/Pictures/variables.png");
+    background-size: cover; 
+    
+}
+
+.card:nth-child(2){
+    background-image: linear-gradient(to bottom, rgb(95, 93, 93) 0%, rgba(0, 0, 0, 0.6) 100%), url("/Pictures/for.jpg");
+    background-size: cover; 
+}
+
+.card:nth-child(3){
+    background-image: linear-gradient(to bottom, rgb(95, 93, 93) 0%, rgba(0, 0, 0, 0.6) 100%), url("/Pictures/while.jpg");
+    background-size: cover; 
+}
+
+.card:nth-child(4){
+    background-image: linear-gradient(to bottom, rgb(95, 93, 93) 0%, rgba(0, 0, 0, 0.6) 100%), url("/Pictures/if.jpg");
+    background-size: cover; 
+    
+}
+
+.card:nth-child(5){
+    background-image: linear-gradient(to bottom, rgb(95, 93, 93) 0%, rgba(0, 0, 0, 0.6) 100%), url("/Pictures/function.png");
+    background-size: cover; 
+}
+
+.card:nth-child(6){
+    background-image: linear-gradient(to bottom, rgb(95, 93, 93) 0%, rgba(0, 0, 0, 0.6) 100%), url("/Pictures/array.jpg");
+    background-size: cover; 
+}
+
+.card:nth-child(7){
+    background-image: linear-gradient(to bottom, rgb(95, 93, 93) 0%, rgba(0, 0, 0, 0.6) 100%), url("/Pictures/DOM.jpg");
+    background-size: cover; 
+}
+
+.card:nth-child(8){
+    background-image: linear-gradient(to bottom, rgb(95, 93, 93) 0%, rgba(0, 0, 0, 0.6) 100%), url("/Pictures/object.png");
+    background-size: cover; 
+}
+
+.card:nth-child(9){
+    background-image: linear-gradient(to bottom, rgb(95, 93, 93) 0%, rgba(0, 0, 0, 0.6) 100%), url("/Pictures/arrayOperations.jpg");
+    background-size: cover; 
+}
+
+.card:nth-child(10){
+    background-image: linear-gradient(to bottom, rgb(95, 93, 93) 0%, rgba(0, 0, 0, 0.6) 100%), url("");
+    background-size: cover; 
+}
+
+.card:nth-child(11){
+    background-image: linear-gradient(to bottom, rgb(95, 93, 93) 0%, rgba(0, 0, 0, 0.6) 100%), url("/Pictures/eventProperties.jpg");
+    background-size: cover; 
+}
+
+.card:nth-child(12){
+    background-image: linear-gradient(to bottom, rgb(95, 93, 93) 0%, rgba(0, 0, 0, 0.6) 100%), url("/Pictures/classesJavascript.png");
+    background-size: cover; 
+}
+
+.card:nth-child(13){
+    background-image: linear-gradient(to bottom, rgb(95, 93, 93) 0%, rgba(0, 0, 0, 0.6) 100%), url("");
+    background-size: cover; 
+}
+
+.card:nth-child(){
+    background-image: linear-gradient(to bottom, rgb(95, 93, 93) 0%, rgba(0, 0, 0, 0.6) 100%), url("");
+    background-size: cover; 
+}
+
+
+.card:nth-child(){
+    background-image: linear-gradient(to bottom, rgb(95, 93, 93) 0%, rgba(0, 0, 0, 0.6) 100%), url("");
+    background-size: cover; 
+}
+
+
+.card:nth-child(){
+    background-image: linear-gradient(to bottom, rgb(95, 93, 93) 0%, rgba(0, 0, 0, 0.6) 100%), url("");
+    background-size: cover; 
+}
+
+
+.card:nth-child(){
+    background-image: linear-gradient(to bottom, rgb(95, 93, 93) 0%, rgba(0, 0, 0, 0.6) 100%), url("");
+    background-size: cover; 
+}
+
+
+.card:nth-child(){
+    background-image: linear-gradient(to bottom, rgb(95, 93, 93) 0%, rgba(0, 0, 0, 0.6) 100%), url("");
+    background-size: cover; 
+}
+
+
+
+/*Colorful titles of the cards*/
+
+.card-title-HTML{
+    background-image: linear-gradient(to right,  #f64210 21%, #c5493b 52%, #cf9c55 78%, #6b6b6b 100%);
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+     -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+}
+.card-title-CSS{
+    background-image: linear-gradient(to right, #1455b6 52%, #6a92ef 78%, #c5cfe7 100%);
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+     -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+}
+.card-title-JS{
+    background-image: linear-gradient(to right, #f6ff00 25%, #b6b628 50%,#6a6a3f 75%, #616060 100%);
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+     -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+}
+
+.card-p{
+    background-image: linear-gradient(to right, #ffffff 25%, #8f8f83 50%,#f7f7f7 75%, #616060 100%);
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+     -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+}
+
+/*Properties of the cards*/
+
+.card{
+    height: 300px;border: .5px solid black;
+    margin: 1rem;
+    position: relative;
+    width: 260px;
+    border-radius: 6px;
+}
+
+.card h5{
+    font-size: 1.5rem;
+    position: absolute;
+    top: 9rem;
+    left: 1rem;
+ 
+}
+
+.card p{
+    font-size: 1rem;
+    top: 12.5rem;
+    left: 1rem;
+    position: absolute;
+}
+
+.card button{
+    position: absolute;
+    top: 15.5rem;
+    left: 5.5rem;
+    padding:  10px 35px;
+    border-radius: 8px;
+    color:rgb(0, 0, 0);
+    outline: none;
+    border: none;
+}
+
+.card button:hover{
+    transition: all 0.5s ease;
+    background: #7e8386;
+    cursor: pointer;
+}
+
+.card:hover{
+    transform: scale(1.1);
+    transition: .7s ease;
+}
+
+/*javascript html*/
+
+.match{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    pointer-events: none;
+    transition: all 1s ease;
+
+}
+
+.container-intro{  /**/
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.question-card {
+    width: 300px;
+    border: solid red 3px;
+    background-color: white;
+    width: 300px;
+    height: 200px;
+
+  }
+
+  /*prueba*/  
+
+.intro{
+    width: 300px;
+    height: 200px;
+    border: red solid 3px;
+    color: white;
+}
+
+.answers{
+    width: 300px;
+    height: 50px;
+    border: rgb(255, 0, 187) solid 3px;
+    position: absolute;
+    top: 550px;
+}
+
+    /*prueba*/
+
+
+
+
+.js-btn{
+    background: red;
+}
+
+div.fadeOut{
+    opacity: 0;
+    pointer-events: none;
+}
+
+div.fadeIn{
+    opacity: 1;
+    pointer-events: all;
+}
+
+/*esto va para position HTML*/
+
+.parent{
+    background-color: rgb(47, 152, 244);
+    padding: 20px;
+}
+
+.child{
+    /* display: block; */
+    padding: 5px;
+}
+
+.parent, .child{
+    font-size: 50px;
+    font-family: sans-serif;
+}
+
+.child-one{
+    background-color: rgb(116, 225, 116);
+    position: relative;
+}
+
+.child-two{
+    background-color: tomato;
+}
+
+.child-three{
+    background-color: rgb(235, 118, 178);
+}
+
+.body-position{
+    background-color: white;
+}
+
+.parent{
+    position: relative;
+    top: 30px;
+}
+
+/*Javascript files */
+
+
+.JSfiles-header{
+    display: flex;
+}
+
+.JSfiles-header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:rgb(45, 64, 113)
+}
+/* Body */
+
+/* *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+} */
+
+
+/*
+
+
+
+302 javscriptfiles CSS
+
+*/
+
+body{
+    background-color: rgb(29, 29, 29);
+}
+
+
+/* navbar */
+
+.navbar{
+    background-color: rgb(0, 0, 0);
+    height: 10vh;
+    display: flex;
+    align-items: flex-end;
+    position: relative;
+}
+
+.container-navbar1{
+    display: flex;
+    justify-content: space-around;
+    width: 50%;  
+    margin-bottom: 10px;
+}
+
+.container-navbar1 i{
+    width: 20px;
+    height: 20px;
+    background-color: aqua;
+}
+
+.container-navbar1 a{
+    color: rgb(37, 73, 193);
+    text-decoration: none;
+    margin-left: 10%;
+}
+
+.container-navbar2 input{
+    margin-bottom: 10px;
+
+    position: relative;
+    
+}
+
+.navbar-input{
+    position: absolute;
+    left: 80%;
+    width: 300px;
+}
+
+.navbar-logo{
+    width: 40px;
+    height: 40px;
+    background-color: aqua;
+    position: absolute;
+   left: 20px;
+   margin-bottom: 10px;
+}
+
+/*Content*/
+
+.main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    height: 1000%;
+
+}
+
+.main-content{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+
+/*page body*/
+
+.main-container h2{
+    background-image: linear-gradient(to right, rgb(255, 255, 255) 40%, rgb(149, 147, 147) 50%, rgb(255, 245, 245) 60%);
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+}
+
+.main-container p{
+    color: rgb(97, 96, 96);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+/*images of each card*/
+
+.card:nth-child(1){
+    background-image: linear-gradient(to bottom, rgb(95, 93, 93) 0%, rgba(0, 0, 0, 0.6) 100%), url("/Pictures/variables.png");
+    background-size: cover; 
+    
+}
+
+.card:nth-child(2){
+    background-image: linear-gradient(to bottom, rgb(95, 93, 93) 0%, rgba(0, 0, 0, 0.6) 100%), url("/Pictures/for.jpg");
+    background-size: cover; 
+}
+
+.card:nth-child(3){
+    background-image: linear-gradient(to bottom, rgb(95, 93, 93) 0%, rgba(0, 0, 0, 0.6) 100%), url("/Pictures/while.jpg");
+    background-size: cover; 
+}
+
+.card:nth-child(4){
+    background-image: linear-gradient(to bottom, rgb(95, 93, 93) 0%, rgba(0, 0, 0, 0.6) 100%), url("/Pictures/if.jpg");
+    background-size: cover; 
+    
+}
+
+.card:nth-child(5){
+    background-image: linear-gradient(to bottom, rgb(95, 93, 93) 0%, rgba(0, 0, 0, 0.6) 100%), url("/Pictures/function.png");
+    background-size: cover; 
+}
+
+.card:nth-child(6){
+    background-image: linear-gradient(to bottom, rgb(95, 93, 93) 0%, rgba(0, 0, 0, 0.6) 100%), url("/Pictures/array.jpg");
+    background-size: cover; 
+}
+
+.card:nth-child(7){
+    background-image: linear-gradient(to bottom, rgb(95, 93, 93) 0%, rgba(0, 0, 0, 0.6) 100%), url("/Pictures/DOM.jpg");
+    background-size: cover; 
+}
+
+.card:nth-child(8){
+    background-image: linear-gradient(to bottom, rgb(95, 93, 93) 0%, rgba(0, 0, 0, 0.6) 100%), url("/Pictures/object.png");
+    background-size: cover; 
+}
+
+.card:nth-child(9){
+    background-image: linear-gradient(to bottom, rgb(95, 93, 93) 0%, rgba(0, 0, 0, 0.6) 100%), url("/Pictures/arrayOperations.jpg");
+    background-size: cover; 
+}
+
+.card:nth-child(10){
+    background-image: linear-gradient(to bottom, rgb(95, 93, 93) 0%, rgba(0, 0, 0, 0.6) 100%), url("");
+    background-size: cover; 
+}
+
+.card:nth-child(11){
+    background-image: linear-gradient(to bottom, rgb(95, 93, 93) 0%, rgba(0, 0, 0, 0.6) 100%), url("/Pictures/eventProperties.jpg");
+    background-size: cover; 
+}
+
+.card:nth-child(12){
+    background-image: linear-gradient(to bottom, rgb(95, 93, 93) 0%, rgba(0, 0, 0, 0.6) 100%), url("/Pictures/classesJavascript.png");
+    background-size: cover; 
+}
+
+.card:nth-child(13){
+    background-image: linear-gradient(to bottom, rgb(95, 93, 93) 0%, rgba(0, 0, 0, 0.6) 100%), url("");
+    background-size: cover; 
+}
+
+.card:nth-child(){
+    background-image: linear-gradient(to bottom, rgb(95, 93, 93) 0%, rgba(0, 0, 0, 0.6) 100%), url("");
+    background-size: cover; 
+}
+
+
+.card:nth-child(){
+    background-image: linear-gradient(to bottom, rgb(95, 93, 93) 0%, rgba(0, 0, 0, 0.6) 100%), url("");
+    background-size: cover; 
+}
+
+
+.card:nth-child(){
+    background-image: linear-gradient(to bottom, rgb(95, 93, 93) 0%, rgba(0, 0, 0, 0.6) 100%), url("");
+    background-size: cover; 
+}
+
+
+.card:nth-child(){
+    background-image: linear-gradient(to bottom, rgb(95, 93, 93) 0%, rgba(0, 0, 0, 0.6) 100%), url("");
+    background-size: cover; 
+}
+
+
+.card:nth-child(){
+    background-image: linear-gradient(to bottom, rgb(95, 93, 93) 0%, rgba(0, 0, 0, 0.6) 100%), url("");
+    background-size: cover; 
+}
+
+
+
+/*Colorful titles of the cards*/
+
+.card-title-HTML{
+    background-image: linear-gradient(to right,  #f64210 21%, #c5493b 52%, #cf9c55 78%, #6b6b6b 100%);
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+     -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+}
+.card-title-CSS{
+    background-image: linear-gradient(to right, #1455b6 52%, #6a92ef 78%, #c5cfe7 100%);
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+     -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+}
+.card-title-JS{
+    background-image: linear-gradient(to right, #f6ff00 25%, #b6b628 50%,#6a6a3f 75%, #616060 100%);
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+     -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+}
+
+.card-p{
+    background-image: linear-gradient(to right, #ffffff 25%, #8f8f83 50%,#f7f7f7 75%, #616060 100%);
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+     -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+}
+
+/*Properties of the cards*/
+
+.card{
+    height: 300px;border: .5px solid black;
+    margin: 1rem;
+    position: relative;
+    width: 260px;
+    border-radius: 6px;
+}
+
+.card h5{
+    font-size: 1.5rem;
+    position: absolute;
+    top: 9rem;
+    left: 1rem;
+ 
+}
+
+.card p{
+    font-size: 1rem;
+    top: 12.5rem;
+    left: 1rem;
+    position: absolute;
+}
+
+.card button{
+    position: absolute;
+    top: 15.5rem;
+    left: 5.5rem;
+    padding:  10px 35px;
+    border-radius: 8px;
+    color:rgb(0, 0, 0);
+    outline: none;
+    border: none;
+}
+
+.card button:hover{
+    transition: all 0.5s ease;
+    background: #7e8386;
+    cursor: pointer;
+}
+
+.card:hover{
+    transform: scale(1.1);
+    transition: .7s ease;
+}
+
+/*javascript html*/
+
+.match{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    pointer-events: none;
+    transition: all 1s ease;
+
+}
+
+.container-intro{  /**/
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.question-card {
+    width: 300px;
+    border: solid red 3px;
+    background-color: white;
+    width: 300px;
+    height: 200px;
+
+  }
+
+  /*prueba*/  
+
+.intro{
+    width: 300px;
+    height: 200px;
+    border: red solid 3px;
+    color: white;
+}
+
+.answers{
+    width: 300px;
+    height: 50px;
+    border: rgb(255, 0, 187) solid 3px;
+    position: absolute;
+    top: 550px;
+}
+
+    /*prueba*/
+
+
+
+
+.js-btn{
+    background: red;
+}
+
+div.fadeOut{
+    opacity: 0;
+    pointer-events: none;
+}
+
+div.fadeIn{
+    opacity: 1;
+    pointer-events: all;
+}
+
+/*esto va para position HTML*/
+
+.parent{
+    background-color: rgb(47, 152, 244);
+    padding: 20px;
+}
+
+.child{
+    /* display: block; */
+    padding: 5px;
+}
+
+.parent, .child{
+    font-size: 50px;
+    font-family: sans-serif;
+}
+
+.child-one{
+    background-color: rgb(116, 225, 116);
+    position: relative;
+}
+
+.child-two{
+    background-color: tomato;
+}
+
+.child-three{
+    background-color: rgb(235, 118, 178);
+}
+
+.body-position{
+    background-color: white;
+}
+
+.parent{
+    position: relative;
+    top: 30px;
+}
+
+/*Javascript files */
+
+
+.JSfiles-header{
+    display: flex;
+}
+
+.JSfiles-header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:rgb(45, 64, 113)
+}

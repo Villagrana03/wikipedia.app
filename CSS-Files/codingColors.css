@@ -1,0 +1,170 @@
+body{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 15px;
+    background-color: rgb(58, 58, 58);
+}
+
+
+/*span colors*/
+
+.result{
+    color:aquamarine;
+}
+
+.aqua{
+    color: rgb(14, 223, 143);
+}
+
+.red{
+    color: red;
+}
+
+.black{
+    color: black;
+}
+
+.darkBlue{
+    color: rgb(6, 64, 135);
+}
+
+.purple{
+    color: rgb(120, 36, 139);
+}
+
+.green{
+    color: green
+}
+
+.blue{
+    color: rgb(27, 121, 244);
+}
+
+.lightBlue{
+    color: rgb(70, 200, 248);
+}
+
+.orange{
+    color: orange;
+}
+
+.pink{
+    color: rgb(226, 29, 190);
+}
+
+.yellow{
+    color: rgb(227, 227, 7);
+}
+
+.lightGreen{
+    color: rgb(56, 208, 14);
+}
+
+.boldClass{
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+}
+
+.answerColor{
+    color:rgb(59, 223, 184)
+}
+
+.blackCoding p{
+    color: white;
+    display: block;
+    margin: 10px;
+}
+
+.p{
+    color: gray;
+}
+/*span colors*/
+/* .darkBlue{
+    color: rgb(35, 97, 221);
+}
+
+.purple{
+    color: rgb(120, 36, 139);
+}
+
+.green{
+    color: green
+}
+
+.blue{
+    color: rgb(27, 121, 244);
+}
+
+.lightBlue{
+    color: rgb(70, 200, 248);
+}
+
+.orange{
+    color: orange;
+}
+
+.pink{
+    color: rgb(226, 29, 190);
+}
+
+.yellow{
+    color: rgb(227, 227, 7);
+}
+
+.lightGreen{
+    color: rgb(67, 237, 19);
+}
+
+.red{
+    color: red;
+}
+
+.boldClass{
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+}
+
+.answerColor{
+    color:rgb(59, 223, 184)
+}
+
+.blackCoding p{
+    color: white;
+    display: block;
+    margin: 10px;
+} */
+/*new thing*/
+h1{
+    color: rgb(238, 0, 255);
+}
+
+/* h2{
+    background-image: linear-gradient(to right, #e8f005 5%,  #a39d9d 20%);
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+     -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+} */
+
+
+.ejemplo{
+    background-color: #2a2e31;
+    color: white;
+}
+
+/*For coding*/
+.blackCoding{
+    background-color: #000000;
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.blackCoding p{
+    color: azure;
+}
+
+.codingExample{
+    margin: 20px;
+    color: white;
+}
+

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/CSS-Files/style.css">
+    <link rel="stylesheet" href="/CSS-Files/codingColors.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+      
+    <div class="navbar">
+        <div class="container-navbar1">
+            <a href="/index.html">Home</a>
+            <a href="">CSS</a>
+            <a href="/HTML/htmlFirst.html">HTML</a>
+        </div>  
+    </div>
+
+    <div>
+        <div class="main-container">
+           
+            <div>
+                <h2></h2>
+                <p></p>
+            </div>
+
+            <div class="main-content">
+
+            </div>
+
+        </div>
+
+
+            <div class="body">
+                <div class="kyu7">
+                    <h2>Likes Vs Dislikes</h2>
+                    <p>YouTube had a like and a dislike button, which allowed users to express their opinions about particular content. It was set up in such a way that you cannot like and dislike a video at the same time. There are two other interesting rules to be noted about the interface: Pressing a button, which is already active, will undo your press. If you press the like button after pressing the dislike button, the like button overwrites the previous "Dislike" state. The same is true for the other way round.</p>
+
+                    <div class="blackCoding"> 
+                      <p>  function likeOrDislike(buttons) { <br>
+                        <p><span class="lightGreen"> //This variable keeps track of the current state, which can be "Nothing", "Like", or "Dislike".</span></p> <br>
+                        let currentState = "Nothing" <br>
+                         <br>
+                            <p>     <span class="lightGreen">// On each iteration, the variable button will hold the current element from the buttons array.</span></p> <br>
+                        for(button of buttons){ <br>
+
+                            <p><span class="lightGreen">if (button === currentState) checks if the current button is equal to currentState.
+                                If they are equal, it means the button is being pressed again to undo the current state.
+                                currentState = "Nothing"; sets the currentState to "Nothing", indicating that the previous state has been undone</span></p> <br>
+                      if(button === currentState){ <br>
+                         currentState = "Nothing" <br>
+                      } else{ <br>
+                         currentState = button <br>
+                      } <br>
+                        } <br>
+                      return currentState <br>
+                    } <br></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="body">
+                <div class="kyu7">
+                    <h2></h2>
+                    <p></p>
+
+                    <div class="blackCoding">
+                     <p>   const n = 4923618 <br>
+                        <br>
+                        const descendingOrder = () => { <br>
+                            <span class="lightGreen">//Here i am converting the integer into a string</span><br>
+                            const nString = n.toString() <br>
+                            <span class="lightGreen">//once the integer its a string i will split it and each number will be in an array separated with a comma</span> <br>
+                        const result = nString.split("") <br>
+                        <span class="lightGreen">//once each number is separated i will sort it from descending order </span><br>
+                            result.sort((a,b) => b - a); <br>
+                            <span class="lightGreen">//and Here i used join() and it automatically joins it as an integer</span> <br>
+                            const finalAnswer =  result.join("") <br>
+                        <br>
+                            return finalAnswer <br>
+                        } <br>
+                        <br> 
+                        console.log(descendingOrder())</p>
+                    
+                    </div>
+                </div>
+            </div>
+
+            <div class="body">
+                <div class="kyu7">
+                    <h2>Is it a letter?</h2>
+                    <p>Write a function, isItLetter or is_it_letter or IsItLetter, which tells us if a given character is a letter or not.</p>
+
+                    <div class="blackCoding">
+                      <p>
+                        function isItLetter(character) { <br>
+                            <br>
+
+                            <p><span class="lightGreen">// ^[A-Za-z]$: This is a regular expression pattern. <br>
+                                <br>
+                                ^ asserts the start of the string. <br>
+                                [A-Za-z] matches any uppercase or lowercase letter. <br>
+                                $ asserts the end of the string. <br>
+                                Together, this pattern ensures that the string consists of only one letter, whether uppercase or lowercase.</span></p>
+                                <p><span class="lightGreen"> // It takes a string argument (character) and checks if that string matches the regular expression pattern. <br>
+                                    If the string matches the pattern, .test() returns true; otherwise, it returns false.</span></p>
+                            return /^[A-Za-z]$/.test(character); <br>
+                        } <br>
+                      </p>
+                    </div>
+                </div>
+            </div>
+              
+    </div>
+</body>
+</html>

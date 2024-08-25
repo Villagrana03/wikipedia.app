@@ -1,0 +1,93 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/CSS-Files/style.css">
+    <link rel="stylesheet" href="/CSS-Files/codingColors.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+      
+    <div class="navbar">
+        <div class="container-navbar1">
+            <a href="/index.html">Home</a>
+            <a href="">CSS</a>
+            <a href="/HTML/htmlFirst.html">HTML</a>
+        </div>  
+    </div>
+
+    <div>
+        <div class="main-container">
+           
+            <div>
+                <h2>Functions</h2>
+                <p></p>
+            </div>
+        </div>
+
+
+            <div class="javascript-body">
+               <h3>Functions</h3>
+               <p></p>
+
+               <div class="blackCoding">
+                    <p>
+                        <span class="purple">def</span> <span class="yellow">suma</span>(<span class="lightBlue">a</span>, <span class="lightBlue">b</span>): <br>
+                        <span class="black">---</span>  <span class="pink">return</span>  <span class="lightBlue">a</span> + <span class="lightBlue">b</span>  <br>
+                        <br>
+                        <span class="yellow">print</span>(<span class="lightBlue">3</span>, <span class="lightBlue">6</span>) <span class="yellow">Output</span> -> 9
+                        <br>
+                        <br>
+                        <span class="lightGreen">#Here we will learn lambda functions</span> <br>
+                        <span class="blue">arguments</span>: A comma-separated list of arguments that the lambda function takes. <br>
+                        <span class="red">expression</span>: A single expression that is evaluated and returned. <br>
+                        <br>
+                        lambda <span class="blue">arguments</span>: <span class="red">expression</span> <br>
+
+                        <br>
+                        <span class="lightBlue">cuadrado</span> = <span class="darkBlue">lambda</span> <span class="lightBlue">x</span>: <span class="lightBlue">x</span>**2 <br>
+                        <span class="yellow">print</span>(<span class="lightBlue">cuadrado</span>(4)) <span class="yellow">Output</span> -> 16 <br>
+                        <br>
+                        <br>
+                        <span class="lightGreen">#*args</span> <br>
+                        # *args y **kwargs
+
+                        lista = [1,2,3,4,5] <br>
+                        lista2 = [1,10] <br>
+                        lista3 = [] <br>
+                        <br>
+                        def sumar(a,b): <span class="lightGreen">#se limita a dos parametros, si usa menos no funciona</span> <br>
+                        <span class="black">---</span>    return a + b <br>
+                        <br>
+                        def sumaMejorada(*arg): <span class="lightGreen">#* es una lista dependiendo de los argumentos que oine el usuario o, toma todos los parametros que se dan como lista</span> <br>
+                        <span class="black">---</span>    if len(arg) == 0: <br>
+                        <span class="black">------</span>        return 0 <br>
+                        <span class="black">---</span>    suma = 0 <span class="lightGreen">#guardar el registro de la suma</span> <br>
+                        <span class="black">---</span>    for val in arg: <br>
+                        <span class="black">-------</span>        suma += val <br>
+                        <span class="black">---</span>    return suma <br>
+                        <br>
+                        resultado = sumaMejorada(1,2,3,4,5,6) <br>
+                        print(resultado) <br>
+                        <br>
+                        <br>
+                        
+                        <span class="lightGreen"># **kwargs te lo convierte en diccionario</span> <br>
+                        def ejemplo(a, **kwargs): <br>
+                        <span class="black">---</span>    print(a) <br>
+                        <span class="black">---</span>    print(kwargs) <br>
+                        <br>
+                        <br>
+                        print(ejemplo(4, edad=70,nombre="Rene"))
+
+                    </p>
+                </div>
+
+               
+            </div>
+    </div>
+</body>
+</html>

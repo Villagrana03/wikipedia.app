@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id ="prueba">hola</p>
+    <button id="bold">Bold</button>
+    <button id="colorGreen">Green</button>
+
+    <script>
+        const prueba = document.getElementById("prueba")
+        const bold = document.getElementById("bold")
+        const colorGreen = document.getElementById("colorGreen")
+
+
+        const clickGreen = () => {
+            prueba.style.backgroundColor = "green";
+        }
+
+
+        const clickBold = () => {
+            prueba.style.fontWeight = "bold"
+        }
+
+         bold.addEventListener("click", clickBold)
+        colorGreen.addEventListener("click", clickGreen)
+        // colorGreen.onclick = clickGreen
+
+    </script>
+
+</body>
+</html> 
+
+

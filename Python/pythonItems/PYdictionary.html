@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/CSS-Files/style.css">
+    <link rel="stylesheet" href="/CSS-Files/codingColors.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+      
+    <div class="navbar">
+        <div class="container-navbar1">
+            <a href="/index.html">Home</a>
+            <a href="">CSS</a>
+            <a href="/HTML/htmlFirst.html">HTML</a>
+        </div>  
+    </div>
+
+    <div>
+        <div class="main-container">
+           
+            <div>
+                <h1>Voy a agregar esto setdefault y update</h1>
+                <h2>Dictionaries </h2>
+                <p>Dictionaries are a built-in data type in Python used to store collections of key-value pairs. They are unordered, mutable, and indexed by keys, which can be of any immutable type (such as strings, numbers, or tuples).</p>
+            </div>
+
+
+        </div>
+
+
+            <div class="javascript-body">
+               <h2>Dictionaries</h2>
+               <p></p>
+
+               <div class="blackCoding">
+                <p>
+                    <span class="blue">Unordered: </span>Prior to Python 3.7, dictionaries were unordered collections. From Python 3.7 onwards, they maintain insertion order. <br>
+                    <span class="blue">Indexed by Keys:</span> Accessed by using keys rather than numerical indexes. <br>
+                    <span class="blue">Mutable: </span> You can change, add, or remove key-value pairs after the dictionary is created. <br>
+                    <span class="blue">Unique Keys: </span>Keys must be unique within a dictionary
+                </p>
+               </div>
+
+               <div class="blackCoding">
+                <p>
+                    <span class="lightBlue">traduction</span> = { <br>
+                        "Blue"<span class="yellow">:</span> "Azul"<span class="yellow">,</span> <br>
+                        "Green"<span class="yellow">:</span> "Verde"<span class="yellow">,</span> <br>
+                        "Red"<span class="yellow">:</span> "Rojo"<span class="yellow">:</span>, <br>
+                        "Yellow"<span class="yellow">:</span> "Amarillo" <br>
+                    } <br>
+                </p>
+               </div>
+
+               <h4>Accessing Dictionary Elements</h4>
+               <p>You can access the values in a dictionary by using their keys.</p>
+
+               <div class="blackCoding">
+                <p>
+                    <span class="lightBlue">traduction</span> = { <br>
+                        "Blue"<span class="yellow">:</span> "Azul"<span class="yellow">,</span> <br>
+                        "Green"<span class="yellow">:</span> "Verde"<span class="yellow">,</span> <br>
+                        "Red"<span class="yellow">:</span> "Rojo"<span class="yellow">:</span>, <br>
+                        "Yellow"<span class="yellow">:</span> "Amarillo" <br>
+                    } <br>
+
+                    <br>
+                    <br>
+                    <span class="lightBlue">print</span>(<span class="yellow">traduction</span>["Azul"]) Output -> "Blue"
+                </p>
+               </div>
+
+                <h3>Modifying Dictionaries</h3>
+                    <div class="blackCoding">
+                        <p>
+                            <span class="lightBlue">traduction</span> = { <br>
+                                "Blue"<span class="yellow">:</span> "Azul"<span class="yellow">,</span> <br>
+                                "Green"<span class="yellow">:</span> "Verde"<span class="yellow">,</span> <br>
+                                "Red"<span class="yellow">:</span> "Rojo"<span class="yellow"></span>, <br>
+                                "Yellow"<span class="yellow">:</span> "Amarillo" <br>
+                            } <br>
+                            <br>
+                            <span class="lightGreen"># Adding a new key-value pair</span> <br>
+                            <span class="lightBlue">traduction</span>["Purple"] = "Morado" <br>
+                            <span class="yellow">print</span>(<span class="lightBlue">traduction</span>) <span class="yellow">Output</span> -> {'Blue': 'Azul', 'Green': 'Verde', 'Red': 'Rojo', 'Yellow': 'Amarillo', <span class="result">'Purple': 'Morado'</span>}
+                           <br>
+                           <br>
+                            <span class="lightGreen"># Updating an existing key-value pair</span> <br>
+                            <span class="lightBlue">traduction</span>["Blue"] = "Mango" <br>
+                            <span class="yellow">print</span>(<span class="lightBlue">traduction</span>["<span class="orange">Blue</span>"]) Output -> "<span class="result">Mango</span>"
+                            <br>
+                            <br>
+                            <span class="lightGreen">#  Deleting a key-value pair</span> <br>
+                            <span class="purple">del</span> <span class="lightBlue">traduction</span>["Blue"] <br>
+                            <span class="yellow">print</span>( <span class="lightBlue">traduction</span>) <span class="yellow">Output</span> -> {'Green': 'Verde', 'Red': 'Rojo', 'Yellow': 'Amarillo'} <span class="lightGreen"># ""Blue was deleted</span> <br>
+                            <br>
+                            <span class="lightBlue">traduction</span>.pop("Blue") <br>
+                            <span class="yellow">print</span>(<span class="lightBlue">traduction</span>) <span class="yellow">Output</span> -> {'Green': 'Verde', 'Red': 'Rojo', 'Yellow': 'Amarillo'}  <span class="lightGreen"># ""Blue was deleted</span> <br>
+                        </p>     
+                    </div>
+
+                    <h3>Dictionary Methods</h3>
+                    <p>Python provides a variety of methods to work with Dictionary:</p>
+
+                    <h4>clear()</h4>
+                    <p>Removes all elements from the dictionary.</p>
+
+                    <div class="blackCoding">
+                        <p>
+                            <span class="lightBlue">traduction</span> = { <br>
+                                "Blue"<span class="yellow">:</span> "Azul"<span class="yellow">,</span> <br>
+                                "Green"<span class="yellow">:</span> "Verde"<span class="yellow">,</span> <br>
+                                "Red"<span class="yellow">:</span> "Rojo"<span class="yellow"></span>, <br>
+                                "Yellow"<span class="yellow">:</span> "Amarillo" <br>
+                            } <br>
+                            <br>
+                            <span class="lightBlue">traduction</span>.<span class="yellow">clear</span>() <br>
+                            <span class="yellow">print</span>(<span class="lightBlue">dictionary</span>)  <span class="yellow">Output</span> -> {}
+                        </p>
+                       </div>
+
+
+            
+
+                            <h4>setdefault()</h4>
+                             <p>Returns the value of the specified key. If the key does not exist, inserts the key with the specified value.</p>
+                            <div class="blackCoding">
+                                <p>
+                                    <span class="lightBlue">traduction</span> = { <br>
+                                        "Blue"<span class="yellow">:</span> "Azul"<span class="yellow">,</span> <br>
+                                        "Green"<span class="yellow">:</span> "Verde"<span class="yellow">,</span> <br>
+                                        "Red"<span class="yellow">:</span> "Rojo"<span class="yellow"></span>, <br>
+                                        "Yellow"<span class="yellow">:</span> "Amarillo" <br>
+                                    } <br>
+                                    <br>
+                                  <span class="lightBlue">traduction</span>.<span class="yellow">setdefault</span>("newValue"<span class="yellow">,</span> "Hello!") <br>
+                                    <span class="yellow">print</span>(<span class="lightBlue">traduction</span>) <span class="yellow">Output</span> -> {'Blue': 'Azul', 'Green': 'Verde', 'Red': 'Rojo', 'Yellow': 'Amarillo', <span class="result">'newValue': 'Hello!'</span> } <span class="lightGreen">#add a value to the the dictionary</span>
+
+                                </p>
+                            </div>
+
+                            <h4>update()</h4>
+                            <p>Updates the dictionary with elements from another dictionary or an iterable of key-value pairs.</p>
+
+                            <div class="blackCoding">
+                                <p>
+                                    myDict = { <br>
+                                        "a": 1, <br>
+                                        "b": 2 <br>
+                                        } <br>
+                                        <br>
+                                       <span class="lightBlue">myDict</span>.<span class="yellow">update</span>(<span class="purple">{</span>"b"<span class="yellow">:</span> 54<span class="yellow">,</span> "c"<span class="yellow">:</span> 3<span class="purple">}</span>) <br>
+                                       <span class="yellow">print</span>(<span class="lightBlue">myDict</span>) <span class="yellow">Output</span> -> {'a': 1, 'b': 54, 'c': 3} <span class="lightGreen"># with update, we can update a value of a key to anything OR add new keys to the dictionary</span>
+                                </p>
+                            </div>
+
+                            <h4>values()</h4>
+                            <p>Returns a view object that displays a list of all the values in the dictionary.</p>
+
+                            <div class="blackCoding">
+                                <p>
+                                    <span class="lightBlue">traduction</span> = { <br>
+                                        "Blue"<span class="yellow">:</span> "Azul"<span class="yellow">,</span> <br>
+                                        "Green"<span class="yellow">:</span> "Verde"<span class="yellow">,</span> <br>
+                                        "Red"<span class="yellow">:</span> "Rojo"<span class="yellow"></span>, <br>
+                                        "Yellow"<span class="yellow">:</span> "Amarillo" <br>
+                                    } <br>
+                                    <br>
+                                    <span class="lightBlue">values</span> = <span class="lightBlue">traduction</span><span class="yellow">values</span>() <br>
+                                    <span class="yellow">print</span>(<span class="lightBlue">values</span>) <span class="yellow">Output</span> -> dict_values(['Azul', 'Verde', 'Rojo', 'Amarillo']) <span class="lightGreen"># gets just the values of the dictionary</span>
+                                </p>
+                            </div>
+
+                            <h4>items()</h4>
+                            <p>Returns a view object that displays a list of a dictionary's key-value tuple pairs.</p>
+     
+                            <div class="blackCoding">
+                             <p>
+                                 <div class="blackCoding">
+                                     <p>
+                                         <span class="lightBlue">traduction</span> = { <br>
+                                             "Blue"<span class="yellow">:</span> "Azul"<span class="yellow">,</span> <br>
+                                             "Green"<span class="yellow">:</span> "Verde"<span class="yellow">,</span> <br>
+                                             "Red"<span class="yellow">:</span> "Rojo"<span class="yellow"></span>, <br>
+                                             "Yellow"<span class="yellow">:</span> "Amarillo" <br>
+                                         } <br>
+                                         <br>
+                                         <span class="lightBlue">tuppleExample</span> = <span class="lightBlue">traduction</span>.<span class="yellow">items</span>() <br>
+                                         <span class="yellow">print</span>(<span class="lightBlue">tuppleExample</span>) <span class="yellow">Output</span> -> dict_items([('Blue', 'Azul'), ('Green', 'Verde'), ('Red', 'Rojo'), ('Yellow', 'Amarillo')]) <span class="lightGreen">#get every pair of the dictionary and makes every pair a tupple</span>
+     
+                                     </p>
+                                    </div>
+                             </p>
+                            </div>
+     
+                            <h4>keys()</h4>
+                            <p>Returns a view object that displays a list of all the keys in the dictionary.</p>
+                                 <div class="blackCoding">
+                                     <p>
+                                         <span class="lightBlue">traduction</span> = { <br>
+                                             "Blue"<span class="yellow">:</span> "Azul"<span class="yellow">,</span> <br>
+                                             "Green"<span class="yellow">:</span> "Verde"<span class="yellow">,</span> <br>
+                                             "Red"<span class="yellow">:</span> "Rojo"<span class="yellow"></span>, <br>
+                                             "Yellow"<span class="yellow">:</span> "Amarillo" <br>
+                                         } <br>
+                                         <br>
+                                         <span class="lightBlue">listExample</span> = <span class="lightBlue">traduction</span>.<span class="yellow">keys</span>() <br>
+                                         <span class="yellow">print</span>(<span class="lightBlue">listExample</span>) <span class="yellow">Output</span> -> dict_keys(['Blue', 'Green', 'Red', 'Yellow']) <span class="lightGreen">#get every key value of the dictionary and put them into a list</span>
+     
+                                     </p>
+                                 </div>
+
+                                 <h4>fromkeys()</h4>
+                                 <p>Creates a new dictionary with keys from an iterable and values set to a specified value.</p>
+          
+                                 <div class="blackCoding">
+                                  <p>
+                                      <span class="lightBlue">letters</span> = ["a", "b", "c"] <br>
+                                      <span class="lightBlue">defaultValue</span> = 0 <br>
+                                      <br>
+                                      <span class="lightBlue">newDictionary</span> = <span class="green">dict</span>.fromkeys(<span class="lightBlue">letters</span>, <span class="lightBlue">defaultValue</span>) <br>
+                                      <span class="yellow">print</span> (<span class="lightBlue">newDictionary</span>) <span class="yellow">Output</span> -> {'a': 0, 'b': 0, 'c': 0} <span class="lightGreen"># What is it doing here, is getting a list and putting a default value and converting that list into a dictionary </span>
+                                  </p>
+                                 </div>
+
+                    <h4>get()</h4>
+                    <p>I will explain what get does</p>
+                        <div class="blackCoding">
+                              <p>
+                                 <span class="lightBlue">dictionary</span> = { <br>
+                                    True: "Blue", <br>
+                                False: "Red" <br>
+                                } <br>
+                                <br>
+                                  <span class="lightBlue">dictionary</span>.<span class="yellow">get</span>() <br>
+                                    <br>
+                                 <span class="yellow">print</span>(<span class="lightBlue">dictionary</span>.get(<span class="red">salse</span>))  Output -> False <span class="lightGreen"># what get() do, is check if salse is in the dictionary, and since is not there returns false</span>
+                             </p>
+                       </div>
+            </div>
+    </div>
+</body>
+</html>

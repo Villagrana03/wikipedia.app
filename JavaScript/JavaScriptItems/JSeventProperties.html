@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/CSS-Files/style.css">
+    <link rel="stylesheet" href="/CSS-Files/codingColors.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Properties</title>
+</head>
+<body>
+
+<!-- I USED A LOT OF <BR> I KNOW IS NOT A GOOD PRACTICE BUT THIS ARE JUST MY NOTES!!! -->
+
+      
+    <div class="navbar">
+        <div class="container-navbar1">
+            <a href="/index.html">Home</a>
+            <a href="">CSS</a>
+            <a href="/HTML/htmlFirst.html">HTML</a>
+        </div>  
+    </div>
+
+    <div>
+
+                <div class="JSfiles-header">
+                    <h2 class="JSfiles-header">Event Properties</h2>
+
+                    <h3>Here we will learn how to make a page interactive</h3>
+                </div>
+
+
+            <div class="javascript-body">
+                    
+                <h3>addEventListener</h3>
+                <p>Here i will type all the Event properties</p>
+    
+                <p>a more modern way of adding events to elements is with the addEventListener(), in this example i will show you, how addEventlistener work. we will focus on the last line which is the addEventListener</p>
+                <p>The <span class="blue">bold</span> is what is it doing is linking the button with the ID = "bold", so everytime the button is being called, in this case "clicked", the following function will occur, The <span class="purple">"click"</span> are event types or event names, they represent user interaction. </p>
+
+                <div class="blackCoding">
+
+                    <p> <span class="darkBlue">const </span> <span class="blue">example </span> <span class="lightBlue">document</span>.getElementById("example") <!-- <span class="lightGreen"> //Here i am getting the id of the tag "p" </span> --> </p>
+                    <p> <span class="darkBlue">const </span> <span class="blue">bold </span> <span class="lightBlue">document</span>.getElementById("bold")  <!-- <span class="lightGreen"> //Here i am getting the id of the button "bold" -->  </span> </p>
+    
+                    <p> <span class="darkBlue">const </span> <span class="yellow">clickBold </span>= ()  => {</p>
+                    <p> <span class="red">example</span>.<span class="orange">style</span>. <span class="pink">fontWeight</span> = "bold" <span class="lightGreen"> </span> </p>
+                    <p>}</p>
+    
+
+                    <p> <span class="blue">bold</span>.addEventListener(<span class="purple">"click"</span>, clickBold)</p>
+                </div>
+
+                    <h3>Event types</h3>
+
+                    <div class="blackCoding">
+                        <p> <span class="blue">click:</span> Occurs when a mouse button is clicked on an element. <br>
+                            <span class="blue">dblclick:</span> Occurs when a mouse button is double-clicked on an element. <br>
+                            <span class="blue">mousedown:</span> Occurs when a mouse button is pressed down on an element. <br>
+                            <span class="blue">mouseup:</span> Occurs when a mouse button is released on an element. <br>
+                            <span class="blue">mousemove:</span> Occurs when the mouse pointer is moved while it is over an element. <br>
+                            <span class="blue">mouseover:</span> Occurs when the mouse pointer enters the area of an element. <br>
+                            <span class="blue">mouseout:</span> Occurs when the mouse pointer leaves the area of an element. <br>
+                            <span class="blue">keydown:</span> Occurs when a key on the keyboard is pressed down. <br>
+                           <span class="blue"> keyup:</span> Occurs when a key on the keyboard is released. <br>
+                            <span class="blue">keypress:</span> Occurs when a key on the keyboard is pressed and released. <br>
+                           <span class="blue"> focus:</span> Occurs when an element receives focus (e.g., via tabbing or clicking). <br>
+                           <span class="blue"> blur:</span> Occurs when an element loses focus. <br>
+                            <span class="blue">submit:</span> Occurs when a form is submitted. <br>
+                            <span class="blue">change:</span> Occurs when the value of an input element changes (e.g., in text fields, checkboxes, or select dropdowns). <br>
+                            <span class="blue">load:</span> Occurs when a resource and its dependent resources (e.g., images, scripts) have finished loading. <br>
+                            <span class="blue">unload:</span> Occurs when a page is being unloaded (e.g., when the user navigates away from the page or refreshes it).</p>
+                    </div>
+
+                    <h3>removeEventListener()</h3>
+                    <p>We can also remove events, remove event listener after toggling the color, tap the "div" to change the color to pink.</p>
+                    <p>in the first square we can see how the removeEventListener() is working, once we click it, the color will change, but if we click it again, it wont, and the second square it is changing everytime we click on it.</p>
+
+                    <div id="square" class="square"></div>
+                    <br>
+                    <div class="square" id="secondSquare" ></div>
+
+                    <div class="blackCoding">
+                        <p><span class="darkBlue">const</span> <span class="blue">square</span> <span class="lightBlue"> document</span>.getElementById("square")</p>
+                        <p><span class="darkBlue">const</span> <span class="blue">secondSquare</span> <span class="lightBlue"> document</span>.getElementById("secondSquare")</p>
+                        <br>
+                        <p><span class="darkBlue">const</span> <span class="yellow">squareChangeColor</span> = () => {</p>
+                        <p><span class="blue">square</span>.<span class="lightBlue">classList</span>.toggle("newSquare")</p>
+                        <p><span class="blue">square</span>.<span class="yellow">removeEventListener</span>("click", squareChangeColor) <span class="lightGreen">//instead of doing the "toggle()" function, its removing due to the removeEventListener()</span> </p>
+                        <p>}</p>
+                        <br>
+                        <p><span class="lightGreen">//The second square will just be doing the "toggle()" function, since we don't have the removeEventListener()</span></p>
+                        <p><span class="darkBlue">const</span> <span class="yellow">squareNoChangeColor</span> = () => {</p>
+                        <p><span class="blue">secondSquare</span>.<span class="lightBlue">classList</span>.toggle("newSquare")</p>
+                        <p>}</p>
+
+                        <br>
+
+                        <p><span class="lightGreen">//Here we are just linking everytime the user click on the div "square"</span></p>
+                        <p><span class="blue">square</span>.<span class="yellow">addEventListener</span>("click", squareChangeColor)</p>
+                        <p><span class="blue">secondSquare</span>.<span class="yellow">addEventListener</span>("click", squareNoChangeColor)</p>
+                    </div>
+
+                    <h4>We can also add many events to at the same time, here i will show an example</h4>
+
+
+                    <div class="blackCoding">
+                        <p><span class="lightGreen">//This is just an example of how would the syntax be if you have multiple events at the same time.</span></p>
+                        <p><span class="darkBlue">const</span> <span class="blue">div</span> <span class="lightBlue"> document</span>.querySelector("div") <span class="lightGreen">//Here i am getting the FIRST div which we would use it in the example</span></p>
+                        <p><p><span class="darkBlue">const</span> <span class="blue">button</span> <span class="lightBlue"> document</span>.querySelectorAll("sbutton") <span class="lightGreen">//Here i am selecting ALL the buttons instead of selecting one by their specific ID</span></p></p>
+
+
+                        <p><span class="darkBlue">const</span> <span class="yellow">changeHeight</span> = () => {</p>
+                            <p><span class="blue">item</span>.<span class="lightBlue">classList</span>.toggle("height")</p>
+                            <p>}</p>
+
+                            <p><span class="darkBlue">const</span> <span class="yellow">changeWidth</span> = () => {</p>
+                                <p><span class="blue">item</span>.<span class="lightBlue">classList</span>.toggle("width")</p>
+                                <p>}</p>
+
+                                <p><span class="lightGreen">//In this example there were 3 buttons and since we did not specified which button by their ID, we select the button by their index, and "button[0]" is the first one, i do not like this practice but thats how was shown in the example.</span></p>
+                        <p><span class="blue">button[0]</span>.<span class="yellow">addEventListener</span>("click", changeHeight)</p>
+                        <p><span class="blue">button[0]</span>.<span class="yellow">addEventListener</span>("click", changeWidth)</p>
+                    </div>
+
+                    <h3>Here i will be explaining the most common event properties.</h3> 
+
+                    <div class="blackCoding">
+
+                        <!-- <p> <span class="red">Example:</span> in the example i used "example" in the first "parameter" what is doing is getting the id of "example" woch is the tag "p" and anytime when the function is going to work the .style will happen. </p> -->
+                        <p> <span class="orange">"Element object":</span> there are many element object to choose from such as: <br>
+                            <br>
+                            <span class="orange" id="textContent">textContent:</span> Property representing the text content of the element. <br>
+                        <span class="orange" id="innerHTML"> innerHTML:</span> Property representing the HTML content of the element. <br>
+                        <span class="orange" id="style">style:</span> Object representing the inline CSS styles of the element. <br>
+                            <span class="orange" id="classList">classList:</span> Object representing the classes of the element. <br>
+                            <span class="orange" id="getAttribute">getAttribute():</span> Method to get the value of a specified attribute.</p>
+                    </div>
+            </div>
+
+            <h2>textContent</h2>
+            <p>The textContent property in JavaScript is used to get or set the text content of an element in the DOM (Document Object Model). It represents the textual content of the specified node and all its descendants.</p>
+            <p>You can also set the text content of an element by assigning a value to the textContent property. When you assign a value to textContent, it replaces all existing content within the specified element with the new text content. For example:</p>
+
+            <div class="blackCoding">
+                <p> <span class="darkBlue">const </span> <span class="blue">example </span> <span class="lightBlue">document</span>.getElementById("example") <span class="lightGreen"> //Here i am getting the id of the tag "p" </span> </p>
+                <p> <span class="blue">example</span>.textContent = "by pressing each button youwill be able to change it depending on the button." <span class="lightGreen"> // You are getting the content of id "example"</span> </p>
+            </div>
+
+            <h2>innerHTML</h2>
+                <p>The innerHTML property in JavaScript is used to get or set the HTML content (including tags and text) of an element. It allows you to dynamically manipulate the content of an element by accessing or modifying its HTML markup.</p>
+                <p>When you access the innerHTML property without assigning a value, it returns the HTML content of the specified element, including any child elements, tags, and text. For example:</p>
+
+                    <br>
+
+                <p id="exampleinnerHTML">This is an example of how innerHTML is used</p>
+                <button id="buttoninnerHTML">Press me</button>
+
+                <div class="blackCoding">
+                    <p> <span class="darkBlue">const </span> <span class="blue">exampleinnerHTML </span><span class="lightBlue">document</span>.GetElementById("exampleinnerHTML") <span class="lightGreen"> //Here i am getting the ID of "p" which is exampleinnerHTML </span> </p>
+                    <p> <span class="darkBlue">const </span> <span class="blue">buttoninnerHTML </span><span class="lightBlue">document</span>.GetElementById("buttoninnerHTML") <span class="lightGreen">// here i am getting the ID of the button</span> </p>
+                    <p> <span class="red">exampleinnerHTML</span>.<span class="orange">innerHTML</span> = "After the button has been clicked This message will appeared!"  <span class="lightGreen"> //The exampleinnerHTML is actually the tag "p" with the ID exampleinnerHTML</span></p>
+                </div>
+
+
+
+                <h2>Style</h2>
+                <p id = "example">by pressing each button you will be able to change it depending on the button.</p>
+
+                <button id="bold">Bold</button>
+                <button id="blue">Blue</button>
+                <button id="underline">Underline</button>
+                <button id="erase">Erase</button>
+            
+
+            <br>
+
+            <p>Here i will just show an example using just "bold" so the code is not long</p>
+
+            <div class="blackCoding">
+                <p> <span class="darkBlue">const </span> <span class="blue">example </span> <span class="lightBlue">document</span>.getElementById("example") <span class="lightGreen"> //Here i am getting the id of the tag "p" </span> </p>
+                <p> <span class="darkBlue">const </span> <span class="blue">bold </span> <span class="lightBlue">document</span>.getElementById("bold") <span class="lightGreen"> //Here i am getting the id of the button "bold"  </span> </p>
+
+                <p> <span class="darkBlue">const </span> <span class="yellow">clickBold </span>= ()  => {</p>
+                <p> <span class="red">example</span>.<span class="orange">style</span>. <span class="pink">fontWeight</span> = "bold" </p>
+                <p>}</p>
+
+                <p> <span class="blue">bold</span>.addEventListener(<span class="purple">"click"</span>, clickBold) <span class="lightGreen">//The first parameter is the function, so evrytime you "click" the the following fucntion would occur, The second paramter would be called, (Function) once the user "click" the button</span> </p>
+            </div>
+
+            <p>Here i will show all the properties that style have.</p>
+
+            <div class="blackCoding">
+                <p> <span class="yellow">Font Properties:</span> <br>
+                    <span class="blue">fontFamily:</span> Specifies the font family for text. <br>
+        <span class="blue">fontSize:</span> Specifies the font size. <br>
+        <span class="blue">fontWeight:</span> Specifies the font weight (e.g., "bold", "normal").
+        </p>
+
+        <p> <span class="yellow">Text Properties:</span> <br>
+            <span class="blue">color:</span> Specifies the text color. <br>
+            <span class="blue">textDecoration:</span> Specifies decorations added to text (e.g., "underline", "line-through"). <br>
+            <span class="blue">textAlign:</span> Specifies the alignment of text (e.g., "left", "center", "right").
+        </p>
+
+        <p>
+            <span class="yellow">Background Properties:</span> <br>
+
+            <span class="blue">backgroundColor:</span> Specifies the background color. <br>
+            <span class="blue">backgroundImage:</span> Specifies the background image. <br>
+            <span class="blue">backgroundPosition:</span> Specifies the position of the background image.
+        </p>
+
+        <p>
+            <span class="yellow">Border Properties:</span> <br>
+
+                <span class="blue">border:</span> Specifies the border properties (e.g., "1px solid black"). <br>
+                <span class="blue">borderColor:</span> Specifies the color of the border. <br>
+                <span class="blue">borderWidth:</span> Specifies the width of the border.
+        </p>
+
+        <p>
+            <span class="yellow">Dimension Properties:</span> <br>
+
+                <span class="blue">width:</span> Specifies the width of the element. <br>
+                <span class="blue">height:</span> Specifies the height of the element. <br>
+                <span class="blue">margin:</span> Specifies the margin around the element.
+        </p>
+
+        <p>
+            <span class="yellow">Padding Properties:</span> <br>
+
+                <span class="blue">padding:</span> Specifies the padding inside the element.
+        </p>
+
+        <p>
+           <span class="yellow"> Positioning Properties:</span> <br>
+
+            <span class="blue">position:</span> Specifies the positioning method (e.g., "absolute", "relative"). <br>
+            top, right, bottom, left: Specifies the position of the element relative to its containing element.
+        </p>
+
+        <p>
+            <span class="yellow">Display Properties:</span> <br>
+
+           <span class="blue"> display:</span> Specifies the display behavior (e.g., "block", "inline", "none").
+        </p>
+
+        <p>
+            <span class="yellow">Overflow Properties:</span> <br>
+
+                <span class="blue">overflow:</span> Specifies how content that overflows the element's box is handled (e.g., "visible", "hidden").
+        </p>
+
+        <p>
+            <span class="yellow">Others:</span> <br>
+
+           <span class="blue"> cursor:</span> Specifies the type of cursor to display when hovering over the element. <br>
+            <span class="blue">zIndex:</span> Specifies the stack order of the element.
+        </p>
+
+    </div>
+
+    <h2>classList</h2>
+    <h3>classList is a property of DOM elements in JavaScript that provides access to a list of classes (CSS classes) applied to the element</h3>
+
+    <p id="paragraph">Here you will see how a classList works!</p>
+
+    <button id="add">Add</button>
+    <button id="removeBtn">Remove</button>
+    <button id="toggle">Toggle</button>
+
+    <div class="blackCoding">
+
+        <p> <span class="lightGreen">//This is CSS, it should be in another file or inside the "style" tags but i will just have it here.</span> </p>
+        <p> <span class="yellow">.highlight</span>{ </p>
+        <p> <span class="lightBlue">background-color</span>: <span class="orange">yellow</span>; </p>
+        <p>}</p>
+
+            <br>
+
+        <p> <span class="darkBlue">const </span> <span class="blue">add</span> = document.getElementById("add") <span class="lightGreen">// here i am getting the id "add" of the button</span> </p>
+        <p> <span class="darkBlue">const </span> <span class="blue">removeBtn</span> = document.getElementById("removeBtn") <span class="lightGreen">// here i am getting the id "remove" of the button also, i used "Btn" since "remove" is a special keyword </span> </p>
+        <p> <span class="darkBlue">const </span> <span class="blue">toggle</span> = document.getElementById("toggle") <span class="lightGreen"></span> </p>
+
+            <br>
+            <br>
+
+            <p> <span class="lightGreen">//What is it doing here, everytime you call the function the classLIst would start, and what it does is to (ADD, REMOVE or TOGGLE) the class "highlight" to the "paragraph", element and in this case, is just a tag "p" with the ID of "paragraph"</span> </p>
+
+        <p> <span class="darkBlue">const </span> = <span class="yellow">clickAdd</span> = () => { </p>
+        <p> <span class="lightBlue">paragraph</span>.classList.add("highlight") </p>
+        <p>}</p>
+
+        <p> <span class="darkBlue">const </span> = <span class="yellow">clickRemove</span> = () => { </p>
+        <p> <span class="lightBlue">paragraph</span>.classList.remove("highlight") </p>
+        <p>}</p>
+    
+        <p> <span class="darkBlue">const </span> = <span class="yellow">clickToggle</span> = () => { </p>
+            <p> <span class="lightBlue">paragraph</span>.classList.toggle("highlight") </p>
+            <p>}</p>
+
+            <br>
+            <br>
+
+        <p> <span class="blue">add</span>.addEventLIstener("click", clickAdd) <span class="lightGreen">//Here i am calling the function "clickAdd" everytime the button "add" is being clicked</span> </p>
+        <p> <span class="blue">removeBtn</span>.addEventLIstener("click", clickRemove) <span class="lightGreen">//Here i am calling the function "clickRemove" everytime the button "remove" is being clicked</span> </p>
+        <p> <span class="blue">toggle</span>.addEventLIstener("click", clickToggle) <span class="lightGreen">//Here i am calling the function "clickToggle" everytime the button "toggle" is being clicked</span> </p>
+    </div>
+
+    <p> <span class="yellow">I have a picture that will expalin the difference between add() and toggle() i have it saved in my phone, april 1st, 2024</span> </p>
+    
+    <h2>getAttribute</h2>
+    <h3>Here you will learn how to use getAttribute()</h3>
+    <p>The getAttribute() method in JavaScript is used to retrieve the value of a specified attribute on an HTML element. It allows you to access any attribute of an HTML element, such as id, class, href, src, data-*, etc.</p>
+    <a id="link" href="https://www.google.co.jp/">Google</a> <p><span class="lightGreen"><!-- if you press google it will send you yo  google, i will be getting the attribute using getAttribute() --></span> </p>
+
+    <div class="blackCoding">
+        <p> <span class="darkBlue">const </span> <span class="blue">link </span> <span class="lightBlue">document</span>.getElementById("link") <span class="lightGreen">//Here i am getting the iD of "link" inside the tag "a"</span> </p>
+        <p> <span class="darkBlue">const </span> <span class="blue">resultLink </span> = link.getAttribute("href") <span class="lightGreen"> // Here i made a new variable so it can store the data, then i vused link, which is the <a> tag with the ID "link" and inside of the getAttribute("href") i put the attribute that i would want</span> </p>
+        <p> <span class="yellow">console</span>.<span class="lightBlue">log</span>(resultLink) <span class="lightGreen">// output, which would be the link.</span>  </p>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+<style>
+    .highlight{
+        background-color: yellow;
+    }
+
+    /* removeEventListener() class */
+
+    .square{
+        width: 100px;
+        height: 100px;
+        background-color: aqua;
+        top: 10px;
+    }
+
+    .newSquare{
+        width: 100px;
+        height: 100px;
+        background-color: rgb(252, 0, 244);
+    }
+
+    /* .squareDos{
+        width: 100px;
+        height: 100px;
+        background-color: rgb(4, 21, 74);
+    }
+
+    .newSquareDos{
+        width: 100px;
+        height: 100px;
+        background-color: rgb(67, 4, 74);
+    } */
+</style>
+
+<script>
+
+// removeEventListener() code will be here
+
+const square = document.getElementById("square")
+const secondSquare = document.getElementById("secondSquare")
+
+const squareChangeColor = () => {
+    square.classList.toggle("newSquare")
+    square.removeEventListener("click", squareChangeColor) // is removing the event listener after toggling the color.
+}
+
+const squareNoChangeColor = () => {
+    secondSquare.classList.toggle("newSquare")
+}
+
+
+square.addEventListener("click", squareChangeColor)
+secondSquare.addEventListener("click", squareNoChangeColor)
+
+//this the code so the "p" can be manipulated 
+
+    const example = document.getElementById("example")
+    const bold = document.getElementById("bold")
+    const blue = document.getElementById("blue")
+    const underline = document.getElementById("underline")
+    const erase = document.getElementById("erase")
+
+
+    const clickBold = () => {
+        example.style.fontWeight = "bold"
+    }
+
+    const clickBlue = () => {
+        example.style.color = "blue"
+    }
+
+    const clickUnderline = () => {
+        example.style.textDecoration = "underline"
+    }
+
+    const clickErase = () => {
+        example.style = ""
+    }
+
+
+bold.addEventListener("click", clickBold);
+blue.addEventListener("click", clickBlue);
+underline.addEventListener("click", clickUnderline);
+erase.addEventListener("click", clickErase)
+
+//Here i will doing the innerHTML example 
+
+const exampleinnerHTML = document.getElementById("exampleinnerHTML");
+const buttoninnerHTML = document.getElementById("buttoninnerHTML");
+
+const workinnerHTML = () => {
+    exampleinnerHTML.innerHTML = "After the button has been clicked This message will appeared!"
+}
+
+
+buttoninnerHTML.addEventListener("click", workinnerHTML)
+
+//classLIst
+
+const paragraph = document.getElementById("paragraph");
+const add = document.getElementById("add");
+const removeBtn = document.getElementById("removeBtn");
+const toggle = document.getElementById("toggle");
+
+
+const clickAdd = () => {
+    paragraph.classList.add("highlight") //agarra la clase highlight
+}
+
+const clickRemove = () => {
+    paragraph.classList.remove("highlight")
+}
+
+const clickToggle = () => {
+    paragraph.classList.toggle("highlight")
+}
+
+add.addEventListener("click",clickAdd);
+removeBtn.addEventListener("click",clickRemove);
+toggle.addEventListener("click", clickToggle)
+
+//getAttribute()
+
+const link = document.getElementById("link") // here i am getting the ID of link.
+const resultLink = link.getAttribute("href") // Here i made a new variable so it can store the data, then i vused link, which is the <a> tag with the ID "link" and inside of the getAttribute("href") i put the attribute that i would want
+
+console.log(resultLink) //output
+
+
+
+
+//Here i will be doing the windows for the object elements
+
+// const lol = document.getElementById("lol")
+// const textContent = document.getElementById("textContent");
+// const innerHTML = document.getElementById("textContent");
+// const style = document.getElementById("style");
+// const classList = document.getElementById("classList");
+// const getAttribute = document.getElementById("getAttribute")
+
+// const clicktextContent = () => {
+//     window.alert("hola")
+    
+// }
+
+// const clickinnerHTML = () => {
+//     window.alert("The innerHTML property in JavaScript is used to get or set the HTML content (including tags and text) of an element. It allows you to dynamically manipulate the content of an element by accessing or modifying its HTML markup.")
+// }
+
+// const clickstyle = () => {
+//     window.alert("2")
+// }
+
+// const clickclassList = () => {
+//     window.alert("3")
+// }
+
+// const clickgetAttribute = () => {
+//     window.alert("4")
+// }
+
+// textContent.addEventListener("click", clicktextContent);
+// innerHTML.addEventListener("click", clickinnerHTML);
+// style.addEventListener("click", clickstyle);
+// classList.addEventListener("click", clickclassList);
+// getAttribute.addEventListener("click", clickgetAttribute);
+</script>
+
+</body>
+</html>

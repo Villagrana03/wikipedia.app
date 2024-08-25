@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/CSS-Files/style.css">
+    <link rel="stylesheet" href="/CSS-Files/codingColors.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+      
+    <div class="navbar">
+        <div class="container-navbar1">
+            <a href="/index.html">Home</a>
+            <a href="">CSS</a>
+            <a href="/HTML/htmlFirst.html">HTML</a>
+        </div>  
+    </div>
+
+    <div>
+        <div class="main-container">
+           
+            <div>
+                <h2>Set</h2>
+                <p></p>
+            </div>
+
+        </div>
+
+
+            <div class="javascript-body">
+               <h3>Set</h3>
+               <p>
+                In Python, sets are used to store multiple items in a single variable. They are one of the built-in data types in Python and have several useful properties and methods. Here are some key points about sets: ,use {} same same as dictionaries</p>
+               <br>
+               <h3>Why would we use sets?</h3>
+               <p>Sets are particularly useful when you need to eliminate duplicate entries from a collection or when you need to perform mathematical set operations like union, intersection, difference, and symmetric difference.</p>
+              
+                <div class="blackCoding">
+                    <p><span class="blue">Unordered:</span> set does not mantain order of the data</p>
+                    <p><span class="blue">Unindexed:</span> Items in a set do not have an index, so you cannot access elements by an index.</p>
+                    <p><span class="blue">Unique Elements:</span> A set cannot contain duplicate elements.</p>
+                    <p><span class="blue">Mutable:</span> Sets are mutable, meaning you can add and remove items from a set.</p>
+                </div>
+
+            </div>
+
+             <div class="CreatingSets">
+                <h3>Creating Sets</h3>
+                <p>You can create a set using curly braces {} or the set() constructor:</p>
+
+                <div class="blackCoding">
+                    <p>
+                        <span class="lightGreen"># Using curly braces</span> <br>
+                        <span class="lightBlue">my_set </span> = {1, 2, 3, 4} <br>
+                        <br>
+                        <span class="lightGreen"># Using the set() constructor</span> <br>
+                        <span class="lightBlue">my_set </span> = set([1, 2, 3, 4])
+                    </p>
+                </div>
+
+             </div>   
+
+            <h2>Set methods</h2>
+            <p>Here i will show set methods</p>
+
+            <h4>add()</h4>
+            <p>add a value to the set </p>
+            
+            <div class="blackCoding">
+               <p>
+                <span class="lightBlue">conjuntosA</span> = {1, 3, 5, 7, 8, 3, 3, 1} <br>
+                <span class="lightBlue">conjuntosB</span> = {2, 4, 5, 6, 8, 2} <br>
+                <br>
+                <span class="lightBlue">conjuntosA</span>.add(9) <span class="yellow">Output</span> -> {1, 3, 5, 7, 8, 9} <span class="lightGreen"># Remember that with sets all the duplicates are being removed.</span>
+               </p>
+            </div>
+
+            <h4>remove()</h4>
+            <p>remove a value of the set, Raises a KeyError if the element is not present. </p>
+            
+            <div class="blackCoding">
+               <p>
+                <span class="lightBlue">conjuntosA</span> = {1, 2, 3} <br>
+                <span class="lightBlue">conjuntosB</span> = {3, 4, 5} <br>
+                <br>
+                <span class="lightBlue">conjuntosA</span>.remove(2) <span class="yellow">Output</span> -> {1, 3} <span class="lightGreen"># Remember that with sets all the duplicates are being removed.</span>
+               </p>
+            </div>
+
+            <h4>clear()</h4>
+            <p>Removes all elements from the set. </p>
+            
+            <div class="blackCoding">
+               <p>
+                <span class="lightBlue">conjuntosA</span> = {1, 2, 3} <br>
+                <span class="lightBlue">conjuntosB</span> = {3, 4, 5} <br>
+                <br>
+                <span class="lightBlue">conjuntosA</span>.clear() <span class="yellow">Output</span> -> {} <span class="lightGreen"></span>
+               </p>
+            </div>
+
+            <h4>Union()</h4>
+            <p>Join both sets</p>
+
+            <div class="blackCoding">
+               <p>
+                <span class="lightBlue">conjuntosA</span> = {1, 3, 5, 7, 8, 3, 3, 1} <br>
+                <span class="lightBlue">conjuntosB</span> = {2, 4, 5, 6, 8, 2} <br>
+                <br>
+                conjuntoC = conjuntosA.union(conjuntosB) <br>
+                print(conjuntoC) <span class="yellow">Output</span> -> {1, 2, 3, 4, 5, 6, 7, 8} <span class="lightGreen">#Union joins both sets, removing all the duplicates and ordering in ascending order.</span>
+               </p>
+            </div>
+
+            <h4>intersection()</h4>
+            <p>Gives you the values are in both set</p>
+
+            <div class="blackCoding">
+                <p>
+                    <span class="lightBlue">conjuntosA</span> = {1, 3, 5, 7, 8, 3, 3, 1} <br>
+                    <span class="lightBlue">conjuntosB</span> = {2, 4, 5, 6, 8, 2} <br>
+                    <br>
+                    conjuntoC = conjuntosA.intersection(conjuntosB) <br>
+                    print( <span class="lightBlue">conjuntoC</span>) <span class="yellow">Output</span> => {5, 8} <span class="lightGreen"># give the number that has both set</span>    
+                </p>
+            </div>
+
+            <h4>difference()</h4>
+            <p>difference of the set</p>
+
+            <div class="blackCoding">
+                <p>
+                    <span class="lightBlue">conjuntosA</span> = {1, 2, 3} <br>
+                    <span class="lightBlue">conjuntosB</span> = {3, 4, 5} <br>
+                    <br>
+                    <br>
+                    conjuntoC = conjuntosA.difference(conjuntosB) <br>
+                    print( <span class="lightBlue">conjuntoC</span>) <span class="yellow">Output</span> => {1, 2} <span class="lightGreen"># give the number unique in ConjuntoSA (numbers that are not shared in the other set)</span>
+                    <br>
+                    <br>
+                    conjuntoC = conjuntosB.difference(conjuntosA) <br>
+                    print( <span class="lightBlue">conjuntoC</span>) <span class="yellow">Output</span> => {4, 5} <span class="lightGreen"># give the number unique in ConjuntosB (numbers that are not shared in the other set)</span>
+                
+                </p>
+            </div>
+
+            
+    </div>
+</body>
+</html>
+
+<!--
+<div class="blackCoding">
+                <span class="lightBlue">conjuntosA</span> = {1, 3, 5, 7, 8, 3, 3, 1} <br>
+                <span class="lightBlue">conjuntosB</span> = {2, 4, 5, 6, 8, 2} <br>
+            </div>
+
+-->

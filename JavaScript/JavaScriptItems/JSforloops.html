@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/CSS-Files/style.css">
+    <link rel="stylesheet" href="/CSS-Files/codingColors.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+      <!--Navbar-->
+    <div class="navbar">
+        <div class="container-navbar1">
+            <a href="/index.html">Home</a>
+            <a href="">CSS</a>
+            <a href="/HTML/htmlFirst.html">HTML</a>
+        </div>  
+    </div>
+
+
+    <div>
+        <div class="JSfiles-header">
+            <h2 class="JSfiles-header">For Loop</h2>
+            <p>A for loop is a programming construct used for repetitive execution of a block of code.</p>
+        </div>
+
+            <div class="javascript-body">
+                <div class="blackCoding">
+    
+                    <div class="blockLine">
+                        <div class="margin-top">
+                             <p style=" width: 100%;" ><span class="purple">for</span>( <span class="green">let i = 0</span>; <span class="blue">i &lt; array.length</span>; <span class="pink">i++</span>)</p>
+                        </div>
+                    </div>  
+    
+                    <div class="blockLine">
+                        <p style=" width: 100%;"><span class="purple">for</span>(<span class="green">Initialization</span>; <span class="blue">Condition</span>; <span class="pink">Iteration</span>)</p>
+                    </div>
+    
+                </div>
+    
+                <h3>For loop Parameters</h3>
+                    <p>the for loop takes 3 parameters, which are for(initialization; condition; iteration)</p>
+    
+                        <ol>
+                            <li><span class="boldClass">Initialization:</span> The initialization parameter is executed before the loop begins. It is used to initialize the loop variable or any other necessary variables. This parameter typically assigns an initial value to the loop variable.</li>
+                            <li><span class="boldClass">Condition:</span> The condition parameter is evaluated before each iteration of the loop. If the condition is true, the loop continues executing. If the condition is false, the loop terminates</li>
+                            <li><span class="boldClass">Iteration:</span> The iteration parameter is executed at the end of each iteration, just before evaluating the condition again. It typically modifies the loop variable</li>
+                        </ol>
+
+                        <h3>For Each</h3>
+                    <h2 class="JSfiles-header"> array.forEach()</h2>
+                        <div class="blackCoding">
+                            <p>const numbers = [1,2,3,4,5]</p>
+                            <span class="lightGreen">// numbers it is what we want to loop over in this case the array, then add the "."</span>
+                            <p>numbers<span class="pink">.</span>forEach <span class="blue">(</span><span class="lightBlue">(</span> n, index<span class="lightBlue">)</span> => <span class="yellow">{</span> <br>
+                                console.log(`Element at index ${index} is: ${n}`) <br>
+                                <span class="yellow">}</span><span class="blue">)</span>
+                            </p> 
+        
+                            <p><span class="yellow">Element at index 1 is: 2 <br>
+                                Element at index 2 is: 3 <br>
+                                Element at index 3 is: 4 <br>
+                                Element at index 4 is: 5</span></p>
+                        </div>
+                        <p>method when you want to iterate over each element of an array and perform an action or operation on each element. Here are a few scenarios where</p>
+        
+                        <h3>For In</h3>
+                        <p>The for...in statement iterates over all enumerable string properties of an object (ignoring properties keyed by symbols), including inherited enumerable properties.</p>
+      
+                        <div class="blackCoding">
+                            <p><span class="lightGreen">// i have a great example inside "script" </span></p>
+                            <p><span class="darkBlue">const</span> <span class="yellow">person</span> = { <br>
+                                name: "Michelle", <br>
+                                age: 19, <br>
+                                city: 'Tijuana', <br>
+                                food: "Enchiladas"
+                            };
+                            </p>
+
+                            <p><span class="darkBlue">for</span> (let key in person) { <span class="lightGreen">// This loop will only log properties directly defined on the person object and not properties inherited from its prototype chain.</span> <br>
+                                console.log(key + ': ' + person[key]); <br>
+                            }</p>
+
+                            <p><span class="yellow"> output // name: Michelle
+                                age: 19
+                                city: tijuana
+                                food: enchiladas</span></p>
+
+                                <p><span class="lightGreen">// i have a great example inside "script" </span></p>
+                                <p><span class="darkBlue">const</span> <span class="yellow">person</span> = { <br>
+                                    name: "Michelle", <br>
+                                    age: 19, <br>
+                                    city: 'Tijuana', <br>
+                                    food: "Enchiladas"
+                                };
+                                </p>
+    
+                                <p><span class="darkBlue">for</span> (let key in person) { <span class="lightGreen">// This loop will only log properties directly defined on the person object and not properties inherited from its prototype chain.</span> <br>
+                                    console.log(key); <br>
+                                }</p>
+    
+                                <span class="yellow"> output // name
+                                    age
+                                    city
+                                    food</span>
+                        </div>
+
+                        <h3>for Of</h3>
+                        <p>
+                            The for...of loop in JavaScript is used to iterate over iterable objects such as arrays, strings, sets, maps, and other data structures that implement the iterable protocol. It provides a simpler and more concise syntax compared to traditional for loops or for...in loops, especially when working with arrays.</p>
+
+                        <div class="blackCoding">
+
+                            <span class="lightGreen">// in the for of, i gotta use 2 parameters, if i only use 1, the result would be "4" in this case. If a instead of returing value, i would return index (first parameter) it would only return the index of each item, like in the second example </span>
+                            <p><span class="darkBlue">const</span> <span class="yellow">array</span> = ['hello', 'world', 'this', 'is', 'great']; <br>
+                                <span class="darkBlue">let</span> result = array.entries() <span class="lightGreen"> // Using entries() to iterate through the array</span> <br>
+                                <spaan class="darkBlue">const</spaan> prueba = () => { <br>
+                                    let resultado = "" <br>
+                                    <span class="blue">for</span>(const [index, value] of <span class="lightBlue">result</span>){ <span class="lightGreen"> // Using a for...of loop to iterate through the iterator</span> <br>
+                                       <span class="lightBlue">resultado</span> += value + " " <br>
+                                    } <br>
+                                    <span class="pink">return</span> resultado <br>
+                                } <br>
+                                
+                                console.log(prueba()) <br>
+
+                                <span class="lightGreen">// second example</span>
+
+                                <p><span class="yellow"> output // hello world this is great </span></p>
+
+
+                                <p><span class="darkBlue">const</span> <span class="yellow">array</span> = ['hello', 'world', 'this', 'is', 'great']; <br>
+                                <span class="darkBlue">let</span> result = array.entries() <span class="lightGreen"> // Using entries() to iterate through the array</span> <br>
+                                <spaan class="darkBlue">const</spaan> prueba = () => { <br>
+                                    let resultado = "" <br>
+                                    <span class="blue">for</span>(const [index, value] of <span class="lightBlue">result</span>){ <span class="lightGreen"> // Using a for...of loop to iterate through the iterator</span> <br>
+                                       <span class="lightBlue">resultado</span> += index <br>
+                                    } <br>
+                                    <span class="pink">return</span> resultado <br>
+                                } <br>
+                                
+                                console.log(prueba()) <br>
+                                <p><span class="yellow"> output // 01234 </span></p>
+                                </p>
+                        </div>
+      <script>
+// for in is more common used in objects, but also is used arrays.
+        //i must type this code using .blackCoding      
+            const object = { a: 1, b: 2, c: 3 };
+
+            //In this example, property is a variable that represents each key (or property name) in the object as the loop iterates over the properties of the object.
+for (const property in object) {
+  console.log(`${property}: ${object[property]}`); //this syntax is weird 
+}
+
+// Expected output:
+// "a: 1"
+// "b: 2"
+// "c: 3"
+
+
+
+
+let spaceship = {
+    crew: {
+        //Here i am getting for(let example in spaceship.crew) BECAUSE there are many people and each of those people is being indetified by their job title, 
+
+        //In JavaScript, spaceship.crew is an object, and objects don't have a name property directly in this case. Instead, spaceship.crew itself is an object with its own properties, such as "captain", "chief officer", "medic", and "translator", each of which is also an object containing properties like name, degree, and methods.
+
+//When you write spaceship.crew.name, JavaScript tries to find a property named name directly on the spaceship.crew object. However, since there is no name property directly on spaceship.crew, you will get undefined.
+    captain: { 
+        name: 'Lily', 
+        degree: 'Computer Engineering', 
+        cheerTeam() { console.log('You got this!') } 
+        },
+    'chief officer': { 
+        name: 'Dan', 
+        degree: 'Aerospace Engineering', 
+        agree() { console.log('I agree, captain!') } 
+        },
+    medic: { 
+        name: 'Clementine', 
+        degree: 'Physics', 
+        announce() { console.log(`Jets on!`) } },
+    translator: {
+        name: 'Shauna', 
+        degree: 'Conservation Science', 
+        powerFuel() { console.log('The tank is full!') } 
+        }
+    }
+}; 
+
+// in this example, the "example" is looping troguht each value of spaceship.crew , which is the job titles "looping through the key values, not the values inside of them"
+// what are we doing here is looping through everyvalue inside  of spaceship.crew that why for in is for
+for(let example in spaceship.crew){
+  console.log(`${example}: ${spaceship.crew[example].name}`);
+  
+}
+
+
+        </script>
+            </div>
+            </div>
+    </div>
+</body>
+</html>

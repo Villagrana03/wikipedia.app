@@ -1,0 +1,174 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/CSS-Files/style.css">
+    <link rel="stylesheet" href="/CSS-Files/codingColors.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+      
+    <div class="navbar">
+        <div class="container-navbar1">
+            <a href="/index.html">Home</a>
+            <a href="">CSS</a>
+            <a href="/HTML/htmlFirst.html">HTML</a>
+        </div>  
+    </div>
+
+    <div>
+        <div class="main-container">
+           
+            <div>
+                <h2>For loop</h2>
+                <p>In Python, the for loop is used to iterate over a sequence (such as a list, tuple, dictionary, set, or string) or other iterable objects. This allows you to execute a block of code multiple times, once for each item in the sequence.</p>
+            </div>
+
+            
+
+        </div>
+
+
+            <div class="javascript-body">
+                <!-- <h1>keys, items, values</h1> -->
+                <h3>Range</h3>
+                <p>Using range() in a for loop is typically useful when you need to iterate over a sequence of numbers or when you need to perform a fixed number of iterations. Here are some scenarios and reasons for using range() versus iterating directly over a collection:</p>
+                
+                <div class="blackCoding">
+                    <p>
+                        <span class="blue">Blue</span>: numbers of iterations<br>
+                        <span class="red">Red</span>: where the iteration will start<br>
+                        <span class="pink">pink</span>: step value specified by the third argument.                  <br>
+                        <br>
+
+                        <span class="lightGreen"># using for loop with 1 </span> <br>
+                        <span class="purple">for</span> i <span class="purple">in</span> <span class="green">range</span>(<span class="blue">4</span>)<span class="yellow">:</span> <br>
+                        <br>
+                        <span class="lightGreen"># using for loop with 2 </span> <br>
+                        <!-- <span class="black">---</span> <span class="yellow">print</span>("<span class="orange"></span>")  -->
+                        <span class="purple">for</span> i <span class="purple">in</span> <span class="green">range</span>(<span class="red">2</span>,<span class="blue">4</span>)<span class="yellow">:</span> <br>
+                        <br>
+                        <span class="lightGreen"># using for loop with 3 </span> <br>
+                        <span class="purple">for</span> i <span class="purple">in</span> <span class="green">range</span>(<span class="red">2</span>,<span class="blue">11</span>,<span class="pink">2</span>)<span class="yellow">:</span> <br>
+                    </p>
+                </div>
+
+                <div class="blackCoding">
+                    <p>
+                        <span class="lightGreen"># using for loop with 1 arguments</span> <br>
+                        <span class="purple">for</span> i <span class="purple">in</span> <span class="green">range</span>(<span class="blue">4</span>)<span class="yellow">:</span> <br>
+                        <span class="black">---</span> <span class="yellow">print</span>("<span class="orange">i will be printed 4 times!</span>") 
+                        <br>
+                        <br>
+                        <span class="yellow">Output</span> ->  <br>
+                        i will be printed 4 times! <br>
+                        i will be printed 4 times! <br>
+                        i will be printed 4 times! <br>
+                        i will be printed 4 times! <br>
+                        <br>
+                        <br>
+                        <span class="lightGreen"># using for loop with 2 arguments</span> <br>
+                        <span class="purple">for</span> i <span class="purple">in</span> <span class="green">range</span>(<span class="red">2</span>,<span class="blue">4</span>)<span class="yellow">:</span> <br>
+                        <span class="black">---</span> <span class="yellow">print</span>("<span class="orange">i will be printed 2 times!</span>") 
+                        <br>
+                        <br>
+                        <span class="yellow">Output</span> ->  <br>
+                        i will be printed 2 times! <br>
+                        i will be printed 2 times! <br>
+                        <br>
+                        <span class="lightGreen"># using for loop with 3 arguments</span> <br>
+                        <span class="purple">for</span> i <span class="purple">in</span> <span class="green">range</span>(<span class="red">2</span>,<span class="blue">11</span>,<span class="pink">2</span>)<span class="yellow">:</span> <br>
+                        <span class="black">---</span> <span class="yellow">print</span>("<span class="orange">i will be printed 5 times!</span>")  <br>
+                        <br>
+                        <span class="yellow">Output</span> ->  <br>
+                        i will be printed 5 times! <br>
+                        i will be printed 5 times! <br>
+                        i will be printed 5 times! <br>
+                        i will be printed 5 times! <br>
+                        i will be printed 5 times! <br>
+                       <br>
+                       <br>
+                       <span class="lightGreen"># Here i will be looping through the len of the list using range.</span> <br>
+                       <span class="lightBlue">names</span> = [<span class="orange">"Mango", "azul", "Mich"</span>] <br>
+                        <br>
+                        <span class="purple">for</span> i in <span class="green">range</span>(<span class="yellow">len</span>(names)): <br>
+                        <span class="black">---</span>    <span class="yellow">print</span>(f"{i} and {names[i]}") <br>
+                        <br>
+                        <span class="yellow">Output</span> -> <br>
+                        0 and Mango <br>
+                        1 and azul <br>
+                        2 and Mich
+                        <br>
+                        <br>
+                        <span class="lightGreen">#Alternatively, you can use a standard for loop with the range() function to get both the index and value:</span> <br>
+                        my_list = ['apple', 'banana', 'cherry'] <br>
+                        <br>
+                        for index in range(len(my_list)): <br>
+                            print(f"Index: {index}, Value: {my_list[index]}") <br>
+
+              
+                    </p>    
+                </div>
+                <h3>enumerate()</h3>
+                <p></p>
+
+                <div class="blackCoding">
+                    <p>
+                        <span class="lightBlue">datos</span> = [<span class="orange">"Mich"</span>, 19,<span class="orange">"F"</span> ,664 ,<span class="orange">"O-"</span>, 3] <br>
+                        <br>
+                        <span class="pink">for</span> index, value <span class="pink">in</span> <span class="green">enumerate</span>(<span class="lightBlue">datos</span>): <br>
+                        <span class="black">---</span> <span class="yellow">print</span>(<span class="lightBlue">index</span>, <span class="lightBlue">value</span>)
+                        <br>
+                        <br>
+                        <span class="yellow">Output</span> ->  <br>
+                        <br>
+
+                        i represent the index! `0`, and i am each value of the list `Mich` <br>
+                        i represent the index! `1`, and i am each value of the list `19` <br>
+                        i represent the index! `2`, and i am each value of the list `F` <br>
+                        i represent the index! `3`, and i am each value of the list `664` <br>
+                        i represent the index! `4`, and i am each value of the list `O-` <br>
+                        i represent the index! `5`, and i am each value of the list `3` <br>
+                    </p>
+                </div>
+            </div>
+
+            <h3>zip()</h3>
+            <p>The zip function in Python is used to combine multiple iterables (such as lists, tuples, etc.) into a single iterable of tuples. Each tuple contains elements from the input iterables that are at the same position.</p> 
+            <p>if a list has more values than the other, for example, first list = 4 values and the other list2 = 3 values, when we conbine those 2 list it will be with 3 values </p>
+            <div class="blackCoding">
+                <p>
+                    <span class="lightBlue">list1</span> = [1, 2, 3] <br>       
+                    <span class="lightBluw">list2</span> = ["a", "b", "c"] <br>
+                        <br>
+                    <span class="pink">for</span> <span class="lightBlue">one</span>, <span class="lightBlue">two</span> in <span class="green">zip</span>(<span class="lightBlue">list1</span>, <span class="lightBlue">list2</span>): <br>
+                        <span class="lightBlue">print</span>(one, two) <br>
+                        <span class="yellow">Output</span> -> <br>
+                        <br>
+                        1 a <br>
+                        2 b <br>
+                        3 c
+                </p>
+
+               
+            </div>
+
+            <p>We can also create Diccionaries!</p>
+            <div class="blackCoding">
+                <p>
+                    keys = ['name', 'age', 'city'] <br> 
+                    values = ['Alice', 30, 'New York'] <br>
+                    <br>
+                    my_dict = dict(zip(keys, values)) <br>
+                    print(my_dict) <span class="yellow">Output</span>-> {'name': 'Alice', 'age': 30, 'city': 'New York'}
+                    <br>
+
+                </p>
+            </div>
+    </div>
+</body>
+</html>

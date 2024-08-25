@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/CSS-Files/style.css">
+    <link rel="stylesheet" href="/CSS-Files/codingColors.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+      
+    <div class="navbar">
+        <div class="container-navbar1">
+            <a href="/index.html">Home</a>
+            <a href="">CSS</a>
+            <a href="/HTML/htmlFirst.html">HTML</a>
+        </div>  
+    </div>
+
+    <div>
+        <div class="main-container">
+           
+            <div>
+                <h2>OOP Programming</h2>
+                <p>Python classes are a way to bundle data and functionality together. Creating a new class creates a new type of object, allowing new instances of that type to be made. Each instance can have attributes attached to it for maintaining its state. Python classes provide a means of bundling data and functionality together</p>
+            </div>
+
+        </div>
+
+
+            <div class="javascript-body">
+               <h3>Basic concepts Concepts of OOP</h3>
+               <p>A class is a blueprint for creating objects (a particular data structure). A class defines a set of attributes and methods that the created objects will have.</p>
+             
+               <div class="blackCoding">
+                <p> <span class="darkBlue">Class Attribute:</span> A variable that is shared among all instances of a class. <br>
+                    <span class="darkBlue">Instance Attribute:</span> A variable that is unique to each instance of a class. <br>
+                    <span class="darkBlue">Instance Method:</span> A function that operates on an instance of a class and can access instance attributes. <br> </p>
+               </div>
+
+               <div class="blackCoding">
+                <p>
+                    <span class="lightGreen"># A class is defined using the class keyword.</span>: <br>
+                    <span class="darkBlue">class</span> <span class="aqua">Animal</span>: <br>
+                    <br>
+                    <span class="lightGreen"># Class attribute</span> <br>
+                    <span class="lightBlue">alive</span> = <span class="darkBlue">True</span> <br>
+                    <br>
+                    <span class="lightGreen"> # Initializer / Instance attributes</span> <br>
+                    <span class="black">---</span><span class="darkBlue">def</span> <span class="yellow">__init__</span>(self, name, age): <br>
+                    <span class="black">------</span>  self.value = value <br>
+                    <span class="black">------</span>  self.name = name <br>
+                    <span class="black">------</span>  self.age = age <br>
+                    <br>
+                    <br>
+                    <span class="lightGreen"># Instance method</span> <br>
+                    <span class="black">---</span><span class="darkBlue">def</span> <span class="yellow">presentation</span>(self): <br>
+                    <span class="black">------</span> <span class="pink">return</span> (f"Hello my name is {self.name} and i am {self.age} old!") <br>
+                    <br>
+                    <!-- <span class="black">---</span><span class="darkBlue">def</span> <span class="yellow">__str__</span>(self): <span class="lightGreen"># I got a method with __str__ because if i dont have one i will get where the object is at, at the console.</span> <br>
+                    <span class="black">------</span> <span class="pink">return</span> (f"Hello my name is {self.name}") <br> -->
+                    <br>
+                    <br>
+                    <span class="lightGreen">#Creating Objects</span> <br>
+                    <span class="lightBlue">mango</span> = <span class="aqua">Animal</span>("Mango", 4) <br> 
+                    <br>
+                    <span class="lightGreen"># Creating instances of the Dog class</span> <br>            
+                    <span class="yellow">print</span>(<span class="lightBlue">mango</span>) <span class="yellow">Output</span> -> __main__.Animal object at 0x0000022BEE4660C0> <br>   
+                    <br>
+                    <span class="lightGreen"># Accessing class attribute</span> <br>
+                    <span class="yellow">print</span>(<span class="aqua">Animal</span>.alive) <span class="yellow">Output</span> -> True <br> 
+                    <span class="yellow">print</span>(<span class="lightBlue">mango</span>.<span class="lightBlue">alive</span>) <span class="yellow">Output</span>  -> True <br>                                                                 
+                    <br>                                                                
+                    <span class="lightGreen"># Accessing instance attributes</span> <br>
+                    <span class="yellow">print</span>(<span class="lightBlue">mango</span>.name) <span class="yellow">Output</span> -> ('Mango') <br>
+                    <br>                                                            
+                    <span class="lightGreen"># Calling instance methods</span> <br>
+                    <span class="yellow">print</span>(<span class="lightBlue">mango</span>.presentation()) <span class="yellow">Output</span> -> Hello my name is ('Mango',) and i am 4 old! <br>
+
+                </p>
+               </div>
+         </div>
+
+         
+         <h3>Inheritance in Python</h3>
+         <p>Inheritance is a feature in object-oriented programming that allows a class (called a child or subclass) to inherit attributes and methods from another class (called a parent or superclass). This promotes code reuse and can create a hierarchical relationship between classes.</p>
+
+            <div class="blackCoding">
+                <p>
+                    <span class="darkGreen">Key Points</span> <br>
+                    <br>
+                    <span class="darkBlue">Parent Class (SuperClass):</span> The class whose attributes and methods are inherited. <br>
+                    <span class="darkBlue">Child Class (SubClass):</span> The class that inherits from the parent class. <br>
+                    <span class="darkBlue">super():</span> A function used to call methods from the parent class. <br>
+                </p>
+            </div>
+
+            <div class="blackCoding">
+                <p>
+                    <span class="darkBlue">class</span> <span class="aqua">Cat</span>(<span class="aqua">Animal</span>): <br>
+                    <br>
+                    <span class="lightGreen">#The parent class have name and age instance attributes, but Cat has additional attributes, such as "mustache"</span> <br>
+                    <span class="darkBlue">def</span> __init__(self, name, age, mustache): <br>                                                                                                                                                                 
+                    <span class="black">---</span>    <span class="lightGreen">#The super() method is used to bring all the instance attributes from the parent to the child, and then we proceed to create unique attributes for the child</span> <br>
+                    <span class="black">---</span>     <span class="aqua">super</span>().<span class="yellow">__init__</span>(name, age) <br>                                             
+                    <span class="black">---</span>     self.mustache = mustache <span class="lightGreen">#in this line we created Cat attribute.</span> <br>
+                        <br>
+                        <br>
+                    <span class="darkBlue">def</span> <span class="yellow">mustacheCount</span>(self): <br>
+                        <span class="pink">return</span> (f"Since i am a cat i have {self.mustache} mustaches!")
+                    <br>
+                    <br>
+                <span class="lightGreen"># Creating Objects</span> <br>
+                <span class="lightBlue">azul</span> = <span class="aqua">Cat</span>("Azul", 4, 13)
+
+                #calling Cat method
+                <span class="yellow">print</span>(<span class="lightBlue">azul</span>.<span class="yellow">mustacheCount</span>())
+                </p>
+            </div>
+    </div>
+
+    <h3>Without super()</h3>
+    <p>If you don't use super(), you would have to manually set the name attribute in the child class:</p>
+    <div class="blackCoding">
+        <p>
+            class Dog(Animal): <br>                 
+            <span class="black">---</span>    def __init__(self, name, breed): <br>
+            <span class="black">-------</span> <span class="lightGreen"># Manually set the name attribute (duplicating the parent's logic)</span> <br>
+            <span class="black">-------</span>       self.name = name <br>
+            <span class="black">-------</span>        self.breed = breed <br>
+        </p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,33 @@
+body{
+    background-color: azure;
+}
+
+/*Header*/
+.header{
+    display: flex;
+    justify-content: center;
+}
+.title{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/*Body*/
+
+.pageBody{
+    display: flex;
+    justify-content: center;
+}
+
+.userInput{
+    height: 50px;
+    width: 300px;
+    /* background-color: aqua; */
+}
+
+.toDoList{
+    height: 100px;
+    width: 300px;
+    background-color: rgb(255, 216, 133);
+    border: solid;
+    border-radius: 3px black;
+}

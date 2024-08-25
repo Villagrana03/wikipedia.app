@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/CSS-Files/style.css">
+    <link rel="stylesheet" href="/CSS-Files/codingColors.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+      
+    <div class="navbar">
+        <div class="container-navbar1">
+            <a href="/index.html">Home</a>
+            <a href="">CSS</a>
+            <a href="/HTML/htmlFirst.html">HTML</a>
+        </div>  
+    </div>
+
+    <div>
+        <div class="main-container">
+           
+            <div>
+                <h2>list comprehension </h2>
+                <p>A list comprehension in Python is a concise way to create lists. It allows you to generate lists in a single line of code, often making your code more readable and expressive. List comprehensions provide a syntactic construct for creating lists based on existing lists or iterables.</p>
+            </div>
+
+
+        </div>
+
+            <p>In this example we will run a loop from 1 to 10 </p>
+            <div class="javascript-body">
+               <div class="blackCoding">
+                <p>
+                    <span class="green">expression</span>: The value or operation to apply to each item. <br>
+                    <span class="orange">item</span>: The variable representing each element in the iterable. <br>
+                    <span class="blue">iterable</span>: Any iterable object (like a list, tuple, string, etc.). <br>
+                    <span class="red">condition</span> (optional): A conditional statement that filters items from the iterable. <br>
+                    <br>
+                    <br>
+                    <!-- <span class="lightBlue">datos</span> = [<span class="orange">"Mich"</span>, 19,<span class="orange">"F"</span> ,664 ,<span class="orange">"O-"</span>, 3] -->
+                    <span class="lightBlue">example</span> = [<span class="green">x**2</span> <span class="blue">for <span class="orange">x</span> in [1,2,3,4,5,6,7,8,9,10]</span> <span class="red">if x%2==0</span> ] <br>
+                    <br>
+                    print(<span class="lightBlue">example</span>) <span class="yellow">Output</span> -> [4, 16, 36, 64, 100] <span class="lightGreen">#we multiplied each number by its squared and then we filtered, ib they are even numbers it will be printed</span>
+                    <br>
+                    <br>
+                    <span class="purple">NEED TO FIX THE COLORS ON this example</span> <br>
+                    <span class="lightGreen">#aqui voy a agarrar letra inicial</span> <br>
+                    names = ["Mango", "Azul", "Rene", "Mich"] <br>
+                    letral_inicial = [nombre[0] for nombre in names] <span class="lightGreen">#nombre[0] iria indetizado dentro dce un for lop</span> <br>
+                    print(letral_inicial)
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <span class="lightGreen">#Here i going to get pair numbers</span>
+                    <span class="lightBlue">numeros_pares</span> = [<span class="lightBlue">i</span> for <span class="lightBlue">i</span> <span class="purple">in</span> <span class="green">range</span>(1,15) <span class="purple">if</span> <span class="lightBlue">i</span>%2==0] <br>
+                    <span class="black">---</span> <span class="lightBlue">print</span>(<span class="lightBlue">numeros_pares</span>) <span class="yellow">Output</span> -> 
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <span class="lightGreen">#Ejemplo comprension de lista</span> <br>
+                    <span class="lightBlue">colores</span> ={"azul", "rojo", "verde", "cafe"} <br>
+                    <span class="lightBlue">names</span> = ["Mango", "Azul", "Rene", "Mich"] <br>
+                    <br>
+                    <span class="lightBlue">diccionario</span> = {<span class="lightBlue">llave</span>:<span class="lightBlue">valor</span> for (<span class="lightBlue">llave</span>, <span class="lightBlue">llave</span>) in zip(<span class="lightBlue">colores</span>, <span class="lightBlue">names</span>)} <br>
+                    <span class="yellow">print</span>(<span class="lightBlue">diccionario</span>)
+
+                </p>
+               </div>
+            </div>
+    </div>
+</body>
+</html>

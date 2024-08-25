@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/CSS-Files/style.css">
+    <link rel="stylesheet" href="/CSS-Files/codingColors.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+      
+    <div class="navbar">
+        <div class="container-navbar1">
+            <a href="/index.html">Home</a>
+            <a href="">CSS</a>
+            <a href="/HTML/htmlFirst.html">HTML</a>
+        </div>  
+    </div>
+
+    <div>
+        <div class="main-container">
+           
+            <div>
+                <h2></h2>
+                <p></p>
+            </div>
+
+            <div class="main-content">
+
+            </div>
+
+        </div>
+
+
+            <div class="body">
+               <div class="kyu5">
+                <h2>Moving Zeros To The End</h2>
+                <p>Write an algorithm that takes an array and moves all of the zeros to the end, preserving the order of the other elements.</p>
+
+                <div class="blackCoding">
+                    const numbers = [4,3,0,9,6,0,3,0,1] <br>
+<br>
+let numbersEntries = numbers.entries(); <br>
+<br>
+function add(){ <br>
+    const firstArray = []; <br>
+    const secondArray = []; <br>
+    let result  <br>
+    // let result = "" <br>
+    for(const [index, value] of numbersEntries){  <br>
+        if(value !== 0){  <br>
+            firstArray.push(value) <br>
+        }else{ <br>
+            secondArray.push(value) <br>
+        } <br>
+    } <br>
+    result = firstArray.concat(secondArray) <br>
+    return result <br>
+     <br>
+} <br>
+ <br>
+console.log(add())
+                </div>
+
+
+               </div>
+            </div>
+    </div>
+</body>
+</html>

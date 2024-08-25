@@ -1,0 +1,26 @@
+.dad{
+    display: flex;
+    justify-content: center;
+}
+
+.main-container{
+    top: 20px;
+    display: flex;
+    justify-content: center;
+    width: 500px;
+    height: 300px;
+    background-color: rgb(103, 156, 156);
+    border: 5px;
+    border-color:black;
+}
+
+.form{
+
+}
+
+.form input{
+    display: grid;
+    grid-template-columns: 1fr;
+    height: 10px;
+    width: 300px;
+}
