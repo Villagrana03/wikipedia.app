@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/CSS-Files/style.css">
+    <link rel="stylesheet" href="/CSS-Files/codingColors.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+      
+    <div class="navbar">
+        <div class="container-navbar1">
+            <a href="/index.html">Home</a>
+            <a href="">CSS</a>
+            <a href="/HTML/htmlFirst.html">HTML</a>
+        </div>  
+    </div>
+
+    <div>
+        <div class="main-container">
+           
+            <div>
+                <h2>Reference and Pointers</h2>
+                <h5>Learn how to manipulate memory in C++.</h5>
+                <p>When a variable is declared, a free memory address is set aside for the purpose of storing the value inside that variable. C++ provides two powerful features that allow programmers to directly manipulate memory:</p>
+
+                <ul>
+                    <li>References</li>
+                    <li>Pointers</li>
+                </ul>
+            </div>
+
+        
+        </div>
+
+
+            <div class="javascript-body">
+               
+                <p>Memory manipulation has many use cases in C++. For example, it is used for dynamic memory allocation and advanced data structures such as linked lists and trees.</p>
+
+                <h3>Reference</h3>
+                <p>In C++, a reference variable is an alias to an existing variable. It is declared by using an ampersand & between the reference type and the variable name:</p>
+
+                <div class="blackCoding">
+                    <p>
+                        <span class="lightGreen">//The score variable is an alias to the exam_grade variable. When the value of score is changed, the value of exam_grade will also change in the same way.</span> <br>
+                        int exam_grade = 85; <br> 
+                        int<span class="yellow">&</span> score = exam_grade;
+                    </p>
+                </div>
+
+                <p>Be careful about two things when declaring a reference variable:</p>
+
+                <ol>
+                    <li>References must be initialized: there is no such thing as an empty reference.</li>
+                    <li>References cannot be reassigned: reassigning an existing reference variable will produce unexpected results.</li>
+                </ol>
+
+                <div class="blackCoding">
+                    <p>
+                        double& volume; <span class="lightGreen">// Compiler error, reference not initialized.</span> <br>
+<br>
+                        int x = 1, y = 2; <br>
+                        int& num = x; <br>
+                        num = y;    <span class="lightGreen">// Reassigning references will result in undesired behavior!</span>
+                    </p>
+                </div>
+
+                <h4>Memory Address</h4>
+                <p>When not used in a declaration, the ampersand symbol & is called the address of operator and is used to access the memory address of a variable. This can be done by preceding the name of a variable with &:</p>
+
+                <div class="blackCoding">
+                    <p>
+                        std::string message = "Hello World!"; <br>
+<br>
+                        <span class="lightGreen">// Print the value of message (Hello World!)</span> <br>
+                        std::cout << message << std::endl; <br>
+<br>
+                       <span class="lightGreen"> // Print the memory address of message (0x7ffee9b21af0)</span> <br>
+                        std::cout << &message << std::endl;
+
+                    </p>
+                </div>
+
+                <h2>Pointers</h2>
+                <p>A pointer in C++ is a variable that stores a memory address as its value. Pointer variables are declared with an asterisk * between the data type and the variable name. A pointer variable must point to a data type of the same type. For example, int* means “pointer to an int variable”.</p>
+
+                <div class="blackCoding">
+                    <p>
+                        int* age; <br>
+                        char* initial;
+
+                    </p>
+                </div>
+
+                <p>Just like normal variables, pointers are empty when they are declared and need to be initialized. A pointer variable is usually assigned with a memory address obtained by the address of operator &.</p>
+
+                <div class="blackCoding">
+                    <p>
+                        <span class="lightGreen">//So suppose we have a variable called day</span> <br>
+                        std::string day = "Monday"; <br>
+                        <br>
+                        <span class="lightGreen">//We can create a pointer variable called ptr and point to it by:</span> <br>
+                        <p>std::string* ptr = &day;</p>
+                    </p>
+                </div>
+
+                <h3>Null Pointer</h3>
+                <p>It is dangerous to leave a pointer variable uninitialized. If you are unsure where to point, assign that variable to nullptr, which is a keyword that provides a typesafe pointer value representing an empty pointer.</p>
+
+                <div class="blackCoding">
+                    <p>
+                        int* ptr = nullptr;
+
+                    </p>
+                </div>
+            </div>
+    </div>
+</body>
+</html>

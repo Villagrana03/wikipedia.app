@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/CSS-Files/style.css">
+    <link rel="stylesheet" href="/CSS-Files/codingColors.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+      
+    <div class="navbar">
+        <div class="container-navbar1">
+            <a href="/index.html">Home</a>
+            <a href="">CSS</a>
+            <a href="/HTML/htmlFirst.html">HTML</a>
+        </div>  
+    </div>
+
+    <div>
+        <div class="main-container">
+           
+            <div>
+                <h2>Archive Utilities</h2>
+                <p>Archives are collections of files and directories that have been bundled together into a single file. This is typically done to facilitate storage, transfer, or backup. Archives can also include compression to reduce file size. Here are some key aspects of archives:.</p>
+            </div>
+
+        </div>
+
+
+            <div class="javascript-body">
+               <h5>Commands:</h5>
+               <ul>
+                <li><span class="blue">zip</span>: Creates a zip archive, which can contain multiple files and directories.</li>
+                <li><span class="blue">tar</span>: is a command-line utility used in Unix and Linux systems for combining multiple files and directories into a single file</li>
+               </ul>
+
+               <p>have the ability to compress and archive files. This means that unlike the compression commands which compress a single file at a time, the files’ size will be reduced and packaged into a single archive file in one command.</p>
+            
+               <h4>zip</h4>
+
+               <div class="blackCoding">
+                <p>
+                    zip &lt;archive_name>.zip &lt;file1> &lt;file2> … <br>
+                    <span class="lightGreen">//Example:</span> <br>
+                    zip archive.zip test1.txt test2.text test3.txt <span class="lightGreen">//all the test will be inside of archive</span> <br>
+                    <br>
+                    <span class="lightGreen">//Note: On some distributions of Linux, zip must first be installed using the command sudo apt install zip unzip.</span>
+                </p>
+               </div>
+
+               <h5>Extract files</h5>
+               
+               <div class="blackCoding">
+                <p>
+                    unzip archive.zip
+                </p>
+               </div>
+
+               <h5>Zip Flags</h5>
+
+               <ul>
+                <li><span class="blue">-r</span>: Recursively zip files in a directory, including subdirectories.</li>
+                <li><span class="blue">-e</span>: Encrypt the zip file with a password.</li>
+                <li><span class="blue">-u</span>: Update existing files in the zip archive with newer versions.</li>
+                <li><span class="blue">-d</span>: Delete files from the zip archive.</li>
+                <li><span class="blue">-x</span>: Exclude specific files from being zipped.</li>
+                <li><span class="blue">-v</span>: Verbose mode; shows the files being processed.</li>
+                <li><span class="blue">-q</span>: Quiet mode; suppresses output.</li>
+                <li><span class="blue">-o</span>: Specify the output zip file name.</li>
+               </ul>
+
+
+               <h4>tar</h4>
+               <p>it is recommended to use tar when distributing archives among Linux-based systems. This is because tar archives store Unix file attributes, retaining file permissions and other metadata.</p>
+           
+               <div class="blackCoding">
+                <p>
+                    tar -cf &lt;archive_name>.tar &lt;files or directories> <br>
+                    <span class="lightGreen">//Example: </span> <br>
+                    tar -cf example.tar index.html script.js style.css <span class="lightGreen">//you are creating a tar archive named example.tar that contains the three specified files: index.html, script.js, and style.css. Here’s a breakdown of the command:</span>
+
+                </p>
+               </div>
+
+               <h5>Extract files</h5>
+               <p>To extract the files in a .tar archive, we can use the -xf option.</p>
+
+               <div class="blackCoding">
+                <p>
+                    tar -xf &lt;archive_name>.tar
+                </p>
+               </div>
+
+               <h5>tar Flags</h5>
+
+               <ul>
+                <li><span class="blue">-c</span>: Create a new archive.</li>
+                <li><span class="blue">-x</span>: Extract files from an archive.</li>
+                <li><span class="blue">-f</span>: Specify the filename of the archive.</li>
+                <li><span class="blue">-v</span>: Verbose mode; lists files being processed.</li>
+                <li><span class="blue">-z</span>: Compress the archive using Gzip.</li>
+                <li><span class="blue">-j</span>: Compress the archive using Bzip2.</li>
+                <li><span class="blue">-t</span>: List the contents of the archive.</li>
+                <li><span class="blue">-C</span>: Change to a directory before performing any operations.</li>
+               </ul>
+            </div>
+
+            <h3>Compressing .tar Files</h3>
+            <p>What makes tar powerful is that we can combine it with the compression utilities we discussed in a previous exercise to create a compressed archive. </p>
+
+            <p>For example, to compress an archive/tarball of some video files video1.mp4 and video2.mkv, where we want the resulting compress archive to be called videos.tar.bz2</p>
+
+            <div class="blackCoding">
+                <p>
+                    tar -cjf videos.tar.bz2 video1.mp4 video2.mkv
+                </p>
+            </div>
+
+            <h4>Decompressing and Extracting .tar Files</h4>
+
+            <div class="blackCoding">
+                <p>
+                    tar -xjf videos.tar.bz2
+                </p>
+            </div>
+
+         
+
+             <!--  <span class="darkBlue">const</span>          &lt; h1 &gt;  Hello world&lt;/h1&gt;   -->
+    </div>
+</body>
+</html>

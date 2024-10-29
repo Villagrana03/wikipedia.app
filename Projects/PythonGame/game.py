@@ -1,9 +1,11 @@
 import pygame
+from pygame import mixer
 import os # this will import the function that helped me determine which animatio to use, such as idle run or jump 
 import random
 import csv
 import button
 
+mixer.init()
 pygame.init()
 
 SCREEN_WIDTH = 800
@@ -28,6 +30,7 @@ SCROLL_THRESH = 200 #IS the distance the player can get to he end of the screen 
 screen_scroll = 0 # this will always be equal to the player speed
 bg_scroll = 0 #this is a accumulate value 
 
+MAX_LEVELS = 3
 #Game settings
 ROWS = 16
 COLS = 150
@@ -38,6 +41,7 @@ TILE_SIZE = SCREEN_HEIGHT // ROWS
 TILE_TYPES =  21
 
 start_game = False
+start_intro = False
 
 #Define player action variables
 moving_left = False
@@ -45,6 +49,22 @@ moving_right = False
 shoot = False # -> here we will make the bullet False, everytime the user press SPACE it wil become True and it will shoot
 grenade = False #its false, everytime we press g, it will become True and action will occur 
 grenade_thrown = False #if its True the grenade has been thrown this will only happen when we press "g"
+
+#load msuic and sounds
+pygame.mixer.music.load("projects\\PythonGame\\img\\audio\\audio_music2.mp3")
+pygame.mixer.music.set_volume(0.3)
+pygame.mixer.music.play(-1, 0.0, 5000) #arguments (1.- times to loop over, 2.- delay, 3.- fade)
+
+jump_fx = pygame.mixer.Sound("projects\\PythonGame\\img\\audio\\audio_jump.wav")
+jump_fx.set_volume(.5)
+
+shot_fx = pygame.mixer.Sound("projects\\PythonGame\\img\\audio\\audio_shot.wav")
+shot_fx.set_volume(.5)
+
+grenade_fx = pygame.mixer.Sound("projects\\PythonGame\\img\\audio\\audio_grenade.wav")
+grenade_fx.set_volume(.5)
+
+
 
 #load button images
 start_img = pygame.image.load("projects\\PythonGame\\start_btn.png").convert_alpha()
@@ -91,6 +111,7 @@ RED = (255, 0, 0)
 WHITE = (255,255,255)
 GREEN = (0, 255, 0)
 BLACK = (0,0,0)
+PINK = (235, 65, 54)
 #define font
 font = pygame.font.SysFont("Futura", 30)
 
@@ -99,7 +120,27 @@ def draw_text(text, font, text_col, x, y):
     img = font.render(text, True, text_col) #This method is used to create an image (surface) of the text that can be drawn onto the screen.
     screen.blit(img, (x,y)) #In Python, particularly when using the Pygame library, the blit method is used to draw one image onto another. This is typically done to display an image or surface onto the screen or another surface
 
+#function to reset game
+def reset_level():
+    #we will reset the grouos
+    # #we delete all of the instances 
+    enemy_group.empty()  
+    bullet_group.empty()
+    grenade_group.empty()
+    explosion_group.empty()
+    item_box_group.empty()
+    decoration_group.empty()
+    water_group.empty()
+    exit_group.empty()
 
+    #reset world data
+    #create empty tile list
+
+    data = []
+    for row in range(ROWS):
+        r = [-1] * COLS 
+        data.append(r)
+    return data
 
 #create a function that will refresh the brackground every iteration. (function = draw_background)
 def draw_bg():
@@ -271,7 +312,7 @@ class Soldier(pygame.sprite.Sprite):
         #jump
         #so everytime i press "w" it will set self.jump = True and for instance it will call this if
         if(self.jump == True and self.in_air == False):
-            self.vel_y = -11 # is negative because the top of the screen is 0, and when you go down you go on the negative side, (this is gravity)
+            self.vel_y = -12 # is negative because the top of the screen is 0, and when you go down you go on the negative side, (this is gravity)
             self.jump = False #after jumping i want to set the self.jump back to False
             self.in_air = True
 
@@ -310,24 +351,33 @@ class Soldier(pygame.sprite.Sprite):
                     self.in_air = False
                     dy = tile[1].top - self.rect.bottom #this is when the player lands over a tile, we subtract the top of the tiles minus the feet of the player
            
-        #check going of the edge of the screen to player
-        if self.char_type == "player":
-            if self.rect.left + dx < 0 or self.rect.right + dx > SCREEN_WIDTH:
-                dx = 0
-
-
-        #updating rectangle position
-        self.rect.x += dx
-        self.rect.y += dy   
+         
 
         
         #check collision with water
         if pygame.sprite.spritecollide(self, water_group, False): #we used srpite collide because it works with grouos / if its true it will kill the self (player) but we will handle that
             self.health = 0
             
+        #check for collsion with exit
+        level_complete = False
+        if pygame.sprite.spritecollide(self, exit_group, False): #the moment this line is True level_complete will be True
+            level_complete = True     
+
         #check if player fell of the map
         if self.rect.bottom > SCREEN_HEIGHT: #if player goes beyond the screen
             self.health = 0
+        
+        #check going of the edge of the screen to player
+        if self.char_type == "player":
+            if self.rect.left + dx < 0 or self.rect.right + dx > SCREEN_WIDTH:
+                dx = 0
+
+
+
+        #updating rectangle position
+        self.rect.x += dx
+        self.rect.y += dy  
+
 
         #SCROLLING
         #since all the scrilling will be done by player movement, it will done at move method
@@ -338,7 +388,7 @@ class Soldier(pygame.sprite.Sprite):
                 self.rect.x -= dx #once the player gets at 200 it will stopj moving, anf just the game (background) will move, and thats gonna make the ilsuion of scrolling
                 screen_scroll = -dx
 
-        return screen_scroll #this screen_scroll was a local variable we ued return to make it global
+        return screen_scroll,  level_complete #this screen_scroll was a local variable we ued return to make it global
 
 #we created a method to the Player class so the enemies can shoot to, because we just set if the player can shoot
     def shoot(self):#                    x-cord                                                y-coord                coords oif the player location underneath we are creating the location of the bullet everytimewe press SPACE
@@ -348,7 +398,7 @@ class Soldier(pygame.sprite.Sprite):
             #we will add tbhis bullte to the bullet_group (Group)
             bullet_group.add(bullet) # we are adding bullet to the group
             self.ammo -= 1 #everytime we press SPACE we will shoot and if we have ammo it will shoot and reduce our ammo minus 1
-
+            shot_fx.play()
     
     def ai(self): #who ever we are calling this method, will have this function, since we are calling enemy.ai(), each self, apply to the enemy
         #ai() method is only for the enemies
@@ -481,14 +531,12 @@ class World():
                     elif tile >= 11 and tile <= 14:
                         decoration = Decoration(img, x * TILE_SIZE, y * TILE_SIZE) #img is loaded for the list from the img from 11, 14 "which are all deocrations" will be here
                         decoration_group.add(decoration)
-                        
-                        pass
                     elif tile == 15: #create a player
                         #__init__(self, char_type, x, y, scale, speed, ammo, health, grenades)
-                        player = Soldier('player', x * TILE_SIZE, y * TILE_SIZE, 1.65, 5, 20, 100, 3)
+                        player = Soldier('player', x * TILE_SIZE, y * TILE_SIZE, 1.65, 5, 20, 50, 3)
                         health_bar = HealthBar(10,10, player.health, player.health)
                     elif tile == 16: #create enemy
-                        enemy = Soldier('enemy', x * TILE_SIZE, y * TILE_SIZE, 1.65, 1.5, 1000, 100, 0)
+                        enemy = Soldier('enemy', x * TILE_SIZE, y * TILE_SIZE, 1.65, 2, 2, 100, 0)
                         #group of enemy (since we will have many enemies)
                         enemy_group.add(enemy)
                     elif tile == 17: #Ammo box
@@ -543,6 +591,9 @@ class Exit(pygame.sprite.Sprite):
         self.rect = self.image.get_rect() #for each imae it wil have arect
        #                    x-coord           y-coord
         self.rect.midtop = (x + TILE_SIZE //2,y + (TILE_SIZE - self.image.get_height())) # ASK CHATGPTx = i divided by half because its the middle of the square
+
+    def update(self):
+            self.rect.x += screen_scroll
 
 #items drops
 class ItemBox(pygame.sprite.Sprite):
@@ -698,6 +749,7 @@ class Grenade(pygame.sprite.Sprite): #ASK CHATGPT
         self.timer -= 1
         if self.timer <= 0:
             self.kill() #this self grenade will die (dissapear)
+            grenade_fx.play()
             explosion = Explosion(self.rect.x,self.rect.y, 1 ) #we create a variable as of instance of the explosion class which takes (x, y, scale) same as their parameters
             explosion_group.add(explosion) #here we added the explosion as a group, so every grande thrown will have a explosion
             #do damage 
@@ -718,7 +770,7 @@ class Explosion(pygame.sprite.Sprite): #ASK CHATGPT why we made another Class fo
            #we will make the same as the plasyer animation
             self.images = [] #we made this list and we will load all the images here, and would run one after another
             for num in range(1,6): #we are going to loop through all the images
-                img = pygame.image.load(f"img/explosion/exp{num}.png").convert_alpha() #Here i loaded all the explosion images there 5 of them
+                img = pygame.image.load(f"projects\\PythonGame\\img\\explosion/exp{num}.png").convert_alpha() #Here i loaded all the explosion images there 5 of them
                 img = pygame.transform.scale(img, (int(img.get_width() * scale), int(img.get_height() * scale))) #transform.cale takes 2 arguments, The first argument is the image that you want to scale, which in this case is img. The second argument is a tuple representing the new size of the image. This tuple contains the new width and height of the image. 
                 self.images.append(img) # all this immages will be stored in this self list
             self.frame_index = 0 #this index represewnts which index of the list im at 
@@ -746,6 +798,35 @@ class Explosion(pygame.sprite.Sprite): #ASK CHATGPT why we made another Class fo
                 else:
                     self.image= self.images[self.frame_index] #self.image becomes the next frame_index
 
+class ScreenFade():
+    def __init__(self, direction, color, speed):
+        self.direction = direction
+        self.color = color
+        self.speed = speed
+        self.fade_counter = 0
+
+    def fade(self):
+        fade_complete = False
+        self.fade_counter += self.speed #i can change the speed of the animation
+
+        if self.direction == 1: #whole screen fade
+            pygame.draw.rect(screen, self.color, (0- self.fade_counter,0, SCREEN_WIDTH//2, SCREEN_HEIGHT)) #as self.fade_counter increase, the rect moves to the left
+            pygame.draw.rect(screen, self.color, (SCREEN_WIDTH // 2 + self.fade_counter, 0, SCREEN_WIDTH, SCREEN_HEIGHT)) #start middle of the screen and move right
+            pygame.draw.rect(screen, self.color, (0, 0 - self.fade_counter, SCREEN_WIDTH, SCREEN_HEIGHT //2))
+            pygame.draw.rect(screen, self.color, (0, SCREEN_HEIGHT // 2 +self.fade_counter, SCREEN_WIDTH, SCREEN_HEIGHT))
+
+        #we will create a rect and moving hrough the screen
+        if self.direction == 2: #vertical screen down
+             pygame.draw.rect(screen, self.color, (0,0, SCREEN_WIDTH, 0 + self.fade_counter)) #(x,y width and height)
+        if self.fade_counter >= SCREEN_WIDTH: # once the counter gets equal to SCREEN_WIDTH
+            fade_complete = True
+
+        return fade_complete
+    
+#create screen fades
+intro_fade = ScreenFade(1, BLACK, 4)
+death_fade = ScreenFade(2, PINK, 4)
+
 #create button
         #we declared a new variable called start_button (x,y img, scale)
 start_button = button.Button(SCREEN_WIDTH // 2 - 130, SCREEN_HEIGHT //2 -150, start_img, 1)
@@ -766,10 +847,6 @@ item_box_group = pygame.sprite.Group()
 decoration_group = pygame.sprite.Group()
 water_group = pygame.sprite.Group()
 exit_group = pygame.sprite.Group()
-
-
-
-
 
 
 
@@ -818,6 +895,7 @@ while run:
         #draw buttons
         if start_button.draw(screen) == True: #in the class button whenever is being clicked, will return True
             start_game = True
+            start_intro = True
         elif exit_button.draw(screen) == True:
             run = False
 
@@ -896,6 +974,13 @@ while run:
         water_group.draw(screen)
         exit_group.draw(screen)
 
+    #show intro
+        if start_intro == True: #onced the start button is being pressed the intro will start
+            if intro_fade.fade():
+                start_intro = False #once it started we will set it back to false
+                intro_fade.fade_counter = 0 #here we accesed the variables of the instance and we took fade_counter
+
+
 
         #this going to be run if player.alive is True
         if player.alive == True:
@@ -921,18 +1006,47 @@ while run:
             elif moving_left or moving_right:
                 player.update_action(1) # 1 means run ,,,,,,,,,,,,,,,,, at 1, it goes to update_action metohd
             else:
+                #same as normal function, the move() method took 2 parameters wich are moving_left and moving_right
+        #once we press "d" which is right, it willk add to the positive x-axis
                 player.update_action(0) # when user is not moving left of right action will be 0 so it will be idle    
-
+            screen_scroll, level_complete = player.move(moving_left, moving_right) #screen_scroll, level_complete here i am returning this 2 variables
+            bg_scroll -= screen_scroll #and this will re position the imges
+                #check player has completed level
+            if level_complete == True: #once player hits the next sign
+                    start_intro = True
+                    level += 1
+                    bg_scroll = 0
+                    world_data = reset_level() #here reaload all the world from scratch
+                    if level <= MAX_LEVELS:
+                        #load in level data and create world
+                        with open(f"projects\\PythonGame\\level{level}_data.csv", newline="") as csvfile:
+                            reader = csv.reader(csvfile, delimiter= ",")
+                            for x, row in enumerate(reader):
+                                    for y, tile in enumerate(row):
+                                        world_data[x][y] = int(tile)
+                        world = World()         
+                        player, health_bar = world.process_data(world_data) 
         else: #if player not alive 
             screen_scroll = 0
-            if restart_button.draw(screen):
-                bg_scroll = 0
-    
+            if death_fade.fade() == True: # once it becomes true the button will appear, and tit will only be True when 0 == SCREEN_WIDTH 
+                death_fade.fade_counter = 0 #this is set because the first time i die the intro will appear but if i restart the game it wouldnt because it was not set to 0
+                start_intro = True
+                if restart_button.draw(screen):
+                    bg_scroll = 0 #total amount of the background, and with 0 is back to stock
+                    world_data = reset_level() #the empoty list that we created t reset_level() is now world_data
+                    #we will reset the whole excel game
+                    with open(f"projects\\PythonGame\\level{level}_data.csv", newline="") as csvfile:
+                        reader = csv.reader(csvfile, delimiter= ",")
+                        for x, row in enumerate(reader):
+                                for y, tile in enumerate(row):
+                                        world_data[x][y] = int(tile)
+                world = World()         
+                player, health_bar = world.process_data(world_data)
+
 
         #same as normal function, the move() method took 2 parameters wich are moving_left and moving_right
         #once we press "d" which is right, it willk add to the positive x-axis
-        screen_scroll = player.move(moving_left, moving_right) #one of the reasons why i have this is because permantely move the rects
-        bg_scroll -= screen_scroll #and this will re position the imges
+       # player.move(moving_left, moving_right) #one of the reasons why i have this is because permantely move the rects
 
         
     
@@ -954,7 +1068,8 @@ while run:
             if(event.key == pygame.K_SPACE):
                 shoot = True # Everytime we press SPACE shoot variable will be True so the player.shoot() method will occur
             if(event.key == pygame.K_w and player.alive): #pygame.K_a: Represents the 'w' key on the keyboard.
-                player.jump = True   #whats the difference between calling player.jump and making an method of player.jump() 
+                player.jump = True   #whats the difference between calling player.jump and making an method of player.jump()
+                jump_fx.play()
             if(event.key == pygame.K_ESCAPE):
                 run = False  
             if(event.key == pygame.K_g):

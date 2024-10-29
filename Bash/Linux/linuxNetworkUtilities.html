@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/CSS-Files/style.css">
+    <link rel="stylesheet" href="/CSS-Files/codingColors.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+      
+    <div class="navbar">
+        <div class="container-navbar1">
+            <a href="/index.html">Home</a>
+            <a href="">CSS</a>
+            <a href="/HTML/htmlFirst.html">HTML</a>
+        </div>  
+    </div>
+
+    <div>
+        <div class="main-container">
+           
+            <div>
+                <h2>Network Utilities</h2>
+                <p></p>
+            </div>
+
+            <div class="main-content">
+
+            </div>
+
+        </div>
+
+
+            <div class="javascript-body">
+                <h4>Interacting with Files Hosted Online</h4>
+                <p>Let’s start simple: how do we access files from the Internet in the command line? There are two commands that allow us to do just that: curl and wget</p>
+               
+                <p><span class="blue">curl</span>: is a command-line tool used for transferring data to or from a server using various protocols, including HTTP, HTTPS, FTP, and more. It is widely used for testing and interacting with web services and APIs</p>
+                <div class="blackCoding">
+                    <p>
+                        $ curl "URL in quotes" <span class="lightGreen">//displays the contents of the file at the URL in terminal.</span>
+                    </p>
+                </div>
+
+                <p>The option -O (a capitalized letter “O”) or -output combined with a desired name</p>
+
+                <div class="blackCoding">
+                    <p>
+                        $ curl "URL" --output &lt;desired_filename> <br> 
+                        <span class="lightGreen">//Example:</span> <br>
+                        curl --output filename.html "https://www.google.com"
+
+                    </p>
+                </div>
+
+                <h5>curl flags</h5>
+                <ul>
+                    <li><span class="blue">-X &lt;command></span>: Specifies the request method to use (e.g., GET, POST, PUT, DELETE).</li>
+                    <li><span class="blue">-d <data></span>: Sends data in a POST request (use with -X POST).</li>
+                    <li><span class="blue">-H </span>: Adds custom headers to the request (e.g., &lt;code>-H "Authorization: Bearer token"&lt;/code>).</li>
+                    <li><span class="blue">-O</span>: Saves the output to a file named after the remote file.</li>
+                    <li><span class="blue">-o &lt;filename></span>: Saves the output to a specified filename.</li>
+                    <li><span class="blue">-L</span>: Follows redirects (useful when a URL redirects to another).</li>
+                    <li><span class="blue">-i</span>: Includes the HTTP response headers in the output.</li>
+                    <li><span class="blue">-s</span>: Silent mode; does not show progress or error messages.</li>
+                    <li><span class="blue">-v</span>: Verbose mode; displays detailed information about the request and response.</li>
+                    <li><span class="blue">-u &lt;user:password></span>: Sends basic authentication credentials.</li>
+                    <li><span class="blue">-k</span>: Ignores SSL certificate validation (useful for testing with self-signed certificates).</li>
+                    <li><span class="blue">-F</span>: Sends form data (useful for file uploads).</li>
+                    <li><span class="blue">--data-urlencode <data></span>: URL-encodes the specified data before sending.</li>
+                    <li><span class="blue">--header</span>: Adds a custom header (same as -H).</li>
+                    <li><span class="blue">-A &lt;agent></span>: Sets the User-Agent string.</li>
+                    <li><span class="blue">--cookie &lt;cookie></span>: Sends specified cookies in the request.</li>
+                </ul>
+                
+                <h3>Checking Network Connectivity</h3>
+                <p>How can we check whether two devices connected to the same network can communicate with one another? Simple! We use a command called ping, short for Packet INternet Groper. The command</p>
+                <p>sends packets to the target host and waits for replies. If the ping command returns with a failure, that means the target is unreachable.</p>
+
+
+                <div class="blackCoding">
+                    <p>
+                        ping [options]  &lt;target domain or IP>
+                    </p>
+                </div>
+
+                <h4>wget</h4>
+                <p>wget is a command-line utility used for downloading files from the web. Here are some basic usage examples:</p>
+
+                <div class="blackCoding">
+                    <p>
+                        wget [options] [URL]
+                    </p>
+                </div>
+
+                <h5>wget flags</h5>
+
+                <ul>
+                    <li><span class="blue">-O</span> - Save the file with a specific name.</li>
+                    <li><span class="blue">-b</span> - Download in the background.</li>
+                    <li><span class="blue">-c</span> - Continue an interrupted download.</li>
+                    <li><span class="blue">--limit-rate</span> - Limit the download speed.</li>
+                    <li><span class="blue">--recursive</span> - Download files recursively.</li>
+                    <li><span class="blue">--no-parent</span> - Prevent downloading files from parent directories.</li>
+                    <li><span class="blue">-i</span> - Read URLs from a file.</li>
+                    <li><span class="blue">--user-agent</span> - Specify a custom user-agent string.</li>
+                    <li><span class="blue">--quiet</span> - Turn off output messages.</li>
+                    <li><span class="blue">--no-check-certificate</span> - Ignore SSL certificate checks.</li>
+                  </ul>
+                  
+
+                <h4>DNS Resolution</h4>
+                <p>What if we wanted to find out the IP address for any given domain name or vice versa? This process is known as DNS lookup or DNS resolution</p>
+                <p>Host command</p>
+
+                <div class="blackCoding">
+                    <p>
+                        host &lt;domain or IP>
+                    </p>
+                </div>
+
+                <h3>Network Interface Status</h3>
+                <p>The ifconfig command, or interface configurator, is one of the network inspection commands available on Linux. Running it will display IP addresses, MAC addresses, and some more relevant details.</p>
+
+                <div class="blackCoding">
+                    <p>
+                        ifconfig [interface] [options]
+
+                    </p>
+                </div>
+            </div>
+    </div>
+    <!--  <span class="darkBlue">const</span>          &lt; h1 &gt;  Hello world&lt;/h1&gt;   -->
+</body>
+</html>

@@ -1,0 +1,139 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/CSS-Files/style.css">
+    <link rel="stylesheet" href="/CSS-Files/codingColors.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+      
+    <div class="navbar">
+        <div class="container-navbar1">
+            <a href="/index.html">Home</a>
+            <a href="">CSS</a>
+            <a href="/HTML/htmlFirst.html">HTML</a>
+        </div>  
+    </div>
+
+    <div>
+        <div class="main-container">
+           
+            <div>
+                <h2>MultiLine JSX</h2>
+                <p>you will learn some common ways that JSX and React components work together. You’ll get more comfortable with both JSX and React components while picking up some new tricks.</p>
+            </div>
+
+           
+        </div>
+
+
+            <div class="javascript-body">
+
+               <h3>MultiLine Code</h3>
+               <p>The only diferrence is that we have the specific web code inside of one component (function) and we used multiline code</p>
+
+               <div class="blackCoding">
+                    <p>
+                         <!--  <span class="darkBlue">const</span>          &lt; h1 &gt;  Hello world&lt;/h1&gt;   -->
+                        import React from 'react'; <br>
+<br>
+                        function QuoteMaker() { <br>
+                            return ( <br>           
+                                &lt;blockquote&gt; <br>
+                                &lt;p&gt; <br>
+                                The world is full of objects, more or less interesting; I do not wish to add any more. <br>
+                                &lt;/p&gt; <br>
+                                &lt;cite&gt; <br>
+                                    &lt;a target="_blank" <br>                              
+                                    href="https://en.wikipedia.org/wiki/Douglas_Huebler"&gt; <br>
+                                    Douglas Huebler <br>
+                                    &lt;/a&gt; <br>
+                                    &lt;/cite&gt;   <br> 
+                                    &lt;/blockquote&gt; <br>
+                            ); <br>
+                        };<br>
+<br>
+                        export default QuoteMaker; <br>
+                    </p>
+               </div>
+
+
+               <h3>Use a Variable Attribute in a Component</h3>
+               <p></p>
+            </div>
+
+            <div class="blackCoding">
+                <p>
+                      <!--  <span class="darkBlue">const</span>          &lt; h1 &gt;  Hello world&lt;/h1&gt;   -->
+                    import React from 'react' <span class="lightGreen">// we imported react to get their functions</span> <br>
+<br>
+                    <span class="lightGreen">//Here i made an attribute that is n image with the title and the image and will introduce it into my react component</span> <br>
+                    const owl = { <br>          
+                      title: 'Excellent Owl', <br>                                              
+                      src: https://content.codecademy.com/courses/React/react_photo-owl.*8* <br>
+                    }; <br>
+<br>                    
+                    function Owl(){ <br>
+                      return( <br>
+                      &lt;div&gt; <br>
+                      &lt;h1&gt;{owl.title}&lt;/h1&gt; <span class="lightGreen">//the title of the attribute</span><br>
+                    <br>
+                      &lt;img <br>         
+                            <span class="lightGreen">//Here we got each value of the attribute  </span> <br>
+                              src={owl.src} <br>
+                              alt={owl.title} <br>
+                              width={owl.width} /&gt; <br>
+                              &lt;/div&gt; <br>
+                      ) <br>
+                       <br>
+                    } <br>              
+                    export default Owl <br>
+                </p>
+            </div>
+
+            <h3>Use a Conditional in a Function Component</h3>
+            <p>in this example it will be a 50/50 random number and depending on the answer the h1 will change</p>
+
+            <div class="blackCoding">
+                <p>
+                      <!--  <span class="darkBlue">const</span>          &lt; h1 &gt;  Hello world&lt;/h1&gt;   -->
+                      import React from 'react'; <br>
+<br>
+                      const fiftyFifty = Math.random() < 0.5; <span class="lightGreen">//The random variable</span> <br>
+                      <br>
+                      function TonightsPlan() { <br>
+                          if (fiftyFifty) { <span class="lightGreen">if fiftyFifty === True</span> <br>
+                            return &lt;h1&gt;Tonight I'm going out WOOO&lt;/h1&gt;; <br>
+                          } else { <br>
+                            return &lt;h1&gt;Tonight I'm going to bed WOOO&lt;/h1&gt;; <br>
+                          } <br>
+                      } <br>
+                      export default TonightsPlan; <span class="lightGreen">//we will export the Componet to other file</span> <br>
+                </p>
+            </div>
+
+            <h3>Event Listener and Event Handlers in a Component</h3>
+            <p>Your function components can include event handlers. With event handlers, we can run some code in response to interactions with the interface, such as clicking.</p>
+
+            <div class="blackCoding">
+                <p>
+                    import React from 'react'; <br>
+<br>
+                    <span class="lightGreen">//Whenever we click on the button, the "onClick" function will occur, and it calls the function handleClick()</span> <br>
+                    function SubmitButton() { <br>
+                    function handleClick() { <br>
+                        alert('Submission Successful.'); <br>
+                    } <br>
+                    return &lt;button onClick = {handleClick}&gt;Submit&lt;/button&gt;; <span class="lightGreen">//once the user clicks the buttonn it will call the handleClick()</span><br>
+                    } <br>
+ <br>
+                    export default SubmitButton; <br>
+                </p> 
+            </div>
+    </div>
+</body>
+</html>

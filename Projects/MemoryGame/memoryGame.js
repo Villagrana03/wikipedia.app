@@ -23,7 +23,7 @@ function flipCard(){
     //This is how it works, as soon as the function starts, (it starts once the user click to the first item, automatically it sets lockBoard to true) so the flipCard function
    
     //also, it checks if lockBoard is ture, snce its false continue to the code, ut once the first card is clicked it will become ture at unflipcards() function.
-    if(lockBoard) return;
+    if(lockBoard === true) return;
     if(this === firstCard) return;
     
  //Here we will access each memory with the this ALSO NOTE "this" must be in a normal function and not arrow

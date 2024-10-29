@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/CSS-Files/style.css">
+    <link rel="stylesheet" href="/CSS-Files/codingColors.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+      
+    <div class="navbar">
+        <div class="container-navbar1">
+            <a href="/index.html">Home</a>
+            <a href="">CSS</a>
+            <a href="/HTML/htmlFirst.html">HTML</a>
+        </div>  
+    </div>
+
+    <div>
+        <div class="main-container">
+           
+            <div>
+                <h2>Access Documentation in Linux</h2>
+                <p>Preview: Docs Linux is a family of Unix-like operating systems that are all based on the Linux kernel.
+                    Linux
+                     provides many ways to access documentation for other commands!</p>
+            </div>
+        </div>
+            <p>We can access documentation in the terminal itself using these files and commands:</p>
+
+            <ul>
+                <li>/usr/share/doc/</li>
+                <li>man</li>
+                <li>info</li>
+            </ul>
+
+            <div class="javascript-body">
+               <h3>/usr/share/doc/ command</h3>
+               <p>The /usr/share/doc/ directory contains README files, simple text files that describe a program, for many installed packages in your Linux distribution.</p>
+
+               <div class="blackCoding">
+                <p>
+                    ls /usr/share/doc
+                </p>
+               </div>
+
+               <h3>man</h3>
+               <p>The man command is used to access the manual pages</p>
+
+               <div class="blackCoding">
+                <p>
+                    man [options] command_name> <br>
+                    man ls <span class="lightGreen">//Will give the manual of "ls"</span> <br>
+                </p>
+               </div>
+
+               <h3>info Command</h3>
+               <p>Even though manual pages are somewhat outdated, they make for great cheat sheets/reference cards. For full and detailed documentation, we can use the info command which also contains more recent information about programs than man.</p>
+
+               <div class="blackCoding">
+                <p>
+                    info [options] command_name> <br>
+                    info ls <span class="lightGreen">//running info "ls" will provided detailed information of ls</span>
+                </p>
+               </div>
+
+               <h3>Compression utilities</h3>
+               <p>Compression is the process of reducing the size of a file or a set of files. This is done by encoding the information in a way that takes up less space.</p>
+
+               <p>commands which reduce file sizes and differ mainly by the algorithms behind them. Three popular compression commands are: </p>
+
+               <ol>
+                <li><span class="darkBlue">gzip</span>: retains the original file’s ownership modes, access, and modification timestamps. Compressed files have the .gz extension</li>
+                <li><span class="darkBlue">bzip2</span>: compressed files have the .bz2 extension.</li>
+                <li><span class="darkBlue">xz</span>: compressed files have the .xz extension</li>
+               </ol>
+
+               
+               <div class="blackCoding">
+                <p>
+                    &lt;compression_utility> [options] &lt;file_name> <br>
+                    <br>
+                    <span class="lightGreen">//For example: </span> <br>
+                    gzip hello.txt <span class="lightGreen">//will result in a compressed file named hello.txt.gz and delete the original file.</span>
+                    gzip -k hello.txt <span class="lightGreen">//Adding the -k option will retain the original file.</span>
+                </p>
+               </div>
+
+               <h4>Multiple files</h4>
+
+               <div class="blackCoding">
+                <p>
+                    bzip2 poem.txt riddle.txt <span class="lightGreen">//This will compress this 2 files</span> <br>
+                    xz *.txt <span class="lightGreen">//wil compress all files within the directory</span> <br>
+                </p>
+               </div>
+
+               <p>The gzip command has the ability to compress all files in a directory using the -r option and providing the path to a directory.</p>
+               <p>Files can be decompressed using the -d option.</p>
+
+               
+            </div>
+
+    </div>
+      <!--  <span class="darkBlue">const</span>          &lt; h1 &gt;  Hello world&lt;/h1&gt;   -->
+</body>
+</html>

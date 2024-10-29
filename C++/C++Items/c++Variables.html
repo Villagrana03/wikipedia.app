@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/CSS-Files/style.css">
+    <link rel="stylesheet" href="/CSS-Files/codingColors.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+      
+    <div class="navbar">
+        <div class="container-navbar1">
+            <a href="/index.html">Home</a>
+            <a href="">CSS</a>
+            <a href="/HTML/htmlFirst.html">HTML</a>
+        </div>  
+    </div>
+
+    <div>
+        <div class="main-container">
+           
+            <div>
+                <h2>Variables</h2>
+                <p></p>
+            </div>
+
+            
+        </div>
+
+
+            <div class="javascript-body">
+               
+                <h3>Variables</h3>
+                <p>A variable is a name that represents a particular piece of the computer’s memory that has been set aside for storing, retrieving, and using data. This article will cover the following topics:</p>
+
+                <ul>
+                    <li>Declaring a variable</li>
+                    <li>Declaring multiple variables</li>
+                    <li>Constant variables</li>
+                </ul>
+
+                <h4>Creating a Variable</h4>
+                <p>In order to create a variable, three pieces of information need to be present:</p>
+
+                <ol>
+                    <li><span class="lightBlue">Data type</span>: The type of data the variable will store.</li>
+                    <li><span class="orange">Name</span>: The unique name of the variable. Names cannot start with a number and cannot be a C++ keyword.</li>
+                    <li><span class="purple">Value</span>: The value the variable will store. This value must match the type of the variable.</li>
+                </ol>
+
+                <div class="blackCoding">
+                    <p>
+                        <br>
+                        <span class="lightBlue">type</span> <span class="orange">name</span> = <span class="purple">Value</span>; <br>
+                        <br>
+                        <span class="lightBlue">int</span> <span class="orange">age</span> = <span class="purple">21</span>; <br>
+                        <span class="lightBlue">string</span> <span class="orange">name</span> = <span class="purple">"Michelle"</span>; <br>
+                        <br>
+                        <br>
+                        <span class="lightGreen">//When a a variable does not have value we just declare it with the data type and name</span> <br>
+                        <span class="lightBlue">int</span> <span class="orange">money</span>;
+                    </p>
+                </div>
+
+                <h3>Declaring Multiple Variables</h3>
+                <p>Multiple variables of the same type can be declared in a single statement using a comma-separated list. For example:</p>
+
+                <div class="blackCoding">
+                    <p>
+                        <span class="lightGreen">// Declare three integer variables</span> <br>
+                        <span class="lightBlue">int</span> <span class="orange">a</span> = <span class="purple">1</span>, <span class="orange">b</span> = <span class="purple">2</span>, <span class="orange">c</span> = <span class="purple">3</span>;
+                    </p>
+                </div>
+
+                <h3>Data Types</h3>
+                <p>A variable in C++ must be assigned a specific type. Type is important because it tells the compiler how to interpret the content of a variable.
+
+                    There are 5 basic data types that every C++ programmer should know about:</p>
+
+                    <ul>
+                        <li>int</li>
+                        <li>double</li>
+                        <li>char</li>
+                        <li>string</li>
+                        <li>bool</li>
+                    </ul>
+
+                    <h4>int</h4>
+                    <p>int stores whole numbers without decimals. An int variable requires 4 bytes of memory space and ranges from -2³¹ to 2³¹.</p>
+
+                    <div class="blackCoding">
+                        <p>
+                            int moonLanding = 1969; <br>
+                            int age = 18;
+
+                        </p>
+                    </div>
+
+                    <h3>double</h3>
+                    <p>double stores floating-point numbers with decimals. A double variable requires 8 bytes of memory space and is sufficient for storing up to 15 decimal digits.</p>
+
+                    <div class="blackCoding">
+                        <p>
+                            double pi = 3.1415; <br>
+                            double height = 1.75;
+                        </p>
+                    </div>
+
+                    <h4>Type Conversion</h4>
+                    <p>It is possible to convert int into double and vice versa. This is called a type conversion or a type casting.</p>
+                    <p>The notation (type) value means “convert value to type“. So for example:</p>
+
+                    <div class="blackCoding">
+                        <p>
+                            <span class="lightGreen">// Converting a double to an int</span> <br>
+                            double a = 3.5; <br>
+                            int b = (int) a;        <span class="lightGreen">// b is now 3</span> <br>
+<br>
+                            <span class="lightGreen">// Converting an int to a double</span> <br>
+                            int c = 5; <br>
+                            double d = (double) c; <span class="lightGreen">// d is now 5.0</span>
+                        </p>
+                    </div>
+
+                    <h3>char</h3>
+                    <p>char stores a single character surrounded by single quotes ' '. A char variable requires 1 byte of memory space.</p>
+
+                    <div class="blackCoding">
+                        <p>
+                            char first_letter = 'a';
+                        </p>
+                    </div>
+
+                    <h3>string</h3>
+                    <p>std::string stores a sequence of characters surrounded by double quotes " ".</p>
+                    <p>Note: std::string is not a built-in type; the &lt;string&gt;library must be included before std::string can be used.</p>
+
+
+              <!--  <span class="darkBlue">const</span>          &lt; h1 &gt;  Hello world&lt;/h1&gt;   -->
+                    <div class="blackCoding">
+                        <p>
+                            #include &lt;string&gt; <br>
+<br>
+                            std::string message = "Hello World!"; 
+                        </p>
+                    </div>
+
+                    <h3>bool</h3>
+                    <p>bool stores true or false boolean values. A bool variable requires 1 byte of memory space.</p>
+
+                    <div class="blackCoding">
+                        <p>
+                            bool underaged = true; <br>
+                            bool certified = false;
+                        </p>
+                    </div>
+                </div>
+    </div>
+</body>
+</html>

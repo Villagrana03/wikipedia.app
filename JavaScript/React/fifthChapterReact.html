@@ -1,0 +1,114 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/CSS-Files/style.css">
+    <link rel="stylesheet" href="/CSS-Files/codingColors.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+      
+    <div class="navbar">
+        <div class="container-navbar1">
+            <a href="/index.html">Home</a>
+            <a href="">CSS</a>
+            <a href="/HTML/htmlFirst.html">HTML</a>
+        </div>  
+    </div>
+
+    <div>
+        <div class="main-container">
+           
+            <div>
+                <h2>Components Interact</h2>
+                <p>A React application can contain dozens, or even hundreds, of components. Each component might be small and relatively unremarkable on its own. When combined, however, they can form enormous, fantastically complex ecosystems of information.</p>
+                <p>A goood example of a Component is a post in a web, from user data, post data, reaction such as (likes, comments shares etc)</p>
+            </div>
+
+
+        </div>
+
+
+            <div class="javascript-body">
+               <h3>Returning Another Component</h3>
+               <p>As we’ve seen before, each React component is responsible for one piece of the interface. As the application grows in complexity, components need to be able to interact with each other to support the features needed</p>
+            
+                <div class="blackCoding">
+                    <p>
+                        <span class="lightGreen">//you can have components interact with each other by passing information or even returning other components.</span> <br>
+                        <br>
+                          <!--  <span class="darkBlue">const</span>          &lt; h1 &gt;  Hello world&lt;/h1&gt;   -->
+                        import React from 'react'; <br>
+<br>
+                        <span class="lightGreen">//We have this Component that is just an image</span> <br>
+                        function Picture() { <br>
+                        return &lt;img src="https://content.codecademy.com/courses/React/react_photo-octopus.jpg" />; <br>
+                        } <br>
+<br>
+                        <span class="lightGreen">//in the following Component Profile(), will have its own data</span>
+                        function Profile() { <br>
+                        return ( <br>
+                            <> <br>
+                            &lt;Picture /&gt; <span class="lightGreen">//here it called Picture component</span><br>
+                            &lt;h1&gt;Name: Octavia&lt;/h1&gt; <br>
+                            &lt;h2&gt;Species: Octopus&lt;/h2&gt; <br>
+                            &lt;h2&gt;Class: Cephalopoda&lt;/h2&gt; <br>
+                            </> <br>
+                        ) <br>
+                        } <br>
+<br>
+                        export default Profile; <br>
+                    </p>
+                </div>
+
+                <h3>Apply a Component in a Render Function</h3>
+                <p>In the previous lessons, when we defined components and exported them. We usually exported them into our top-level file, App.js. Inside App.js, we imported components and returned them inside our App component—which are then exported to be rendered!</p>
+
+                <div class="blackCoding">
+                    <p>
+                         <!--  <span class="darkBlue">const</span>          &lt; h1 &gt;  Hello world&lt;/h1&gt;   -->
+                        <span class="lightGreen">//This is ProfilePage.js</span>
+                        import React from 'react'; <br>
+                        import NavBar from './NavBar'; <span class="lightGReen">//We just imported the NavBar Component from NavBar</span><br>
+<br>
+                        function ProfilePage() { <br>
+                        return ( <br>   
+                            &lt;div> <br>   
+                                &lt;NavBar /> <span class="lightGreen">//We rendered NavBar (The one we imported already)</span> <br>              
+                                &lt;h1>All About Me!&lt;/h1> <br>                       
+                                &lt;p>I like movies and blah blah blah blah blah&lt;/p> <br>
+                                &lt;img src="https://content.codecademy.com/courses/React/react_photo-monkeyselfie.jpg" /> <br>
+                                &lt;/div> <br>
+                        ); <br>
+                        } <br>
+ <br>
+                        export default ProfilePage; <br>
+                        <br>
+                        <span class="lightGreen">//This is NavBar.js</span><br>
+                        import React from 'react'; <br>
+<br>
+                        function NavBar() { <br>
+                            const pages = ['home', 'blog', 'pics', 'bio', 'art', 'shop', 'about', 'contact']; <br>
+                            const navLinks = pages.map(page => { <br>
+                            return ( <br>
+                            &lt;a href={'/' + page}> <br>
+                                &nbsp;{page} <br>
+                                &lt;/a> <br>
+                            ) <br>
+                            }); <br>
+<br>
+                            return &lt;nav>{navLinks}&lt;/nav>; <br>
+                        } <br>
+                        export default NavBar; <br>
+
+                    </p>
+                </div>
+            </div>
+    </div>
+</body>
+</html>
+

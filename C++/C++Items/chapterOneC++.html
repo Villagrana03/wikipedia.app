@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/CSS-Files/style.css">
+    <link rel="stylesheet" href="/CSS-Files/codingColors.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+      
+    <div class="navbar">
+        <div class="container-navbar1">
+            <a href="/index.html">Home</a>
+            <a href="">CSS</a>
+            <a href="/HTML/htmlFirst.html">HTML</a>
+        </div>  
+    </div>
+
+    <div>
+        <div class="main-container">
+           
+            <div>
+                <h2>Chapter 2 of the Book</h2>
+                <p></p>
+            </div>
+
+        </div>
+
+
+            <div class="javascript-body">
+               <p></p>
+
+               <div class="blackCoding">
+                <p>
+                    <span class="lightGreen">//Comment</span> <br>
+                    <span class="lightGreen"># Beggining pf preprocessor</span> <br>
+                    <span class="lightBlue"><></span> enclose filename in #include <br>
+                    <span class="lightBlue">{}</span> Encloses a group of statements <br>
+                    <span class="lightBlue">" "</span> Encloses a string of characters <br>
+                    <span class="lightBlue">; </span>Endf of a Programming statement
+                </p>
+               </div>
+                <br>
+                <br>
+                <h2>Cout Object, #include, variable and literals</h2>
+                <p>Display the output on the computer Screen</p>
+
+                <div class="blackCoding">
+                        <span class="purple">#include <iostream></span> <br>
+                            <br>
+                        int main (){ <br>
+                          std::cout << "hola"; <br>
+                          return 0; <br>
+                        } <br>
+                        
+                        <br>
+                        <span class="lightGreen">We use "endl" to jump into the next line</span>
+
+                        <span class="purple">#include <iostream></span> <br>
+                            <br>
+                        int main (){ <br>
+                          std::cout << "hola" << std::endl; <span class="lightGreen"># "l" is a lower case L</span> <br>
+                          return 0; <br>
+                        } <br>
+
+                        <h3>#include</h3>
+                        <p>Inserts the content of another file into the program. this is a preprocessor directive, not part of C++ language #include lines not seen by compiler, do not place a semicolon at the end</p>
+               
+                        <h3>variable and literlas</h3>
+                        <p>Has a name and a type of data it can hold and Must be defined before it can be used:</p>
+                        <br>
+                        <br>
+                            #include <iostream>
+
+                                int main (){
+                                int number; <span class="lightGreen">#declaring variable Here</span>
+                                number = 5;
+                                }
+                            
+                        <h3>literals</h3>
+                        <p>Literal: a value that is written into a program’s code. <br>
+                            "hello, there" (string literal) <br>
+                            12 (integer literal) <br>
+                            </p>
+                            
+                    </div>
+
+                    <h2>Identifiers, Int, Char </h2>
+                    <p>
+                    </p>
+                    <div class="blackCoding">
+                        <p>
+                            <h3>identifer</h3>
+                            <p>• An identifier is a programmer-defined name for some part of a program: variables, functions, etc.</p>
+                            <p>The first character of an identifier must be  an alphabetic character or and underscore ( _ ), After the first character you may use alphabetic characters, numbers, or underscore characters. Upper- and lowercase characters are distinct</p>
+                        
+                            <p>integer literal</p>
+                            <p>To store an integer constant in a long memory location,
+                                put ‘L’ at the end of the number: 1234L <br>
+                                To store an integer constant in a long long memory
+                                location, put ‘LL’ at the end of the number: 324LL <br>
+                                Constants that begin with ‘0’ (zero) are base 8: 075
+                                Constants that begin with ‘0x’ are base 16: 0x75A <br>
+                                </p>
+                        </p>
+
+                        <h3>Char</h3>
+                        <span class="darkBlue">Definition</span>: char is a data type in C++ used to store a single character.
+                        <span class="darkBlue">Size</span>: Typically, char is 1 byte in size, though this can vary depending on the system.
+                        <span class="darkBlue">Usage</span>: It is used to declare variables that can hold individual characters. For example
+                    
+                        <h3>String Class</h3>
+                        <p>Class Definition: std::string is part of the C++ Standard Library, included in the <string> header. <br>
+                            Purpose: It provides a way to work with text in a more intuitive and flexible manner than C-style strings (character arrays).</p>
+                    
+                            #include <iostream> <br>
+                                #include <string> <br>
+                               <br> 
+                                int main() {
+                                    std::string str1;              // Default constructor, empty string <br>
+                                    std::string str2 = "Hello";    // Initialize with a C-string literal <br>       
+                                    std::string str3("World");     // Another way to initialize with a C-string <br>
+                                    std::string str4(5, 'A');      // Initialize with 5 'A' characters <br>
+                                    <br>                                                                        
+                                    std::cout << str2 << " " << str3 << std::endl; // Output: Hello World <br>
+                                    std::cout << str4 << std::endl;               // Output: AAAAA <br>
+                                    <br>        
+                                    return 0; <br>
+                                }
+                                
+                        </div>
+            </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/CSS-Files/style.css">
+    <link rel="stylesheet" href="/CSS-Files/codingColors.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+      
+    <div class="navbar">
+        <div class="container-navbar1">
+            <a href="/index.html">Home</a>
+            <a href="">CSS</a>
+            <a href="/HTML/htmlFirst.html">HTML</a>
+        </div>  
+    </div>
+
+    <div>
+        <div class="main-container">
+           
+            <div>
+                <h2>Functions</h2>
+                <p>A function in C++ contains a set of instructions that are executed when it is called. Functions are an important part of any good C++ program because they make code flexible and reusable.</p>
+            </div>
+
+            <div class="main-content">
+
+            </div>
+
+        </div>
+
+
+            <div class="javascript-body">
+               <p>In this article, we will cover the following topics:</p>
+
+               <ul>
+                <li>Creating a function</li>
+                <li>Calling a function</li>
+                <li>Return type and value</li>
+                <li>Function scope</li>
+               </ul>
+
+               <h3>Creating a function</h3>
+               <p>While C++ provides many helpful built-in functions, it’s never a bad idea to create your own user-defined functions to tackle specific tasks. A function is made up of two components:</p>
+
+               <ol>
+                <li>Declaration: The function’s name, return type, and any parameters.</li>
+                <li>Definition: The body of the function containing the code to be executed.</li>
+               </ol>
+
+               <div class="blackCoding">
+                <p>
+                    <span class="lightGreen">//void means that the function does not have a return value.</span> <br>
+                    void doSomething() {    <span class="lightGreen">// Declaration</span> <br>
+                    <span class="black">---</span>    std::cout << "Functions are great!\n";     <span class="lightGreen">// Definition</span> <br>
+                      } <br>
+                      
+                </p>
+               </div>
+
+               <h3>Calling a function</h3>
+               <p>To use a function, it needs to be “called” by specifying the function name followed by a pair of parentheses () and a semicolon ;:</p>
+
+               <div class="blackCoding">
+                <p>
+                    <span class="lightGreen">// Create a function</span> <br>
+                    void doSomething() { <br>               
+                    std::cout << "Functions are great!\n"; <br>
+                    } <br>
+<br>
+                    int main() {  <br>      
+                        <span class="lightGreen">// Call the function</span> <br> 
+                        <span class="black">---</span>    doSomething();     <br>
+                      } <br>
+                      
+                </p>
+               </div>
+               
+               <h3>Return Type and Value</h3>
+               <p>The programmer can choose whether a function returns something back to the caller. A function that doesn’t return a value should be declared as a void function.</p>
+               <p>A function that returns a value need to have two things:</p>
+
+               <ul>
+                <li>Return type: The type defined before the function’s name. Just like variables, functions can take on data types like int, double, and bool. This type dictates the type of value that can be returned.</li>
+                <li>Return value: The specific value returned from the function using the return keyword. The type of this return value must match the function’s return type.</li>
+               </ul>
+
+
+               <div class="blackCoding">
+                <p>
+                    double valueOfPi() { <br>
+                        return 3.1415; <br>
+                      } <br>
+                      <br>
+                      int main() { <br>         
+                        double pi = valueOfPi(); <br>
+                        std::cout << pi;  <span class="lightGreen">// Output: 3.1415 </span>   <br>
+                      }
+                      
+                </p>
+               </div>
+
+               <h3>Function Scope</h3>
+               <p>Scope defines the region of code that can access or view a given variable. Function scope is no different from other types of scopes; variables declared inside a function are only accessible inside that function. If we try to reference a function variable outside the function scope, the C++ compiler will output an error message.</p>
+
+               <div class="blackCoding">
+                <p>
+                    int lucky() { <br>          
+                        int lucky_number = 7; <br>
+                        return lucky_number; <br>
+                      } <br>
+                      <br>          
+                      int main() { <br>                                                 
+                        <span class="lightGreen">//Error: variable lucky_number is not in the scope of main()</span> <br>
+                        std::cout << lucky_number;  <br>
+                      <br>          
+                        return 0; <br>
+                      }
+                </p>
+               </div>
+
+               <h3>Parameters</h3>
+               <p>In C++, function parameters are variables that act as placeholders for input values passed to a function. They act as variables inside a function. </p>
+            
+               <div class="blackCoding">
+                <p>
+                    int feetToInches(int ft) {  <span class="lightGreen">//Here we have "ft" as a parameter</span><br>
+                        return ft * 12; <br>
+                      } <br>
+                      
+                </p>
+               </div>
+
+               <h3>Function Overloading</h3>
+               <p>In C++, function overloading allows multiple functions to have the same name as long as they differ in their parameters. It enables functions to handle different types/numbers of inputs.</p>
+
+               <div class="blackCoding">
+                <p>
+                    <span class="lightGreen">// Adds two int values</span> <br>
+                <span class="black">---</span>    int add(int a, int b) { <br>
+                    return a + b; <br>
+                    } <br>
+ <br>
+                    <span class="lightGreen">// Adds two double values</span> <br>
+                    double add(double a, double b) { <br>
+                        <span class="black">---</span>     return a + b; <br>
+                    } <br>
+                </p>
+               </div>
+            </div>
+    </div>
+</body>
+</html>

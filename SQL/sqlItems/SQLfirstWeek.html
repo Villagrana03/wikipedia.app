@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/CSS-Files/style.css">
+    <link rel="stylesheet" href="/CSS-Files/codingColors.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+      
+    <div class="navbar">
+        <div class="container-navbar1">
+            <a href="/index.html">Home</a>
+            <a href="">CSS</a>
+            <a href="/HTML/htmlFirst.html">HTML</a>
+        </div>  
+    </div>
+
+    <div>
+        <div class="main-container">
+           
+            <div>
+                <h2>SQL</h2>
+                <p>SQL, Structured Query Language, is a programming language designed to manage data stored in relational databases. SQL operates through simple, declarative statements. This keeps data accurate and secure, and helps maintain the integrity of databases, regardless of size</p>
+            </div>
+
+        </div>
+
+
+            <div class="javascript-body">
+
+                <h2>relational database</h2>
+                <p>A relational database is a database that organizes information into one or more tables. Here, the relational database contains one table.</p>
+
+                <h3>CREATE TABLE</h3>
+                <p>CREATE TABLE is a clause. Clauses perform specific tasks in SQL. By convention, clauses are written in capital letters. Clauses can also be referred to as command</p>
+
+                    <div class="blackCoding">
+                        <p>
+                            <span class="darkBlue">CREATE TABLE</span> "table_name" ( <br>
+                                column_1 data_type,  <br>
+                                column_2 data_type,  <br>
+                                column_3 data_type <br>
+                                );
+
+                                <br>
+                                <br>
+                                CREATE TABLE celebs ( <span class="lightGreen">//We just created a table</span> <br>
+                                    id INTEGER,  <br>
+                                    name TEXT,  <br>
+                                    age INTEGER <br>
+                                    ); <br>
+                        </p>
+                    </div>
+
+                    <h3>Insert</h3>
+                    <p>The INSERT statement inserts a new row into a table.</p>
+
+                    <div class="blackCoding">
+                        <p>
+                            <span class="lightGreen">//We inserted a row into the table of celebs</span>
+                            <span class="darkBlue">INSERT INTO</span> celebs(id,name,age) <br>
+                            <span class="darkBlue">VALUES</span> (1, 'Justin Bieber', 29);
+                        </p>
+                    </div>
+                    
+                    <div class="blackCoding"></div>
+                        <p>
+                            <span class="lightGreen">// we just inserted 3 more rowws into the table</span>
+                            <span class="lightGreen">//We inserted a row into the table of celebs</span>
+                            <span class="darkBlue">INSERT INTO</span> celebs(id,name,age) <br>
+                            <span class="darkBlue">VALUES</span> (1, 'Justin Bieber', 29);
+                            <br>
+                            <span class="darkBlue">INSERT INTO</span> celebs (id, name, age) <br>
+                            <span class="darkBlue">VALUES</span> (2, 'Beyonce Knowles', 42); <br>
+                            <br>
+                            <span class="darkBlue">INSERT INTO</span> celebs (id, name, age) <br>
+                            <span class="darkBlue">VALUES</span> (3, 'Jeremy Lin', 35); <br>
+                            <br>
+                            <span class="darkBlue">INSERT INTO</span> celebs (id, name, age) <br>
+                            <span class="darkBlue">VALUES</span> (4, 'Taylor Swift', 33);  <br>
+
+                        </p>
+                    </div>
+                    <h3>select</h3>
+                    <p>SELECT statements are used to fetch data from a database. In the statement below, SELECT returns all data in the name column of the celebs table.</p>
+                    <p>SELECT is used every time you want to query data from a database and * means all columns.</p>
+                    <div class="blackCoding">
+                        <p>
+                            <span class="lightGreen">//name specifies the column to query data from.</span> <br>
+                            <span class="lightGreen">//FROM celebs specifies the name of the table to query data from. In this statement, data is queried from the celebs table.</span><br>
+                            <br>
+                            <span class="darkBlue">SELECT</span> name <span class="darkBlue">FROM</span> celebs;
+                        </p>
+                    </div>
+
+                    <h3>Alter, Update, Delete, Constraints</h3>
+                    <p>The <span class="blue">ALTER TABLE</span> statement adds a new column to a table. You can use this command when you want to add columns to a table. The statement below adds a new column twitter_handle to the celebs table.</p> <br>
+                    <p>The <span class="red">UPDATE</span> statement edits a row in a table. You can use the UPDATE statement when you want to change existing records. The statement below updates the record with an id value of 4 to have the twitter_handle @taylorswift13.</p> <br>
+                    <p>The <span class="orange">DELETE FROM</span> statement deletes one or more rows from a table. You can use the statement when you want to delete existing records. The statement below deletes all records in the celebs table with no twitter_handle:</p> <br>
+                    <p><span class="purple">Constraints</span> that add information about how a column can be used are invoked after specifying the data type for a column. They can be used to tell the database to reject inserted data that does not adhere to a certain restriction. The statement below sets constraints on the celebs table.</p> <br>
+                    <br>
+                    <br>
+
+
+                    <div class="blackCoding">
+                        <p>
+                            <span class="blue">Alter</span>
+                            <span class="lightGreen">//twitter_handle is the name of the new column being added <br>
+                                                     //TEXT is the data type for the new column</span> br
+                                                     <br>
+                            <span class="darkBlue">celebs</span> <br>
+                           <span class="darkBlue">ADD COLUMN</span> twitter_handle TEXT; <br>
+                           <br>
+                           <br>
+                           <span class="red">UPDATE</span> <br>
+                           <span class="darkBlue">UPDATE</span> celebs <span class="lightGreen">//celebs is the name of the table.</span><br>                       
+                           <span class="darkBlue">SET</span> twitter_handle = '@taylorswift13' <span class="lightGreen">//SET is a clause that indicates the column to edit.</span> <br>
+                           <span class="darkBlue">WHERE</span> id = 4; <span class="lightGreen">WHERE is a clause that indicates which row(s) to update with the new column value. Here the row with a 4 in the id column is the row that will have the twitter_handle updated to @taylorswift13.</span> <br>
+                            <br>
+                            <br>
+                            <span class="orange">DELETE</span> <br>
+                            <span class="darkBlue">DELETE FROM</span> celebs  <br>
+                            <span class="darkBlue">WHERE</span> twitter_handle IS NULL; <span class="lightGreen">//WHERE is a clause that lets you select which rows you want to delete. Here we want to delete all of the rows where the twitter_handle column IS NULL</span>
+                            <br>
+                            <br>
+                            <span class="purple">Constraints</span> <br>
+                            CREATE TABLE awards ( <br>                                  
+                                id INTEGER <span class="purple">PRIMARY KEY</span>, <br>
+                                recipient TEXT <span class="purple">NOT NULL</span>, <br>
+                                award_name TEXT <span class="purple">DEFAULT</span> 'Grammy' <br>
+                                ); <br>
+                                <br>
+                                <span class="purple">PRIMARY KEY</span> columns can be used to uniquely identify the row. Attempts to insert a row with an identical value to a row already in the table will result in a constraint violation which will not allow you to insert the new row. <br>
+                                <span class="purple">UNIQUE</span> columns have a different value for every row. This is similar to PRIMARY KEY except a table can have many different UNIQUE columns. <br>
+                                <span class="purple">NOT NULL</span> columns must have a value. Attempts to insert a row without a value for a NOT NULL column will result in a constraint violation and the new row will not be inserted. <br>
+                                <span class="purple">DEFAULT</span> columns take an additional argument that will be the assumed value for an inserted row if the new row does not specify a value for that column. <br>
+
+                        </p>
+                    </div>
+                    <h3>As, Distinct</h3>
+                    <p><span class="green">AS</span> is a keyword in SQL that allows you to rename a column or table using an alias. The new name can be anything you want as long as you put it inside of single quotes.</p>
+                    <p><span class="aqua">DISTINCT</span> is used to return unique values in the output. It filters out all duplicate values in the specified column(s).</p>
+
+
+                    <div class="blackCoding">
+                       <p>
+                        SELECT name <span class="green">AS</span> 'Titles' <br>
+                        FROM movies; <br>
+                        <br>
+                        <br>
+                        SELECT <span class="aqua">DISTINCT</span> genre  <span class="lightGreen">//it filters all the  duplicated values </span><br>
+                        FROM movies;
+                       </p>
+                    </div>
+
+                    <h3>Where, like I, like II</h3>
+                    <p>We can restrict our query results using the <span class="red">WHERE</span> clause in order to obtain only the information we want.</p>
+                    <p>The <span class="red">WHERE</span> clause filters the result set to only include rows where the following condition is true.</p>
+                    <p><span class="blue">LIKE I</span> can be a useful operator when you want to compare similar values.The movies table contains two films with similar titles, ‘Se7en’ and ‘Seven’.How could we select all movies that start with ‘Se’ and end with ‘en’ and have exactly one character in the middle?</p>
+                    <p>The percentage sign <span class="pink">%</span> is another wildcard character that can be used with LIKE. ,This statement below filters the result set to only include movies with names that begin with the letter ‘A’:</p>
+                    
+                    
+                    <div class="blackCoding">
+                        <p>
+                            <span class="lightGreen">//Comparison operators used with the WHERE clause are:</span> <br>
+                            <span class="red">WHERE</span> <br>
+                            = equal to <br> 
+                            != not equal to <br>
+                            > greater than <br>
+                            < less than <br>            
+                            >= greater than or equal to <br>
+                            <= less than or equal to <br>
+                            <br>
+
+                            SELECT *  <br>
+                            FROM movies  <br>
+                            WHERE year > 2014; <span class="lightGreen">// Here we are selecting all the movies where the year is higher than 2014.</span>
+                            <br>
+                            <br>
+                            SELECT *  <br>
+                            FROM movies <br>
+                            WHERE name LIKE 'Se_en'; <br>
+                            <br>
+                            <span class="pink">like II "%"</span> <br>
+                            <br>
+                            SELECT *  <br>
+                            FROM movies <br>        
+                            WHERE name LIKE 'A%'; <span class="lightGreen">// movies that start with letter "A"</span><br>
+                            <br>
+                            SELECT *  <br>
+                            FROM movies <br>        
+                            WHERE name LIKE '%A'; <span class="lightGreen">// movies that finish with letter "A"</span><br>
+                            <br>
+                            SELECT *  <br>
+                            FROM movies  <br>
+                            WHERE name LIKE '%man%'; <span class="lightGreen">//Movies that will contain the word "man" in the title</span><br>
+
+                        </p>
+                    </div>
+
+                    <h3>Is Null, between, and, or</h3>
+                    <p>with the is null or is not null we can determine any nullvalues.</p>
+                    <p>The <span class="red">BETWEEN</span> operator is used in a WHERE clause to filter the result set within a certain range. It accepts two values that are either numbers, text or dates.</p>
+                    <p> <span class="purple">"and"</span> Sometimes we want to combine multiple conditions in a WHERE clause to make the result set more specific and useful. One way of doing this is to use the AND operator. Here, we use the AND operator to only return 90’s romance movies</p>
+                    <p>Similar to AND, the <span class="lightBlue">OR</span> operator can also be used to combine multiple conditions in WHERE, but there is a fundamental difference</p>
+
+                    <div class="blackCoding">
+                        <p>
+                            SELECT name <br>
+                            FROM movies  <br>
+                            WHERE imdb_rating IS NOT NULL; <span class="lightGreen">// here we are getting al the ratings that are not null</span> <br>
+                            <br>
+                            <br>
+                            SELECT * <br>
+                            FROM movies <br>
+                            WHERE year BETWEEN 1990 <span class="purple">AND</span> 1999; <span class="lightGreen">// all movies that are between 1990 and 1999</span> <br>
+                            <br>
+                            <br>
+                            SELECT * <br>
+                            FROM movies <br>
+                            WHERE year < 1985 <br>
+                            <span class="purple">AND</span> genre = "horror"; <span class="lightGreen">//Here we are retrieving all the movies that were produced in the year of 1985 or previous and also where te genre is "Horror"</span><br>
+                            <br>
+                            <br>
+                            SELECT * <br>
+                            FROM movies <br>
+                            WHERE genre = "romance" <br>
+                            OR genre = 'comedy';  <span class="lightGreen">// here we are selecting all the movies that are comedy or romance</span> <br> 
+                        </p>
+                    </div>
+
+                    <h3>order by, limit, case</h3>
+                    <p>We can sort the results using ORDER BY, either alphabetically or numerically. Sorting the results often makes the data more useful and easier to analyze.</p>
+                    <p>"<span class="red">limit</span>" We’ve been working with a fairly small table (fewer than 250 rows), but most SQL tables contain hundreds of thousands of records. In those situations, it becomes important to cap the number of rows in the result.  For instance, imagine that we just want to see a few examples of records.</p>
+                    <p>A <span class="orange">CASE</span> statement allows us to create different outputs (usually in the SELECT statement). It is SQL’s way of handling if-then logic.</p>
+                    
+                    <div class="blackCoding">
+                        <p>
+                            SELECT * <br>
+                            FROM movies <br>            
+                            WHERE imdb_rating > 8 <br>
+                            ORDER BY year DESC; <span class="lightGreen">// Here are getting all the movies have rating of 8 or higher and the order is by the year in descending order</span><br>
+                            <br>
+                            <br>
+                            <span class="red">limit</span> <br>
+                            SELECT * <br>
+                            FROM movies <br>
+                            LIMIT 10; <br>
+                            <br>
+                            <span class="orange">CASE</span> <br>
+                            <br>
+                            SELECT <span class="orange">CASE</span>, <br>
+                            CASE <br>
+                            WHEN imdb_rating > 8 THEN 'Fantastic' <br>
+                            WHEN imdb_rating > 6 THEN 'Poorly Received' <br>
+                            ELSE 'Avoid at All Costs' <br>
+                            END <br>        
+                            FROM movies; <br>
+                            <span class="lightGreen">
+                            // If the rating is above 8, then it is Fantastic. <br>
+                            //If the rating is above 6, then it is Poorly Received. <br>
+                            //Else, Avoid at All Costs. <br>
+                            //EVERYTHING INSIDE OF THE SELECT CLAUSE</span>
+
+                        </p>
+                    </div>
+                </div>
+
+        </div>
+</body>
+</html>

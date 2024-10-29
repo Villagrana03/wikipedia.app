@@ -1,0 +1,105 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/CSS-Files/style.css">
+    <link rel="stylesheet" href="/CSS-Files/codingColors.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+      
+    <div class="navbar">
+        <div class="container-navbar1">
+            <a href="/index.html">Home</a>
+            <a href="">CSS</a>
+            <a href="/HTML/htmlFirst.html">HTML</a>
+        </div>  
+    </div>
+
+    <div>
+        <div class="main-container">
+           
+            <div>
+                <h2>React Forms</h2>
+                <p></p>
+            </div>
+
+
+        </div>
+
+
+            <div class="javascript-body">
+
+               <h3>input onChange</h3>
+               <p>When the user interacts with an input, such as entering or deleting any characters, the onChange event fires and updates the component state</p>
+                <p>onChange: Local Update: When onChange is triggered, it updates the local state of the component (like setting the value of the input field). This is happening within the browser, not on the server.</p>
+                <p>Server Communication: For data to be sent to the server, you need to explicitly make a request to the server (using something like fetch(), axios, or a form submission). The onChange event doesn't inherently trigger server-side communication.</p>
+
+
+                <h3>Write an Input Event Handler</h3>
+                <p>Let’s define an event handler function that gets called whenever a user enters or deletes any character inside the &lt;input&gt; element</p>
+
+                <h3>Update an Input's Value</h3>
+                <p>Also we updated the value={userInput}</p>
+<!--  <span class="darkBlue">const</span>          &lt; h1 &gt;  Hello world&lt;/h1&gt;   -->
+                <div class="blackCoding">
+                    <p>
+                        import React, { useState } from "react"; <br>
+                        import styles from "./Input.module.css"; <br>
+<br>
+                        function Input() { <br>                         
+                        const [userInput, setUserInput] = useState("") <span class="lightGreen">//Here we will handle the userInput</span> <br>
+                        function handleUserInput(e) { <br>
+                            setUserInput(e.target.value); <span class="lightGreen">//Whatever the value is, of the target, we will update the userInput using the setUserInput</span><br>
+                        } <br>      
+                        return ( <br>
+                            <> <br>                                     
+                            &lt;div className={styles.emailContainer}> <br>
+                            &lt;h2>Let's stay in touch.&lt;/h2> <br>
+                            &lt;p> <br>
+                                Sign up for our newsletter to stay up-to-date on the latest products, <br>
+                                receive exclusive discounts, and connect with other programmers who <br>
+                                share your passion for all things tech. <br>
+                                &lt;/p> <br>
+                                &lt;form> <br>
+                                &lt;label for="email">Email: &lt;/label> <br>
+                                &lt;input id="email" type="text" value = {userInput} onChange={handleUserInput} /> <span class="lightGreen">//In this line, we update the input, we set value={userInput} so everytime the value is updated will be like:  value = {userInpt} AND onChange = {handleUserInput} we just call that function</span><br>
+                                &lt;/form> <br>
+                                &lt;/div> <br>                             
+                                &lt;div className={styles.inputDisplay}> <br>
+                                &lt;h2>Current User Input: &lt;/h2> <br>
+                                &lt;h4>&lt;/h4> <br>
+                                &lt;/div> <br>
+                            </> <br>
+                        ); <br>
+                        } <br>
+<br>
+                        export default Input; <br>
+                    </p>
+                </div>
+
+                <h3>Controlled vs Uncontrolled</h3>
+                <p> Uncontrolled component: is a component that maintains its own internal state.</p>
+                <p>Controlled component: is a component that does not maintain any internal state. Since a controlled component has no state, it must be controlled by someone else.</p>
+
+                <h4>Example of Uncontrolled</h4>
+                <p>Think of a typical <input type='text' /> element. It appears on the screen as a text box. If you need to know what text is currently in the box, then you can ask the <input> element</p>
+                
+                <div class="blackCoding">
+                    <p>
+                        let input = document.querySelector('input[type="text"]'); <br>
+                        <br>
+                        let typedText = input.value; <span class="lightGreen">// input.value will be equal to whatever text is currently in the text box.</span> <br>
+                    </p>
+                </div>
+
+                <h4>Example of Controlled</h4>
+                <p>A controlled component, on the other hand, has no memory. If you ask it for information about itself, then it will have to get that information through props. Most React components are controlled.</p>
+                <p>In React, when you give an <input> element a value attribute, then something strange happens: the input element becomes controlled. It stops using its internal storage. This is a more “React” way of doing things</p>
+            </div>
+    </div>
+</body>
+</html>

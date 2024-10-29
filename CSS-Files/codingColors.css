@@ -59,6 +59,10 @@ body{
     color: rgb(56, 208, 14);
 }
 
+.gold{
+    color:rgb(255, 215, 0)
+}
+
 .boldClass{
     font-weight: bold;
     color: rgb(0, 0, 0);

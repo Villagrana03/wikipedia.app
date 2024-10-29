@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/CSS-Files/style.css">
+    <link rel="stylesheet" href="/CSS-Files/codingColors.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+      
+    <div class="navbar">
+        <div class="container-navbar1">
+            <a href="/index.html">Home</a>
+            <a href="">CSS</a>
+            <a href="/HTML/htmlFirst.html">HTML</a>
+        </div>  
+    </div>
+
+    <div>
+        <div class="main-container">
+           
+            <div>
+                <h2>This is the first chapter of codeacademy teaching React!</h2>
+                <p></p>
+            </div>
+
+         
+        </div>
+
+
+            <div class="javascript-body">
+
+               <h3>JSX</h3>
+               <p>the following code is a combination of react and Javascript! and the file is written in Javascript BUT The part that looks like HTML, &lt;h1&gt;Hello world&lt;/h1&gt, is something called JSX.</p>
+
+               <div class="blackCoding">
+                <p>
+                    <span class="darkBlue">const</span> h1 = >&lt;h1&gt;Hello world&lt;/h1&gt;; 
+
+
+                </p>
+               </div>
+               <!--  <span class="darkBlue">const</span>          &lt;h1&gt;Hello world&lt;/h1&gt;   -->
+               <h3>Whats JSX?</h3>
+               <p>JSX is a syntax extension for JavaScript. It was written to be used with React. JSX code looks a lot like HTML</p>
+               <p>If a JavaScript file contains JSX code, then that file will have to be compiled. This means that before the file reaches a web browser, a JSX compiler will translate any JSX into regular JavaScript.</p>
+               <p>This JSX element looks exactly like HTML! The only noticeable difference is that you would find it in a JavaScript file, instead of in an HTML file.</p>
+               <br>
+               
+               <h3>JSX Element</h3>
+               <div class="blackCoding">
+                <p>
+                    
+                    &lt;h1&gt;Hello world&lt;/h1&gt;  <span class="lightGreen">//This is a JSX Element</span>
+
+                </p>
+               </div>
+
+               <p>JSX elements are treated as JavaScript expressions. They can go anywhere that JavaScript expressions can go. This means that a JSX element can be saved in a variable, passed to a function, stored in an object or array… you name it.</p>
+               <div class="blackCoding">
+                <p>
+                    <span class="darkBlue">const</span>  navBar = &lt;h1&gt;I am a Navbar !&lt;/h1&gt; ; <br>
+                    <br>
+                    <span class="lightGreen">//The following code will be an example of how element is being stored. </span> <br>
+                    const myTeam = { <br>               
+                        center: &lt;li&gt;Benzo Walli&lt;/li&gt;, <br>
+                        powerForward: &lt;li&gt;Rasha Loa&lt;/li&gt;, <br>  
+                        smallForward: &lt;li&gt;Tayshaun Dasmoto&lt;/li&gt;, <br>
+                        shootingGuard: &lt;li&gt;Colmar Cumberbatch&lt;/li&gt;, <br>
+                        pointGuard: &lt;li&gt;Femi Billon&lt;/li&gt; <br>
+                      };
+                      
+                </p>
+               </div>
+               <h3>JSX Atributtes</h3>
+               <p>JSX elements can have attributes, just like how HTML elements can. A JSX attribute is written using HTML-like syntax: a name, followed by an equals sign, followed by a value. The value should be wrapped in quotes, like this:</p>
+          
+               <div class="blackCoding">
+                <p>
+                    <span class="lightGreen">//id="title" it is just an attribute like in html</span> <br>          
+                    <span class="darkBlue">const</span> &lt;h1 id='title'>Introduction to React.js: Part I /h1&gt;; <br>
+                    <br>
+                    <span class="darkBlue">const</span> p1= &lt;p <span class="lightBlue">id</span> = "<span class="orange">large</span>" &gt; foo &lt;/p&gt; <br>
+                    <span class="darkBlue">const</span> p2 = &lt;p <span class="lightBlue">id</span> = "<span class="orange">small</span>" &gt; bar &lt;/p&gt;;
+                </p>
+               </div>
+          
+               <h3>Nested JSX</h3>
+               <p>You can nest JSX elements inside of other JSX elements, just like in HTML. Here’s an example of a JSX &lt;h1&gt; element, nested inside of a JSX &lt;a&gt; element &lt;/p&gt;
+                
+                <div class="blackCoding">
+                    <p>
+                        <span class="lightGreen">//
+                            To make this more readable, you can use HTML-style line breaks and indentation:</span> <br>
+                            <span class="lightGreen">//If a JSX expression takes up more than one line, then you must wrap the multi-line JSX expression in parentheses <span class="orange">()</span>. This looks strange at first, but you get used to it:</span> <br>
+                       <span class="orange">(</span>  <br>   
+                        &lt;a href="ttps://www.example.com"> <br>
+                       <span class="black">---</span><&lt;h1&gt; <br>
+                       <span class="black">------</span> Click me! <br>
+                       <span class="black">---</span>&lt;/h1&gt; <br>
+                        &lt;a&gt; <br>
+                        <span class="orange">)</span> 
+                    </p>
+                </div>
+          
+                <h3>JSX Outer Elements</h3>
+                <p></p>
+
+                  <!--  <span class="darkBlue">const</span>          &lt; h1 &gt;  Hello world&lt;/h1&gt;   -->
+           
+                <div class="blackCoding">
+                    <p>
+                        <span class="lightGreen">//As far as i know this code will not work because is not wrapped into something like a div</span> <br>
+                        const paragraphs = (  <br>
+                            &lt;p&gt;I am a paragraph.&lt;/p&gt; <br>
+                        &lt;p&gt;I, too, am a paragraph.&lt;/p&gt; <br>
+                        );
+                    </p>
+                </div>
+
+                <h3>Rendering JSX</h3>
+                <p>You’ve learned how to write JSX elements! Now it’s time to learn how to render them. To render a JSX expression means to make it appear on screen.</p>
+
+                <div class="blackCoding">
+                    <p>
+                        import React from 'react'; <br>
+                        import { createRoot } from 'react-dom/client'; <br>
+                        <br>
+                        <span class="lightGreen">//Before we get started it is essential to understand that React relies on two things to render: what content to render and where to place the content.</span> <br>
+                        <br>
+                        <br>
+                        <span class="darkBlue">const</span>  container = document.getElementById('app'); <span class="lightGreen">//Uses the document object which represents our web page. in other words app = "Our page"</span> <br> 
+                        <br>
+                        <span class="darkBlue">const</span> root = createRoot(container); <span class="lightGreen">//we use createRoot() from the react-dom/client library, which creates a React root from container and stores it in root. root can be used to render a JSX expression. This is the “where to place the content” part of React rendering.</span> <br>
+                        root.render(&lt;h1&gt;Hello world&lt;/h1&gt;); <span class="lightGreen">// We use the method render from root that will display in ouyr page what is rendered </span>
+                        <br>
+                        <br>
+                        <br>
+                        <span class="lightGreen">//Here we made a JSX element, and we stored it in a toDolist vairable</span>
+                        const toDoList = ( <br>                     
+                       <span class="black">---</span>&lt;ol&gt; <br>                    
+                       <span class="black">------</span>&lt;li&gt;Learn React&lt;/li&gt; <br>
+                       <span class="black">------</span>&lt;li&gt;Become a Developer&lt;/li&gt; <br>
+                        <span class="black">---</span>&lt;/ol&gt; <br>
+                        ); <br>
+                        <br>
+                        <span class="lightGreen">//And here we just rendered it into the page</span> <br>
+                        const container = document.getElementById('app'); <br>
+                        const root = createRoot(container); <br>
+                        root.render(toDoList); <br>
+                    </p>
+                </div>
+
+
+            </div>
+    </div>
+</body>
+</html>

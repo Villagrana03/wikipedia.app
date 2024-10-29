@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/CSS-Files/style.css">
+    <link rel="stylesheet" href="/CSS-Files/codingColors.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+      
+    <div class="navbar">
+        <div class="container-navbar1">
+            <a href="/index.html">Home</a>
+            <a href="">CSS</a>
+            <a href="/HTML/htmlFirst.html">HTML</a>
+        </div>  
+    </div>
+
+    <div>
+        <div class="main-container">
+           
+            <div>
+                <h2>Operators</h2>
+                <p>In C++, operators are used to perform operations on variables and values. In an operation, symbols are labeled as either operands or operators.</p>
+            </div>
+
+           
+
+        </div>
+
+
+            <div class="javascript-body">
+               
+                <div class="blackCoding">
+                    <p>
+                        int n = 3 + 4;
+                    </p>
+                </div>
+
+                <h3>Arithmetic Operators</h3>
+                <p>Arithmetic operators are used to perform mathematical operations on numerical variables such as int and double.</p>
+
+                <img src="/Pictures/c++/Screenshot 2024-10-20 130741.png" alt="" width="800px" height="300px">
+
+                <p>Example of Arithmetic</p>
+
+                <div class="blackCoding">
+                    <p>
+                        int x = 4, y = 2; <br>
+<br>
+                        int z = x + y;  <span class="lightGreen">// z now equals 6</span> <br>
+                        z = x / y;  <span class="lightGreen">// z now equals 2</span> <br>
+                        z = x % y;  <span class="lightGreen">// z now equals 0</span> <br>
+                        z = --x;    <span class="lightGreen">// z now equals 3, x now equals 3</span> <br>
+
+                    </p>
+                </div>
+
+                <h4>Pre vs. Post-Increment</h4>
+                <p>When placed before the operand, they are called pre-increment and pre-decrement operators. The value stored in the operand is incremented or decremented first, and then that operand is returned. For example:</p>
+
+                <div class="blackCoding">
+                    <p>
+                        int x = 10; <br>
+<br>
+                        <span class="lightGreen">// x is decremented to 9 first, and then assigned to y</span> <br>
+                        int y = --x; <br>
+<br>
+                        std::cout << x << ' ' << y; <br>
+                         <span class="yellow">Output</span> = 9 9
+                    </p>
+                </div>
+
+                <p>When placed after the operand, they are called post-increment and post-decrement operators. Postfix operators require more steps than prefix operators. First, a copy of the operand is made. Then the operand (not the copy) is incremented or decremented. Finally, the copy (not the original) is evaluated. For example:</p>
+
+                <div class="blackCoding">
+                    <p>
+                        int x = 10; <br>
+<br>
+                        <span class="lightGreen">// A copy of x is made first, then x is decremented to 9</span> <br>
+                        <span class="lightGreen">// Finally the value of the copy (10) is assigned to y</span> <br>
+                        int y = x--; <br>
+<br>
+                        std::cout << x << ' ' << y;  <br>
+                        <span class="yellow">Output</span> = 9 10
+                    </p>
+                </div>
+
+                <h3>Assignment Operators</h3>
+                <p>Assignment operators are used to assign values to variables. Furthermore, compound assignment operators can perform arithmetic operations on a variable and reassign its value in one step. They can be thought of as short-hand operators.</p>
+
+                <img src="/Pictures/c++/AssignemntOperand.png" alt="" width="800px" height="300px">
+
+                <div class="blackCoding">
+                    <p>
+                        <span class="lightGreen">//For example, the following statements</span> <br>
+                        x = x + 5; <br>
+                        y = y * 2; <br>
+<br>
+                        <span class="lightGreen">//may be substituted with compound assignments:</span> <br>
+                        x += 5; <br>
+                        y *= 2;
+
+                    </p>
+                </div>
+
+                <h3>Relational Operators</h3>
+                <p>Relational operators are used to compare two variables or values. The result of the operation of a relational operator is a bool (true or false).</p>
+
+                <img src="/Pictures/c++/relationOperands.png" alt=""width="800px" height="300px">
+
+                <h3>Logical Operators</h3>
+                <p>Logical operators are used to combine the logic of two or more conditions. The result of a logical operation is a bool (true or false).</p>
+
+                <img src="/Pictures/c++/logicalOperand.png" alt="" width="800px" height="300px">
+
+                <h3>Bitwise Operators</h3>
+                <p>Bitwise operators are used to manipulate variables at the bit level. They are most commonly used with numerical variables to perform bit operations.</p>
+    
+                <img src="/Pictures/c++/bitwiseOperand.png" alt="" width="800px" height="300px">
+
+                <p>Example:</p>
+
+                <div class="blackCoding">
+                    <p>
+                        int x = 3;  <span class="lightGreen">// in bits: 0011</span> <br>
+                        int y = 9;  <span class="lightGreen">// in bits: 1001</span> <br>
+<br>
+                        int z = x << 2; <span class="lightGreen">// z equals 12, in bits: 1100</span> <br>
+                        z = y >> 1; <span class="lightGreen">// z equals 4, in bits: 0100</span> <br>
+                        z = x | y;  <span class="lightGreen">// z equals 11, in bits: 1011</span> <br>
+                    </p>
+                </div>
+            </div>
+
+          
+    </div>
+</body>
+</html>

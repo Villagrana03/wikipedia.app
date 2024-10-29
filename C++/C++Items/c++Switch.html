@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/CSS-Files/style.css">
+    <link rel="stylesheet" href="/CSS-Files/codingColors.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+      
+    <div class="navbar">
+        <div class="container-navbar1">
+            <a href="/index.html">Home</a>
+            <a href="">CSS</a>
+            <a href="/HTML/htmlFirst.html">HTML</a>
+        </div>  
+    </div>
+
+    <div>
+        <div class="main-container">
+           
+            <div>
+                <h2>switch</h2>
+                <p>Learn how to control code execution with switch statements.</p>
+            </div>
+
+            <div class="main-content">
+
+            </div>
+
+        </div>
+        
+
+            <div class="javascript-body">
+               <p>The switch statement is a type of conditional statement in C++ just like if and else. A switch statement provides a means of checking an expression against various cases. If there is a match, the code within the block starts to execute.</p>
+         
+               <h4>switch Syntax</h4>
+
+               <div class="blackCoding">
+                <p>
+                    switch (grade) { <br>
+                        <span class="black">---</span>    case 9: <br>                      
+                        <span class="black">------</span>      std::cout << "Freshman\n"; <br>
+                        <span class="black">------</span>      break; <br>
+                          <span class="black">---</span>    case 10: <br>
+                          <span class="black">------</span>      std::cout << "Sophomore\n"; <br>
+                          <span class="black">------</span>      break; <br>
+                          <span class="black">---</span>    case 11: <br>               
+                          <span class="black">------</span>      std::cout << "Junior\n"; <br>
+                          <span class="black">------</span>      break; <br>
+                          <span class="black">---</span>    case 12: <br>                   
+                          <span class="black">------</span>      std::cout << "Senior\n"; <br>
+                          <span class="black">------</span>      break; <br>
+                          <span class="black">---</span>    default: <br>                   
+                          <span class="black">------</span>      std::cout << "Invalid\n"; <br>
+                          <span class="black">------</span>      break; <br>
+                      }
+                      
+                </p>
+               </div>
+
+               <p>Note: The expression of a switch statement must be an integral type (int, char, short, long, long long, or enum).</p>
+            </div>
+
+            <h3>switch vs. if-else</h3>
+            <p>For conditional statements with multiple outcomes, if-else chains are tedious to write and read. If the previous example was written with if-else</p>
+   
+            <h3>The break Keyword</h3>
+            <p>The break keyword signals the compiler to jump out of a case. Without the break keyword at the end of each case, the program would execute the code for the first matching case and also subsequent cases.</p>
+            <p>For example, if the break keyword is removed from the first case of the example:</p>
+            <div class="blackCoding">
+                <p>
+                    case 9: <br>
+                    <span class="black">---</span> std::cout << "Freshman\n"; <br>
+                    case 10: <br>
+                    <span class="black">---</span>std::cout << "Sophomore\n"; <br>
+                    break; <br>
+<br>
+                    <span class="yellow">Output</span> <br>
+                    Freshman <br>
+                    Sophomore
+
+
+                </p>
+            </div>
+
+            <h3>The default Keyword</h3>
+            <p>The default keyword is used to specify a code block to be run if none of the cases are true. It acts very similarly to an else statement and is usually placed at the end of a switch statement.</p>
+
+            <div class="blackCoding">
+                <p>
+                    default: <br>               
+                    std::cout << "Invalid\n"; <br>
+                    break; <br>
+
+                </p>
+            </div>
+        </div>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/CSS-Files/style.css">
+    <link rel="stylesheet" href="/CSS-Files/codingColors.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+      
+    <div class="navbar">
+        <div class="container-navbar1">
+            <a href="/index.html">Home</a>
+            <a href="">CSS</a>
+            <a href="/HTML/htmlFirst.html">HTML</a>
+        </div>  
+    </div>
+
+    <div>
+        <div class="main-container">
+           
+            <div>
+                <h2>Styling React</h2>
+                <p></p>
+            </div>
+
+        </div>
+
+
+            <div class="javascript-body">
+               <h3>Inline styling</h3>
+               <p>Inline style refers to a method of applying CSS (Cascading Style Sheets) directly within an HTML element using the style attribute. Instead of defining styles in an external CSS file or within a style</p>
+
+               <div class="blackCoding">
+                <!--  <span class="darkBlue">const</span>          &lt; h1 &gt;    Hello world&lt;/h1&gt;   -->
+                <p>
+                    &lt;h1 style={{ color: 'red' }}&gt;Hello world&lt;/h1&gt;  <span class="lightGreen">//Notice that it has double curly braces. The outer curly braces are to note that everything between should be read as JavaScript. The inner curly braces create a JavaScript object literal.</span><br>
+                </p>
+               </div>
+
+               <h3>Why not use Inline?</h3>
+               <p>using inline styles can quickly become messy if you want to apply more than just a few styles. An alternative is to store a style object in a variable and then inject that variable as the value of the style attribute</p>
+            
+               <div class="blackCoding">
+                <p>
+                    <span class="lightGreen">// To do this, we can initialize an object with properties and values like so:</span> <br>
+                    const darkMode = { <br>
+                        color: 'white', <br>
+                        background: 'black' <br>
+                      }; <br>
+                      <br>
+                      <span class="lightGreen">//Then, the object can be injected to style a component:</span> <br>
+                      &lt;h1 style={darkMode}&gt;Hello world&lt;/h1&gt; <span class="lightGreen">//Since we are not doing a inline style, we are just need to add one {}</span><br>
+
+                </p>
+               </div>
+
+               <h3>Multiple Stylesheets</h3>
+               <p>While inline styles and style object variables are valid methods of styling in React, it can become organizationally difficult to keep track of the styles being applied as your application grows.</p>
+               <p>One way to make styles modular, organized, and reusable is to create separate stylesheets for each component.
+
+                We can import a stylesheet by using the import keyword:</p>
+
+
+               <div class="blackCoding">
+                <p>
+                    import './App.css' <br>
+                </p>
+               </div>
+
+               <p>However, if we have multiple stylesheets with the same class names, the names can collide and create style conflicts.
+
+                One way to prevent this is to use CSS modules. By importing it as a module, the styles will only be available for the component that imported the style. This is done automatically by creating unique class names for each module. This frees us from having to keep track of the class names we’ve used across stylesheets.</p>
+
+                <p>To use CSS modules, we begin by naming our stylesheet in this format, where fileName should be replaced with the name of the component you’re styling</p>
+               
+                <div class="blackCoding">
+                    <!--  <span class="darkBlue">const</span>          &lt; h1 &gt;    Hello world&lt;/h1&gt;   -->
+                    <p>
+                        fileName.module.css <span class="lightGreen">//This indicates that the file should be processed as a CSS module.</span> <br>
+                        <br>
+                        import styles from './fileName.module.css' <br>
+                        <br>
+                        <span class="lightGreen">//Now everytime we to use style in abject using this method we will set it like this:</span> <br>
+                        &lt;div className={styles.divStyle}&gt;&lt;/div&gt; <br>
+                        <span class="lightGreen">We must! use "className"</span> <br>
+
+                    </p>
+                </div>
+            </div>
+    </div>
+</body>
+</html>

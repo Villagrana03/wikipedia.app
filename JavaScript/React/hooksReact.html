@@ -1,0 +1,298 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/CSS-Files/style.css">
+    <link rel="stylesheet" href="/CSS-Files/codingColors.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+      
+    <div class="navbar">
+        <div class="container-navbar1">
+            <a href="/index.html">Home</a>
+            <a href="">CSS</a>
+            <a href="/HTML/htmlFirst.html">HTML</a>
+        </div>  
+    </div>
+
+    <div>
+        <div class="main-container">
+           
+            <div>
+                <h2>Hooks!</h2>
+                <p>What should we do if we want to add a state to our function component? How about if we wanted our app to respond to the changes in data?</p>
+                <p>a hook is a special function that lets you use state and other React features in functional components.</p>
+            </div>
+
+
+        </div>
+
+
+            <div class="javascript-body">
+               <h3>Why to use a hook?</h3>
+               <p>React Hooks, plainly put, are functions that let us manage the internal state of components and handle post-rendering side effects directly from our function components</p>
+               <p>React offers a number of built-in Hooks. A few of these include useState(), useEffect(), useContext(), useReducer(), and useRef().</p>
+        
+                <h3>Update Function Component State</h3>
+                <h4>State Hook</h4>
+                <p>Let’s get started with the State Hook, the most common Hook used for building React components. The State Hook is a named export from the React library, so we import with object destructuring like the following:</p>
+
+                <div class="blackCoding">
+                    <p>
+                        import React, { useState } from 'react';
+                    </p>
+                </div>
+
+                <p>When we call the useState() function, it returns an array with two values: <br>
+<br>
+                    <span class="blue">The current state:</span> The current value of this state. <br>
+                    <span class="blue">The state setter:</span> A function that we can use to update the value of this state.</p>
+
+                    <div class="blackCoding">
+                        <p>
+                            <span class="lightGreen">//</span> <br>
+                            const [currentState, setCurrentState] = useState(); <span class="lightGreen">//If we can to set a inital value to something, we pass put in inside od the useState()</span> <br>
+                            <span class="lightGreen">//If we don’t pass an initial value when calling useState(), the current value of the state during the first render will be undefined. Often, this is perfectly fine for the computers running the code, but it can be unclear to the humans reading our code. So, we prefer to explicitly initialize our state.</span>
+                        </p>
+                    </div>
+                    <br>
+
+                       <!--  <span class="darkBlue">const</span>          &lt; h1 &gt;  Hello world&lt;/h1&gt;   -->
+                    <div class="blackCoding">
+                        <p>
+                            import React, { useState } from "react"; <br>
+<br>
+                                function Toggle() { <br>                
+                                const [toggle, setToggle] = useState(); <br>
+<br>
+                                return ( <br>   
+                                    &lt;div&gt; <br>
+                                    &lt;p>The toggle is {toggle}&lt;/p&gt; <br>                     
+                                    &lt;button onClick={() => setToggle("On")}>On&lt;/button&gt; <span class="lightGreen">//When ever the user clicks on the button setToggle is just to change the state of toggle or To update the value of toggle</span><br>
+                                    &lt;button onClick={() => setToggle("Off")}>Off&lt;/button&gt; <br>
+                                    &lt;/div&gt; <br>
+                                ); <br>
+                                } <br>
+                                <br>
+                                <br>
+                                <br>
+                                <span class="lightGreen">//we have an event listener where everytime the function is being calle we will update the email variable and put what ever value in hte input was, to the email value, for istance, if user puts "hello world" in the input, the emaill will be that</span> <br>
+                                import React, { useState } from 'react'; <br>
+<br>
+                                export default function EmailTextInput() { <br>
+                                const [email, setEmail] = useState(''); <br>
+                               <span class="red">-></span> const handleChange = (event) => { <br>          
+                                <span class="red">-></span>    const updatedEmail = event.target.value; <br>
+                                <span class="red">-></span>    setEmail(updatedEmail); <br>
+                                <br>
+                                <span class="lightGreen">//The code that has the red arrows could be replaced but the following code: </span> <br>
+                                <span class="lightGreen">//const handleChange = ({target}) => setEmail(target.value);</span> <br>
+                                } <br>
+<br>
+                                return ( <br>
+                                    &lt;input value={email} onChange={handleChange} /&gt; <span class="lightGreen">//The value of the &lt;input&gt; tag will be the email state variable.</span> <br>
+                                ); <br>
+                                } <br>
+                        </p>
+                    </div>
+            </div>
+
+            <h3>Set From Previous State</h3>
+            <p>React state updates are asynchronous. This means that there are some scenarios where portions of your code will run before the state is finished updating.</p>
+            <p>it is best practice to update a state with a callback function</p>
+
+            <div class="blackCoding">
+                <p>
+                    <span class="lightGreen">// In this example we have 2 callbacks, everytime the user clicks the button, the number will be add one or subtract one</span> <br>
+                    <br>
+                    import React, { useState } from 'react'; <br>
+<br>
+                    export default function QuizNavBar({ questions }) { <br>
+                    const [questionIndex, setQuestionIndex] = useState(0); <br>
+ <br>
+                    const goBack = () => <span class="lightGreen">//eventHandler</span> <br>                                           
+                        setQuestionIndex((prevQuestionIndex) => prevQuestionIndex - 1); <span class="lightGreen">//callback</span><br>
+                    const goToNext = () =><span class="lightGreen">//eventHandler</span> <br>                                         
+                        setQuestionIndex((prevQuestionIndex) => prevQuestionIndex + 1); <span class="lightGreen">//callback</span><br>
+ <br>
+                    const onFirstQuestion = questionIndex === 0; <br>               
+                    const onLastQuestion = questionIndex === questions.length - 1; <br>
+<br>
+                    return ( <br>
+                    &lt;nav&gt; <br>
+                        <span>Question #{questionIndex + 1}</span> <br>
+                        &lt;div&gt; <br>
+                            &lt;button onClick={goBack} disabled={onFirstQuestion}&gt; <br>
+                            Go Back <br>
+                            &lt;/button&gt; <br>
+                            &lt;button onClick={goToNext} disabled={onLastQuestion}&gt; <br>
+                            Next Question <br>
+                            &lt;/button&gt; <br>
+                            &lt;/div&gt; <br>
+                        &lt;/nav&gt; <br>
+                    );<br>
+                    } <br>
+                </p>
+                 <!--  <span class="darkBlue">const</span>          &lt; h1 &gt;  Hello world&lt;/h1&gt;   -->
+            </div>
+
+            <h3>Arrays in State</h3>
+            <p>JavaScript arrays are the best data model for managing and rendering JSX lists. Let’s take a look at the code for a website for a pizza restaurant.</p>
+            <p> selected: The current state value. <br>         
+                setSelected: A function to update the state. <br>
+                initialValue or []: The value that the state will start with. It can be of any type (string, number, array, object, etc.).</p>
+
+
+            <div class="blackCoding">
+                <p>
+                    export default function PersonalPizza() { <br>
+                        const [selected, setSelected] = useState([]); <span class="lightGreen">//This means that selected starts as an empty array. You might use this for managing a list of items, like selected options in a dropdown, checkboxes, or any collection of values.</span> <br>
+<br>
+    <br>                  
+                        const toggleTopping = ({target}) => { <br>
+                          const clickedTopping = target.value; <br>
+                          setSelected((prev) => { <br>   
+                            <br>                   
+                           <span class="lightGreen">// check if clicked topping is already selected</span> <br>
+                            if (prev.includes(clickedTopping)) { <br>   
+                              <span class="lightGreen">// filter the clicked topping out of state</span> <br>
+                              return prev.filter(t => t !== clickedTopping); <br>
+                            } else { <br>        
+                                <br>                       
+                              <span class="lightGreem">// add the clicked topping to our state</span> <br>
+                              return [clickedTopping, ...prev]; <br>
+                            } <br>
+                          }); <br>
+                        }; <br>
+                      <br>
+                        return ( <br>
+                        &lt;div&gt; <br>                
+                            {options.map(option => ( <br>
+                                &lt;button value={option} onClick={toggleTopping} key={option}> <br>
+                                {selected.includes(option) ? 'Remove ' : 'Add '} <br>
+                                {option} <br>
+                                &lt;/button&gt; <br>
+                            ))} <br>
+                            &lt;p&gt;Order a {selected.join(', ')} pizza&lt;/p&gt; <br>
+                            &lt;/div&gt; <br>
+                        ); <br>
+                      } <br>
+                </p>
+            </div>
+
+
+            <h3>Objects in State</h3>
+            <p></p>
+
+            <div class="blackCoding">
+                <!--  <span class="darkBlue">const</span>          &lt; h1 &gt;  Hello world&lt;/h1&gt;   -->
+                <p>
+                    <span class="lightGreen">//const numbers = [1, 2, 3]; <br>
+                        // const newNumbers = [...numbers, 4, 5];  <br>
+                        // newNumbers will be [1, 2, 3, 4, 5] <br>
+                        </span> <br>
+                        <br>
+                        <br>
+                        import React, { useState } from "react"; <br>
+<br>
+                        export default function EditProfile() { <br>
+                        const [profile, setProfile] = useState({}); <br>
+<br>
+                        const handleChange = ({ target }) => { <br>
+                            const { name, value } = target; <br>
+                            setProfile((prevProfile) => ({ <br>
+                            ...prevProfile, <br>
+                            [name]: value <br>
+                            })); <br>
+                        }; <br>
+<br>
+                        const handleSubmit = (event) => { <br>
+                            event.preventDefault(); <br>            
+                            alert(JSON.stringify(profile, '', 2)); <br>
+                        }; <br>
+<br>
+                        return ( <br>
+                        &lt;form onSubmit={handleSubmit}> <br>
+                        &lt;input <br>                          
+                                value={profile.firstName || ''} <br>
+                                onChange={handleChange} <br>
+                                name="firstName" <br>
+                                type="text" <br>        
+                                placeholder="First Name" <br>
+                            /> <br> 
+                            &lt;input <br>                          
+                                value={profile.lastName || ''} <br>
+                                onChange={handleChange} <br>
+                                type="text" <br>    
+                                name="lastName" <br>    
+                                placeholder="Last Name" <br>
+                            /> <br> 
+                            &lt;input <br>                  
+                                value={profile.bday || ''} <br>
+                                onChange={handleChange} <br>
+                                type="date" <br>
+                                name="bday" <br>
+                            /&gt; <br>
+                            &lt;input <br>                      
+                                value={profile.password || ''} <br>
+                                onChange={handleChange} <br>
+                               <br>             
+                                 type="password" <br>
+                                name="password" <br>    
+                                placeholder="Password" <br>
+                            /&gt; <br>                                          
+                            &lt;button type="submit">Save Profile&lt;/button&gt; <br>
+                            &lt;/form&gt; <br>
+                         ); <br>
+                        } <br>
+
+                </p>
+            </div>
+
+            <h3>Separate Hooks for Separate States</h3>
+            <p>While there are times when it can be helpful to store related data in a data collection, like an array or object, it can also be helpful to create different state variables for data that change separately</p>
+
+            <div class="blackCoding">
+                <p>
+                    import React, { useState } from "react"; <br>
+<br>
+                    function Musical() { <br>               
+                    const [state, setState] = useState({ <br>
+                        title: "Best Musical Ever", <br>                            
+                        actors: ["George Wilson", "Tim Hughes", "Larry Clements"], <br>
+                        locations: { <br>
+                        Chicago: { <br>             
+                            dates: ["1/1", "2/2"],  <br>
+                            address: "chicago theater"}, <br> 
+                        SanFrancisco: { <br>
+                            dates: ["5/2"],  <br>   
+                            address: "sf theater" <br>
+                        } <br>
+                        } <br>
+                    }) <br>
+                    } <br>
+<br>
+                    <span class="lightGreen">// in this Component i just used the useState in actors, title and location because it will be more reusable in the future</span> <br>
+                    function MusicalRefactored() { <br>                         
+                    const [title, setTitle] = useState("Best Musical Ever"); <br>                                   
+                        const [actors, setActors] = useState(["George Wilson", "Tim Hughes", "Larry Clements"]); <br>
+                    const [locations, setLocations] = useState({ <br>
+                        Chicago: { <br>         
+                        dates: ["1/1", "2/2"],  <br>
+                        address: "chicago theater" <br>
+                        },  <br>            
+                        SanFrancisco: { <br>
+                        dates: ["5/2"],  <br>
+                        address: "sf theater" <br>
+                        } <br>
+                    }); <br>
+                    }br
+                </p>
+            </div>
+        </div>
+</body>
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/CSS-Files/style.css">
+    <link rel="stylesheet" href="/CSS-Files/codingColors.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+      
+    <div class="navbar">
+        <div class="container-navbar1">
+            <a href="/index.html">Home</a>
+            <a href="">CSS</a>
+            <a href="/HTML/htmlFirst.html">HTML</a>
+        </div>  
+    </div>
+
+    <div>
+        <div class="main-container">
+           
+            <div>
+                <h2>Third Chapter react</h2>
+                <p></p>
+            </div>
+
+          
+
+        </div>
+
+
+            <div class="javascript-body">
+               
+                <h3>React Components</h3>
+                <p>What is a Component?</p>
+                <p>A component is a small, reusable chunk of code that is responsible for one job. That job is often to render some HTML and re-render it when some data changes.</p>
+
+                <div class="blackCoding">
+                    <p>
+                        <span class="lightGreen">//This is an example of a component</span> <br>
+                        import React from 'react'; <br>
+                        import ReactDOM from 'react-dom/client'; <br>
+<br>
+                        function MyComponent() { <br>
+                        return &lt;h1&gt;Hello world&lt;/h1&gt;; <br>
+                        } <br>
+<br>
+                        ReactDOM.createRoot( <br>       
+                        document.getElementById('app') <br>
+                        ).render(&lt;MyComponent /&gt;); <br>
+                    </p>
+                </div>
+
+                <!--  <span class="darkBlue">const</span>          &lt; h1 &gt;  Hello world&lt;/h1&gt;   -->
+
+                <h3>Import React</h3>
+                <p>The first React component we created in the last exercise started with importing react. The line that did this is:</p>
+
+                <div class="blackCoding">
+                    <p>
+                        <span class="lightGreen">//This creates an object named React, which contains methods necessary to use the React library. React is imported from the 'react' package, which should be installed in your project as a dependency. With the object, we can start utilizing features of the react library!</span> <br>
+                        import React from 'react';
+
+                        <span class="lightGreen">//By importing the library, we can use important features such as Hooks,</span>
+                    </p>
+                </div>
+
+                <h3>Import ReactDOM</h3>
+                <p>The Document Object Model (DOM) is a programming interface for web documents. It represents the page so that programs can change the document structure, style, and content. The DOM represents the document as nodes and objects;</p>
+
+                <div class="blackCoding">
+                    <p>
+                        <span class="lightGreen">//index.js</span>
+                        import ReactDOM from 'react-dom/client'; <span class="lightGreen">//In code academt we have 2 files, app.js and index.js but since DOM means  Document Object Mode and its for web files we will have it in the index.</span> <br>
+
+
+                    </p>
+                </div>
+
+                <h3>Create a Function Component</h3>
+                <p>You’ve learned that a React component is a small, reusable chunk of code that is responsible for one job, which often involves rendering HTML and re-rendering it whenever some data changes.</p>
+                <p>It’s useful to think of components as smaller pieces of our interface. Combined, they are the building blocks that make up a React application. In a website,</p>
+                <p>we can create a component for the search bar, another component for the navigation bar, and another component for the dashboard content itself.</p>
+
+                <div class="blackCoding">
+                    <p>
+                        import React from 'react'; <br>
+                        import ReactDOM from 'react-dom/client'; <br>
+<br>
+                        <span class="lightGreen">//Function component names must start with capitalization and are conventionally created with PascalCase! Due to how JSX tags are compiled, capitalization indicates that it is a React component rather than an HTML tag.</span> <br>
+                        function MyComponent() {  <span class="lightGreen">//We are creating the component here.</span> <br>
+                        return &lt;h1&gt;Hello world&lt;/h1&gt;; <br>
+                        } <br>
+<br>
+                        export default MyComponent; <span class="lightGreen">//is exported so it can be used later.</span>
+                    </p>
+                </div>
+
+                <h3>Importing and Exporting React Components</h3>
+                <p>In this example, we have 2 files App.js file is the top level of your application, and index.js is the entry point, we will have all the code at app.js and we will import it to index.js</p>
+
+                <div class="blackCoding">
+                    <p>
+                        <span class="lightGreen">//app.js</span> <br>
+                        import React from 'react'; <br>
+<br>
+                        function MyComponent() {  <span class="lightGreen">//We created a component that has the Title</span> <br>
+                        return &lt;h1&gt; Hello world&lt;/h1&gt;; <br>
+                        } <br>
+<br>
+                        export default MyComponent; <span class="lightGreen">//Since this is app.js we have all the Components and we exported this Component</span> <br>
+                        <br>
+                        <br>
+                        <span class="lightGreen">//index.js</span> <br>
+                        import React from 'react'; <br>             
+                        import ReactDOM from 'react-dom/client'; <br>
+                        <br>
+                        import MyComponent from './App'; <span class="lightGreen">//We just imported the Component from app.js, but we need to render it</span>
+                    </p>
+                </div>
+
+                <h3>Using and Rendering a Component</h3>
+                <p>Now that we have a defined function component, we can start using it. We can use it with an HTML-like syntax that resembles a self-closing tag:</p>
+                 <!--  <span class="darkBlue">const</span>          &lt; h1 &gt;  Hello world&lt;/h1&gt;   -->
+
+                 <div class="blackCoding">
+                    <p>
+                        &lt;MyComponent /&gt; <br>
+                        <br>
+                        <span class="lightGreen">//If you need to nest other components in between, you may also use an opening and corresponding <span class="orange">closing tag structure:</span></span><br>
+                        &lt;MyComponent&gt; <br>
+                       <span class="black">---</span> &lt;OtherComponent /&gt; <br>
+                        &lt;<span class="orange">/</span>MyComponent&gt; <br> 
+                        <br>
+                        <br>
+                        ReactDOM.createRoot(document.getElementById('app')).render(&lt;MyComponent /&gt;);; <span class="lightGreen">//o render our component to the browser, we must rely on the .createRoot() and .render() methods from the react-dom library</span>
+                        <span class="lightGreen">//Inside of the render will be what we want to render</span>
+                    </p>
+                 </div>
+            </div>
+    </div>
+</body>
+</html>

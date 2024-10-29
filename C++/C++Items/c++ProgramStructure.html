@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/CSS-Files/style.css">
+    <link rel="stylesheet" href="/CSS-Files/codingColors.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+      
+    <div class="navbar">
+        <div class="container-navbar1">
+            <a href="/index.html">Home</a>
+            <a href="">CSS</a>
+            <a href="/HTML/htmlFirst.html">HTML</a>
+        </div>  
+    </div>
+
+    <div>
+        <div class="main-container">
+           
+            <div>
+                <h2>Program Structure</h2>
+                <p>Welcome to the basic syntax section of Learn C++ for Programmers! This section will cover concepts that are essential for writing your first C++ program.</p>
+            </div>
+
+        </div>
+
+
+            <div class="javascript-body">
+               <h3>Hello World</h3>
+
+
+                <!--  <span class="darkBlue">const</span>          &lt; h1 &gt;  Hello world&lt;/h1&gt;   -->
+               <div class="blackCoding">
+                <p>
+                    #include &lt;iostream&gt; <br>
+                        using namespace std; <br>
+                        <br>            
+                        int main() { <br>           
+                          cout << "Hello, world!"; <br>
+                          return 0; <br>
+                        }
+                        
+                </p>
+               </div>
+
+               <h3>Preprocessor Directive</h3>
+               <h4>IOstream</h4>
+               <p>is a special type of statement that starts with the # symbol and is examined before actual compilation, The library being imported in this program is the iostream library, which stands for input/output stream. This library allows us to use cout on line 5 and print the hello world message.</p>
+
+               <div class="blackCoding">
+                <p>
+                    #include &lt;iostream&gt;
+                </p>
+               </div>
+
+               <h4>using nameSpace</h4>
+               <p>line introduces the namespace std into the current program. This line allows the usage of standard library objects without prepending the std:: identifier.</p>
+
+               <div class="blackCoding">
+                <p>
+                    using namespace std;
+                </p>
+               </div>
+
+               <h3>main(){}</h3>
+               <p>This is the beginning of the main function. Every C++ program must have a main function in order to run.</p>
+
+               <div class="blackCoding">
+                <p>
+                    int main(){ <br>
+                        cout << "Hello, world!"; <span clas='lightGreen'> //is responsible for printing out the hello world message. </span>  <br>
+                        return 0; <span class="lightGreen">//The next line is a return statement, which terminates a function and returns something to the caller. A return value of 0 indicates that the main function finished running with no problems.</span>    <br>
+                    }
+                </p>
+               </div>
+
+               <h3>COUT</h3>
+               <p>std::cout, which stands for “character output”, is used together with the insertion operator << to print values on the terminal:</p>
+
+               <div class="blackCoding">
+                <p>
+                    std::cout << "Hello World!"; <span class="yellow">Output</span> Hello world!
+                </p>
+               </div>
+
+            </div>
+
+            <h3>New line</h3>
+            <p>A new line can be inserted by adding "\n" in the text to be printed. </p>
+            <div class="blackCoding">
+                <p>
+                    std::cout << "Hello World!\n"; <br>
+                    std::cout << "C++ is fun!\n";
+                </p>
+            </div>
+
+            <p>std::endl, which stands for “end line”, can also be used to achieve the same result:  </p>
+
+            <div class="blackCoding">
+                <p>
+                    std::cout << "Hello World!" << std::endl; <br>
+                    std::cout << "C++ is fun!" << std::endl;
+                </p>
+            </div>
+    </div>
+</body>
+</html>

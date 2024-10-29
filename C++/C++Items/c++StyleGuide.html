@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/CSS-Files/style.css">
+    <link rel="stylesheet" href="/CSS-Files/codingColors.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+      
+    <div class="navbar">
+        <div class="container-navbar1">
+            <a href="/index.html">Home</a>
+            <a href="">CSS</a>
+            <a href="/HTML/htmlFirst.html">HTML</a>
+        </div>  
+    </div>
+
+    <div>
+        <div class="main-container">
+           
+            <div>
+                <h2>C++</h2>
+                <p></p>
+            </div>
+
+        </div>
+
+
+            <div class="javascript-body">
+               <h3>Include Statements</h3>
+               <p>#include statements give us access to functionalities from header file libraries. As a rule of thumb, include statements are mostly written at the beginning of any C++ program. Include headers should be listed in the following order:</p>
+
+               <ul>
+                    <li>C system headers</li>
+                    <li>C++ standard library headers</li>
+                    <li>User-defined libraries’ headers.</li>
+               </ul>
+
+ <!--  <span class="darkBlue">const</span>          &lt; h1 &gt;  Hello world&lt;/h1&gt;   -->
+
+
+               <div class="blackCoding">
+                <p>
+                    <span class="lightGreen">// C system headers</span> <br>
+                    #include &lt;stdlib.h&gt; <br>
+<br>
+                    <span class="lightGreen">// C++ standard library headers</span> <br>
+                    #include &lt;iostream&gt; <br>
+<br>
+                    <span class="lightGreen">// User-defined headers</span> <br>
+                    #include "foo/server/bar.h" <br>
+<br>
+                    <span class="lightGreen">// The rest of your code goes here…</span>
+                </p>
+               </div>
+
+               <h3>Punctuation Marks</h3>
+               <ol>
+                    <li>Brackets {}: The open bracket should be on the same line as the statement. The closing bracket should be placed under the last line of code in the scope.</li>
+                    <li>Parentheses (): There should be no space between parentheses and the code inside. When parentheses are used in a statement, there should be a space before ( and a space after ). When parentheses are used as part of a class or function, only a space after ) is sufficient.</li>
+                    <li>Commas ,: There should always be a blank space after each comma.</li>
+               </ol>
+
+               <div class="blackCoding">
+                <p>
+                    int GetLargerNumber(int num_one, int num_two) { <br>        
+                      <span class="black">---</span>  if (num_one > num_two) { <br>
+                       <span class="black">------</span>   return num_one; <br>
+                       <span class="black">---</span>  } <br>
+                       <span class="black">---</span> else { <br>               
+                        <span class="black">------</span>    return num_two; <br>
+                          <span class="black">---</span>  } <br>
+                      }
+                </p>
+               </div>
+
+               <h3>Formatting</h3>
+               <h4>Spacing</h4>
+
+               <p>Types, variable, operators, and literal values should be separated by one space horizontally like so:</p>
+
+               <div class="blackCoding">
+                <p>
+                    string message = "Hello World!"; <br>
+                    <br> 
+                    <span class="lightGreen">// or</span> <br>
+                    <br>
+                    #include &lt;iostream&gt; <span class="lightGreen">// preprocessor directive</span> <br>
+<br>
+                        float pi = 3.1415;  <span class="lightGreen">// global variable</span> <br>
+                        <br>
+                        class MyClass {     <span class="lightGreen">// class</span> <br>
+                        <span class="black">---</span>  public: <br>
+                        <span class="black">------</span>    myClass() { <br>
+                            <span class="black">---</span>  } <br>
+                        }; <br>
+                        <br>
+                        int main() {       <span class="lightGreen"> // function</span> <br>
+                        <span class="black">---</span>  return 0; <br>
+                        } <br>
+                        
+                </p>
+               </div>
+
+               <h3>Indentation</h3>
+               <p>All indentations should be two spaces at a time. There should be an indentation each time a new block (eg. loop, method, etc) is opened, as seen in the examples above. Do NOT use tabs in your code unless your editor is set to emit two spaces on tab.</p>
+
+               <div class="blackCoding">
+                <p>
+                    <span class="lightGreen">// Good: two spaces</span> <br>
+                    if (n == 3) { <br>                                      
+                        <span class="black">--</span>  std:cout << "Fizz"; <br>
+                    } <br>
+<br>
+                    <span class="lightGreen">// Bad: tab or four spaces</span> <br>
+                    if (n == 5) { <br>                                                      
+                        <span class="black">----</span>    std:cout << "Buzz"; <br>
+                    } <br>
+                </p>
+               </div>
+
+               <h3>Line Length</h3>
+               <p>Each line of text in your code should be at most 80 characters long. Programmers set up their work environment assuming a particular maximum window width, and 80 columns have been the traditional standard. You do not need to follow this rule as strictly as the others - just be mindful of lines that extend for too long.</p>
+
+               <h3>Compile</h3>
+               <p>C++ is a compiled language, which means a compiler (i.e. GCC) needs to first translate your C++ source code into machine code in the form of an executable file before it can be run. and the command is:</p>
+               
+               <div class="blackCoding">
+                <p>
+                    g++ MyProgram.cpp -o MyProgram
+                </p>
+               </div>
+
+               <p>Lets say we have this file called "hello.cpp"</p>
+
+               <div class="blackCoding">
+                <p>
+                    <span class="lightGreen"></span> <br>
+                    #include &lt;iostream> <br>
+  <br>
+                        int main(){ <br>                    
+                        <span class="black">--</span>  std::cout << "Hello, world!\n"; <br>
+                        <span class="black">--</span>   return 0; <br>
+                        } <br>
+                        
+                </p>
+               </div>   
+
+               <p>We would have that command in the terminal</p>
+               <div class="blackCoding">
+                <p>
+                    g++ hello.cpp -o hello
+                </p>
+               </div>
+            </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/CSS-Files/style.css">
+    <link rel="stylesheet" href="/CSS-Files/codingColors.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+      
+    <div class="navbar">
+        <div class="container-navbar1">
+            <a href="/index.html">Home</a>
+            <a href="">CSS</a>
+            <a href="/HTML/htmlFirst.html">HTML</a>
+        </div>  
+    </div>
+
+    <div>
+        <div class="main-container">
+           
+            <div>
+                <h2>Introduction to Bash Scripting</h2>
+                <p>Bash (or shell) scripting is a great way to automate repetitive tasks and can save you a ton of time as a developer. Bash scripts execute within a Bash shell interpreter terminal. Any command you can run in your terminal can be run in a Bash script.</p>
+            </div>
+
+        
+
+        </div>
+
+
+            <div class="javascript-body">
+               <p>There are some conventions to follow to ensure that your computer is able to find and execute your Bash scripts. The beginning of your script file should start with <span class="gold">#!/bin/bash</span> on its own line.</p>
+               <p>The script files also need to have the “execute” permission to allow them to be run. To add this permission to a file with filename: script.sh use:</p>
+
+               <div class="blackCoding">
+                <p> 
+                    #!/bin/bash <span class="lightGreen">//To ensure this is going to be a bash Script</span><br>
+                    <br>
+                    chmod +x script.sh <span class="lightGreen">//Adding permission to be executed</span>
+                </p>
+               </div>
+
+               <h5>Run the Script in the terminal</h5>
+
+               <div class="blackCoding">
+                <p>
+                    ./linuxBashScript.sh <span class="lightGreen">//After having a script run this command in the terminal</span>
+                </p>
+               </div>
+
+               <p>Your terminal runs a file every time it is opened to load its configuration. On 
+                Preview: Docs Linux is a family of Unix-like operating systems that are all based on the Linux kernel.
+                Linux
+                 style shells, this is ~/.bashrc and on OSX, this is <span class="gold">~/.bash_profile</span>. To ensure that scripts in <span class="gold">~/bin/</span> are available, you must add this directory to your PATH within your configuration file:</p>
+
+                 <div class="blackCoding">
+                    <p>
+                        PATH=~/bin:$PATH
+                    </p>
+                 </div>
+
+                 <h4>Variables</h4>
+                 <p>Within bash scripts (or the terminal for that matter), variables are declared by setting the variable name equal to another value.</p>
+
+                 <div class="blackCoding">
+                    <p>
+                        greeting="Hello" <span class="lightGreen">//Note that there is no space between the variable name, the equals sign, or “Hello”</span>
+                    </p>
+                 </div>
+
+                 <h4>Access Value</h4>
+                 <p>To access the value of a variable, we use the variable name prepended with a dollar sign (<span class="gold">%</span>). </p>
+                 <p>print the variable value to the screen, we use the following syntax:</p>
+
+                 <span class="blackCoding">
+                    <p>
+                        echo <span class="gold">%</span>greeting
+                    </p>
+                 </span>
+
+                 <h3>Conditionals</h3>
+                 <p>In Bash scripting, conditionals allow you to perform different actions based on whether a condition is true or false. Here are the primary conditional constructs you can use:</p>
+
+                    <div class="blackCoding">
+                            <p>
+                                <span class="lightGreen">// then and fi is the same as { } in Javascript for a if statement</span> <br>
+                                <span class="lightGreen">//Note to have space in the bracket</span> <br>
+                                if [ $index -lt 5 ] then <span class="lightGreen">//then shows if the condition of the if statement evaluates to true. It comes immediately after the if condition</span> <br> <br>
+                                <span class="black">---</span> echo $index<br>
+                                else<br>
+                                <span class="black">---</span>echo 5<br>
+                                fi <span class="lightGreen">//This keyword marks the end of the if block. It's essentially "if" spelled backward and is used to close the if statement.</span><br>
+
+                            </p>
+                    </div>
+
+                    <h4>Comparison operators</h4>
+                    <p>NOTE: (==, !=) are used comparing strings and (-eq, -ne) are used comparing integers.</p>
+
+                    <ul>
+                        <li><span class="blue">-eq</span>: Equal</li>
+                        <li><span class="blue">-ne</span>: Not equal</li>
+                        <li><span class="blue">-le</span>: Less than or equal</li>
+                        <li><span class="blue">-lt</span>: Less than</li>
+                        <li><span class="blue">-ge</span>: Greater than or equal</li>
+                        <li><span class="blue">-gt</span>: Greater than</li>
+                        <li><span class="blue">-z</span>: Is null</li>
+                    </ul>
+
+                    <h4>Comparing strings</h4>
+                    <ul>
+                        <li><span class="blue">==</span>: Equal</li>
+                        <li><span class="blue">!=</span>: Not Equal</li>
+                    </ul>
+            </div>
+
+            <h3>Loops</h3>
+            <p>There are 3 different ways to loop within a bash script: for, while and until.</p>
+
+            <h4>For</h4>
+            <p>A for loop is used to iterate through a list and execute an action at each step.</p>
+
+            <div class="blackCoding">
+                <p>
+                    for word in $paragraph <br>
+                    do <br>
+                <span class="black">---</span> echo $word <br>
+                    done <br>
+                </p>
+            </div>
+
+            <h4>While</h4>
+            <p>Certainly! A while loop in Bash is used to repeatedly execute a block of commands as long as a specified condition evaluates to true.</p>
+
+            <div class="blackCoding">
+                <p>
+                    while [ $index -lt 5 ] <br>
+                    do <br>
+                <span class="black">---</span>    echo $index <br>      
+                <span class="black">---</span>    index=$((index + 1)) <br>
+                    done <br>
+
+                </p>
+            </div>
+
+            <h4>Until</h4>
+            <p>In Bash, the until loop is similar to the while loop but operates in the opposite manner. It repeatedly executes a block of commands until a specified condition becomes true.</p>
+
+            <div class="blackCoding">
+                <p>
+                    until [ condition ]; do <br>
+                    <span class="black">---</span>    # commands to execute <br>
+                    done <br>
+                    <span class="lightGreen">Example:</span> <br>
+                    <br>
+                    <br>
+                    count=1 <br>
+<br>
+                    until [ $count -gt 5 ]; do <br>
+                    <span class="black">---</span>    echo "Count: $count" <br>
+                    <span class="black">---</span>    count=$((count + 1))  # Increase count by 1 <br> 
+                    done <br>
+<br>
+                    echo "Finished!"
+
+                </p>
+            </div>
+
+            <h4>Logical Flows</h4>
+
+            <ul>
+                <li>while: Executes while the condition is true.</li>
+                <li>until: Executes while the condition is false.</li>
+            </ul>
+
+            <h3>Inputs</h3>
+            <p>To make bash scripts more useful, we need to be able to access data external to the bash script file itself.</p>
+            <p>read: </p>
+
+            <div class="blackCoding">
+                <p>
+                    #!/bin/bash <br>
+<br>
+                    <span class="lightGreen">//echo = print() and read = input() in python</span> <br>
+                    echo "Please enter your name: " <span class="lightGreen">//This prints a message asking for input</span><br>
+                    read name <span class="lightGreen">//: This command waits for the user to type something and press Enter. The input is stored in the variable name.</span> <br>
+                    echo "Hello, $name!" <br>
+                </p>
+            </div>
+
+            <h3>Aliases</h3>
+            <p>You can set up aliases for your bash scripts within your .bashrc or .bash_profile file to allow calling your scripts without the full filename</p>
+
+            <div class="blackCoding">
+                <p>
+                    alias saycolors='./saycolors.sh'
+                </p>
+            </div>
+    </div>
+</body>
+</html>

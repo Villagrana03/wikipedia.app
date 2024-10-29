@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/CSS-Files/style.css">
+    <link rel="stylesheet" href="/CSS-Files/codingColors.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+      
+    <div class="navbar">
+        <div class="container-navbar1">
+            <a href="/index.html">Home</a>
+            <a href="">CSS</a>
+            <a href="/HTML/htmlFirst.html">HTML</a>
+        </div>  
+    </div>
+
+    <div>
+        <div class="main-container">
+           
+            <div>
+                <h3>Second chapter</h3>
+                <p></p>
+            </div>
+
+
+        </div>
+
+
+            <div class="javascript-body">
+               <h3>Class vs Classname</h3>
+               <p></p>
+
+                <!--  <span class="darkBlue">const</span>          &lt;h1&gt;Hello world&lt;/h1&gt;   -->
+               <div class="blackCoding">
+                <p>
+                    <span class="lightGreen">//in HTML is commonly used to have class, in JSX we use className</span> <br>
+                    &lt;h1 className="big">Title&lt;/h1> <br>
+                    <br>
+                    <span class="lightGreen">//We must include a "/" whenever we are using a single tag in JSX</span> <br>
+                    &lt;br /&gt; <br>
+                    <br>
+                    <br>
+                    <span class="lightGreen">//In the following code i will provide 2 examples one of them will print a string and the other will print a integer</span><br>
+                    root.render(&lt;h1>2 + 3&lt;/h1>); <span class="yellow">Output -></span> this will render 2 + 3 <span class="lightGreen">//since they are inside of JSX tags</span> <br>
+                    root.render(&lt;h1>{2 + 3}&lt;/h1>); <span class="yellow">Output -></span> this will render 5 <span class="lightGreen">//since they are inside of curly braces</span> <br>
+                    <br>
+                    <br>
+                    <span class="lightGreen">// 
+                        In JSX, JavaScript variables declared outside the JSX block are accessible within the JSX expressions, as they share the same scope.</span> <br>
+                        <br>
+                        <span class="darkBlue">const</span> theBestString = 'This text was accessed through a javascript variable'; <span class="lightGreen">//this variable is written in Javascript</span> <br>
+                        root.render(&lt;h1>{theBestString}&lt;/h1>); <span class="lightGreen">// and we used "{}" to call/render any JS variable </span>
+                </p>
+               </div>
+                    <h3>Variable Attributes in JSX</h3>
+                    <p>When writing JSX, it’s common to use variables to set attributes.</p>
+
+                    <div class="blackCoding">
+                           <!--  <span class="darkBlue">const</span>          &lt;h1&gt;Hello world&lt;/h1&gt;   -->
+              
+                        <p>
+                            <span class="darkBlue">const</span> redBackgroundColor = "red"; <span class="lightGreen">//Here we just declared a variable to "red" and we will use it as an attribute later.</span>  <br>
+                            &lt;div background-color="redBackgroundColor"&gt;  <span class="lightGreen">//Here we just set the background color to a variable that we declared</span><br>
+                                <br>
+                            &lt;/div&gt; <br>
+                            <br>
+                            <br>
+                            <span class="lightGReen">//in the provided example, we declared an image as variable and then we used it as an attribute</span> <br>
+                            <span class="darkBlue">const</span>  goose = "ttps://content.codecademy.com/courses/React/react_photo-goose.jpg'; <span class="lightGreen">//</span> <br>
+                            <br>
+                            <span class="darkBlue">const</span>  gooseImg = (<img src={goose}/>);
+                        </p>
+                    </div>
+
+                    <h3>Event Listeners in JSX</h3>
+                    <p>JSX elements can have event listeners, just like HTML elements can. Programming in React means constantly working with event listeners.
+
+                    </p>
+                    <div class="blackCoding">
+                        <p>
+                            <span class="lightGreen">//You create an event listener by giving a JSX element a special attribute. Here’s an example: </span> <br>
+                            &lt;img onClick={clickAlert} /&gt;  <span class="lightGreen">//Whenever the user clicks on the image, something will happen, but we need to delcared it first, like this:</span><br>
+                            <br>
+
+                            <span class="darkBlue">function</span> clickAlert() { <br>
+                                alert('You clicked this image!'); <br>
+                              } <br>
+                               <br>
+                              &lt;img onClick={clickAlert} /&gt; <span class="lightGreen">//Here we just called clickAlert whenever the user clicks on the image</span><br>
+                        </p>
+                    </div>
+                     <!--  <span class="darkBlue">const</span>          &lt; h1 &gt;  Hello world&lt;/h1&gt;   -->
+                    <h3>JSX Conditionals: If Statements That Don't Work</h3>
+                    <p>One option is to write an if statement and not inject it into JSX.</p> 
+                    <div class="blackCoding">
+                        <p>
+                            if (user.age >= drinkingAge) { <br>
+                               message = ( <span class="lightGreen">//In this example we surrounded everything inside of the if, and thats how we not injected in JSX</span> <br>
+                            <span class="black">---</span>        &lt;h1&gt; <br>         
+                            <span class="black">---</span>        Hey, check out this alcoholic beverage! <br>
+                            <span class="black">---</span>        &lt;/h1&gt; <br>
+                                ); <br>
+                              } else { <br> 
+                                message = ( <br>
+                                <span class="black">---</span>       &lt;h1&gt; <br>
+                                <span class="black">------</span>    Hey, check out these earrings I got at Claire's! <br>
+                                    <span class="black">---</span>      &lt;/h1&gt; <br>
+                                ); <br>
+                              }<br>
+                              <br>
+                              <span class="lightGreen">//Ternaty mode</span> <br>
+                              <span class="darkBlue">const</span>   headline = ( <br>
+                                &lt;h1&gt; <br>
+                                    { age >= drinkingAge ? 'Buy Drink' : 'Do Teen Stuff' } <span class="lightGreen">//This is ternary, the if will be "buy drink" and else is the "do teen stuff"</span><br>
+                                    &lt;/h1&gt; <br>
+                                );<br>
+                        </p>
+                    </div>
+
+                    <h3>.map()</h3>
+                    <p>If you want to create a list of JSX elements, then using .map() is often the most efficient way. It can look odd at first:</p>
+
+                    <div class="blackCoding">
+                        <p>
+                            <span class="darkBlue">const</span> root = createRoot(container); <span class="lightGreen">//We grab the whole page and sotre it inside of root</span> <br> 
+                            <span class="lightGreen">//When you make a list in JSX, sometimes your list will need to include something called keys:</span> <br>
+                            <span class="lightGreen">//<span class="orange">key</span> don’t do anything visible! React uses them internally to keep track of lists. </span> <br>
+                            <span class="darkBlue">const</span> people = ['Rowe', 'Prevost', 'Gare']; <span class="lightGreen">//an array</span> <br>
+<br>                        
+                            <span class="lightGreen">// 1.- The list items have memory from one render to the next. For instance, when a to-do list renders, each item must “remember” whether it was checked off. The items shouldn’t get amnesia when they render. <br>
+                               // 2.- A list’s order might be shuffled. For instance, a list of search results might be shuffled from one render to the next.</span>
+
+                            <span class="darkBlue">const</span> peopleList = people.map((person,i) => <span class="lightGreen">//Here we will map trough each item of the array</span> <br>
+                            <br>
+                            &lt;li <span class="orange">key</span> ={'person_'+ i}&gt;{person}&lt;/li&gt; <span class="lightGreen">//we got every element of the array</span><br>
+                            ); <br>
+                            &lt;ul&gt;{peopleList}&lt;/ul&gt; <span class="lightGreen">//We declared the array after is being completedd</span><br>
+
+                            root.render(&lt;ul&gt;{peopleList}&lt;/ul&gt;) <span class="lightGreen">//we rendered/made it appear in the page.</span>
+                        </p>
+                        <!--  <span class="darkBlue">const</span>          &lt; h1 &gt;  Hello world&lt;/h1&gt;   -->
+                    </div>
+            </div>
+            <h3>React.createElement</h3>
+            <p>The majority of React programmers do use JSX, but you should understand that it is possible to write React code without it.</p>
+
+            <div class="blackCoding">
+                <p>
+                    <span class="lightGreen">//This is a JSX code</span> <br>
+                    const h1 = &lt;h1&gt;Hello world&lt;/h1&gt;; <br>
+                    <br>
+                    <span class="lightGreen">//</span> <br>
+                    <span class="darkBlue">const</span> h1 = React.createElement( <br>
+                            "h1", <span class="lightGreen">//This is the tag we will use</span>
+                            null, <span class="lightGreen">//function, the null value represents the absence of properties (or "props") for the element being created.</span>
+                            "Hello world" <span class="lightGreen">//The value inside of the tag</span>
+                            );
+                </p>
+            </div>
+    </div>
+</body>
+</html>

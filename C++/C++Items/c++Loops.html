@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/CSS-Files/style.css">
+    <link rel="stylesheet" href="/CSS-Files/codingColors.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+      
+    <div class="navbar">
+        <div class="container-navbar1">
+            <a href="/index.html">Home</a>
+            <a href="">CSS</a>
+            <a href="/HTML/htmlFirst.html">HTML</a>
+        </div>  
+    </div>
+
+    <div>
+        <div class="main-container">
+           
+            <div>
+                <h2>Loops</h2>
+                <p>A loop is a control flow construct that repeatedly executes some code. Loops are great for tasks that have to repeat multiple times in a row.</p>
+            </div>
+
+          
+
+        </div>
+
+
+            <div class="javascript-body">
+               <p>I will show the following loops:</p>
+
+               <ul>
+                <li>While Loop</li>
+                <li>do-while loop</li>
+                <li>for loop</li>
+                <li>for-each loop</li>
+               </ul>
+            </div>
+
+            <h3>While loop</h3>
+            <p>The while loop repeats a block of code as long as the given boolean condition is true. For example:</p>
+
+            <div class="blackCoding">
+                <p>
+                    int count = 1; <br>
+                    while (count <= 5) { <br>
+                   <span class="black">---</span> std::cout << count;    <span class="lightGreen">//This is the print() in c++</span><br>
+                   <span class="black">---</span> count++; <br>
+                    } <br>
+                    <br>
+                    <span class="yellow">Output</span> => 12345
+                </p>
+            </div>
+
+            <h4>Infinite Loops</h4>
+            <p>If the expression of a while loop always evaluates to true, the loop will keep repeating forever. This is called an infinite loop.</p>
+    
+            <div class="blackCoding">
+                <p>
+                    int count = 1; <br>
+                    while (count <= 5) { <br>
+                   <span class="black">---</span> std::cout << count;  <span class="lightGreen">//This will be a infinite loop because it does not have a "counter" variable</span><br>
+                    } <br>
+                </p>
+            </div>
+
+            <h3>do-while loop</h3>
+            <p>The do-while loop is very similar to a while loop, but will always execute at least once, even if the condition is initially false:</p>
+
+
+            <div class="blackCoding">
+                <p>
+                    <span class="lightGreen">//Even though price > 500 evaluates to false, the program above will still print Too expensive! once.</span> <br>
+                    int price = 300; <br>
+                    do { <br>
+                        <span class="black">---</span>std::cout << "Too expensive!"; <br>
+                    } while (price > 500)<span class="red">;</span>  <br>
+                    <span class="lightGreen">//Note: Unlike the while loop, a semicolon <span class="red">;</span> needs to be placed at the end of a do-while loop!</span>
+                </p>
+            </div>
+
+            <h3>for Loops</h3>
+            <p>The for loop should be implemented when the programmer knows exactly how many times a block of code needs to be repeated.</p>
+
+            <div class="blackCoding">
+                <p>
+                    for (int i = 1; i <= 5; i++) { <br>
+                        <span class="black">---</span>    std::cout << i; <br>
+                    } <br>
+                    <span class="yellow">Output</span> => 12345 <br>
+                </p>
+            </div>
+
+            <h3>for-each Loops</h3>
+            <p>The for-each loop is especially useful for iterating through list-like structures such as arrays or std::vector. Although regular for loops are perfectly capable of this task, for-each loops provides a more convenient syntax:</p>
+            <p>This for-each loop iterates through an array called fibonacci using the counter variable number.</p>
+
+            <div class="blackCoding">
+                <p>
+                    int fibonacci[5] = {0, 1, 1, 2, 3}; <br>
+                    for (int number : fibonacci) { <br>                         
+                        <span class="black">---</span>    std::cout << number; <br>
+                    } <br>
+                </p>
+            </div>
+
+            <h4>The auto Keyword</h4>
+            <p>When iterating through an array using the for-each loop, the counter variable may be declared using the auto keyword.</p>
+
+            <p>    <span class="red">auto</span> lets C++ deduce the type of the variable based on the type of the list it belongs to.</p>
+
+            <div class="blackCoding">
+                <p>
+                    int fibonacci[5] = {0, 1, 1, 2, 3}; <br>
+                    for (<span class="red">auto</span> number : fibonacci) { <br>                         
+                        <span class="black">---</span>    std::cout << number; <br>
+                    } <br>
+                </p>
+            </div>
+
+            <h3>break</h3>
+            The break keyword can be used to jump out of a loop. When the break statement is executed, the loop immediately ends and any code below it will not run:
+
+            <h3>break vs. return</h3>
+
+            <p>A <span class="red">break</span> statement is used to terminate a switch or loop, and code execution will continue to the line after the switch or loop.</p>
+            <p>A <span class="red">return</span> statement terminates the entire function and resumes code execution at the point where the function was called. Unlike break, return also returns something back to the caller.</p>
+
+            <h3>Continue</h3>
+            <p>The continue keyword can be placed inside a loop to skip over one iteration of the loop. If continue is executed, the current loop iteration will immediately end, and the next iteration will begin.</p>
+        </div>
+
+
+</body>
+</html>

@@ -1,0 +1,292 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/CSS-Files/style.css">
+    <link rel="stylesheet" href="/CSS-Files/codingColors.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+      
+    <div class="navbar">
+        <div class="container-navbar1">
+            <a href="/index.html">Home</a>
+            <a href="">CSS</a>
+            <a href="/HTML/htmlFirst.html">HTML</a>
+        </div>  
+    </div>
+
+    <div>
+        <div class="main-container">
+           
+            <div>
+                <h2>Access a Component's props</h2>
+                <p>A component’s props is an object. It holds information about that component.</p>
+                <p>In React, a "prop" (short for "property") is a special keyword used to pass data from one component to another. Props are how you can customize components and make them reusable.</p>
+                <p>A good example of why would i use prop, is because whenever we are calling each component in the main app, we can just modify which type of data to render in the prop</p>
+            </div>
+
+           
+
+        </div>
+
+
+            <div class="javascript-body">
+                <h3></h3>
+                <p></p>
+
+                <div class="blackCoding">
+                    <p>
+                <!--  <span class="darkBlue">const</span>          &lt; h1 &gt;  Hello world&lt;/h1&gt;   -->
+
+                        function Greeting(props) { <span class="lightGreen">//Props are passed as parameters to a React component to allow that component to receive data and behavior from its parent component. By defining props as parameters, you enable components to be flexible and reusable, as they can operate based on the values they receive.</span> <br>                         
+                            return  &lt;h1&gt;Hello, {props.name}! &lt;/h1&gt;; <br>
+                          } <br>
+                          <br>                      
+                          <span class="lightGreen">// Using the Greeting component </span><br>
+                          &lt;Greeting name="Alice" /&gt; <span class="lightGreen">//&lt;p&gt;{props.username}&lt;/p&gt; {/* This will display the username */}</span> <br>
+                          <br>
+                          <br>
+                          <br>
+                          <span class="lightGreen">//Here i will just show a Component that has many props</span> <br>
+                          <br>
+                          &lt;Greeting name="The Queen Mary" city="Long Beach, California" age={56} haunted={true} /&lt;
+                    </p>
+                </div>
+
+                <h3>Render a Component's props</h3>
+                <p>Props allow us to customize the component by passing it information.</p>
+              
+                <div class="blackCoding">
+                    <p>
+                        <span class="lightGreen">//To make sure that a function Component can use the props object, define your function component with props as the parameter</span> <br>
+                        function Button(props) { <br>
+                            return  &lt;button&gt;{props.displayText} &lt;/button&gt;; <br>
+                          } <br>
+                          <br>
+                          <br>
+                          <span class="lightGreen">//<p>To make sure that a function Component can use the props object, define your function component with props as the parameter:</p> </span> <br>
+                          function Button({displayText}) {
+                            return  &lt;button&gt;{displayText} &lt;/button&gt;;
+                          }
+                          
+                    </p>
+                </div>
+
+                <h3>Rendering props</h3>
+                <p>Here is a example of how props would work</p>
+
+
+                 <!--  <span class="darkBlue">const</span>          &lt; h1 &gt;  Hello world&lt;/h1&gt;   -->
+                <div class="blackCoding">
+                    <p>
+                        <span class="lightGreen">//Product.js</span> <br>
+                        <span class="lightGreen">Here we created this Component, will have props and we exported to App.js</span>//
+                        import React from 'react'; <br>
+<br>
+                            function Product(props) { <br>
+                            return ( <br>
+                            &lt;div&gt; <br>  
+                            &lt;h1&gt;{props.name}&lt;/h1&gt; <br>
+                            &lt;h2&gt;{props.price}&lt;/h2&gt; <br>
+                            &lt;h3&gt;{props.rating}&lt;/h3&gt; <br>
+                            &lt;/div&gt;        <br>
+                            ); <br>
+                            } <br>
+<br>
+                            export default Product; <br>
+                            <br>
+                            <br>
+                            <span class="lightGReen">//App.js</span> <br>
+                            <span class="lightGreen">//This is the main App, that will be rendered, and inside of the Component(Product) we have props, and its more versatil because depeding on the product we can just change it from here!</span> <br>
+                            <br>
+                            import React from 'react'; <br> 
+                            import Product from './Product' <br>
+ <br>
+                            function App() { <br>
+                            return &lt;Product name="Apple Watch" price = {399} rating = "4.5/5.0" /&gt;; <br>
+                            } <br>
+<br>
+                            export default App; <br>
+
+                    </p>
+                </div>
+                <h3>Pass props From Component To Component</h3>
+                <p></p>
+                <p>Props in React travel in a one-way direction, from the top to bottom, parent to child.</p>
+
+                <!--  <span class="darkBlue">const</span>          &lt; h1 &gt;  Hello world&lt;/h1&gt;   -->
+                <div class="blackCoding">
+                    <p>
+                        <span class="lightGreen">//In this example, App is the parent and Product is the child. App passes three props to Product (name, price, and rating), which can then be read inside the child component</span> <br>
+                        function App() { <br>
+                            return &lt;Product name="Apple Watch" price = {399} rating = "4.5/5.0" /&gt;; <br>
+                        } <br>
+                        
+                    </p>
+                </div>
+
+                <h3>Render Different UI Based on props</h3>
+                <p>You can do more with props than just display them. You can also use props to make decisions.</p>
+
+                <div class="blackCoding">
+                    <p>
+                        <span class="lightGreen">//Here is an example of how we can use props to make decisions, if the password is equal to the password another page will render</span> <br>
+                
+                        function LoginMsg(props) { <br>                     
+                            if (props.password === 'a-tough-password') { <br>
+                              return &lt;h2&gt;Sign In Successful.&lt;/h2&gt; <br>
+                            } else { <br>                                               
+                              return &lt;h2&gt;Sign In Failed..&lt;/h2&gt; <br>
+                            } <br>
+                          } <br>
+                          
+                    </p>
+                </div>
+
+                <h3>Put an Event Handler in a Function Component</h3>
+                <p>You can, and often will, pass functions as props. It is especially common to pass event handler functions.</p>
+
+                <div class="blackCoding">
+                    <p>
+                        <!--  <span class="darkBlue">const</span>          &lt; h1 &gt;  Hello world&lt;/h1&gt;   -->
+                        <span class="lightGreen">//to make a Event Handler we have define it first, We define an event handler as a method on the function component!</span> <br>
+                       <br>
+                        import React from 'react'; <br>
+<br>
+                        function Example() {  <br>
+                            <br>
+                            <span class="lightGreen">//Inside of this function handleEvent, we will have an alert</span> <br>
+                        function handleEvent() { <br>   
+                            alert(`I am an event handler. <br>
+                            If you see this message, <br>
+                            then I have been called.`); <br>
+                        } <br>
+                        <br>
+                        return ( <br>
+                        &lt;h1 onClick={handleEvent}&gt; <span class="lightGreen">//Everytime we click the &lt;h1&gt; we will call handleEvent function </span> <br>
+                                Hello world <br>
+                                &lt;/h1&gt; <br>
+                            ); <br>
+                        }
+                    </p>
+                </div>
+
+                <h3>Pass an Event Handler as a prop</h3>
+                <p>8/13 get the code, i just clicked on the next assignment and did not copied to here...</p>
+
+                <h3>Receive an Event Handler as a prop</h3>
+                <p></p>
+
+                <div class="blackCoding">
+                    <p>
+                        <!--  <span class="darkBlue">const</span>          &lt; h1 &gt;  Hello world&lt;/h1&gt;   -->
+                        <span class="lightGreen">//button.js</span> <br>
+                        import React from 'react'; <br>
+                        import talk from "./Talker" <br>
+<br>
+                        function Button(props) { <br>
+                        return ( <br>
+                        &lt;button onClick={props.talk}&gt; <span class="lightGreen">//we used props in this example because Button is rendered inside of Talker so button is the child</span> <br>
+                            Click me! <br>
+                            &lt;/button&gt; <br>
+                        ); <br>
+                        } <br>
+<br>
+                        export default Button; <br>
+                        <br>
+                        <br>
+                        <br>
+                        <span class="lightGreen">//Talker.js</span> <br>
+                        import React from 'react'; <br>
+                        import Button from './Button'; <br>
+<br>                                            
+                        function Talker() { <br>
+                        function talk() { <br>
+                            let speech = ''; <br>               
+                            for (let i = 0; i < 10000; i++) { <br>
+                            speech += 'blah '; <br>
+                            } <br>          
+                            alert(speech); <br>
+                            } <br>                      
+                        return &lt;Button talk={talk}/&gt;; <span class="lightGreen">//In this example that i just provided, Button it is inside of Talker, and makes it a child of Talker for insatnce, whenever we want to use a function of Talker in Button we will use props</span> <br>
+                        } <br>
+<br>
+                        export default Talker;
+                    </p>
+                </div>
+
+                <h3>props.children</h3>
+                <p>If a component has more than one child between its JSX tags, then props.children will return those children in an array. However, if a component has only one child,</p>
+
+                <div class="blackCoding">
+                    <p>
+                         <!--  <span class="darkBlue">const</span>          &lt; h1 &gt;  Hello world&lt;/h1&gt;   -->
+                        <span class="lightGreen">//In Example 1, &lt;BigButton&gt;‘s props.children would equal the text, “I am a child of BigButton.”</span>
+                       <span class="lightGreen"> // Example 1</span> <br>
+                       &lt;BigButton&gt; <br>
+                    <span class="black">---</span>I am a child of BigButton. <br>
+                        &lt;/BigButton&gt; <br>
+                        <br>
+                        <br>
+                        <span class="lightGreen">//App.js -> (main App)</span> <br>
+                        import React from 'react'; <br>
+                        import List from './List'; <br>
+<br>
+                        function App() { <br>
+                        return ( <br>
+                        &lt;div> <br>                       
+                        &lt;List type='Living Musician'> <br>                   
+                       <span class="black">---</span> &lt;li>Sachiko M&lt;/li> <span class="lightGreen">//This is props.children</span> <br>     
+                      <span class="black">---</span>  &lt;li>Harvey Sid Fisher&lt;/li> <span class="lightGreen">//This is props.children</span> <br>
+                                &lt;/List> <br> 
+                                <br>                        
+                                &lt;List type='Living Cat Musician'> <br>                           
+                            <span class="black">---</span>    &lt;li>Nora the Piano Cat&lt;/li> <span class="lightGreen">//This is props.children</span> <br>
+                                &lt;/List> <br>
+                                &lt;/div> <br>
+                        ); <br>
+                        } <br>
+                    <br>                    
+                        export default App; <br>
+                        <br>
+                        <br>
+                        import React from 'react'; <br>
+<br>
+                        function List(props) { <br>                 
+                        let titleText = `Favorite ${props.type}`; <br>
+                        if (props.children instanceof Array) { <br>
+                            titleText += 's'; <br>
+                        } <br>
+                        return ( <br>
+                        &lt;div> <br>          
+                        &lt;h1&gt;{titleText}&lt;/h1&gt; <br>
+                        &lt;ul&gt;{props.children}&lt;/ul&gt; <span class="lightGreen">//{/* Here we render the children */}</span> <br>
+                        &lt;/div&gt; <br>
+                        ); <br>
+                        } <br>
+<br>
+                        export default List; <br>
+                    </p>
+                </div>
+
+                <h3>Giving Default Values to props</h3>
+                <p>If nobody passes any text to Button, then Button‘s display will be blank. It would be better if Button could display a default message instead.</p>
+
+                import React from 'react'; <br>
+<br>
+                function Button(props) { <br>                               
+                    const {text = 'Default Text of Big Button'} = props; <span class="lightGreen">//In case in the main app, we do not render something in the ext prop, this will be a default value</span><br>
+                    return ( <br>               
+                    &lt;button&gt;{text}&lt;/button&gt; <br>
+                    ); <br>
+                } <br>
+<br>                                    
+                export default Button; <br>
+            </div>
+    </div>
+</body>
+</html>
