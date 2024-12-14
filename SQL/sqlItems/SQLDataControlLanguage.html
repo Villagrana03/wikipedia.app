@@ -22,31 +22,38 @@
         <div class="main-container">
            
             <div>
-                <h2></h2>
+                <h2>Data Control Language</h2>
                 <p></p>
             </div>
 
-         
+            <div class="main-content">
+
+            </div>
 
         </div>
 
 
             <div class="javascript-body">
-               <h3>ls</h3>
-               <p></p>
 
-               <h4>ls flags</h4>
-               <ul>
-                <li><span class="blue">-R</span>: This option stands for "recursive." When used, it tells ls to list not only the contents of the current directory but also the contents of all subdirectories, going as deep as necessary.</li>
-               </ul>
+               <h3>GRANT</h3>
+               <p>Gives a user (e.g., user1) the right to select data from the employees table.</p>
 
                <div class="blackCoding">
                 <p>
-                    ls <span class="lightGreen">// enlist the elements in a directory</span> <br>
-                    man <span class="lightGreen">//Checks the manual of each command</span> <br>
-                    
+                    <span class="blue">GRANT SELECT ON</span> employees TO user1;
+
                 </p>
                </div>
+
+               <h3>REVOKE</h3>
+               <p>Removes the SELECT permission for user1 on the employees table.</p>
+
+               <div class="blackCoding">
+                <p>
+                    <span class="blue">REVOKE SELECT ON</span> employees FROM user1;
+                </p>
+               </div>
+
             </div>
     </div>
 </body>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/CSS-Files/style.css">
+    <link rel="stylesheet" href="/CSS-Files/codingColors.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+      
+    <div class="navbar">
+        <div class="container-navbar1">
+            <a href="/index.html">Home</a>
+            <a href="">CSS</a>
+            <a href="/HTML/htmlFirst.html">HTML</a>
+        </div>  
+    </div>
+
+    <div>
+        <div class="main-container">
+           
+            <div>
+                <h2>Where</h2>
+                <p>he WHERE clause in SQL is used to filter records based on specified conditions. It limits the data returned by a SELECT query to only those rows that meet certain criteria, such as matching a specific value or range.</p>
+            </div>
+
+        </div>
+
+
+            <div class="javascript-body">
+
+                <h3>Using Where</h3>
+                <p>Filters records based on specified conditions.</p>
+
+
+               <div class="blackCoding">
+                <p>
+                    <span class="blue">SELECT</span> * <span class="blue">FROM</span> employees <span class="blue">WHERE</span> department = 'Sales';
+                </p>
+               </div>
+
+               <h3>Filtering with Comparison Operators</h3>
+
+               <ul>
+                <li><span class="blue">=</span>: Equal to</li>
+                <li><span class="blue">&lt;&gt;</span> or <span class="blue">!=</span>: Not equal to</li>
+                <li><span class="blue">&lt;</span>: Less than</li>
+                <li><span class="blue">&lt;=</span>: Less than or equal to</li>
+                <li><span class="blue">&gt;</span>: Greater than</li>
+                <li><span class="blue">&gt;=</span>: Greater than or equal to</li>
+              </ul>
+              
+
+              <div class="blackCoding">
+                <p>
+                    <span class="blue">SELECT</span> * <span class="blue">FROM</span> orders <span class="blue">WHERE</span> amount > 100;
+                </p>
+              </div>
+
+              <h3>BETWEEN</h3>
+              <p> Filters results within a specified range (inclusive)</p>
+
+              <div class="blackCoding">
+                <p>
+                    <span class="blue">SELECT </span> * <span class="blue">FROM </span>Products<span class="blue">WHERE </span> price BETWEEN 10 AND 50;
+                </p>
+              </div>
+
+              <h3>IN</h3>
+              <p>Matches any value in a specified list.</p>
+
+              <div class="blackCoding">
+                <p>
+                    <span class="blue">SELECT </span> * <span class="blue">FROM </span>customers <span class="blue">WHERE </span>City IN ('New York', 'Los Angeles');
+                </p>
+              </div>
+
+              <h3>LIKE</h3>
+              <p>Searches for a specified pattern in a column. Use % as a wildcard for any number of characters, _ for a single character.</p>
+
+              <div class="blackCoding">
+                <p>
+                    <span class="blue">SELECT </span> * <span class="blue">FROM </span>employees <span class="blue">WHERE </span> last_name LIKE 'S%'; <br>
+                    <br>
+                    <span class="red">Here i need to add %S and %A%</span>
+                </p>
+              </div>
+
+              <h3>NULL</h3>
+              <p>IS NULL / IS NOT NULL: Checks for NULL or non-NULL values.</p>
+
+              <div class="blackCoding">
+                <p>
+                    <span class="blue">SELECT </span> * <span class="blue">FROM </span>orders <span class="blue">WHERE </span> delivery_date IS NULL;
+                </p>
+              </div>
+
+              <h3> Combining Filters with AND, OR, and NOT</h3>
+              <p></p>
+
+              <ul>
+                <li><span class="darkBlue">AND</span>: Combines conditions that must all be true.</li>
+                <li><span class="darkBlue">OR</span>: Combines conditions where any can be true.</li>
+                <li><span class="darkBlue">NOT</span>: Negates a condition.</li>
+              </ul>
+
+              <div class="blackCoding">
+                <p>
+                    <span class="blue">SELECT </span> * <span class="blue">FROM </span>products<span class="blue">WHERE</span> stock > 0 AND price < 20; <br>
+                    <br>
+                    <span class="blue">SELECT </span> * <span class="blue">FROM </span>customers <span class="blue">WHERE</span> city = 'Seattle' OR city = 'Portland';  <br>
+                    <br>
+                    <span class="blue">SELECT </span> * <span class="blue">FROM </span>employees <span class="blue">WHERE</span> NOT department = 'HR';
+                </p>
+              </div>
+
+              <h3>ORDER BY</h3>
+              <p>Sorts results by one or more columns. Use ASC for ascending (default) or DESC for descending.</p>
+
+              <div class="blackCoding">
+                <p>
+                    <span class="blue">SELECT </span> * <span class="blue">FROM </span>Products <span class="blue">ORDER BY </span> price DESC; 
+                </p>
+              </div>
+
+              <h3>LIMIT</h3>
+              <p> Restricts the number of records returned.</p>
+
+              <div class="blackCoding">
+                <p>
+                    <span class="blue">SELECT </span> * <span class="blue">FROM </span>orders <span class="blue">WHERE </span> amount > 100 LIMIT 10;
+                </p>
+              </div>
+
+              <h3>Group Filtering with GROUP BY and HAVING</h3>
+
+              <ul>
+                <li><span class="darkBlue">GROUP BY</span>: Groups records based on one or more columns.</li>
+                <li><span class="darkBlue">HAVING</span>: Filters groups based on aggregate conditions.</li>
+              </ul>
+
+              <div class="blackCoding">
+                <p>
+                    <span class="blue">SELECT</span> department, COUNT(*) <span class="blue">AS</span> employee_count <br>
+                    <span class="blue">FROM</span> employees <br>
+                    <span class="blue">GROUP BY</span> department <br>  
+                    <span class="blue">HAVING</span> employee_count > 5; <br>
+
+                </p>
+              </div>
+
+            </div>
+    </div>
+
+     <!--  <span class="blue">  </span> ----------  <span class="blue">SELECT </span> * <span class="blue">FROM </span><span class="blue">WHERE </span>   -->
+</body>
+</html>

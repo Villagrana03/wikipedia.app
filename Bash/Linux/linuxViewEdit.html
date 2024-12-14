@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/CSS-Files/style.css">
+    <link rel="stylesheet" href="/CSS-Files/codingColors.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+      
+    <div class="navbar">
+        <div class="container-navbar1">
+            <a href="/index.html">Home</a>
+            <a href="">CSS</a>
+            <a href="/HTML/htmlFirst.html">HTML</a>
+        </div>  
+    </div>
+
+    <div>
+        <div class="main-container">
+           
+            <div>
+                <h2>Viewing and Editing Files</h2>
+                <p>Viewing and editing files in Linux involves using commands and text editors to read, modify, or manipulate the contents of files. This is essential for managing configuration files, scripts, and other text-based data. </p>
+            </div>
+
+
+        </div>
+
+
+            <div class="javascript-body">
+               
+                <h3>cat</h3>
+                <p>The cat command is used to concatenate and display the contents of files. It can read one or more files and output their contents to the terminal. It's often used for quickly viewing small files.</p>
+
+                <div class="blackCoding">
+                    <p>
+                        cat
+                    </p>
+                </div>
+
+                <h4>cat Flags</h4>
+
+                <ul>
+                    <li><span class="gold">`-n`</span>: Number all output lines.</li>
+                    <li><span class="blue">`-E`</span>: Display a dollar sign at the end of each line.</li>
+                    <li><span class="blue">`-A`</span>: Show all characters including hidden ones.</li>
+                  </ul>
+
+
+                <h3>more</h3>
+                <p>The more command allows users to view the contents of a file one screen at a time. It pauses after each screenful of text, enabling users to read large files without overwhelming the terminal.</p>
+
+                <div class="blackCoding">
+                    <p>
+                        more
+                    </p>
+                </div>
+
+                <h4>more Flags</h4>
+
+                <ul>
+                    <li><span class="gold">`-d`</span>: Display a prompt at the bottom of the screen for more input.</li>
+                    <li><span class="blue">`-c`</span>: Clear the screen before displaying the next page.</li>
+                    <li><span class="blue">`-s`</span>: Squeeze multiple blank lines into one.</li>
+                  </ul>
+
+
+                <h3>less</h3>
+                <p>the less command provides a way to view files page by page. However, it offers more features, including the ability to scroll backward and forward through the file, making it more flexible for navigation.</p>
+
+                <div class="blackCoding">
+                    <p>
+                        less
+                    </p>
+                </div>
+
+                <h4>less Flags</h4>
+
+                <ul>
+                    <li><span class="gold">`-N`</span>: Show line numbers.</li>
+                    <li><span class="blue">`-S`</span>: Suppress long lines (horizontal scroll).</li>
+                    <li><span class="blue">`-F`</span>: Automatically exit if the content fits on one screen.</li>
+                  </ul>
+
+
+                <h3>nano</h3>
+                <p>nano is a simple, user-friendly text editor for the terminal. It allows users to create and edit text files easily, featuring on-screen commands for saving, searching, and exiting, making it accessible for beginners.</p>
+
+                <div class="blackCoding">
+                    <p>
+                        nano
+                    </p>
+                </div>
+
+                <h4>nano Flags</h4>
+
+                <ul>
+                    <li><span class="gold">`-w`</span>: Disable line wrapping.</li>
+                    <li><span class="blue">`-l`</span>: Enable line numbers.</li>
+                    <li><span class="blue">`-h`</span>: Display help when editing.</li>
+                  </ul>
+
+                <h3>vi</h3>
+                <p>vi is a powerful text editor available in most Unix systems. It operates in different modes (insert, command, etc.) and offers extensive features for editing, but has a steeper learning curve than simpler editors like nano. It's widely used for editing configuration files and scripts.</p>
+
+                <div class="blackCoding">
+                    <p>
+                        vim
+                    </p>
+                </div>
+
+                <h4>vi Flags</h4>
+
+                <ul>
+                    <li><span class="gold">`-R`</span>: Open a file in read-only mode.</li>
+                    <li><span class="gold">`-M`</span>: Open in a mode that prevents accidental changes.</li>
+                    <li><span class="blue">`-s`</span>: Start in silent mode (no messages displayed).</li>
+                    <li><span class="blue">`-c command>`</span>: Execute a command after loading the file.</li>
+                    <li><span class="blue">`-u file>`</span>: Use an alternative vimrc file instead of the default one.</li>
+                  </ul>
+
+
+                  <h3>tee</h3>
+                <p>Reads from standard input and writes to standard output and one or more files simultaneously.</p>
+
+                  <div class="blackCoding">
+                    <p>
+                        tee
+                    </p>
+                  </div>
+
+                <h4>tee flags</h4>
+                <ul>
+                <li><span class="gold">-a</span> : Append output to the files instead of overwriting.</li>
+                <li><span class="blue">-i</span> : Ignore interrupts (e.g., signals like Ctrl+C).</li>
+                </ul>
+
+                <h3>cut</h3>
+                <p>Extracts specific sections of each line in a file or input stream, usually by specifying delimiters.</p>
+
+                <div class="blackCoding">
+                    <p>
+                        cut
+                    </p>
+                  </div>
+
+                <h4>cut flags</h4>
+                <ul>
+                <li><span class="gold">-d</span> : Define a delimiter to split fields (e.g., `,`, `:`).</li>
+                <li><span class="gold">-f</span> : Select specific fields from the input.</li>
+                <li><span class="blue">-c</span> : Extract specific character positions from each line.</li>
+                </ul>
+
+                <h3>split</h3>
+                <p>Splits files into smaller parts based on line count, byte size, or other criteria.</p>
+
+                <div class="blackCoding">
+                    <p>
+                        split
+                    </p>
+                  </div>
+
+                <h4>split flags</h4>
+                <ul>
+                <li><span class="blue">-l</span> : Specify the number of lines per output file.</li>
+                <li><span class="blue">-b</span> : Split by byte size instead of lines.</li>
+                <li><span class="blue">-d</span> : Use numeric suffixes for output files.</li>
+                </ul>
+
+                <h3>tr</h3>
+                <p>Translates, squeezes, or deletes characters from input.</p>
+
+                <div class="blackCoding">
+                    <p>
+                        tr
+                    </p>
+                  </div>
+
+                <h4>tr flags</h4>
+                <ul>
+                <li><span class="gold">-d</span> : Delete specified characters from input.</li>
+                <li><span class="blue">-s</span> : Replace repeated characters with a single instance.</li>
+                <li><span class="blue">-c</span> : Complement the set of characters (apply operations to all except specified characters).</li>
+                </ul>
+
+                <h3>sed</h3>
+                <p>Stream editor for filtering and transforming text.</p>
+
+                <div class="blackCoding">
+                    <p>
+                        sed
+                    </p>
+                  </div>
+
+                <h4>sed flags</h4>
+                <ul>
+                <li><span class="gold">-i</span> : Edit files in place.</li>
+                <li><span class="blue">-e</span> : Allow multiple editing commands in a single command.</li>
+                <li><span class="blue">-n</span> : Suppress automatic printing, displaying only specified lines.</li>
+                </ul>
+
+                <h3>awk</h3>
+                <p>Pattern scanning and processing language for complex text manipulation.</p>
+
+                <div class="blackCoding">
+                    <p>
+                        awk
+                    </p>
+                  </div>
+
+                <h4>awk flags</h4>
+                <ul>
+                <li><span class="blue">-F</span> : Specify a field separator.</li>
+                <li><span class="blue">-v</span> : Pass a variable into the awk program.</li>
+                <li><span class="gold">-f</span> : Specify a file containing awk commands.</li>
+                </ul>
+
+
+                <h3>head</h3>
+                <p>Displays the first few lines of a file, typically used to preview the beginning of files.</p>
+
+                <div class="blackCoding">
+                    <p>
+                        head
+                    </p>
+                </div>
+
+                <h4>head flags</h4>
+                <ul>
+                <li><span class="gold">-n</span> : Specify the number of lines to display.</li>
+                <li><span class="blue">-c</span> : Display a specific number of bytes instead of lines.</li>
+                <li><span class="blue">-q</span> : Suppress file name headers when outputting multiple files.</li>
+                </ul>
+
+                <h3>tail</h3>
+                <p>Displays the last few lines of a file, often used to monitor the end of files as they grow.</p>
+
+                <div class="blackCoding">
+                    <p>
+                        tail
+                    </p>
+                </div>
+
+                <h4>tail flags</h4>
+                <ul>
+                <li><span class="gold">-n</span> : Specify the number of lines to display.</li>
+                <li><span class="blue">-f</span> : Follow the file as it grows, updating the output in real time.</li>
+                <li><span class="blue">-c</span> : Display a specific number of bytes from the end of the file.</li>
+                </ul>
+
+
+            </div>
+    </div>
+</body>
+</html>

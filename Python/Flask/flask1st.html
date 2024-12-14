@@ -1,0 +1,105 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/CSS-Files/style.css">
+    <link rel="stylesheet" href="/CSS-Files/codingColors.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+      
+    <div class="navbar">
+        <div class="container-navbar1">
+            <a href="/index.html">Home</a>
+            <a href="">CSS</a>
+            <a href="/HTML/htmlFirst.html">HTML</a>
+        </div>  
+    </div>
+
+    <div>
+        <div class="main-container">
+           
+            <div>
+                
+                <h2>Introduction to flask</h2>
+                <p>Flask is a popular Python framework for developing web applications. It comes with minimal built-in functionalities and requirements, making it simple to get started and flexible to use. The developer has the liberty to customize most aspects of the app, including database integration, accounts and authentication, and more.</p>
+           
+                <img src="/Pictures/PYpictures/backend.svg" alt="backend" width="600px">
+            </div>
+
+        </div>
+
+
+            <div class="javascript-body">
+
+                <ul>
+                    <li><span class="boldClass">Client</span>: The device or browser that a user uses to interact with the application.</li>
+                    <li><span class="boldClass">Web Server</span>: A server that handles HTTP requests from the client and sends back the corresponding responses, like HTML files.</li>
+                    <li><span class="boldClass">Application Server</span>: Processes the business logic of the application. It works behind the web server to handle dynamic content and interact with databases.</li>
+                    <li><span class="boldClass">Web API</span>: A set of endpoints that allow communication between the client and the application server, typically using HTTP methods like GET and POST.</li>
+                    <li><span class="boldClass">Database</span>: Stores and retrieves data that the application uses, such as user information, product details, or transactions.</li>
+                </ul>
+
+                <h3>Creating a Flask App Object</h3>
+                <p></p>
+
+                <ul>
+                    <li><span class="boldClass">app</span>: is the object representing your Flask application. You use it to define routes, configurations, and handle requests.</li>
+                    <li><span class="boldClass">Flask</span>: This is the main class in Flask. It provides all the functionality for handling HTTP requests, defining routes, managing templates, and more.</li>
+                    <li><span class="boldClass">__name__</span>: It tells Flask where to find the app. Flask uses this to locate resources like templates and static files and to set the app's configuration.</li>
+                </ul>
+
+                <div class="blackCoding">
+                    <p>
+                        <span class="lightGreen"># Import Flask class</span> <br>
+                        from flask import Flask <br>
+                        <br>
+                        <br>
+                        <span class="lightGreen"># Create Flask object</span> <br>
+                        app = Flask(__name__) <br>
+                    </p>
+                </div>
+               
+                <h3>Creating a route</h3>
+                <p>a route is a URL pattern that is linked to a specific function (called a view function) that is executed when that URL is requested by the client (like a browser). Essentially, routes define the web addresses your application will respond to</p>
+
+                <div class="blackCoding"> 
+                    <p>
+                        <span class="red">@app</span>.<span class="green">route</span>('/') <br>
+                        <span class="black">---</span><span class="darkBlue">def</span> hello_world(): <br>
+                        <span class="black">---</span>   return 'Hello, World!' <span class="lightGreen"># Output: The text `Hello, World!` is displayed at the URL path '/'</span><br>
+                    </p>
+                </div>
+
+                <h3>Variable Rules</h3>
+                <p>Variable rules allow a Flask app to respond to dynamic URLs. Variable sections of a URL can be indicated by angular brackets and an optional converter: < converter:variable_name >. These variable parts will then be passed to the view function as arguments.</p>
+
+                <div class="blackCoding">
+                    <p>
+                        <span class="red">@app</span>.<span class="green">route</span>(''/page/< int:pg_num >'') <br>
+                        <span class="black">---</span><span class="darkBlue">def</span> content(pg_num): <br>
+                        <span class="black">---</span>   return f'< h1 > Displaying results for page {pg_num}< /h1>'
+                    </p>
+                </div>
+
+                <h3>Render HTML</h3>
+                <p> It can also return HTML to be rendered on a webpage:</p>
+
+                <div class="blackCoding">
+                    <p>
+                        <span class="red">@app</span>.<span class="green">route</span>('/') <br>
+                        <span class="black">---</span><span class="darkBlue">def</span> hello_world(): <br>
+                        <span class="black">---</span>   return "< h1 >Hello, World!< /h1 >"
+                    </p>
+                </div>
+
+
+            </div>
+
+            <!-- <span class="red">@app</span>.<span class="green">route</span>('') -->
+    </div>
+</body>
+</html>

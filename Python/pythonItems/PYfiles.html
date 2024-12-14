@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/CSS-Files/style.css">
+    <link rel="stylesheet" href="/CSS-Files/codingColors.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+      
+    <div class="navbar">
+        <div class="container-navbar1">
+            <a href="/index.html">Home</a>
+            <a href="">CSS</a>
+            <a href="/HTML/htmlFirst.html">HTML</a>
+        </div>  
+    </div>
+
+    <div>
+        <div class="main-container">
+           
+            <div>
+                <h2>Python files</h2>
+                <p> files refer to data storage units that can be read from or written to. They allow you to manage data in a persistent way, meaning the data can be stored on disk and accessed later.</p>
+                <p>There is 2 ways to access a file eith ("open()", "with")</p>
+            </div>
+
+            <!-- <div class="main-content">
+
+            </div> -->
+
+        </div>
+
+
+            <div class="javascript-body">
+               
+                <h3>Opening a file "open()"</h3>
+                <p>You use the open function in Python to open a file. The open function creates a file object and
+                    associates it with a file on the disk. Here is the general format of how the open function is used:</p>
+
+                        <ul>
+                            <li><span class="blue">'r'</span>: Read mode (default). Opens the file for reading.</li>
+                            <li><span class="blue">'w'</span>: Write mode. Opens the file for writing (overwrites the file if it exists).</li>
+                            <li><span class="blue">'a'</span>: Append mode. Opens the file for appending (data is added to the end of the file).</li>
+                            <li><span class="blue">'b'</span>: Binary mode. Used with other modes to read or write binary files (e.g., 'rb', 'wb').</li>
+                            <li><span class="blue">'x'</span>: Exclusive creation. Fails if the file already exists.</li>
+                            <li><span class="blue">'t'</span>: Text mode (default). Opens the file in text mode (can be combined with other modes).</li>
+                        </ul>
+                        
+
+                <div class="blackCoding">
+                    <p>
+                        file_variable = open(filename, mode) <br>
+                        <br>
+                        <span class="lightGreen">//We are going to opn and read a fille called customers.txt Example: </span> <br>
+                        customer_file = open('cusomters.txt', '<span class="blue">r</span>') <br>
+                        <br>
+                    </p>
+                </div>
+
+                <h3>Writing a file</h3>
+                <p>The write() method in Python is used to write a string to a file. When you open a file in write mode ('w'), using file.write(string) writes the specified string to the file. </p>
+
+                <div class="blackCoding">
+                    <p>
+                        <br>
+                        <span class="lightGreen">//write in a file:</span> <br>
+                        sales_file = open('sales.txt', '<span class="blue">w</span>') <br>
+                        <br>
+                        <span class="lightGreen">//After this statement executes, the file named sales.txt will be created, and the variable
+                            sales_file will reference a file object </span> <br>
+                    </p>
+                </div>
+
+                <p><span class="red">Warning</span>: Remember, when you use the 'w' mode you are creating the file on the disk. If a
+                    file with the specified name already exists when the file is opened, the contents
+                    of the existing file will be erased</p>
+
+                    <h4>Writing Data to a File</h4>
+                    <p>Once you have opened a file for writing, you use the file object's write method to write data
+                        to a file. Here is the general format of how you call the write method:</p>
+                        <p><span class="purple">file_variable</span> is a variable that references a file object & <span class="orange">string</span> is a
+                            string that will be written to the file. </p>
+
+                        <div class="blackCoding">
+                            <p>
+                                <span class="purple">file_variable</span>.write("<span class="orange">string</span>") <br>
+                                <br>
+                             <span class="lightGreen">//Example: </span> <br>
+                             <span class="purple">customer_file</span>.write('<span class="orange">Charle Pace</span>') <br>
+                             <br>
+                             <span class="lightGreen">//Another example:</span> <br>
+                             <span class="orange">name</span> = 'Charles Pace' <br>
+                             <span class="purple">customer_file</span>.write(<span class="orange">name</span>)
+                                
+                            </p>
+                        </div>
+
+                        <h4>Closing a File</h4>
+                        <p>Once a program is finished working with a file, it should close the file. Closing a file disconnects
+                            the program from the file. In Python you use the file object's close method to close a file</p>
+
+                            <div class="blackCoding">
+                                <p>
+                                    <span class="purple">customer_file</span>.close()
+                                </p>
+                            </div>
+                        <p>Once a file is closed, the connection between it and the file object is removed. In order to
+                            perform further operations on the file, it must be opened again</p>
+
+
+
+            </div>
+    </div>
+</body>
+</html>
+
+
+<!--
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/CSS-Files/style.css">
+    <link rel="stylesheet" href="/CSS-Files/codingColors.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+      
+    <div class="navbar">
+        <div class="container-navbar1">
+            <a href="/index.html">Home</a>
+            <a href="">CSS</a>
+            <a href="/HTML/htmlFirst.html">HTML</a>
+        </div>  
+    </div>
+
+    <div>
+        <div class="main-container">
+           
+            <div>
+                <h2></h2>
+                <p></p>
+            </div>
+
+            <div class="main-content">
+
+            </div>
+
+        </div>
+
+
+            <div class="javascript-body">
+               
+            </div>
+    </div>
+</body>
+</html>
+
+
+-->

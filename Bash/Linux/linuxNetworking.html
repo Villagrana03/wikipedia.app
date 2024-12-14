@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/CSS-Files/style.css">
+    <link rel="stylesheet" href="/CSS-Files/codingColors.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+      
+    <div class="navbar">
+        <div class="container-navbar1">
+            <a href="/index.html">Home</a>
+            <a href="">CSS</a>
+            <a href="/HTML/htmlFirst.html">HTML</a>
+        </div>  
+    </div>
+
+    <div>
+        <div class="main-container">
+           
+            <div>
+                <h2>Networking</h2>
+                <p>Networking in Linux refers to the communication between computers and devices over a network. It involves the configuration, management, and troubleshooting of network connections, enabling devices to share resources, exchange data, and access the internet. Linux provides various command-line tools to help users manage network settings, diagnose connectivity issues, and secure communications.</p>
+            </div>
+
+
+        </div>
+
+
+            <div class="javascript-body">
+               
+                <h3>ping</h3>
+                <p>The ping command is used to test the reachability of a host on a network. It sends ICMP echo request packets to the target IP address and waits for replies. This helps determine if the host is reachable and measures the round-trip time for messages sent to the destinatio</p>
+
+                <div class="blackCoding">
+                    <p>
+                        ping
+                    </p>
+                </div>
+
+                <h4>ping Flags</h4>
+
+                <ul>
+                    <li><span class="gold">`-c < count >`</span>: Stop after sending < count > packets.</li>
+                    <li><span class="blue">`-i < interval >`</span>: Wait < interval > seconds between sending packets.</li>
+                    <li><span class="blue">`-t < ttl >`</span>: Set the time to live (TTL) for the packets.</li>
+                    <li><span class="blue">`-s < size >`</span>: Specify the number of data bytes to be sent.</li>
+                  </ul>
+
+                <h3>ifconfig</h3>
+                <p>The ifconfig command is used to configure and display network interface parameters. It allows users to view current network settings, such as IP addresses and network masks, and to enable or disable network interfaces.</p>
+
+                <div class="blackCoding">
+                    <p>
+                        ifconfig
+                    </p>
+                </div>
+
+                <h4>ifconfig Flags</h4>
+
+                <ul>
+                    <li><span class="gold">`< interface >`</span>: Display or configure the specified network interface.</li>
+                    <li><span class="blue">`up`</span>: Activate the network interface.</li>
+                    <li><span class="blue">`down`</span>: Deactivate the network interface.</li>
+                    <li><span class="blue">`netmask < mask >`</span>: Set the network mask for the interface.</li>
+                    <li><span class="blue">`broadcast < address >`</span>: Set the broadcast address for the interface.</li>
+                  </ul>
+
+
+                <h3>ssh</h3>
+                <p>The ssh (Secure Shell) command is used to securely connect to a remote computer over a network. It provides a command-line interface for remote administration and file transfers, encrypting all data exchanged between the client and server to ensure confidentiality and integrity.</p>
+
+                <div class="blackCoding">
+                    <p>
+                        ssh
+                    </p>
+                </div>
+
+                <h4>ssh Flags</h4>
+
+                <ul>
+                    <li><span class="gold">`< user >@< host >`</span>: Connect to a remote host as the specified user.</li>
+                    <li><span class="blue">`-p < port >`</span>: Specify a different port to connect to on the remote host.</li>
+                    <li><span class="blue">`-i < identity_file >`</span>: Use the specified file as the private key for authentication.</li>
+                    <li><span class="blue">`-v`</span>: Enable verbose mode for debugging connection issues.</li>
+                  </ul>
+
+
+            </div>
+    </div>
+</body>
+</html>

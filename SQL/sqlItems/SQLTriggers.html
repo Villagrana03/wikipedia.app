@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/CSS-Files/style.css">
+    <link rel="stylesheet" href="/CSS-Files/codingColors.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+      
+    <div class="navbar">
+        <div class="container-navbar1">
+            <a href="/index.html">Home</a>
+            <a href="">CSS</a>
+            <a href="/HTML/htmlFirst.html">HTML</a>
+        </div>  
+    </div>
+
+    <div>
+        <div class="main-container">
+           
+            <div>
+                <h2>Triggers</h2>
+                <p>
+                    Triggers in SQL are special types of stored procedures that automatically execute in response to certain events on a table or view. They are used to enforce rules, maintain audit trails, and automate processes directly in the database.</p>
+            </div>
+
+        </div>
+
+
+            <div class="javascript-body">
+               
+                <h4>Key Characteristics of Triggers</h4>
+                <ul>
+                    <li><span class="bondClass">Event-driven</span>: Triggers are activated by events (such as INSERT, UPDATE, or DELETE) on a specific table.</li>
+                    <li><span class="bondClass">Automatic Execution</span>: Once defined, they run automatically whenever the specified event occurs, without manual intervention.</li>
+                    <li><span class="bondClass">Enforcement of Business Rules</span>: Triggers help enforce rules at the database level, like updating a timestamp column whenever a row is modified.</li>
+                    <li><span class="bondClass">Audit Trails and History</span>: Useful for maintaining logs or historical records whenever data changes, which is essential for data integrity and auditing.</li>
+                </ul>
+
+                <h4>Types of Triggers</h4>
+
+                <ul>
+                    <li><span class="bondClass">BEFORE Triggers</span>: Execute before the specified event. Commonly used to validate or modify data before it is inserted, updated, or deleted.</li>
+                    <li><span class="bondClass">AFTER Triggers</span>: Execute after the specified event has occurred. Often used to log changes, enforce referential integrity, or trigger cascading actions.</li>
+                </ul>
+
+                <h4>Example Use Cases for Triggers</h4>
+
+                <ul>
+                    <li><span class="bondClass">Automatic Timestamp Updates</span>: Updating a last_modified column whenever a record is changed.</li>
+                    <li><span class="bondClass">Data Validation</span>: Preventing invalid data entries by checking values before insertion.</li>
+                    <li><span class="bondClass">Logging Changes</span>: Keeping an audit trail by storing previous values in a log table whenever data is modified.</li>
+                </ul>
+
+                <div class="blackCoding">
+                    <p>
+                       <span class="lightGreen">-- Log table to store old order data</span> <br>
+                        CREATE TABLE Orders_Log ( <br>
+                            <span class="black">---</span>    OrderID INT, <br>
+                            <span class="black">---</span>    OldStatus VARCHAR(20), <br>
+                            <span class="black">---</span>    ChangedDate TIMESTAMP DEFAULT CURRENT_TIMESTAMP <br>
+                        ); <br>
+ <br>
+                        <span class="lightGreen">-- Trigger to log updates on Orders table</span> <br>
+                        DELIMITER // <br>
+ <br>
+                        CREATE TRIGGER AfterOrderUpdate <br>
+                        AFTER UPDATE ON Orders <span class="lightGreen">Trigger Event: AFTER UPDATE ON Orders means the trigger activates after any UPDATE on the Orders table.</span> <br>
+                        FOR EACH ROW <br>
+                        BEGIN <br>
+                        <span class="lightGreen">Trigger Action: The trigger inserts the old OrderID, old Status, and the current timestamp into Orders_Log.</span> <br>
+                        <span class="black">---</span>    INSERT INTO Orders_Log (OrderID, OldStatus, ChangedDate) <br>
+                        <span class="black">---</span>    VALUES (OLD.OrderID, OLD.Status, NOW()); <br>
+                        END // <br>
+<br>
+                        DELIMITER ; <br>
+
+                    </p>
+                </div>
+
+            </div>
+    </div>
+</body>
+</html>

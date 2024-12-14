@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/CSS-Files/style.css">
+    <link rel="stylesheet" href="/CSS-Files/codingColors.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+      
+    <div class="navbar">
+        <div class="container-navbar1">
+            <a href="/index.html">Home</a>
+            <a href="">CSS</a>
+            <a href="/HTML/htmlFirst.html">HTML</a>
+        </div>  
+    </div>
+
+    <div>
+        <div class="main-container">
+           
+            <div>
+                <h2>Permissions</h2>
+                <p>Permissions in Linux control the access rights of users to files and directories. They determine who can read, write, or execute a file. Each file and directory has three types of permissions:</p>
+            </div>
+
+
+        </div>
+
+
+            <div class="javascript-body">
+               
+                <ul>
+                    <li><span class="boldClass">Read (r)</span>: Allows a user to view the contents of a file or directory.</li>
+                    <li><span class="boldClass">Write (w)</span>: Allows a user to modify or delete a file or directory.</li>
+                    <li><span class="boldClass">Execute (x)</span>: Allows a user to run a file as a program or access a directory.</li>
+                </ul>
+
+                <p>Permissions can be set for three types of users: the owner of the file, the group associated with the file, and others.</p>
+
+                <h3>Permissions Numerical Order</h3>
+                <p></p>
+
+                <img src="/Pictures/linux/linuxPermissionsTable.png" alt="">
+
+                <ol>
+                    <li><span class="boldClass">First Number</span>: Controls permissions for the owner of the file. </li>
+                     <li>   <span class="boldClass">Second Number</span>: Controls permissions for the group associated with the file.</li>
+                     <li><span class="boldClass">Third Number</span>: Controls permissions for others (everyone else).</li>
+                </ol>
+
+                <h3>chmod</h3>
+                <p>chmod (change mode) is a command used to change the permissions of a file or directory. It allows users to set read, write, and execute permissions for the owner, group, and others. Permissions can be set using symbolic notation (like u for user, g for group, o for others) or numeric mode (using numbers like 7 for full permissions).</p>
+
+                <div class="blackCoding">
+                    <p>
+                        chmod
+                    </p>
+                </div>
+
+                <h4>chmod</h4>
+                <ul>
+                    <li><span class="blue">`-R`</span>: Change permissions recursively for directories and their contents.</li>
+                    <li><span class="gold">`-v`</span>: Verbosely show the changes made.</li>
+                    <li><span class="blue">`--reference= < file >`</span>: Use the permissions of the specified file.</li>
+                    <li><span class="blue">`--silent`</span>: Suppress most error messages.</li>
+                  </ul>
+
+                <h3>chown</h3>
+                <p>chown (change owner) is a command used to change the ownership of a file or directory. It allows users to set a new owner and optionally a new group for the file. This command is useful for managing access rights and ensuring that the correct users have control over files and directories.</p>
+
+                <div class="blackCoding">
+                    <p>
+                        chown
+                    </p>
+                </div>
+
+                <h4>chown Flags</h4>
+
+                <ul>
+                    <li><span class="gold">`-R`</span>: Change ownership recursively for directories and their contents.</li>
+                    <li><span class="blue">`-v`</span>: Verbosely show the changes made.</li>
+                    <li><span class="blue">`--reference=< file >`</span>: Use the ownership of the specified file.</li>
+                    <li><span class="blue">`--no-dereference`</span>: Change the owner of a symbolic link rather than the target.</li>
+                  </ul>
+
+                  
+                <h2>Adding and Modifying Users and Groups</h2>
+
+                <h3>useradd</h3>
+                <p>creates a new user</p>
+
+                <div class="blackCoding">
+                    <p>
+                        useradd
+                    </p>
+                </div>
+
+                <h4>useradd flags</h4>
+
+                <h3>groupadd</h3>
+                <p>creates a new group</p>
+
+                <div class="blackCoding">
+                    <p>
+                        groupadd
+                    </p>
+                </div>
+
+                <h4>groupadd Flags</h4>
+
+                <h3>usermod</h3>
+                <p></p>
+
+                <div class="blackCoding">
+                    <p>
+                        modify users
+                    </p>
+                </div>
+
+                <h4>usermod flags</h4>
+
+                <h3>groupmod</h3>
+                <p></p>
+
+                <div class="blackCoding">
+                    <p>
+
+                    </p>
+                </div>
+
+                <h4></h4>
+
+                <h3>userdel</h3>
+                <p></p>
+
+                <div class="blackCoding">
+                    <p>
+
+                    </p>
+                </div>
+
+                <h4></h4>
+
+                <h3>groupdel</h3>
+                <p></p>
+
+                <div class="blackCoding">
+                    <p>
+
+                    </p>
+                </div>
+
+                <h4></h4>
+
+
+
+            </div>
+    </div>
+</body>
+</html>

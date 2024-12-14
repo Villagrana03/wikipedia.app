@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/CSS-Files/style.css">
+    <link rel="stylesheet" href="/CSS-Files/codingColors.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+      
+    <div class="navbar">
+        <div class="container-navbar1">
+            <a href="/index.html">Home</a>
+            <a href="">CSS</a>
+            <a href="/HTML/htmlFirst.html">HTML</a>
+        </div>  
+    </div>
+
+    <div>
+        <div class="main-container">
+           
+            <div>
+                <h2>Pointers</h2>
+                <p>Pointers are a concept found primarily in languages like C and C++ that allow direct access to memory by "pointing" to the location where data is stored. A pointer is essentially a variable that holds the memory address of another variable, rather than holding an actual data value.</p>
+            </div>
+
+        </div>
+
+
+            <div class="javascript-body">
+               
+                <h3>Key concepts of Pointers</h3>
+
+                <ul>
+                    <li><span class="bondClass">Memory Address</span>: Each piece of data in a program is stored in a specific location in memory, which has an address. A pointer variable holds this memory address.</li>
+                    <li><span class="bondClass">Dereferencing</span>: Dereferencing a pointer means accessing the value stored at the memory address it points to. In C and C++, this is done using the * operator.</li>
+                </ul>
+
+                <h3>Syntax and Basics</h3>
+
+                <div class="blackCoding">
+                    <p>
+                        <span class="blue">Must have the same variable type in order to access the address</span> <br>
+                        int a = 5; <br>
+                        int *p = &a;  <span class="lightGreen">// p is a pointer to int, holding the address of a</span> <br>
+                        <span class="lightGreen">//& is the address-of operator, and * is the dereference operator.</span>
+
+                    </p>
+                </div>
+
+                <h4>*</h4>
+                <ul>
+                    <li><span class="boldClass">* (Dereference Operator)</span>: Used to access or modify the value at the address stored in a pointer. For example, *ptr gives the value at the address stored in ptr.</li>
+                </ul>
+
+                <h4>&</h4>
+                <ul>
+                    <li><span class="boldClass">& (Address-of Operator)</span>: Used to get the address of a variable. For example, &value gives the memory address where value is stored.</li>
+                </ul>
+
+                <div class="blackCoding">
+                    <p>
+                        <span class="lightGreen">// Declare a pointer to an integer</span> <br>
+                        int *ptr; <br>
+                    <br>
+                        <span class="lightGreen">// Use the & operator to get the address of num and store it in ptr</span> <br>
+                        ptr = & num;  <span class="lightGreen">// ptr now holds the address of num</span> <br>
+                    <br> 
+                        <span class="lightGreen">// Print the value of num directly</span> <br>
+                        cout << "Value of num: " << num << endl;  <span class="lightGreen">// Output: 10</span> <br>
+                    <br>
+                        <span class="lightGreen">// Print the address of num using the & operator</span> <br>
+                        cout << "Address of num: " << &num << endl; <br>
+                        <br>
+                        <span class="lightGreen">// Print the value stored in ptr (which is the address of num)</span> <br>
+                        cout << "Value of ptr (Address of num): " << ptr << endl; <br>
+<br>
+                        <span class="lightGreen">// Dereference ptr to get the value stored at the address it points to (i.e., the value of num)</span> <br>
+                        cout << "Value at the address ptr is pointing to: " << *ptr << endl;  <span class="lightGreen">// Output: 10</span> <br>
+<br>
+                        <span class="lightGreen">// Modify the value of num by dereferencing ptr and assigning a new value</span> <br>
+                        *ptr = 20;  <span class="lightGreen">// This changes the value at the address ptr is pointing to (i.e., num becomes 20)</span> <br>
+<br>
+                        <span class="lightGreen">// Print the updated value of num</span> <br>
+                        cout << "Updated value of num: " << num << endl; <span class="lightGreen">// Output: 20</span>
+                    </p>
+                </div>
+
+                <h3>What is Dereferencing?</h3>
+                <p>Dereferencing is the process of accessing or modifying the value stored at the memory address that a pointer is pointing to. When you dereference a pointer, you use the * operator to go to the address stored in the pointer and access or change the value at that address.</p>
+
+                <div class="blackCoding">
+                    <p>
+                        int value = 42; <br>
+                        int *ptr = &value;  <span class="lightGreen">// ptr now holds the address of value</span> <br>
+                        int dereferencedValue = *ptr; <span class="lightGreen">// dereferencing ptr to get the value (42)</span>
+                    </p>
+                </div>
+
+                <h3>Types of Pointers</h3>
+
+                <ul>
+                    <li><span class="boldClass">Null Pointer</span>: Points to nothing (nullptr in C++).</li>
+                    <li><span class="boldClass">Void Pointer</span>: Can point to any data type but cannot be directly dereferenced.</li>
+                    <li><span class="boldClass">Dangling Pointer</span>: Points to memory that has been freed.</li>
+                    <li><span class="boldClass">Wild Pointer</span>: Uninitialized pointer with an arbitrary address.</li>
+                </ul>
+
+                <h3>Pointer Arithmetic</h3>
+                <p>Pointers support operations like incrementing and decrementing to navigate contiguous memory, especially useful with arrays.</p>
+
+                <div class="blackCoding">
+                    <p>
+
+                    </p>
+                </div>
+            </div>
+    </div>
+</body>
+</html>
+

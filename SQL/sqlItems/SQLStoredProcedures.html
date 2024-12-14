@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/CSS-Files/style.css">
+    <link rel="stylesheet" href="/CSS-Files/codingColors.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+      
+    <div class="navbar">
+        <div class="container-navbar1">
+            <a href="/index.html">Home</a>
+            <a href="">CSS</a>
+            <a href="/HTML/htmlFirst.html">HTML</a>
+        </div>  
+    </div>
+
+    <div>
+        <div class="main-container">
+           
+            <div>
+                <h2>Stored Procedures and Functions</h2>
+                <p>
+                    In SQL, Stored Procedures and Functions are both sets of SQL statements that can be saved and reused to perform specific tasks, but they serve slightly different purposes and have distinct characteristics.</p>
+            </div>
+        </div>
+
+
+            <div class="javascript-body">
+               
+                <h3>Stored Procedures</h3>
+                <p>A Stored Procedure is a batch of SQL statements saved in the database that can be executed with a simple call. Stored procedures are often used for complex tasks or for operations that need to be performed multiple times, as they allow you to encapsulate and reuse logic in the database.</p>
+
+                <h4>Key Features of Stored Procedures</h4>
+                <ul>
+                    <li><span class="bondClass">Reusable</span>: Code can be written once, saved in the database, and called whenever needed.</li>
+                    <li><span class="bondClass">Parameterization</span>: You can pass parameters to procedures, allowing them to operate on different values.</li>
+                    <li><span class="bondClass">Transaction Management</span>: They can include multiple SQL statements and manage transactions (BEGIN TRANSACTION, COMMIT, ROLLBACK).</li>
+                    <li><span class="bondClass">No Return Requirement</span>: Procedures may or may not return a result. They can execute commands, perform operations, and manage data without necessarily returning a value.</li>
+                </ul>
+
+                <div class="blackCoding">
+                    <p>
+                        DELIMITER // <br>
+<br>
+                        <span class="blue">CREATE PROCEDURE</span> GetCustomerInfo (IN CustID INT) <br>
+                        <span class="purple">BEGIN</span> <br>
+                        <span class="black">---</span>    <span class="blue">SELECT</span> CustomerName, Email <br>
+                        <span class="black">---</span>    <span class="blue">FROM</span> Customers <br>
+                        <span class="black">---</span>    <span class="blue">WHERE</span> CustomerID = CustID; <br>
+                        <span class="purple">END</span> // <br>
+<br>
+                        DELIMITER ;
+                    </p>
+                </div>
+
+                <div class="blackCoding">
+                    <p>
+                        <span class="lightGreen">//OK i will delete this, but so far, i think we use procedures to have a query stored inside of a "Variable" and everytime we want to use that query we just call that variable and inside the ("Argument")</span> <br>
+                        <span class="blue">CALL</span> GetCustomerInfo(101);
+
+                    </p>
+                </div>
+
+                <h3>Function</h3>
+                <p>A Function is similar to a stored procedure but is generally used to perform calculations or return a single value. Functions can be called from other SQL statements like SELECT, WHERE, or JOIN clauses, making them versatile for repetitive calculations or transformations.</p>
+
+                <h4>Key Features of Functions</h4>
+
+                <ul>
+                    <li><span class="boldClass">Returns a Value</span>: Functions must return a value (or result) and are often used for computations or simple lookups.</li>
+                    <li><span class="bondClass">Can Be Used in Queries</span>: Functions can be used directly in SQL queries, unlike stored procedures.</li>
+                    <li><span class="bondClass">Limited to Read-Only</span>: They generally don’t modify data in the database and are meant to be non-intrusive.</li>
+                </ul>
+
+                <div class="blackCoding">
+                    <p>
+                        DELIMITER //
+
+                        CREATE FUNCTION CalculateDiscount(OrderTotal DECIMAL(10, 2))
+                        RETURNS DECIMAL(10, 2)
+                        DETERMINISTIC
+                        BEGIN
+                            DECLARE Discount DECIMAL(10, 2);
+                            SET Discount = OrderTotal * 0.10;
+                            RETURN Discount;
+                        END //
+
+                        DELIMITER ;
+                    </p>
+                </div>
+
+                <div class="blackCoding">
+                    <p>
+                        SELECT OrderID, CalculateDiscount(OrderTotal) AS DiscountAmount
+                        FROM Orders;
+
+                    </p>
+                </div>
+
+            </div>
+    </div>
+</body>
+</html>

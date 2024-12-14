@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/CSS-Files/style.css">
+    <link rel="stylesheet" href="/CSS-Files/codingColors.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+      
+    <div class="navbar">
+        <div class="container-navbar1">
+            <a href="/index.html">Home</a>
+            <a href="">CSS</a>
+            <a href="/HTML/htmlFirst.html">HTML</a>
+        </div>  
+    </div>
+
+    <div>
+        <div class="main-container">
+           
+            <div>
+                <h2>Classes & Objects</h2>
+                <p>Get started with object-oriented programming.</p>
+            </div>
+
+
+
+        </div>
+
+
+            <div class="javascript-body">
+
+               <h2>Class</h2>
+               <p>A class is a user-defined data type that encapsulates information and serves as a blueprint for objects, which are instances of the class.</p>
+
+               <p>To create a class, use the class keyword in the following syntax:</p>
+
+               <div class="blackCoding">
+                <p>
+                    class School { <br>
+<br>
+                    }; <span class="lightGreen">// ← Semicolon is required</span>
+                </p>
+               </div>
+
+               <h4>Class members</h4>
+               <p>A member of a class is any variable or method defined within that class. Members define the properties (data) and behaviors (functions) of objects created from that class.</p>
+
+               <ol>
+                    <li><span class="bondClass">Member Variables</span>: These are the attributes or properties of the class. They hold the state or data of an object. For example, in a Car class, color and model could be member variables.</li>
+                    <li><span class="bondClass">Member Methods</span>: These are functions that define the behavior of the class. They can operate on member variables or perform specific actions related to the object. For instance, a method like startEngine() in a Car class would control the car's behavior</li>
+               </ol>
+
+               <p>We will extent School class!</p>
+
+               <div class="blackCoding">
+                <p>
+                    <span class="lightGreen">//Here we added 3 members, 2 variables and 1 method.</span> <br>
+                    class School { <br>
+                             public: <br>
+                        <span class="black">---</span>   std::string name; <br>
+                        <span class="black">---</span>   int age; <br>
+                        <br>
+                          void banner() { <br>
+                            <span class="black">---</span>     std::cout << name << " is " << age << " years old.\n"; <br>
+                          } <br>
+                        }; <br>
+                        
+                </p>
+               </div>
+
+               <h4>Defining Methods Outside of a Class</h4>
+               <p>For larger projects, it’s recommended to split up the class definition in a header and a .cpp file. Doing so requires class methods to be defined outside of the class definition. In this scenario, use the <span class="gold">ClassName</span>:: namespace to indicate that the function belongs to that class.</p>
+
+               <div class="blackCoding">
+                <p>
+                    <span class="lightGreen">//In this example i am declaring the method outside of the casss ("School")</span> <br>
+                    void <span class="gold">School</span>::banner() { <br>
+                    <span class="black">---</span>    std::cout << name << " is " << age << " years old.\n"; <br>
+                      } <br>
+                      <br>
+                      <span class="lightGreen">//Note: Even though a method can be defined outside its class, it must still be declared inside it.`</span>
+                      
+                </p>
+               </div>
+
+               <h3>Objects</h3>
+               <p>
+                An object is a specific instance of a class in object-oriented programming. It represents a distinct entity that combines both data (attributes) and behaviors (methods) defined by the class.</p>
+
+                <h5>Create a object from School Class</h5>
+
+                <div class="blackCoding">
+                    <p>
+                        School codecademy;
+                    </p>
+                </div>
+
+                <p>Once an object is created, we can access and modify the class attributes using the dot operator .:</p>
+
+                <div class="blackCoding">
+                    <p>
+                        <span class="lightGreen">//// Set values for attributes name and age </span><br>
+                        codecademy.name = "Codecademy"; <br>
+                        codecademy.age = 10; <br>
+                        <br>
+                        <span class="lightGreen">//Here we are accesing a class method trough the object!</span> <br>
+                        codecademy.banner();
+                    </p>
+                </div>
+
+                <h4>Multiple Objects</h4>
+
+                <div class="blackCoding">
+                    <p>
+                       <span class="lightGreen"> // Create an object of School</span> <br>
+                        School harvard; <br>
+                        harvard.name = "Harvard"; <br>
+                        harvard.age = 385;  <br>
+<br>
+                        <span class="lightGreen">// Create another object of School</span> <br>
+                        School yale; <br>       
+                        yale.name = "Yale"; <br>
+                        yale.age = 319; <br>
+                    </p>
+                </div>
+
+                <h3>Access Specifiers</h3>
+                <p>Access specifiers are C++ keywords that determine the scope of class components. This article will cover the following topics:</p>
+
+                <ul>
+                    <li>The private keyword</li>
+                    <li>The public keyword</li>
+                    <li>Encapsulation</li>
+                    <li>Accessor functions</li>
+                    <li>Mutator functions</li>
+                </ul>
+
+                <h4>private keyboard</h4>
+                <p>a private class typically refers to a class that is declared as a member of another class and has its access level set to private. This means that the private class cannot be accessed directly from outside the outer class.</p>
+
+                <p>NOTE: we will use private classes ONlY when is going to be a sub class of a class</p>
+
+                <h5>Reasons to use a private class</h5>
+
+                <ul>
+                    <li><span class="boldClass">Encapsulation:</span> A private class encapsulates its implementation details, meaning that external code cannot directly access or modify its members. This protects the integrity of the data and behavior.</li>
+                    <li><span class="boldClass">Controlled Access:</span> By limiting access to the class, you ensure that only certain parts of your program can create or manipulate instances of that class, reducing the risk of misuse.</li>
+                    <li><span class="boldClass">Protection from External Changes:</span>A private class can evolve independently from external code. This isolation can prevent bugs and unintended side effects from changing internal logic.</li>
+                    <li><span class="boldClass">Easier Maintenance:</span> Changes to the implementation of a private class do not affect external code, as long as the public interface remains unchanged. This makes the code easier to maintain and refactor.</li>
+                </ul>
+
+                <div class="blackCoding">
+                    <p>
+                        class Student { <br>
+                            std::string name; <br>
+                          }; <br>
+                           <br>
+                          int main() { <br>
+                            Student clara; <br>
+                            clara.name = "Clara"; <span class="lightGreen">// Not allowed, name is private</span> <br>
+                            return 0; <br>
+                          } <br>
+                        <br>
+                        <br>
+                        <br>
+                        <span class="lightGreen">//This is a more expanded version</span> <br>
+                        <br>
+                        <span class="lightGreen">// Library class</span>
+                        class Library { <br>
+                        private: <br>
+                            <span class="lightGreen">// Private nested class to represent a Book</span> <br>
+                            class Book { <br>
+                            public: <br>
+                                <span class="lightGreen">// Constructor to initialize the Book with a title and an author</span> <br>
+                                Book(const std::string& title, const std::string& author) <br>
+                                    : title(title), author(author) {} <br>
+ <br>
+                                <span class="lightGreen">// Public method to display book information</span>   <br>
+                                void display() const { <br>
+                                    std::cout << "Title: " << title << ", Author: " << author << std::endl; <br>
+                                } <br>
+<br>
+                            private: <br>
+                                std::string title;  <span class="lightGreen">// Book's title (private member)</span> <br>
+                                std::string author; <span class="lightGreen">// Book's author (private member)</span> <br>
+                            }; <br>
+
+
+                    </p>
+                </div>
+
+                <h4>Public Keyboard</h4>
+                <p>The public access specifier has the opposite effect of private; public class members are accessible from anywhere in the program.</p>
+               
+
+                <div class="blackCoding">
+                    <p>
+                        class Festival { <br>
+                            public: <br>    
+                              int firework; <br>
+                            }; <br>
+                            <br>
+                            int main() { <br>   
+                              Festival christmas; <br>
+                              christmas.firework = 100; <span class="lightGreen">// Allowed because firework is public</span> <br>
+                            } <br>
+                            
+                    </p>
+                </div>
+
+                <h4>Encapsulation</h4>
+                <p>Encapsulation is the concept of bundling the data (attributes) and the methods (functions) that operate on that data into a single unit, called a class. It restricts direct access to some of the object's components, which is a means of preventing accidental interference and misuse of the methods and data.</p>
+                <p>In C++, encapsulation is achieved by declaring class members/attributes as private so they cannot be accessed from outside of the class.</p>
+
+                <h4>Accessor Functions</h4>
+                <p>An accessor function (also known as a “getter” function) is a public function that returns the value of a private member variable:</p>
+
+                <div class="blackCoding">
+                    <p>
+                        class Clock { <br>
+                            private: <br>
+                              int time = 1200; <br>
+                            <br>
+                            public:
+                             <span class="lightGreen"> // Accessor function for time</span> <br>
+                              int getTime() { <br>
+                                return time; <br>
+                              } <br> 
+                            }; <br>
+                             <br>
+                            int main() { <br>
+                                <span class="lightGreen">//The main() function calls the accessor function getTime() and gets the value of the time attribute even though it is private.</span> <br>
+                              Clock alarm; <br>
+                              std::cout << alarm.getTime();  <span class="lightGreen"> //Output: 1200</span> <br>
+                            }
+                            
+                    </p>
+                </div>
+
+                <h4>Mutator Functions</h4>
+
+                <div class="blackCoding">
+                    <p>
+                        class Clock { <br>
+                            private: <br>       
+                              int time = 1200; <br>
+                            <br>    
+                            public: <br>                    
+                              <span class="lightGreen">// Accessor function for time</span> <br>
+                              int getTime() { <br>
+                                return time; <br>
+                              } <br>
+                            <br>
+                              <span class="lightGreen">// Mutator function for time</span> <br>
+                              void setTime(int new_time) { <br>
+                                time = new_time; <br>
+                              } <br>
+                            }; <br>
+                            <br>
+                            int main() { <br>
+                              Clock alarm; <br>
+                              alarm.setTime(930); <br>
+                              std::cout << alarm.getTime();  <span class="lightGreen">// Output: 930</span>
+                            }
+                    </p>
+                </div>
+                <p>Mutator functions usually have a return type of void. They are only responsible for resetting the value of an existing class member. As such, mutator functions often have one parameter of the same type as the attribute.</p>
+            </div>
+    </div>
+</body>
+
+
+</html>
+
+<!--
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/CSS-Files/style.css">
+    <link rel="stylesheet" href="/CSS-Files/codingColors.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+      
+    <div class="navbar">
+        <div class="container-navbar1">
+            <a href="/index.html">Home</a>
+            <a href="">CSS</a>
+            <a href="/HTML/htmlFirst.html">HTML</a>
+        </div>  
+    </div>
+
+    <div>
+        <div class="main-container">
+           
+            <div>
+                <h2></h2>
+                <p></p>
+            </div>
+
+            <div class="main-content">
+
+            </div>
+
+        </div>
+
+
+            <div class="javascript-body">
+               
+            </div>
+    </div>
+</body>
+</html>
+
+
+-->

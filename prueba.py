@@ -68,7 +68,12 @@
 
 # #print(finalAnswer)
 
-import math 
+# import math 
 
-result = math.e != math.pow(2,4)
-print(int(result))
+# result = math.e != math.pow(2,4)
+# print(int(result))
+
+
+
+import flask
+@app.route
