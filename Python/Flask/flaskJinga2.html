@@ -1,0 +1,134 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/CSS-Files/style.css">
+    <link rel="stylesheet" href="/CSS-Files/codingColors.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+      
+    <div class="navbar">
+        <div class="container-navbar1">
+            <a href="/index.html">Home</a>
+            <a href="">CSS</a>
+            <a href="/HTML/htmlFirst.html">HTML</a>
+        </div>  
+    </div>
+
+    <div>
+        <div class="main-container">
+           
+            <div>
+                <h2>Jinga2</h2>
+                <p></p>
+            </div>
+        </div>
+
+
+            <div class="javascript-body">
+               
+                <h2>Using Jinga2</h2>
+                <p>Jinja2 is a popular templating engine for Python, commonly used with web frameworks like Flask. It allows developers to create dynamic HTML pages by embedding Python-like expressions and logic directly into HTML templates.</p>
+
+
+                <h3>Rendering a HTML file</h3>
+                <div class="blackCoding">
+                    <p>
+                        <span class="lightGreen">#Before we start we must have a folder called "templates" and from there we can render everypage with that built in function</span> <br>
+                        from flask import Flask, render_template <br>
+                        <br>
+                        app = Flask(__name__) <br>
+                        <span class="red">@app</span>.<span class="green">route</span>('/') <br>
+                        <span class="black">---</span><span class="darkBlue">def</span> index(): <br>
+                        <span class="black">---</span>   <span class="pink">return</span> render_templates("index.html")
+
+                    </p>
+                </div>
+
+                <h3>Variable Filters</h3>
+                <p>variable filters are used to modify the value of variables before rendering them in the template. Filters allow you to apply common transformations, formatting, or processing to variables dynamically within your HTML templates.</p>
+
+                <ul>
+                    <li><span class="blue">title</span>: Capitalizes the first letter of each word in a string</li>
+                    <li><span class="blue">capitalize</span>: Capitalizes the first letter of a string</li>
+                    <li><span class="blue">lower</span>: Makes all the characters in a string lowercase</li>
+                    <li><span class="blue">upper</span>: Makes all the characters in a string uppercase</li>
+                    <li><span class="blue">int</span>: Converts a variable to an integer</li>
+                    <li><span class="blue">float</span>: Converts a variable to a floating-point number</li>
+                    <li><span class="blue">default</span>: Provides a default value if a variable is not defined</li>
+                    <li><span class="blue">length</span>: Calculates the length of a string, list, or dictionary</li>
+                    <li><span class="blue">dictsort</span>: Sorts a dictionary by its keys</li>
+                  </ul>
+
+                <div class="blackCoding">
+                    <p>
+                        <span class="red">@app</span>.<span class="green">route</span>('/') <br>
+                        <span class="black">---</span><span class="darkBlue">def</span> index(): <br>
+                        <span class="black">---</span>   <span class="pink">return</span> render_template("index.html", <br>
+                        template_recipe=recipes[id] ) <br>
+                        <br>
+                        <span class="lightGreen">#This is index.html</span> <br>
+                        < body> <br>
+                            < h1>  {{template_recipe | title}}  < /h1>  <span class="lightGreen">// Here we are using the title filter</span>  <br>
+                        < /body> <br>
+                    </p>
+                </div>
+
+                <h3>if statement</h3>
+                <p>if statement is used to conditionally render parts of a template based on a given condition. It allows you to execute a block of code (HTML, for example) only if the specified condition evaluates to true.</p>
+
+                <div class="blackCoding">
+                    <p>
+                        {% if condition %} <br>
+                        < p>This text will output if condition is True< /p> <span class="lightGreen">Code to render if the condition is True -- ></span> <br>
+                        {% elif another_condition %} <br>
+                        <span class="lightGreen">Code to render if the second condition is True -- ></span> <br>
+                        {% else %} <br>
+                        <span class="lightGreen">Code to render if no conditions are True -- ></span> <br>
+                        {% endif %} <br>
+                    </p>
+                </div>
+            </div>
+
+            <h3>for loops</h3>
+            <p>you can use for loops to iterate over a list or dictionary and dynamically generate HTML content based on the data passed to the template</p>
+
+            <div class="blackCoding">
+                <p>
+                    {% for item in collection %} <br>
+                    <span class="lightGreen">Code to render for each item in the collection --></span> <br>
+                    {% endfor %}         <br>
+
+                </p>
+            </div>
+
+            <h3>Inheritance</h3>
+            <p>Template inheritance in Jinja2 allows you to define a "base" template that contains the common structure of your pages, and then extend or modify it in other templates. This is especially useful when you're working on a web application with a lot of pages that share common elements like headers, footers, and navigation.</p>
+
+            <div class="blackCoding">
+                <p>
+                    <span class="lightGreen">// base.html (parent) </span> <br>
+                        < div>    <br>           
+                            < h2>navbar< /h2> <br>
+                            < p>item< /p> <br>
+                        < /div> <br>
+                        <br>
+                        {% block content %} <span class="lightGreen">#Everything that we extend will show inside of here</span> <br>
+<br>
+                        {% endblock %} <br>
+                        <br>
+                        <span class="lightGreen">// index.html (child)</span> <br>
+                        {% extends "base.html" %} <br>
+                        {% block content %} <br>
+                        <span class="lightGreen">#inside of here will be all the items that we will be extending!</span> <br>
+                        {% endblock %}
+
+                </p>
+            </div>
+    </div>
+</body>
+</html>

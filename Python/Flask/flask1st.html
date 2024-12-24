@@ -26,7 +26,7 @@
                 
                 <h2>Introduction to flask</h2>
                 <p>Flask is a popular Python framework for developing web applications. It comes with minimal built-in functionalities and requirements, making it simple to get started and flexible to use. The developer has the liberty to customize most aspects of the app, including database integration, accounts and authentication, and more.</p>
-           
+                <h1><span class="red">debug=True Se actualiza la pagina independiente de que se guarde o no, </span></h1>
                 <img src="/Pictures/PYpictures/backend.svg" alt="backend" width="600px">
             </div>
 
@@ -81,18 +81,35 @@
                     <p>
                         <span class="red">@app</span>.<span class="green">route</span>(''/page/< int:pg_num >'') <br>
                         <span class="black">---</span><span class="darkBlue">def</span> content(pg_num): <br>
-                        <span class="black">---</span>   return f'< h1 > Displaying results for page {pg_num}< /h1>'
+                        <span class="black">---</span>   <span class="pink">return</span> f'< h1 > Displaying results for page {pg_num}< /h1>'
                     </p>
                 </div>
 
                 <h3>Render HTML</h3>
-                <p> It can also return HTML to be rendered on a webpage:</p>
+                <p> It can also <span class="pink">return</span> HTML to be rendered on a webpage:</p>
 
                 <div class="blackCoding">
                     <p>
                         <span class="red">@app</span>.<span class="green">route</span>('/') <br>
                         <span class="black">---</span><span class="darkBlue">def</span> hello_world(): <br>
                         <span class="black">---</span>   return "< h1 >Hello, World!< /h1 >"
+                    </p>
+                </div>
+
+                <h3>Variable rules</h3>
+                <p> But what if we want to handle a set of URLs that may be constantly changing?</p>
+
+                <div class="blackCoding">
+                    <p>
+                        <span class="lightGreen">#Here is an example </span> <br>
+                        <span class="red">@app</span>.<span class="green">route</span>('/reporter/< int:reporter_id>')  <span class="lightGreen">#Here i am getting each reporter url and depending on the id that would be the result</span><br>
+                        <span class="black">---</span><span class="darkBlue">def</span> reporter(reporter_id): <br>
+                        <span class="black">---</span>   return f''' <br>
+                        < h2>Reporter {reporter_id} Bio</ h2> <br>
+                        < a href="/">Return to home page< /a> <br>
+                        ''' <br>
+                        <br>
+                        
                     </p>
                 </div>
 

@@ -1,0 +1,157 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/CSS-Files/style.css">
+    <link rel="stylesheet" href="/CSS-Files/codingColors.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+      
+    <div class="navbar">
+        <div class="container-navbar1">
+            <a href="/index.html">Home</a>
+            <a href="">CSS</a>
+            <a href="/HTML/htmlFirst.html">HTML</a>
+        </div>  
+    </div>
+
+    <div>
+        <div class="main-container">
+           
+            <div>
+                <h2>FlaskForm Class</h2>
+                <p>A FlaskForm class comes from Flask-WTF, which is an extension of Flask that integrates Flask with WTForms. WTForms is a library that helps you manage and validate forms in Flask applications.</p>
+            </div>
+
+            <div class="main-content">
+
+            </div>
+
+        </div>
+
+
+
+            <div class="javascript-body">
+
+                <h3>FlaskForm form attributes</h3>
+                <ul>
+                    <li><span class="blue">StringField</span> - Text input field</li>
+                    <li><span class="blue">PasswordField</span> - Password input (masked text)</li>
+                    <li><span class="blue">TextAreaField</span> - Multiline text input</li>
+                    <li><span class="blue">EmailField</span> - Email input field</li>
+                    <li><span class="blue">DecimalField</span> - Input for decimal numbers</li>
+                    <li><span class="blue">IntegerField</span> - Input for integer numbers</li>
+                    <li><span class="blue">FloatField</span> - Input for floating-point numbers</li>
+                    <li><span class="blue">BooleanField</span> - Checkbox for True/False</li>
+                    <li><span class="blue">FileField</span> - File upload input</li>
+                    <li><span class="blue">RadioField</span> - Group of radio buttons</li>
+                    <li><span class="blue">SelectField</span> - Dropdown select menu</li>
+                    <li><span class="blue">SelectMultipleField</span> - Multi-select dropdown</li>
+                    <li><span class="blue">SubmitField</span> - Submit button</li>
+                    <li><span class="blue">DateField</span> - Input for date (YYYY-MM-DD)</li>
+                    <li><span class="blue">DateTimeField</span> - Input for date and time</li>
+                    <li><span class="blue">TimeField</span> - Input for time only</li>
+                    <li><span class="blue">URLField</span> - Input for URLs</li>
+                    <li><span class="blue">TelField</span> - Input for telephone numbers</li>
+                    <li><span class="blue">HiddenField</span> - Hidden input field</li>
+                    <li><span class="blue">SearchField</span> - Search input field</li>
+                    <li><span class="blue">DecimalRangeField</span> - Slider for decimals (HTML5)</li>
+                    <li><span class="blue">IntegerRangeField</span> - Slider for integers (HTML5)</li>
+                  </ul>
+                  
+
+               <h3>FlaskForm</h3>
+               <p>A Flask form class inherits from the class FlaskForm and includes attributes for every field:</p>
+
+               <div class="blackCoding">
+                <p>
+                    <span class="lightGreen">#This will create an label and input</span> <br>
+                    class MyForm(FlaskForm): <br>
+                <span class="black">---</span> my_textfield = StringField("Enter text here") <br>
+                <span class="black">---</span>my_submit = SubmitField("SubmitName") <br>
+                <br>
+                <br>
+                <br>
+                < form method="POST"> <br>
+                    {{ form.hidden_tag() }}  <span class="lightGreen">// For CSRF protection --></span> <br>
+                    {{ form.my_textfield.label }}  <span class="lightGreen">// Creates the label for the text field --></span> <br>
+                    {{ form.my_textfield() }}  <span class="lightGreen">// Generates the < input> field --></span> <br>
+                    <br>
+                    {{ form.my_submit() }}  <span class="lightGreen">// Generates the < input type="submit"> --></span> <br>
+                < /form> <br>
+                <br>
+                <br>
+                <br>
+                <span class="lightGreen">// Flask will generate the following HTML:</span> <br>
+                < form method="POST"> <br>
+                <span class="black">---</span>    < input type="hidden" name="csrf_token" value="csrf_token_value"> <br>
+                <span class="black">---</span>    < label for="my_textfield">Enter text here< /label> <br>
+                <span class="black">---</span>    < input id="my_textfield" name="my_textfield" type="text"> <br>
+                    <br> 
+                    <span class="black">---</span>    < input id="my_submit" name="my_submit" type="submit" value="SubmitName"> <br>
+                < /form>
+                
+                </p>
+               </div>
+
+               <h2>Steps Template form Variable</h2>
+                <p></p>
+
+                <div class="blackCoding">
+                    <p>
+                        <span class="lightGreen">// After Setting our form class like this in the flask App: </span> <br>
+                        class MyForm(FlaskForm): <br>
+                        <span class="black">---</span> <span class="orange">my_textfield</span> = StringField("Enter text here") <br>
+                        <span class="black">---</span><span class="blue">my_submit</span> = SubmitField("SubmitName") <br>
+                        <br>
+                        <span class="lightGreen">// We will put the form in a variable: </span> <br>
+                        my_form = MyForm() <br>
+                        <br> 
+                        <span class="lightGreen">// Then on the function where we declare the flask app we will render it</span> <br>
+                        return render_template(<span class="purple">template_form</span>=my_form) <br>
+                        <br>
+                        <span class="lightGreen">// Moving to the template (an html file) we will copy the following code inside of form tags</span> <br>
+                        < form action="/" method="post"> <br>
+                        <span class="lightGreen">// i highlithed the variables with color, because once we render in the HTML we need use the variable that we rendered in this case {template_form} "." and the variable inside the class </span><br>
+                    <span class="gold">--></span>    {{ <span class="purple">template_form</span>.hidden_tag() }} <br>
+                    <span class="gold">--></span>        {{ <span class="purple">template_form</span>.<span class="orange">my_textfield</span>.label }} <br>
+                    <span class="gold">--></span>        {{ <span class="purple">template_form</span>.<span class="orange">my_textfield</span>() }} <br>
+                    <span class="gold">--></span>        {{ <span class="purple">template_form</span>.<span class="blue">my_submit</span>() }} <br>
+                        < /form>
+
+                
+                    </p>
+                </div>
+
+                <h3>Handling FlaskForm Data</h3>
+                <p>Once a form is submitted, the data is sent back to the server through a POST request.</p>
+
+                <div class="blackCoding">
+                    <p>
+                        <span class="lightGreen">// we need to access the data and  The data can be directly accessed by using the data attribute associated with each field in the class.</span> <br>
+                        form_data = flask_form.my_textfield.data <br>
+                        <br>
+                        <span class="lightGreen">// We will use above class to proccess our data</span> <br>
+                        <span class="red">@app</span>.<span class="green">route</span>('/', method= ["GET", "POST"]) <br>
+                        <span class="black">---</span><span class="darkBlue">def</span> commentForm(): <br>
+                        <br>
+                        <span class="lightGreen">// We are assigning the FlaskForm classes to this decorator</span> <br>
+                        <span class="blue">my_form</span> = myForm() <br>
+                        <br>
+                        <span class="lightGreen">// Here we will handle data</span> <br>
+                        new_comment = <span class="blue">my_form</span>.<span class="orange">my_textfield</span>.data <span class="lightGreen">// With this we will get every value of the textfield and store it in new_comment variable</span> <br>
+                        comments[id].append(new_comment) <span class="lightGreen">// Here we will append each result into comments list</span>
+
+                    </p>
+                </div>
+
+
+
+            </div>
+    </div>
+</body>
+</html>
