@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/CSS-Files/style.css">
+    <link rel="stylesheet" href="/CSS-Files/codingColors.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+      
+    <div class="navbar">
+        <div class="container-navbar1">
+            <a href="/index.html">Home</a>
+            <a href="">CSS</a>
+            <a href="/HTML/htmlFirst.html">HTML</a>
+        </div>  
+    </div>
+
+    <div>
+        <div class="main-container">
+           
+            <div>
+                <h2>Templates and Jinja2</h2>
+                <p>Jinja2 is a templating engine for Python, commonly used with web frameworks like Flask. It allows you to write HTML with dynamic content by embedding Python-like expressions inside your HTML files. This makes it easy to generate dynamic pages on the server side.</p>
+            </div>
+
+        </div>
+
+
+            <div class="javascript-body">
+               <h2>Using templates to separate HTML from Python code</h2>
+                <p>Templates in Flask allow you to separate the HTML structure from the Python logic. Instead of writing your HTML directly inside your Python code (which is hard to maintain), you write the structure in a separate HTML file (template), and pass dynamic data to it.</p>
+
+                <div class="blackCoding">
+                    <p>
+                        <span class="yellow">@app.route</span>("/") <br>
+                        <span class="darkBlue">def</span> <span class="yellow">index</span>(): <br>
+                        <span class="lightBlue">user_name</span> = "Michelle" <span class="lightGreen">#Lets say this function gets data from a database</span> <br>
+                        <span class="black">---</span> <span class="pink">return</span> render_template(<span class="orange">"index.html"   </span>,name = user_name)    <br>
+                        <br>
+                        <br>
+                        <span class="lightGreen">#index.html</span>
+                    </p>
+                </div>
+            </div>
+    </div>
+</body>
+</html>
