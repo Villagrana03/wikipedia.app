@@ -41,10 +41,109 @@
                         <span class="black">---</span> <span class="pink">return</span> render_template(<span class="orange">"index.html"   </span>,name = user_name)    <br>
                         <br>
                         <br>
-                        <span class="lightGreen">#index.html</span>
+                        <span class="lightGreen">#index.html</span> <br>
+                        < body> <br>                        
+                            < h1>Welcome, {{ name }}!< /h1>  <span class="lightGreen">#In this example, {{ name }} is a placeholder for the name variable passed from the Python code.</span><br>
+                        < /body> <br>
+
+                    </p>
+                </div> 
+
+                <h2>Template inheritance (base templates)</h2>
+                <p>Template inheritance allows you to create base templates that other templates can inherit from, which helps reduce code repetition. You define a base layout (e.g., a common header, footer, or navigation bar), and then other templates can inherit from it and only override specific parts as needed.</p>
+
+                <div class="blackCoding">
+                    <p>
+                        <span class="lightGreen">#base.html</span> <br>
+<br>
+                        < header> <br>
+                        <span class="black">---</span>       < h1>Welcome to My Website< /h1> <br>
+                        < /header> <br>
+                    <br>
+                        < main> <br>
+                        <span class="black">---</span>       {% block content %}  <br>
+                        <span class="black">------</span>      <span class="lightGreen">< !-- Content will go here in child templates --></span> <br>
+                        <span class="black">---</span>        {% endblock %} <br>
+                        < /main> <br>
+                        <br>
+                        <br>
+                        <span class="lightGreen">#home.html</span> <br>
+                        <br>
+                        {% extends "base.html" %} <span class="lightGreen">This will extend everything from base.html</span> <br>
+<br>
+                        {% block content %} <span class="lightGreen"># every data that we insert inside of this tags will be inside of the template</span><br>            
+                        <span class="black">---</span>      < h2>This is the homepage< /h2> <br>            
+                        <span class="black">---</span>      < p>Welcome to the home page of the site!< /p> <br>
+                        {% endblock %} <br>
+
+
+
+
+                    </p>
+                </div>
+
+                <h2>Passing variables from Flask to templates</h2>
+                <p>In Flask, you can pass variables (like strings, lists, dictionaries, etc.) from your Python code to the template using render_template().</p>
+
+                <div class="blackCoding">
+                    <p>
+                        <span class="lightGreen">#app.py</span> <br>
+                        <span class="yellow">@app.route</span>("/") <br>
+                        <span class="darkBlue">def</span> <span class="yellow">home</span>(): <br>
+                        <span class="lightBlue">user</span> = "Michelle" <br>
+                        <span class="lightBlue">items</span> = ["Apple", "Banana", "Cherry"] <br>
+                        <span class="black">---</span> <span class="pink">return</span> render_template(<span class="orange">"home.html"</span>, user_name=<span class="lightBlue">user</span>, fruit_list=<span class="lightBlue">items</span> )    <br>
+                        <br>
+                        <br> <
+                        <span class="lightGreen">home.html</span> <br>
+                        < h1>Welcome, {{ user_name }}!< /h1>  <span class="lightGreen"># {{ user_name }} will display Michelle on the page.</span> <br>
+                        < ul> <br>
+                        <span class="black">---</span>    {% for fruit in fruit_list %} <span class="lightGreen">The for loop will iterate through fruit_list and display each fruit in an unordered list.</span><br>
+                        <span class="black">------</span>     < li>{{ fruit }}< /li> <br>
+                        <span class="black">---</span>    {% endfor %} <br>
+                        < /ul> <br>
+                    </p>
+                </div>
+
+                <h2> Control structures (loops, conditionals) in templates</h2>
+                <p>Jinja2 allows you to use basic control structures like loops and conditionals inside your templates. This allows you to dynamically generate content based on data passed to the template.</p>
+
+                <div class="blackCoding">
+                    <p>
+                        <span class="lightGreen">#In the previous example we used a for loop using templates, but now i will show an IF statement</span> <br>
+                        <br>
+                        {% if user_name == "Alice" %} <br>
+                        <span class="black">---</span>     < p>Hello, Alice! Welcome back!</ p> <br>
+                        {% else %} <br>             
+                        <span class="black">---</span>     < p>Hello, guest!< /p> <br>
+                        {% endif %} <br>
+                    </p>
+                </div>
+
+                <h3>Combining control structures:</h3>
+                <p>You can combine loops and conditionals together. For instance, showing a special message for certain users:</p>
+
+                <div class="blackCoding">
+                    <p>
+                        < ul> <br>                  
+                        <span class="black">---</span>    {% for user in users %} <br>    
+                        <span class="black">------</span>         {% if user == "Alice" %} <br>           
+                        <span class="black">---------</span>           < li>{{ user }} (Special User)< /li> <br>
+                                    <span class="black">------</span>         {% else %} <br>             
+                                    <span class="black">---------</span>                  < li>{{ user }}< /li> <br>
+                                    <span class="black">------</span>        {% endif %} <br>
+                                <span class="black">---</span>    {% endfor %} <br>
+                        < /ul> <br>
                     </p>
                 </div>
             </div>
     </div>
+
+    <!-- 
+    <span class="yellow">@app.route</span>("/") <br>
+    <span class="darkBlue">def</span> <span class="yellow">home</span>(): <br>
+    <span class="black">---</span> <span class="pink">return</span> <span class="orange">   </span>    <br> 
+    -->
+
 </body>
 </html>
