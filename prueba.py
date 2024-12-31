@@ -75,13 +75,22 @@
 
 
 
-from flask import Flask
+from flask import Flask, request
 
-app = Flask(__name__) 
+app = Flask(__name__)
 
-@app.route("/")
-def home():
-    return ""
+@app.route('/submit', methods=['GET', 'POST'])
+def submit():
+    if request.method == 'POST':
+        # Handle POST request (form submission)
+        name = request.form['name']
+        return f"Hello, {name}!"
+    return '''
+        <form method="POST">
+            Name: <input type="text" name="name">
+            <button type="submit">Submit</button>
+        </form>
+    '''
 
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=True)

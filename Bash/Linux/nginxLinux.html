@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/CSS-Files/style.css">
+    <link rel="stylesheet" href="/CSS-Files/codingColors.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+      
+    <div class="navbar">
+        <div class="container-navbar1">
+            <a href="/index.html">Home</a>
+            <a href="">CSS</a>
+            <a href="/HTML/htmlFirst.html">HTML</a>
+        </div>  
+    </div>
+
+    <div>
+        <div class="main-container">
+           
+            <div>
+                <h2>Nginx</h2>
+                <p></p>
+            </div>
+
+            <div class="main-content">
+
+            </div>
+
+        </div>
+
+        <h2>Installing Nginx</h2>
+
+        <p>To install Nginx on your Raspberry Pi or Ubuntu machine:</p>
+        <div class="blackCoding">
+            <p>sudo apt update</p>
+        </div>
+        <ul>
+            <li><p>Updates your package list.</p></li>
+        </ul>
+
+        <div class="blackCoding">
+        <p>sudo apt install nginx</p>
+        </div>
+        <ul>
+            <li><p>Installs the Nginx web server.</p></li>
+        </ul>
+
+
+        <h2>Checking Nginx Status</h2>
+            <p>To check the status of the Nginx service:</p>
+
+            <div class="blackCoding">
+                <p>sudo systemctl status nginx</p>
+            </div>
+
+            <ul>
+                <li><p>Shows if Nginx is active or not, and provides a summary of the service's status.</p></li>
+            </ul>
+
+        <h2>Starting Nginx</h2>
+        <p>To start the Nginx service:</p>
+
+        <div class="blackCoding">
+            <p>sudo systemctl start nginx</p>
+        </div>
+
+        <ul>
+            <li><p>Starts the Nginx service.</p></li>
+        </ul>
+
+
+        <h2>Enabling Nginx to Start on Boot</h2>
+        <p>To ensure Nginx starts automatically when the system boots:</p>
+        <div class="blackCoding">
+        <p>sudo systemctl enable nginx</p>
+        </div>
+        <ul>
+            <li><p>Configures Nginx to start automatically when the system starts.</p></li>
+        </ul>
+
+        <h2>Stopping Nginx</h2>
+        <p>To stop the Nginx service:</p>
+        <div class="blackCoding">
+        <p>sudo systemctl stop nginx</p>
+        </div>
+        <ul>
+            <li><p>Stops the Nginx service.</p></li>
+        </ul>
+
+        <h2>Restarting Nginx</h2>
+        <p>If you make changes to your configuration, you need to restart Nginx to apply them:</p>
+        <div class="blackCoding">
+        <p>sudo systemctl restart nginx</p>
+        </div>
+        <ul>
+            <li><p>Restarts the Nginx service, which is useful after making changes to config files.</p></li>
+        </ul>
+
+        <h2>Testing Nginx Configuration</h2>
+        <p>To test if the Nginx configuration is correct (this is useful before restarting):</p>
+        <div class="blackCoding">
+        <p>sudo nginx -t</p>
+        </div>
+        <ul>
+            <li><p>Tests the syntax of the Nginx configuration files.</p></li>
+        </ul>
+
+        <h2>Viewing Nginx Logs</h2>
+        <p>To view the Nginx access and error logs:</p>
+        <div class="blackCoding">
+        <p>sudo tail -f /var/log/nginx/access.log</p>
+        </div>
+        <ul>
+            <li><p>Shows access logs of requests made to your server.</p></li>
+        </ul>
+
+        <div class="blackCoding">
+        <p>sudo tail -f /var/log/nginx/error.log</p>
+        </div>
+        <ul>
+            <li><p>Shows error logs for troubleshooting.</p></li>
+        </ul>
+
+        <h2>Opening Ports in Firewall</h2>
+        <p>If you're using UFW (Uncomplicated Firewall), allow traffic to your desired ports (e.g., port 8080):</p>
+        <div class="blackCoding">
+        <p>sudo ufw allow 8080</p>
+        </div>
+        <ul>
+            <li><p>Allows inbound traffic on port 8080 for your first project.</p></li>
+        </ul>
+
+        <div class="blackCoding">
+        <p>sudo ufw allow 8002</p>
+        </div>
+        <ul>
+            <li><p>Allows inbound traffic on port 8002 for your second project.</p></li>
+        </ul>
+
+        <h2>Checking the UFW Status</h2>
+        <p>To check the status of the firewall:</p>
+        <div class="blackCoding">
+        <p>sudo ufw status</p>
+        </div>
+        <ul>
+            <li><p>Shows whether the firewall is active and which ports are open.</p></li>
+        </ul>
+
+        <h2>Configuring Nginx for Multiple Projects</h2>
+        <p>You set up two Nginx server blocks to host two different projects. Here’s an example configuration for your project:</p>
+        <div class="blackCoding">
+        <p>server {</p>
+        <p>    listen 8080;</p>
+        <p>    server_name localhost;</p>
+        <p>    root /var/www/html/proyect2;</p>
+        <p>    index index.html;</p>
+        <p>    location / {</p>
+        <p>        try_files $uri $uri/ =404;</p>
+        <p>    }</p>
+        <p>}</p>
+        </div>
+        <ul>
+            <li><p>The `server { ... }` block defines the configuration for handling a particular domain or port.</p></li>
+            <li><p>The `listen 8080;` tells Nginx to listen for traffic on port 8080.</p></li>
+            <li><p>The `server_name localhost;` specifies the domain or hostname (in this case, `localhost`).</p></li>
+            <li><p>The `root /var/www/html/proyect2;` specifies the directory where your project files are located.</p></li>
+            <li><p>The `index index.html;` defines the default file to serve when visiting the site (index.html).</p></li>
+        </ul>
+
+        <h2>Editing the Hosts File</h2>
+        <p>If you want to use custom domains (e.g., `project2.local`), add them to your `/etc/hosts` file:</p>
+        <div class="blackCoding">
+        <p>sudo nano /etc/hosts</p>
+        </div>
+        <ul>
+            <li><p>Add entries like `127.0.0.1 project2.local` to map domain names to your local machine.</p></li>
+        </ul>
+
+
+        <h3><span class="darkBlue">Here i will explain with my own words</span></h3>
+
+        <div class="blackCoding">
+            <p>
+                <span class="lightgreen">#</span> <br>
+            </p>
+        </div>
+
+    </div>
+</body>
+</html>
