@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/CSS-Files/style.css">
+    <link rel="stylesheet" href="/CSS-Files/codingColors.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+      
+    <div class="navbar">
+        <div class="container-navbar1">
+            <a href="/index.html">Home</a>
+            <a href="">CSS</a>
+            <a href="/HTML/htmlFirst.html">HTML</a>
+        </div>  
+    </div>
+
+    <div>
+
+        <div class="main-container">
+           
+            <div>
+                <h2>Forms and User Input</h2>
+                <p>HTML forms are used to gather user input, like text, numbers, selections, or files. A form is created using the < form > tag, and it typically contains various input fields (like textboxes, radio buttons, checkboxes, etc.). The form can be submitted to the server, which processes the data.</p>
+            </div>
+        </div>
+
+            
+
+            <div class="javascript-body">
+
+                <h2>Basic HTML form Example</h2>
+
+                <div class="blackCoding">
+                    <p>
+                        < form action="/submit" method="POST"> <br>
+                        <span class="black">---</span>    < label for="name">Name:</ label> <br>
+                        <span class="black">---</span>    < input type="text" id="name" name="name">< br>< br> <br>
+                        <br>
+                        <span class="black">---</span>    < label for="email">Email:</ label> <br>                    
+                        <span class="black">---</span>    < input type="email" id="email" name="email">< br>< br> <br>
+                        <br>
+                        <span class="black">---</span>    < button type="submit">Submit< /button> <br>
+                        < /form> <br>
+                        
+                    </p>
+                </div>
+            
+                <h2>Handling Form Submissions (GET vs POST)</h2>
+                <p> When a user submits a form, the data is sent to the server. The two most common methods for sending data from a form are GET and POST. </p>
+
+                <h3>GET Method: </h3>
+
+                <ul>
+                    <li>Sends form data in the URL (as query parameters).</li>
+                    <li>Suitable for non-sensitive data like search queries.</li>
+                    <li>The data is visible in the browser’s address bar.</li>
+                </ul>
+
+                <div class="blackCoding">
+                    <p>
+                        <span class="lightGreen">#GET Method</span> <br>
+                        <br> 
+                        < form action="/search" method="<span class="pink">GET</span>"> <br>
+                        <span class="black">---</span>    < input type="text" name="query"> <span class="lightGreen">#If the user submits the form with the value "python", the browser will navigate to /search?query=python, and the data will be part of the URL.</span> <br>
+                        <span class="black">---</span>    < button type="submit">Search< /button> <br>
+                        < /form> <br>
+                        
+                    </p>
+                </div>
+
+                <h3>POST Method: </h3>
+
+                <ul>
+                    <li>Sends form data in the body of the HTTP request (not visible in the URL)</li>
+                    <li>Suitable for sensitive data like passwords or large amounts of data.</li>
+                    <li>The data is not visible in the browser's address bar.</li>
+                </ul>
+
+                <div class="blackCoding">
+                    <p>
+                        <span class="lightGreen">#POST Method</span> <br>
+                        <br> 
+                        < form action="/submit" method="<span class="pink">POST</span>"> <br>
+                        <span class="black">---</span>    < input type="text" name="username"> <br>
+                        <span class="black">---</span>    < button type="submit">Submit< /button> <br>
+                        < /form>                         <br>
+                    </p>
+                </div>
+
+                <h2>Retrieving Form Data with request.form</h2>
+                <p>After the form is submitted, Flask allows you to retrieve the data submitted through the form using request.form. This is a dictionary-like object that stores the form data as key-value pairs.</p>
+
+                <h3>Example: </h3>
+
+                <div class="blackCoding">
+                    <p>
+                        <span class="lightGreen">#HTML File</span> <br>
+                        <br>
+                        < form action="/submit" method="<span class="pink">POST</span>"> <br> 
+                        <span class="black">---</span>     < label for="username">Username:< /label> <br>                  
+                        <span class="black">---</span>     < input type="text" id="username" name="<span class="orange">username</span>">< br>< br> <br>
+                        <br>
+                        <span class="black">---</span>     < label for="password">Password:< /label> <br>                  
+                        <span class="black">---</span>     < input type="password" id="password" name="<span class="purple">password</span>">< br>< br> <br>
+                        <br>
+                        <span class="black">---</span>     < button type="submit">Submit< /button> <br>
+                        < /form> <br>
+                        <br>
+                        <span class="lightGreen">#app.py</span> <br>
+                        <br>
+                        <span class="yellow">@app.route</span>("/") <br>
+                        <span class="darkBlue">def</span> <span class="yellow">home</span>(): <br>
+                        <span class="lightBlue">username</span> = request.form["<span class="orange">username</span>"] <span class="lightGreen">#request.form lets you retrieve value entered in the input from the name="" attribute</span> <br>
+                        <span class="lightBlue">password</span> = request.form["<span class="purple">password</span>"] <br>
+                        <span class="black">---</span> <span class="pink">return</span> <span class="orange">   </span>    <br> 
+
+                    </p>
+                </div>
+
+                <h2>Validating and Processing Form Data</h2>
+                <p>Form data often needs to be validated before processing it. You can validate the data to ensure it's in the correct format or contains the required values. You can also perform processing tasks like saving it to a database, encrypting a password, etc.</p>
+       
+                <h3>Basic Validation Example</h3>
+                <div class="blackCoding">
+                    <p>
+                        <span class="yellow">@app.route</span>("/submit", <span class="lightBlue">methods</span>=["POST"]) <br>
+                        <span class="darkBlue">def</span> <span class="yellow">submit_form</span>(): <br>
+                        <span class="lightBlue">username</span> = request.form["username"] <br>
+                        <span class="lightBlue">email</span> = request.form["email"] <br>
+                        <br>
+                        <span class="purple">if not</span> username: <br>       
+                       <span class="black">---</span> <span class="purple">return</span> "Username is required!", 400  <span class="lightGreen"># 400 Bad Request</span> <br> 
+                       <br>
+                       <span class="purple">if</span> "@" <span class="purple">not in</span>  email: <br>               
+                       <span class="black">---</span><span class="purple">return</span> "Invalid email address!", 400 <br>
+                       <br>
+                       <span class="lightGreen">#We could also import the data to the database like this</span> <br>
+                       save_to_db(username, email)
+                        <br>
+                        <span class="black">---</span> <span class="pink">return</span> f"<span class="orange"> Form submitted successfully with username: {<span class="lightBlue">username</span>}, email: {<span class="lightBlue">email</span>}  </span>"  <span class="lightGreen">#Or we could use render_template and pass the variables and have a html file </span>   <br> 
+                    </p>
+                </div>
+            </div>
+    </div>
+</body>
+</html>
+
+<!-- 
+<span class="black">---</span>
+
+<span class="yellow">@app.route</span>("/") <br>
+<span class="darkBlue">def</span> <span class="yellow">home</span>(): <br>
+<span class="black">---</span> <span class="pink">return</span> <span class="orange">   </span>    <br> 
+
+-->
