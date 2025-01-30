@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/CSS-Files/style.css">
+    <link rel="stylesheet" href="/CSS-Files/codingColors.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+      
+    <div class="navbar">
+        <div class="container-navbar1">
+            <a href="/index.html">Home</a>
+            <a href="">CSS</a>
+            <a href="/HTML/htmlFirst.html">HTML</a>
+        </div>  
+    </div>
+
+    <div>
+        <div class="main-container">
+           
+            <div>
+                <h2>Flask Templates & Blueprint Structure</h2>
+                <p>In larger Flask applications, we need a way to organize our code better to keep it maintainable and scalable. That's where Blueprints come in, along with templates for the views.</p>
+            </div>
+
+        </div>
+
+
+            <div class="javascript-body">
+               
+                <h2>Organizing Larger Projects with Blueprints</h2>
+                <p>Blueprints in Flask help you organize your application into modular components. This is particularly useful for larger projects because it allows you to split the app into smaller, more manageable pieces.</p>
+
+                <p>For example, imagine you're building a blog app. You might have the following sections:</p>
+                <ul>
+                    <li>User authentication (login, register)</li>
+                    <li>Blog posts (view posts, create posts, etc.)</li>
+                    <li>Admin panel (admin dashboard)</li>
+                </ul>
+
+                <p>We would have different folder depending of the section</p>
+
+                <h3>How to create a blueprint?</h3>
+
+                <div class="blackCoding">
+                    <p>
+                        <span class="lightGreen"># auth.py (inside the auth folder)</span> <br>
+                        <span class="purple">from</span> flask <span class="purple">import</span> Blueprint <br>
+<br>
+                        auth = Blueprint('auth', __name__) <br>
+ <br>
+                        @auth.route('/login') <br> 
+                        <span class="darkBlue">def</span> <span class="yellow">login</span>(): <br>
+                        <span class="black">---</span>    <span class="pink">return</span> "Login page" <br>
+<br>
+                        @auth.route('/logout') <br>
+                        <span class="darkBlue">def</span> <span class="yellow">logout</span>(): <br>
+                        <span class="black">---</span>    <span class="pink">return</span> "Logout page" <br> 
+                        <br>
+                        <br>
+                        <span class="lightGreen">// app.py</span> <br>
+                        <span class="purple">from</span> flask <span class="purple">import</span> Flask <br>
+                        <span class="purple">from</span> auth <span class="purple">import</span> auth <span class="lightGreen">//Here, you're importing the auth blueprint from the auth module.</span><br>
+<br>
+                        app = Flask(__name__) <br>              
+                        app.register_blueprint(auth, url_prefix='/auth') <span class="lightGreen">app.register_blueprint() is a method used to register a blueprint (in this case, auth) and url_prefix='/auth' means that all the routes inside the auth blueprint will be prefixed with /auth when accessed. For example, if your blueprint has a route for login, it would be accessible at /auth/login instead of just /login.</span><br>
+
+
+                    </p>
+                </div>
+
+                <h2>Structuring Your App with Multiple Files</h2>
+
+                <p>here is an overview of a complete blueprint </p>
+
+                <div class="blackCoding">
+                    <p>
+                        /my_flask_app <br>
+                        /app  <br>
+                        <span class="black">---</span>    __init__.py       <span class="lightGreen"># Initializes the app and registers blueprints </span><br>
+                        <span class="black">---</span>    /templates        <span class="lightGreen"> # Folder for HTML files (templates)</span> <br>
+                        <span class="black">---</span>    /static           <span class="lightGreen"># Folder for CSS, JavaScript, and images</span> <br>
+                        <span class="black">---</span>    /<span class="blue">auth</span>              <span class="lightGreen"># Folder for the auth blueprint</span> <br>
+                        <span class="black">------</span>        __init__.py <br>
+                        <span class="black">------</span>        views.py <br>
+                        <span class="black">------</span>        templates/ <br>
+                        <span class="black">---</span>    /<span class="blue">blog</span>             <span class="lightGreen"># Folder for the blog blueprint</span> <br>
+                        <span class="black">------</span>        __init__.py <br>
+                        <span class="black">------</span>        views.py <br>
+                        <span class="black">------</span>        templates/ <br>
+                        <span class="black">---</span>    /<span class="blue">admin</span>             <span class="lightGreen"># Folder for the admin blueprint</span> <br>
+                        <span class="black">------</span>        __init__.py <br>
+                        <span class="black">------</span>        views.py <br>
+                        <span class="black">------</span>         templates/ <br>
+                        /config.py          <span class="lightGreen"># Configuration settings for the app</span> <br>
+                        /run.py             <span class="lightGreen"># Entry point for running the app</span> <br>
+
+                    </p>
+                </div>
+
+                <h2>Splitting Functionality into Separate Components</h2>
+
+                <ul>
+                    <li><span class="boldClass">Views</span>: The views are the functions that handle the routes (URLs) in your application. You define these views in blueprints or directly in your app file. Each blueprint can have its own set of views.</li>
+                    <li><span class="boldClass">Models</span>: These are the classes that represent your database entities. You can split models into separate files to keep things organized. For example, if you're using SQLAlchemy, your models might go in a models.py file or inside their respective blueprint folders.</li>
+                    <li><span class="boldClass">Templates</span>: These are the HTML files that define the structure and layout of your pages. You would usually store templates in a templates/ folder within each blueprint.</li>
+                </ul>
+
+                <h3>An example inside of a Blueprint</h3>
+
+                <div class="blackCoding">
+                    <p>
+                        <span class="lightGreen">So blueprint is just a way to organize code into folder (blueprints) in thisa example we will have all the blog blueprint.</span>
+                        /app  <br>
+                        <br> <span class="black">---</span>    /<span class="blue">blog</span> <span class="lightGreen">/blog blueprint</span> <br>
+                        <span class="black">------</span>        __init__.py           <span class="lightGreen"># Initializes the blog blueprint</span> <br>
+                        <span class="black">------</span>         views.py              <span class="lightGreen"># Views for blog-related routes</span> <br>
+                        <span class="black">------</span>         models.py             <span class="lightGreen"># Database models for the blog</span> <br>
+                        <span class="black">------</span>         /templates <br>
+                        <span class="black">---------</span>             index.html       <span class="lightGreen"># Template for the homepage of the blog</span> <br>
+                        <span class="black">---------</span>             post_detail.html <span class="lightGreen"># Template for viewing individual posts</span> <br>
+
+                    </p>
+                </div>
+            </div>
+    </div>
+</body>
+</html>

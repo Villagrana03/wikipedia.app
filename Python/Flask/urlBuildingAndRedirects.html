@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/CSS-Files/style.css">
+    <link rel="stylesheet" href="/CSS-Files/codingColors.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+      
+    <div class="navbar">
+        <div class="container-navbar1">
+            <a href="/index.html">Home</a>
+            <a href="">CSS</a>
+            <a href="/HTML/htmlFirst.html">HTML</a>
+        </div>  
+    </div>
+
+    <div>
+        <div class="main-container">
+           
+            <div>
+                <h2>URL Building and Redirects</h2>
+                <p></p>
+            </div>
+        </div>
+
+
+            <div class="javascript-body">
+               
+                <h2>Redirecting users using redirect and url_for</h2>
+                <p>In web applications, it's common to redirect a user to another page after they perform an action, like submitting a form or logging in. Flask provides two functions for this:</p>
+
+                <ul>
+                    <li><span class="darkBlue">redirect()</span>:  This function is used to send an HTTP redirect to the client, which tells the browser to go to a different URL.</li>
+                    <li><span class="darkBlue">url_for()</span>: This function generates a URL for a given endpoint (route), which you can use in combination with redirect().</li>
+                </ul>
+
+                <div class="blackCoding">
+                    <p>
+                        <span class="yellow">@app.route</span>("/") <br>
+                        <span class="darkBlue">def</span> <span class="yellow">home</span>(): <br>
+                        <span class="black">---</span> <span class="pink">return</span> <span class="orange">"Welcome to my Page"</span>    <br> 
+                        <br>
+                        <span class="yellow">@app.route</span>("/redirect-to-home") <br>
+                        <span class="darkBlue">def</span> <span class="yellow">redirect_to_home</span>(): <br>
+                        <span class="black">---</span> <span class="pink">return</span> redirect(url_for(<span class="orange">"home"   </span>)) <span class="lightGreen">#home refers to the function name of the route</span>   <br> 
+                    </p>
+                </div>
+
+                <h2>Passing data via URL parameters (query strings)</h2>
+                <p>This method lets you pass data to your Flask routes through the URL, typically as query parameters. These are the key-value pairs that appear after a ? in the URL. </p>
+                
+                <div class="blackCoding">
+                    <p>
+                        <span class="lightGreen">#An example</span> <br>
+                        /profile?username=Rene&age=21 <br>
+                        <span class="lightGreen">#The query parameters are username=Rene and age=21. in the URL</span>
+                    </p>
+                </div>
+
+
+                <p>In Flask, you can access these parameters through <span class="gold">request.args.</span> </p>
+
+                <div class="blackCoding">
+                    <p>
+                        <span class="lightGreen">#"Whenever we have a form with the method 'GET', the user's data is sent via the URL as query parameters. Using request.args.get(), we can retrieve those query parameters from the URL."</span>
+                        <span class="yellow">@app.route</span>("/profile") <br>
+                        <span class="darkBlue">def</span> <span class="yellow">profile</span>(): <br>
+                        <span class="lightBlue">username</span> = request.args.get('username') <br>
+                        <span class="lightBlue">age</span> = request.args.get('age') <br>
+                        <span class="black">---</span> <span class="pink">return</span> <span class="orange"> f'User: {span class="lightBlue">username</span>}, Age: {<span class="lightBlue">age</span>}'   </span>    <br> 
+                    </p>
+                </div>
+
+                <h4>Result</h4>
+                <p>In this case, when you visit /profile?username=Rene&age=21, the route will display:</p>
+
+                <div class="blackCoding">
+                    <p>
+                        User: Rene, Age: 21
+                    </p>
+                </div>
+
+                <h2>Dynamic URLs (e.g., /user/< name >)</h2>
+                <p>Dynamic URLs allow you to capture parts of the URL as variables. This is useful when you want to display data for specific items, like user profiles or blog posts. The part of the URL in < > is dynamic and will be passed to the corresponding view function as a variable.</p>
+
+                <div class="blackCoding">
+                    <p>
+                        <span class="yellow">@app.route</span>("/user/< name >") <br>
+                        <span class="darkBlue">def</span> <span class="yellow">user_profile</span>(): <br>
+                        <span class="black">---</span> <span class="pink">return</span> <span class="orange">f'Hello, {name}!'</span> <span class="lightGreen">#Or we could use render_template() and pass that variable to the html!</span>    <br> 
+                    </p>
+                </div>
+
+                <h3>This is a small example of how we would use Dynamic URL</h3>
+
+                <div class="blackCoding">
+                    <p>
+                        <span class="lightGreen">#app.py </span> <br>
+                        <span class="yellow">@app.route</span>("/") <br>
+                        <span class="darkBlue">def</span> <span class="yellow">index</span>(): <br>
+                        <span class="black">---</span> <span class="pink">return</span> render_template(<span class="orange">'index.html'   </span>) <span class="lightGreen">#Since this is "/" this will be the first route and it will render index.html</span>    <br> 
+                        <br>
+                        <span class="yellow">@app.route</span>("/user/ < name >") <br>
+                        <span class="darkBlue">def</span> <span class="yellow">hello_user</span>(name): <br>
+                        <span class="black">---</span> <span class="pink">return</span> render_template(<span class="orange">'hello_user.html', name=name   </span>) <span class="lightGreen"></span>   <br> 
+
+                        <br>
+                        <br>
+
+                        <span class="lightGreen">#index.html</span> <br>
+
+                         < body > <br>
+                           <span class="black">---</span> < h1 >Blog Users < /h1> <br>
+                           <span class="black">---</span> < a href="{{ url_for('hello_user', name='Michelle') }}">Michelle's Blog< /a> <span class="lightGreen">#Thanks to the url_for, we are passing the variable name with the value Michelle to the hello_user function, and automatically gets the URL and pass tha variable "name" to the URL</span><br>
+                         < /body > <br>
+                        
+                        <br>
+                        <br>
+
+                        <span class="lightGreen">#hello_user.html</span> <br>
+                        < body> <br>
+                        <span class="black">---</span> < h1>Hello, {{ name }}!< /h1> <br>
+                        < /body > <br>
+                    </p>
+                </div>
+
+            </div>
+    </div>
+
+    <!--
+    <span class="yellow">@app.route</span>("/") <br>
+    <span class="darkBlue">def</span> <span class="yellow">home</span>(): <br>
+    <span class="black">---</span> <span class="pink">return</span> <span class="orange">   </span>    <br> 
+    -->
+</body>
+</html>

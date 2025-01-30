@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/CSS-Files/style.css">
+    <link rel="stylesheet" href="/CSS-Files/codingColors.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+      
+    <div class="navbar">
+        <div class="container-navbar1">
+            <a href="/index.html">Home</a>
+            <a href="">CSS</a>
+            <a href="/HTML/htmlFirst.html">HTML</a>
+        </div>  
+    </div>
+
+    <div>
+        <div class="main-container">
+            <div>
+                <h2>Sessions and Cookies in Flask</h2>
+                <p>Flask provides powerful tools for managing sessions and cookies, which are essential for user data storage and communication between the browser and server.</p>
+            </div>
+        </div>
+
+
+            <div class="javascript-body">
+               <h2>Understanding Sessions</h2>
+               
+                <ul>
+                    <li>A session in Flask is a way to store data about a user across multiple requests.</li>
+                    <li>The session data is stored on the server, while the client gets a session cookie (with a unique identifier).</li>
+                    <li>Flask uses signed cookies to ensure data integrity. (It requires a <span class="boldClass">SECRET_KEY</span> to sign the data.)</li>
+                </ul>
+
+                <div class="blackCoding">
+                    <p>
+                        <span class="purple">from</span> flask <span class="purple">import</span> Flask, session, redirect, url_for, request <br>
+<br>
+                        app = Flask(__name__) <br>
+                        app.secret_key = 'your_secret_key' <br>
+<br> 
+                        <span class="yellow">@app.route</span>("/") <br>
+                        <span class="darkBlue">def</span> <span class="yellow">index</span>(): <br>
+                            <span class="lightGreen"># Check if user is logged in</span> <br>
+                            <span class="black">---</span>    <span class="pink">if</span> 'username' in session: <br>
+                            <span class="black">------</span>    <span class="pink">return</span> f"Hello, {session['username']}!" <br>
+                            <span class="black">---</span>    <span class="pink">return</span> "You are not logged in." <br>
+<br>
+                        <span class="yellow">@app.route</span>('/login', <span class="pink">methods</span>=['POST', 'GET']) <br>
+                        <span class="darkBlue">def</span> <span class="yellow">login</span>(): <br>
+                        <span class="black">---</span>    <span class="pink">if</span> request.method == 'POST': <span class="lightGreen"></span> <br>
+                        <span class="black">------</span>        <span class="lightGreen"># Save username in session</span> <br>
+                        <span class="black">------</span>        session['username'] = request.form['username'] <br>
+                        <span class="black">------</span>        <span class="pink">return</span> redirect(url_for('index')) <br>
+                        <span class="black">---</span>    <span class="pink">return</span> ''' <br>
+                        <span class="black">---</span>    < form method="post" > <br>
+                        <span class="black">------</span>            < input type="text" name="username" > <br>
+                        <span class="black">------</span>            < input type="submit" value="Login" > <br>
+                        <span class="black">---</span>        < /form > <br>
+                        <span class="black">---</span>    ''' <br>
+<br>
+<span class="yellow">@app.route</span>('/logout') <br>
+<span class="darkBlue">def</span> <span class="yellow">logout</span>(): <br>
+<span class="black">---</span>    <span class="lightGreen">// Remove data from session</span> <br>
+<span class="black">---</span>    session.pop('username', None) <br>
+<span class="black">---</span>    <span class="pink">return</span> redirect(url_for('index')) <br>
+
+                    </p>
+                </div>
+
+                <h2>Understand Cookie</h2>
+                
+                <ul>
+                    <li>A cookie is a small piece of data stored in the user's browser.</li>
+                    <li>Cookies can persist across sessions and requests.</li>
+                    <li>Flask provides helper methods to set and get cookies.</li>
+                </ul>
+
+                <div class="blackCoding">
+                    <p>
+                        <span class="pink">from</span> flask <span class="pink">import</span> Flask, request, make_response <br>
+<br>
+                        app = Flask(__name__) <br>
+<br>
+<span class="yellow">@app.route</span>('/') <br>
+<span class="darkBlue">def</span> <span class="yellow">index</span>(): <br>
+<span class="black">---</span>     <span class="lightGreen"># Get a cookie </span><br>
+<span class="black">---</span>     <span class="lightBlue">username</span> = request.cookies.get('username') <span class="lightGreen">#request.cookies: Used to access cookies sent by the browser.</span> <br>
+<span class="black">---</span>     <span class="pink">if</span> username: <br>
+<span class="black">------</span>         <span class="pink">return</span> f"Welcome back, {username}!" <br>          
+                                <span class="black">---</span>     <span class="pink">return</span> "Hello, new visitor!" <br>
+<br>
+                                <span class="yellow">@app.route</span>('/setcookie') <br>
+                                <span class="darkBlue">def</span> <span class="yellow">set_cookie</span>(): <span class="lightGreen">//You create a response object with any string, which will be sent back to the user's browser. </span> <br>
+                                <span class="black">---</span>     <span class="lightBlue">resp</span> = make_response("Cookie is set!") <br>
+                                <span class="black">---</span>     <span class="lightGreen"># Set a cookie that expires in 30 seconds </span><br>           
+                                <span class="black">---</span>     <span class="lightBlue">resp</span>.set_cookie('username', 'John Doe', max_age=30) <span class="lightGreen">#now we could get the user age and the username and store it in the user browser </span> <br>
+                                <span class="black">---</span>     <span class="pink">return</span> resp <br>
+
+                    </p>
+                </div>
+
+                <h2>Handlings Secure Sessions</h2>
+                <p>Flask sessions are encrypted using the app's SECRET_KEY. for security we use</p>
+
+                <ul>
+                    <li>Use a strong <span class="darkBlue">SECRET_KEY</span>.</li>
+                    <li>Use secure=True for HTTPS-only cookies.</li>
+                    <li>Enable httponly=True to prevent JavaScript access to cookies.</li>
+                </ul>
+
+                <div class="blackCoding">
+                    <p>
+                        app.config.update( <br>
+                            <span class="black">---</span>    SESSION_COOKIE_SECURE=True,    <span class="lightGreen"># HTTPS-only</span> <br>          
+                            <span class="black">---</span>    SESSION_COOKIE_HTTPONLY=True, <span class="lightGreen"># Prevent JavaScript access</span> <br>
+                            <span class="black">---</span>    SESSION_COOKIE_SAMESITE='Lax' <span class="lightGreen"> # Prevent cross-site requests</span> <br>
+                        ) <br>
+
+                    </p>
+                </div>
+
+            </div>
+    </div>
+
+    <!--
+
+    <span class="black">---</span>
+
+    <span class="yellow">@app.route</span>("/") <br>
+    <span class="darkBlue">def</span> <span class="yellow">home</span>(): <br>
+    <span class="black">---</span> <span class="pink">return</span> <span class="orange">   </span>    <br> 
+
+    -->
+
+</body>
+</html>

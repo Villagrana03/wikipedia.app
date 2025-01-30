@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/CSS-Files/style.css">
+    <link rel="stylesheet" href="/CSS-Files/codingColors.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+      
+    <div class="navbar">
+        <div class="container-navbar1">
+            <a href="/index.html">Home</a>
+            <a href="">CSS</a>
+            <a href="/HTML/htmlFirst.html">HTML</a>
+        </div>  
+    </div>
+
+    <div>
+        <div class="main-container">
+           
+            <div>
+                <h2>Error handling</h2>
+                <p>Error handling is an important part of web development because it helps improve user experience by providing meaningful feedback when things go wrong. In Flask, you can handle errors like 404 (Page Not Found) or 500 (Server Error) and create custom error pages for them. You can also handle form validation errors to ensure that user inputs are correct before submitting forms.</p>
+            </div>
+
+
+        </div>
+
+
+            <div class="javascript-body">
+               
+                <h2>Using Error Handlers for Common HTTP Errors (404, 500)</h2>
+                <p>Flask provides decorators for handling common HTTP errors like 404 (Page Not Found) and 500 (Server Error). You can use these decorators to create custom error pages for these errors.</p>
+
+                <h3>to Handle this errors:</h3>
+
+                <div class="blackCoding">
+                    <p>
+                        <span class="purple">from</span> flask <span class="purple">import</span> Flask, render_template <br>
+<br>
+                        app = Flask(__name__) <br>
+<br>
+<span class="lightGreen">//# Custom 404 Error Handler</span> <br>
+                        <span class="purple">@app.errorhandler</span>(404) <br>
+                        <span class="purple">def</span> page_not_found(error): <br>
+                        <span class="black">---</span>    <span class="purple">return</span> render_template('404.html'), 404 <br>
+                        <br>
+<span class="lightGreen">//# Custom 500 Error Handler</span> <br>
+                        <span class="purple">@app.errorhandler</span>(500) <br>
+                        <span class="purple">def</span> internal_server_error(error): <br>
+                        <span class="black">---</span>    <span class="purple">return</span> render_template('500.html'), 500 <br>
+
+                    </p>
+                </div>       
+
+                <h2>Handling Form validator Errors</h2>
+                <p>In Flask, forms are often handled using Flask-WTF and WTForms. When a user submits a form, you can check whether the data is valid. If not, you can display error messages and keep the user on the form page so they can fix their mistakes.</p>
+
+                <div class="blackCoding">
+                    <p>
+                        <span class="lightGreen">#form class</span> <br>
+                        <br>
+                        <span class="purple">class</span> nameForm(FlaskForm): <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;name = StringField('Name', validators=[DataRequired()]) <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;submit = SubmitField('Submit') <br>
+                        <br>
+                        <br>
+                        <span class="purple">@app.route</span>("/", methods = ['GET', 'POST']) <br>
+                        <span class="purple">def</span> index(): <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;form = nameForm() <span class="lightGreen">#This creates an instance of the nameForm class.</span> <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="purple">if</span> form.validate_on_submit(): <span class="lightGreen">#This line checks if the form is valid and if the user has submitted it (i.e., clicked the submit button</span> <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="purple">return</span> redirect(url_for('success')) <span class="lightGreen">#If the form is valid and submitted, this line will redirect the user to the success page</span><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="purple">return</span> render_template('index.html', form=form) <br>
+                    </p>
+                </div>
+
+            </div>
+    </div>
+</body>
+</html>

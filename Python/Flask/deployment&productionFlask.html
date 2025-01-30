@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/CSS-Files/style.css">
+    <link rel="stylesheet" href="/CSS-Files/codingColors.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+      
+    <div class="navbar">
+        <div class="container-navbar1">
+            <a href="/index.html">Home</a>
+            <a href="">CSS</a>
+            <a href="/HTML/htmlFirst.html">HTML</a>
+        </div>  
+    </div>
+
+    <div>
+        <div class="main-container">
+           
+            <div>
+                <h2>Deployment & Production</h2>
+                <p>In development mode, Flask provides a built-in server and tools for debugging. It allows for hot-reloading, meaning the server automatically restarts when you make changes to the code.</p>
+            </div>
+
+        </div>
+
+
+            <div class="javascript-body">
+
+               <h3>Development mode</h3>
+               <p>In development mode, Flask provides a built-in server and tools for debugging. It allows for hot-reloading, meaning the server automatically restarts when you make changes to the code.</p>
+
+                <div class="blackCoding">
+                        <p>
+                            <span class="yellow">export</span> FLASK_ENV=development <br>
+                            flask run
+                        </p>
+                </div>
+
+               <h2>Production Mode</h2>
+               <p>In production mode, Flask runs without the built-in debugger and hot-reloading. It's more secure and suitable for live applications.</p>
+
+               <div class="blackCoding">
+                    <p>
+                        <span class="yellow">export</span> FLASK_ENV=production <br>
+                        flask run
+
+                    </p>
+               </div>
+
+               <h2>Gunicorn</h2>
+               <p>Gunicorn (Green Unicorn) is a Python WSGI HTTP Server for UNIX. It is a pre-fork worker model that works well with web frameworks like Flask.</p>
+               <p>It is recommended for running Flask apps in production because it is more robust and can handle more concurrent requests than the built-in Flask server.</p>
+
+                <div class="blackCoding">
+                        <p>
+                            <span class="yellow">pip</span> install gunicorn <br>
+                            gunicorn -w 4 -b 0.0.0.0:8000 yourapp:app
+                        </p>
+                </div>
+
+                <ul>
+                    <li><span class="boldClass">-w 4</span>: Specifies the number of worker processes (adjust based on your server's capability).</li>
+                    <li><span class="boldClass">-b 0.0.0.0:8000</span>: Binds the server to all available IP addresses on port 8000.</li>
+                    <li><span class="boldClass">yourapp:app</span>: Refers to the Flask application instance (replace yourapp with the name of your module and app with your Flask app variable).</li>
+                </ul>
+    </div>
+</body>
+</html>

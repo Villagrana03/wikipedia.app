@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/CSS-Files/style.css">
+    <link rel="stylesheet" href="/CSS-Files/codingColors.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+      
+    <div class="navbar">
+        <div class="container-navbar1">
+            <a href="/index.html">Home</a>
+            <a href="">CSS</a>
+            <a href="/HTML/htmlFirst.html">HTML</a>
+        </div>  
+    </div>
+
+    <div>
+        <div class="main-container">
+           
+            <div>
+                <h2>Handling Static Files</h2>
+                <p>Handling static files in Flask involves managing files like CSS, JavaScript, and images that your web application uses to create a richer user experience.</p>
+            </div>
+
+
+        </div>
+
+
+            <div class="javascript-body">
+               
+                <h2>Serving Static Files (CSS, JavaScript, Images)</h2>
+                <p>Static files are assets that don’t change dynamically during the application runtime, such as stylesheets, JavaScript scripts, images, or fonts.</p>
+
+                <ul>
+                    <li>Flask provides a built-in way to serve these files using a folder named static in your project directory.</li>
+                    <li>When you want to include these files in your application, Flask allows you to link them directly in your HTML templates using a special helper function called url_for.</li>
+                </ul>
+
+                <h2>The static Folder and Flask Configuration</h2>
+
+                <div class="blackCoding">
+                    <p>
+                        /project <br>
+                        ├── app.py <br>
+                        ├── templates/ <br>
+                        └── static/ <br>
+                        <span class="black">---</span>    ├── css/ <br>
+                        <span class="black">---</span>    │   └── styles.css <br>
+                        <span class="black">---</span>    ├── js/ <br>
+                        <span class="black">---</span>    │   └── script.js <br>
+                        <span class="black">---</span>    └── images/ <br>
+                        <span class="black">---</span>        └── logo.png <br> 
+
+                    </p>
+                </div>
+
+                <h3>Accessing Files</h3>
+                <p>Flask automatically serves files from the static folder when you use the URL example <span class="gold">/static/< filename ></span></p>
+                <p>Customizing Static Folder: If you want to use a different folder name, you can configure Flask like this:</p>
+
+                <div class="blackCoding">
+                    <p>
+                        <span class="lightBlue">app</span> = Flask(__name__, static_folder='assets')
+                    </p>
+                </div>
+
+                <h2>Linking Static Files in Templates</h2>
+                <p>To use static files in your HTML templates, Flask provides the url_for() function. This function generates the correct URL to access files in the static folder.</p>
+
+                <div class="blackCoding">
+                    <p> 
+                        <span class="lightGreen">//In this example we have the folder named "static"</span> <br>
+                        < body > <br>
+                        <span class="black">---</span>    < img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" > <br>
+                        < /body > <br>
+                        <br>
+                        <br>
+                        <span class="lightGreen">//here would be an example if we name the folder to <span class="purple">assets</span></span> <br>
+                        <span class="lightGreen">app.py</span> <br>
+                        <br>
+                        <span class="lightBlue">app</span> = Flask(__name__, static_folder='<span class="purple">assets</span>') <br>
+                        <br>
+                        <span class="lightGreen">//index.html</span> <br>
+                        < body > <br>
+                        <span class="black">---</span>    < img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" > <br>
+                    < /body > <br>
+                    </p>
+                </div>
+
+            </div>
+    </div>
+</body>
+</html>

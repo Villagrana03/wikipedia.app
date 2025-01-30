@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/CSS-Files/style.css">
+    <link rel="stylesheet" href="/CSS-Files/codingColors.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+      
+    <div class="navbar">
+        <div class="container-navbar1">
+            <a href="/index.html">Home</a>
+            <a href="">CSS</a>
+            <a href="/HTML/htmlFirst.html">HTML</a>
+        </div>  
+    </div>
+
+    <div>
+        <div class="main-container">
+           
+            <div>
+                <h2>Flask Extensions</h2>
+                <p>Flask is a micro-framework, meaning it provides the basics but doesn't force a lot of extra features. However, you can add extra functionality via Flask Extensions. Some of the most useful ones for building a robust Flask app are:</p>
+            </div>
+        </div>
+
+
+            <div class="javascript-body">
+
+                <ul>
+                    <li><span class="boldClass">Flask-SQLAlchemy</span> for working with databases (SQL).</li>
+                    <li><span class="boldClass">Flask-WTF</span> for handling forms easily and securely.</li>
+                    <li><span class="boldClass">Flask-Login</span> for managing user authentication.</li>
+                </ul>
+               
+                <h2>Flask-SQLAlchemy</h2>
+                <p>Flask-SQLAlchemy is an extension for Flask that adds support for SQLAlchemy, a powerful ORM (Object Relational Mapper) for Python.</p>
+
+                <div class="blackCoding">
+                    <p>
+                        <span class="purple">from</span> flask <span class="purple">imports</span> Flask<br> <span class="lighGreen">// This imports flask</span>
+                        <span class="purple">from</span> flask_sqlalchemy  <span class="purple">imports</span> SQLAlchemy<br>
+                        <br>
+                        app = Flask(__name__)<br>
+                        app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///example.db' <span class="lightGreen">//This line tells the Flask application to use SQLAlchemy to connect to an SQLite database stored in a file named example.db. This database file will be created in the root directory of your project if it doesn't already exist.</span><br>
+                        db = SQLAlchemy(app) <span class="lightGreen">//SQLAlchemy(app): This initializes the SQLAlchemy instance with the Flask application instance app.</span><br>
+                    </p>
+                </div>
+
+                <h2>Flask-WTF</h2>
+                <p>Flask-WTF is an extension for Flask that adds support for WTForms, a flexible forms validation and rendering library for Python web development.</p>
+
+                <div class="blackCoding">
+                    <p>
+                        <span class="purple">from</span> flask_wtf <span class="purple">import</span> FlaskForm<br>
+                        <span class="purple">from</span> wtforms <span class="purple">import</span> StringField, SubmitField<br>
+                        <span class="purple">from</span> wtforms.validators <span class="purple">import</span> DataRequired<br>
+                        <br>
+                        <span class="lightGreen">//Im this form example, we have to things, a name input and a submt button</span> <br>
+                        <span class="purple">class</span> MyForm(FlaskForm): <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;name = StringField('Name', validators=[DataRequired()]) <span class="lightGreen">//This is the variable name for the form field. It is used to reference this field within your Flask application.</span><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;submit = SubmitField('Submit') <span class="lightGreen">//This is the variable name for the submit button. It is used to reference this button within your Flask application. </span><br>
+                    </p>
+                </div>
+
+                <h2>Flask-Login</h2>
+                <p>Flask-Login is an extension for Flask that adds support for user authentication, including session management and login/logout functionality.</p>
+
+                <div class="blackCoding">
+                    <p>
+                        <span class="purple">from</span> flask_login <span class="purple">import</span> UserMixin<br>
+                        <br>
+                        <span class="purple">class</span> User(UserMixin): <span class="lightGreen">//is a class that provides default implementations for the methods that Flask-Login expects user objects to have, such as is_authenticated, is_active, is_anonymous, and get_id</span><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="purple">def</span> __init__(self, id): <span class="lightGreen">//This is the constructor method for the User class. It initializes a new instance of the User class with an id attribute</span><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.id = id<br>
+                        <br>
+                        <span class="purple">from</span> flask_login <span class="purple">import</span> LoginManager <span class="lightGreen">//LoginManager is the main class used to manage user login sessions in a Flask application.</span> <br>
+                        <br>
+                        login_manager = LoginManager() <span class="lightGreen">// This instance will be used to configure and manage user login sessions.</span><br>
+                        login_manager.init_app(app) <span class="lightGreen">// It tells Flask-Login to use this instance to manage user sessions for your application.</span><br>
+                        <br>
+                        <span class="purple">from</span> flask_login <span class="purple">import</span> login_user, logout_user, login_required, current_user<br>
+                    </p>
+                </div>
+
+                
+            </div>
+</body>
+</html>
