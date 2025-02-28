@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<link rel="stylesheet" href="/CSS-Files/style.css">
+	<link rel="stylesheet" href="/CSS-Files/codingColors.css">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+
+ 	 
+	<div class="navbar">
+    	<div class="container-navbar1">
+        	<a href="/index.html">Home</a>
+        	<a href="">CSS</a>
+        	<a href="/HTML/htmlFirst.html">HTML</a>
+    	</div>  
+	</div>
+
+	<div>
+    	<div class="main-container">
+      	 
+        	<div>
+            	<h2>nmap</h2>
+            	<p>Nmap (Network Mapper) is a powerful and versatile tool used for network discovery and security auditing. </p>
+        	</div>
+
+    	</div>
+
+
+        	<div class="javascript-body">
+           	<h3>Basic flags: </h3>
+
+           	<ul>
+            	<li><span class="gold">-sn</span> Ping scan: This flag performs host discovery without scanning for open ports. It checks which hosts are up in the network.</li>
+                	<li><span class="gold">-sS</span> Stealth (SYN) scan: This is the default and most popular scan option because it is faster and stealthier than the default TCP connect scan. It only sends SYN packets and waits for responses.</li>
+                	<li><span class="blue">-sT</span> TCP connect scan: This is the default scan used when SYN scan isn't an option. It completes the three-way handshake and is easier to detect.</li>
+                	<li><span class="gold">-sV</span> Version detection: This flag allows Nmap to determine the version of the services running on open ports.</li>
+                	<li><span class="blue">-O</span> OS detection: This flag enables operating system detection, helping identify the OS of the target machine.</li>
+                	<li><span class="blue">-A</span> Aggressive scan: This flag enables OS detection, version detection, script scanning, and traceroute in one go.</li>
+                	<li><span class="gold">-p</span> Port specification: This flag allows you to specify which ports to scan. You can scan individual ports, ranges, or even all ports.</li>
+                	<li><span class="blue">-Pn</span> No ping: This flag treats all hosts as online, skipping host discovery.</li>
+                	<li><span class="gold">-sU</span> UDP scan: This flag is used to scan for open UDP ports on the target machine.</li>
+                	<li><span class="blue">-sC</span> Script scan: This flag enables the Nmap Scripting Engine (NSE) to run a set of scripts against the target.</li>
+                	<li><span class="gold">-T<level></span> Timing template: This flag sets the timing for the scan. Levels range from 0 (paranoid) to 5 (insane).</li>
+          	</ul>
+         	 
+          	<h2>Basic scanning</h2>
+          	<h3>Ping scan</h3>
+          	<p>This scan checks which hosts are up and running in your network:</p>
+
+          	<div class="blackCoding">
+            	nmap -sn 192.168.1.0/24 <span class="lightGreen">#/24: The subnet mask, indicating that the first 24 bits of the IP address are the network part, leaving the remaining 8 bits for host addresses.</span>
+          	</div>
+
+          	<h3>nmap -sn chart</h3>
+
+          	<table border="1">
+            	<tr>
+              	<th>Scan Type</th>
+              	<th>Uses ARP?</th>
+              	<th>Uses ICMP?</th>
+              	<th>Uses TCP?</th>
+              	<th>Uses UDP?</th>
+            	</tr>
+            	<tr>
+              	<td><code>nmap -sn</code> (default)</td>
+              	<td>✅ Yes (local)</td>
+              	<td>✅ Yes (if ARP fails)</td>
+              	<td>❌ No</td>
+              	<td>❌ No</td>
+            	</tr>
+            	<tr>
+              	<td><code>nmap -sn -PS</code></td>
+              	<td>✅ Yes</td>
+              	<td>✅ Yes</td>
+              	<td>✅ Yes (TCP SYN)</td>
+              	<td>❌ No</td>
+            	</tr>
+            	<tr>
+              	<td><code>nmap -sn -PU</code></td>
+              	<td>✅ Yes</td>
+              	<td>✅ Yes</td>
+              	<td>❌ No</td>
+              	<td>✅ Yes (UDP)</td>
+            	</tr>
+            	<tr>
+              	<td><code>nmap -sn -PR</code></td>
+              	<td>✅ Yes</td>
+              	<td>❌ No</td>
+              	<td>❌ No</td>
+              	<td>❌ No</td>
+            	</tr>
+          	</table>
+         	 
+
+        	</div>
+	</div>
+</body>
+</html>
